@@ -17,6 +17,7 @@
     <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/demo/demo.css" rel="stylesheet" />
+    <link href="../assets/css/css1.css"/>
 </head>
 
 <body class="">
@@ -120,7 +121,7 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 card-group">
                             <div class="card">
                                 <div class="card-header card-header-primary">
                                     <h4 class="card-title">Editar Tema</h4>
@@ -136,160 +137,174 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <h1></h1>
-                                            
-                                        </div>
-                                        <div class="row">
-                                            <h1></h1>
-                                            
-                                        </div>
-                                        <div class="row">
-                                            <h1></h1>
-                                            
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="card-header card-header-warning">
-                                                    <h5 class="card-title">Referencia Cita 1</h5>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Texto</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Autor</label>
-                                                    <input type="email" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Obra</label>
-                                                    <input type="email" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
 
+                                        <div class="card subcard">
+                                            <div class="card-body">
+                                                <form>
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Fist Name</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Last Name</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Adress</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">City</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Country</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Postal Code</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>About Me</label>
-                                                    <div class="form-group">
-                                                        <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                                        <textarea class="form-control" rows="5"></textarea>
+                                                    <div class="row ">
+                                                        <div class="col-md-12">
+                                                            <div class="card-header card-header-warning">
+                                                                <h5 class="card-title">Referencia Cita 1<i class="material-icons delete">delete</i></h5>
+                                                            </div>
+                                                        </div>    
+                                                    </div>    
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <input name="text" placeholder="Texto" class="form-control">
+                                                            
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="bmd-label-floating">Autor</label>
+                                                                <input type="email" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="bmd-label-floating">Obra</label>
+                                                                <input type="email" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
-                                        <div class="clearfix"></div>
-                                    </form>
-                                </div>
+                                        <div class="card subcard">
+                                            <div class="card-body text">
+                                                <form>
+                                                    <div class="row ">
+                                                        <div class="col-md-12">
+                                                            <div class="card-header card-header-warning">
+                                                                <h5 class="card-title">Texto<i class="material-icons delete">delete</i></h5>
+                                                            </div>
+                                                        </div>    
+                                                    </div>    
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <input name="text" placeholder="Texto" class="form-control">
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="card subcard">
+                                            <div class="card-body quote-reference">
+                                                <form>
+                                                    <div class="row ">
+                                                        <div class="col-md-12">
+                                                            <div class="card-header card-header-warning">
+                                                                <h5 class="card-title">Referencia Cita 2<i class="material-icons delete">delete</i></h5>
+                                                            </div>
+                                                        </div>    
+                                                    </div>    
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <input name="text" placeholder="Texto" class="form-control">
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="bmd-label-floating">Autor</label>
+                                                                <input type="email" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="bmd-label-floating">Obra</label>
+                                                                <input type="email" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        
+                                        <form>
+                                            <fieldset>
+                                                <label>Referencia a cita</label>
+                                                <input type="radio" name="refCita" value="cita">
+                                                <label>Texto</label>
+                                                <input type="radio" name="texto" value="texto">
+                                                <button class="material-icons">add</button>
+                                            </fieldset>
+                                        </form>
+                                
+                                <button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
+                                <div class="clearfix"></div>
+                                </form>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="card card-profile">
-                                <div class="card-avatar">
-                                    <a href="#pablo">
-                                        <img class="img" src="../assets/img/faces/marc.jpg" />
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h6 class="card-category text-gray">HTML del texto + citas</h6>
-                                    <h4 class="card-title">Ejemplo HTML</h4>
-                                    <p class="card-description">
-                                        SAMPMLE HTML
-                                    </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-profile">
+                            <div class="card-avatar">
+                                <a href="#pablo">
+                                    <img class="img" src="../assets/img/faces/marc.jpg" />
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-category text-gray">HTML del texto + citas</h6>
+                                <h4 class="card-title">Ejemplo HTML</h4>
+                                <p class="card-description">
+                                    SAMPMLE HTML
+                                </p>
 
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="float-left">
-                        <ul>
-                            <li>
-                                <a href="https://www.creative-tim.com">
-                                    Creative Tim
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://creative-tim.com/presentation">
-                                    About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://blog.creative-tim.com">
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.creative-tim.com/license">
-                                    Licenses
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="copyright float-right">
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>, made with <i class="material-icons">favorite</i> by
-                        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-                    </div>
-                </div>
-            </footer>
         </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="float-left">
+                    <ul>
+                        <li>
+                            <a href="https://www.creative-tim.com">
+                                Creative Tim
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://creative-tim.com/presentation">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://blog.creative-tim.com">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.creative-tim.com/license">
+                                Licenses
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright float-right">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+
+                    </script>, made with <i class="material-icons">favorite</i> by
+                    <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+                </div>
+            </div>
+        </footer>
+    </div>
     </div>
     <div class="fixed-plugin">
         <div class="dropdown show-dropdown">
@@ -572,6 +587,7 @@
                 });
             });
         });
+
     </script>
 </body>
 
