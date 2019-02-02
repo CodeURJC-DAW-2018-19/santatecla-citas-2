@@ -41,15 +41,13 @@
     </body>
     <script src="../assets/chartist.min.js"></script>
     <script>
-        // Create a simple bar chart
+        // Desde aquí se puede modificar la cantidad de citas por tema de forma dinámica
         var data = {
             labels: ['El origen de las especies', 'La Biblia', 'El Quijote', '20000 leguas de viaje submarino', 'Momo'],
             series: [
                 [5, 20, 4, 2, 0]
             ]
         };
-
-        // In the global name space Chartist we call the Bar function to initialize a bar chart. As a first parameter we pass in a selector where we would like to get our chart created and as a second parameter we pass our data object.
         new Chartist.Bar('.ct-chart', data);
     </script>
 </html>
