@@ -1,5 +1,6 @@
 textarea{
     resize: none;
+    border: hidden;
 }
 .delete{
     position: relative;
