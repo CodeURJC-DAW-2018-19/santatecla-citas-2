@@ -1015,6 +1015,27 @@ pre code {
   margin-left: auto;
 }
 
+.container-fluid #p-start {
+  position: relative;
+  top: -24px;
+  width: 54px;
+  height: 26px;
+  border-top: 2px solid rgb(104, 104, 104);
+  border-left: 2px solid rgb(104, 104, 104);
+  border-right: 2px solid rgb(104, 104, 104);
+  background: #eeeeee;
+  text-align: center;
+}
+
+.container-fluid #p-start p {
+  font-style: bold;
+  padding: 2px;
+}
+
+.border-container {
+  border-top: 2px solid rgb(104, 104, 104);
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -1425,6 +1446,24 @@ pre code {
   }
   .offset-sm-11 {
     margin-left: 91.666667%;
+  }
+
+  #histogram {
+    background: #fafafa;
+    position: relative;
+    left: 38%;
+    width: 300px;
+    height: 100px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  #histogram a {
+    position: relative;
+    top: 35%;
+    font-size: 1.6em;
+    font-style: bold;
+    color: #535453;
   }
 }
 
@@ -13050,6 +13089,24 @@ fieldset[disabled] .form-group .form-control {
   border-radius: 0;
 }
 
+.navbar #background-login {
+  background: white;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.navbar .navbar-nav .nav-item #position-dialogue {
+  position: relative;
+  top: 8px;
+  left: 12px;
+  justify-items: center;
+}
+
+.navbar .navbar-nav .nav-item #position-dialogue p{
+  text-justify: center;
+  font-style: bold;
+}
+
 .navbar .navbar-nav .nav-item .nav-link {
   position: relative;
   color: inherit;
@@ -14886,6 +14943,11 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   margin-top: 70px;
   padding: 30px 15px;
   min-height: calc(100vh - 123px);
+}
+
+.main-panel> .index-content {
+  position: relative;
+  left: -150px;
 }
 
 .main-panel>.footer {
