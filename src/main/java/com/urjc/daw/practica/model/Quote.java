@@ -1,8 +1,10 @@
 package com.urjc.daw.practica.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@Table(name = "quote")
 public class Quote {
 
     @Id
@@ -17,6 +19,9 @@ public class Quote {
 
     @Column(name = "book")
     private String book;
+
+    @ManyToMany(mappedBy = "quote")
+    private List<Theme> themes;
 
     public Quote(){
         //JPA NEEDS DEFAULT CONSTRUCTOR
