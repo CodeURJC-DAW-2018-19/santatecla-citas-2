@@ -22,12 +22,12 @@
 
 <body class="">
     <div class="wrapper ">
-        <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-            <!--
+        <!--<div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
         Tip 2: you can also add an image using data-image tag
-    -->
+
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text logo-normal">
                     GRUPO 4
@@ -50,7 +50,7 @@
 
                 </ul>
             </div>
-        </div>
+        </div>-->
         <div class="main-panel">
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
@@ -58,7 +58,8 @@
                     <div class="navbar-wrapper">
                         <a class="navbar-brand" href="#pablo">Tema + - numero o titulo tema- </a>
                     </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="navbar-toggler-icon icon-bar"></span>
                         <span class="navbar-toggler-icon icon-bar"></span>
@@ -84,7 +85,8 @@
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
                                     <i class="material-icons">notifications</i>
                                     <span class="notification">5</span>
                                     <p class="d-lg-none d-md-block">
@@ -100,7 +102,8 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
                                     <i class="material-icons">person</i>
                                     <p class="d-lg-none d-md-block">
                                         Account
@@ -118,8 +121,14 @@
                 </div>
             </nav>
             <!-- End Navbar -->
+
             <div class="content">
-                <div class="container-fluid">
+                <div class="container-fluid border-container">
+                    <div id="p-start">
+                        <p class="d-lg-inline-block d-md-inline-block">
+                            <a href="../templates/InicioNuevo.html">INICIO</a>
+                        </p>
+                    </div> 
                     <div class="row">
                         <div class="col-md-6 card-group">
                             <div class="card">
@@ -233,13 +242,11 @@
                                         </div>
 
                                         <form>
+                                            <fieldset>
+                                                <input type="radio" name="texto" value="cita" />Referencia a cita
+                                                <input type="radio" name="texto" value="texto" />Texto
 
-                                            <label>Referencia a cita</label>
-                                            <input type="radio" name="refCita" value="cita">
-                                            <label>Texto</label>
-                                            <input type="radio" name="texto" value="texto">
-
-
+                                            </fieldset>
                                         </form>
                                         <button class="material-icons" id="addQuote">add</button>
 
@@ -301,7 +308,7 @@
                         <script>
                             document.write(new Date().getFullYear())
 
-                    </script>, made with <i class="material-icons">favorite</i> by
+                        </script>, made with <i class="material-icons">favorite</i> by
                         <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
                     </div>
                 </div>
@@ -350,7 +357,8 @@
                     </a>
                 </li>
                 <li class="button-container">
-                    <a href="https://www.creative-tim.com/product/material-dashboard" target="_blank" class="btn btn-primary btn-block">Free Download</a>
+                    <a href="https://www.creative-tim.com/product/material-dashboard" target="_blank" class="btn btn-primary btn-block">Free
+                        Download</a>
                 </li>
                 <!-- <li class="header-title">Want more components?</li>
             <li class="button-container">
@@ -359,17 +367,20 @@
                 </a>
             </li> -->
                 <li class="button-container">
-                    <a href="https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
+                    <a href="https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html"
+                        target="_blank" class="btn btn-default btn-block">
                         View Documentation
                     </a>
                 </li>
                 <li class="button-container github-star">
-                    <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+                    <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star"
+                        data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
                 </li>
                 <li class="header-title">Thank you for 95 shares!</li>
                 <li class="button-container text-center">
                     <button id="twitter" class="btn btn-round btn-twitter"><i class="fa fa-twitter"></i> &middot; 45</button>
-                    <button id="facebook" class="btn btn-round btn-facebook"><i class="fa fa-facebook-f"></i> &middot; 50</button>
+                    <button id="facebook" class="btn btn-round btn-facebook"><i class="fa fa-facebook-f"></i> &middot;
+                        50</button>
                     <br>
                     <br>
                 </li>
@@ -392,7 +403,9 @@
                                 <div class="tim-typo">
                                     <blockquote class="blockquote">
                                         <p style="color:black">
-                                            “We are of opinion that instead of letting books grow moldy behind an iron grating, far from the vulgar gaze, it is better to let them wear out by being read.”
+                                            “We are of opinion that instead of letting books grow moldy behind an iron
+                                            grating, far from the vulgar gaze, it is better to let them wear out by
+                                            being read.”
                                         </p>
                                         <small style="color:grey">
                                             Jules Verne, Journey to the Center of the Earth
@@ -422,7 +435,10 @@
                                 <div class="tim-typo">
                                     <blockquote class="blockquote">
                                         <p style="color:black">
-                                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
+                                            I will be the leader of a company that ends up being worth billions of
+                                            dollars, because I got the answers. I understand culture. I am the nucleus.
+                                            I think that’s a responsibility that I have, to push possibilities, to show
+                                            people, this is the level that things could be at.
                                         </p>
                                         <small style="color:grey">
                                             Kanye West, Musician
@@ -452,7 +468,8 @@
                                 <div class="tim-typo">
                                     <blockquote class="blockquote">
                                         <p style="color:black">
-                                            “A man who dares to waste one hour of time has not discovered the value of life.”
+                                            “A man who dares to waste one hour of time has not discovered the value of
+                                            life.”
                                         </p>
                                         <small style="color:grey">
                                             Charles Darwin, The life and letters of Charles Darwin
@@ -519,8 +536,8 @@
             <script src="../assets/demo/demo.js"></script>
             <script src="../assets/js/js1.js"></script>
             <script>
-                $(document).ready(function() {
-                    $().ready(function() {
+                $(document).ready(function () {
+                    $().ready(function () {
                         $sidebar = $('.sidebar');
 
                         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -540,7 +557,7 @@
 
                         }
 
-                        $('.fixed-plugin a').click(function(event) {
+                        $('.fixed-plugin a').click(function (event) {
                             // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
                             if ($(this).hasClass('switch-trigger')) {
                                 if (event.stopPropagation) {
@@ -551,7 +568,7 @@
                             }
                         });
 
-                        $('.fixed-plugin .active-color span').click(function() {
+                        $('.fixed-plugin .active-color span').click(function () {
                             $full_page_background = $('.full-page-background');
 
                             $(this).siblings().removeClass('active');
@@ -572,7 +589,7 @@
                             }
                         });
 
-                        $('.fixed-plugin .background-color .badge').click(function() {
+                        $('.fixed-plugin .background-color .badge').click(function () {
                             $(this).siblings().removeClass('active');
                             $(this).addClass('active');
 
@@ -583,7 +600,7 @@
                             }
                         });
 
-                        $('.fixed-plugin .img-holder').click(function() {
+                        $('.fixed-plugin .img-holder').click(function () {
                             $full_page_background = $('.full-page-background');
 
                             $(this).parent('li').siblings().removeClass('active');
@@ -593,7 +610,7 @@
                             var new_image = $(this).find("img").attr('src');
 
                             if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-                                $sidebar_img_container.fadeOut('fast', function() {
+                                $sidebar_img_container.fadeOut('fast', function () {
                                     $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
                                     $sidebar_img_container.fadeIn('fast');
                                 });
@@ -602,7 +619,7 @@
                             if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
                                 var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
-                                $full_page_background.fadeOut('fast', function() {
+                                $full_page_background.fadeOut('fast', function () {
                                     $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
                                     $full_page_background.fadeIn('fast');
                                 });
@@ -621,7 +638,7 @@
                             }
                         });
 
-                        $('.switch-sidebar-image input').change(function() {
+                        $('.switch-sidebar-image input').change(function () {
                             $full_page_background = $('.full-page-background');
 
                             $input = $(this);
@@ -653,7 +670,7 @@
                             }
                         });
 
-                        $('.switch-sidebar-mini input').change(function() {
+                        $('.switch-sidebar-mini input').change(function () {
                             $body = $('body');
 
                             $input = $(this);
@@ -668,7 +685,7 @@
 
                                 $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
 
-                                setTimeout(function() {
+                                setTimeout(function () {
                                     $('body').addClass('sidebar-mini');
 
                                     md.misc.sidebar_mini_active = true;
@@ -676,12 +693,12 @@
                             }
 
                             // we simulate the window Resize so the charts will get updated in realtime.
-                            var simulateWindowResize = setInterval(function() {
+                            var simulateWindowResize = setInterval(function () {
                                 window.dispatchEvent(new Event('resize'));
                             }, 180);
 
                             // we stop the simulation of Window Resize after the animations are completed
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 clearInterval(simulateWindowResize);
                             }, 1000);
 
