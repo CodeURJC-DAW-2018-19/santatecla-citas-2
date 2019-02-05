@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="../assets/css/material-dashboard.css" rel="stylesheet" id="bootstrap-css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
         Gestor de Citas
@@ -18,101 +18,104 @@
     <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
     <link rel=stylesheet href="../assets/css/css1.css" />
     <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
-
+</head>
 
 <body>
     <div class="wrapper ">
         <div class="main-panel">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <nav class="navbar navbar-expand-lg navbar-absolute fixed-top ">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="navbar-toggler-icon icon-bar"></span>
-                        <span class="navbar-toggler-icon icon-bar"></span>
-                        <span class="navbar-toggler-icon icon-bar"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end">
+                    <div class="collapse navbar-collapse ">
                         <ul class="nav navbar-nav navbar-right">
-        <li><p class="navbar-text">Already have an account?</p></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-			<ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
-            <div class="col-lg-12">
-              <div class="text-center">
-                <h3><b>Register</b></h3></div>
-              <form id="ajax-register-form" action="http://phpoll.com/register/process" method="post" role="form" autocomplete="off">
-                <div class="form-group">
-                  <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-                </div>
-                <div class="form-group">
-                  <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-                </div>
-                <div class="form-group">
-                  <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
-                </div>
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-xs-6 col-xs-offset-3">
-                      <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-info" value="Register Now">
-                    </div>
-                  </div>
-                </div>
-                <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
-              </form>
-            </div>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
-            <div class="col-lg-12">
-              <div class="text-center">
-                <h3><b>Log In</b></h3></div>
-              <form id="ajax-login-form" action="http://phpoll.com/login/process" method="post" role="form" autocomplete="off">
-                <div class="form-group">
-                  <label for="username">Username</label>
-                  <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" autocomplete="off">
-                </div>
+                            <li class="dropdown">
+                                <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Registrarse
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-lr flipInX" role="menu">
+                                    <div class="col-lg-12">
+                                        <div class="text-center">
+                                            <h3><b>Formulario de Registro</b></h3>
+                                        </div>
+                                        <form id="ajax-register-form" action="http://phpoll.com/register/process"
+                                            method="post" role="form" autocomplete="off">
+                                            <div class="form-group">
+                                                <input type="text" name="username" id="username" tabindex="1" class="form-control"
+                                                    placeholder="Username" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="email" tabindex="1" class="form-control"
+                                                    placeholder="Email Address" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" name="password" id="password" tabindex="2" class="form-control"
+                                                    placeholder="Password">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" name="confirm-password" id="confirm-password"
+                                                    tabindex="2" class="form-control" placeholder="Confirm Password">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-6 col-xs-offset-3">
+                                                        <input type="submit" name="register-submit" id="register-submit"
+                                                            tabindex="4" class="form-control btn btn-info" value="Register Now">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+                                        </form>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Iniciar Sesión
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-lr slideInRight" role="menu">
+                                    <div class="col-lg-12">
+                                        <div class="text-center">
+                                            <h3><b>Iniciar Sesión</b></h3>
+                                        </div>
+                                        <form id="ajax-login-form" action="http://phpoll.com/login/process" method="post"
+                                            role="form" autocomplete="off">
+                                            <div class="form-group">
+                                                <input type="text" name="username" id="username" tabindex="1" class="form-control"
+                                                    placeholder="Usuario" value="" autocomplete="off">
+                                            </div>
 
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
-                </div>
+                                            <div class="form-group">
+                                                <input type="password" name="password" id="password" tabindex="2" class="form-control"
+                                                    placeholder="Contraseña" autocomplete="off">
+                                            </div>
 
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-xs-7">
-                      <input type="checkbox" tabindex="3" name="remember" id="remember">
-                      <label for="remember"> Remember Me</label>
-                    </div>
-                    <div class="col-xs-5 pull-right">
-                      <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
-                    </div>
-                  </div>
-                </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-5">
+                                                        <input type="checkbox" tabindex="3" name="remember" id="remember">
+                                                        <label for="remember">Recordarme</label>
+                                                    </div>
+                                                    <div class="col-xs-5 pull-right">
+                                                        <input type="submit" name="login-submit" id="login-submit"
+                                                            tabindex="4" class="form-control btn btn-success" value="Iniciar Sesión">
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="text-center">
-                        <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
-              </form>
-            </div>
-          </ul>
-        </li>
-      </ul>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="text-center">
+                                                            <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot
+                                                                Password?</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                                        </form>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
@@ -314,7 +317,9 @@
                                                 <div class="tim-typo">
                                                     <blockquote class="blockquote">
                                                         <p style="color:black">
-                                                            “We are of opinion that instead of letting books grow moldy behind an iron grating, far from the vulgar gaze, it is better to let them wear out by being read.”
+                                                            “We are of opinion that instead of letting books grow moldy
+                                                            behind an iron grating, far from the vulgar gaze, it is
+                                                            better to let them wear out by being read.”
                                                         </p>
                                                         <small style="color:grey">
                                                             Jules Verne, Journey to the Center of the Earth
@@ -344,7 +349,11 @@
                                                 <div class="tim-typo">
                                                     <blockquote class="blockquote">
                                                         <p style="color:black">
-                                                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
+                                                            I will be the leader of a company that ends up being worth
+                                                            billions of dollars, because I got the answers. I
+                                                            understand culture. I am the nucleus. I think that’s a
+                                                            responsibility that I have, to push possibilities, to show
+                                                            people, this is the level that things could be at.
                                                         </p>
                                                         <small style="color:grey">
                                                             Kanye West, Musician
@@ -374,7 +383,8 @@
                                                 <div class="tim-typo">
                                                     <blockquote class="blockquote">
                                                         <p style="color:black">
-                                                            “A man who dares to waste one hour of time has not discovered the value of life.”
+                                                            “A man who dares to waste one hour of time has not
+                                                            discovered the value of life.”
                                                         </p>
                                                         <small style="color:grey">
                                                             Charles Darwin, The life and letters of Charles Darwin
@@ -408,7 +418,7 @@
                             </div>
                         </div>
                         <div id="histogram">
-                            <a class="d-lg-inline-block d-md-inline-block" href="">
+                            <a class="d-lg-inline-block d-md-inline-block" href="../templates/graphs.html">
                                 HISTOGRAMA
                             </a>
                         </div>
@@ -420,8 +430,10 @@
 
 </body>
 
-<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="../assets/js/core/jquery.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+
 <!------ Include the above in your HEAD tag ---------->
 
 
