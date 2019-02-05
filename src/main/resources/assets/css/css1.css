@@ -1,7 +1,3 @@
-textarea{
-    resize: none;
-    border: hidden;
-}
 .delete{
     position: relative;
     float: right;
@@ -45,7 +41,7 @@ textarea{
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
 /* Fixed navbar */
 body {
-    padding-top: 90px;
+    padding-top: 10px;
 }
 /* General sizing */
 ul.dropdown-lr {
