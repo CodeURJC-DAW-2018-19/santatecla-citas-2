@@ -1,6 +1,6 @@
 # santatecla-citas-2
-# Gestor de citas
-## MODELO DEL DOMINIO
+# Gestor de citas 
+## MODELO DEL DOMINIO https://docs.google.com/document/d/1PKqs6eayJti3jBymaytm1CKXEUqmyDpC4xDh7tM-wEk/edit?usp=sharing
 
 - Una comunidad de usuarios desea estructurar el conocimiento que gestionan en Citas que referencian parte de alguna obra bibliográfica. Por ejemplo, el texto de “No hay felicidad o infelicidad en este mundo; solo hay comparación de un estado con otro. Solo un hombre que ha sentido la máxima desesperación es capaz de sentir la máxima felicidad. Es necesario haber deseado morir para saber lo bueno que es vivir” del escritor Alejandro Dumas en la obra “El conde de Monte Cristo”. Por tanto de cada cita, desean introducir el texto, el autor y la obra.
 
