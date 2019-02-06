@@ -1,6 +1,7 @@
 package com.urjc.daw.practica.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,10 +26,14 @@ public class Quote {
 
     public Quote(){
         //JPA NEEDS DEFAULT CONSTRUCTOR
+        this.themes= new ArrayList<>();
     }
 
     public Quote(String text, String author, String book){
-
+        this.text=text;
+        this.author=author;
+        this.book=book;
+        this.themes= new ArrayList<>();
     }
 
     public String getText() {
@@ -57,5 +62,9 @@ public class Quote {
 
     public Long getId() {
         return this.id;
+    }
+
+    public void addTheme(Theme theme){
+        this.themes.add(theme);
     }
 }
