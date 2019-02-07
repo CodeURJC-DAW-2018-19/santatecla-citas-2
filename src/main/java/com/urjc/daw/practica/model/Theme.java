@@ -13,7 +13,7 @@ public class Theme {
 
     private String name;
 
-    @ManyToMany(mappedBy = "theme")
+    @ManyToMany(mappedBy = "themes")
     private List<Quote> quotes;
 
 

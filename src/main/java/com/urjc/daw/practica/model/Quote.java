@@ -10,6 +10,7 @@ public class Quote {
 
     @Id
     @GeneratedValue
+    @Column(name = "quote_id")
     private Long id;
 
     @Column(name = "quoteText")
@@ -21,7 +22,13 @@ public class Quote {
     @Column(name = "book")
     private String book;
 
-    @ManyToMany(mappedBy = "quote")
+
+    @ManyToMany(cascade = { CascadeType.MERGE })
+    @JoinTable(
+            name = "Quotes_Themes",
+            joinColumns = { @JoinColumn(name = "quote_id") },
+            inverseJoinColumns = { @JoinColumn(name = "theme_id") }
+    )
     private List<Theme> themes;
 
     public Quote(){

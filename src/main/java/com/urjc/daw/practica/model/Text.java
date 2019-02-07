@@ -11,8 +11,10 @@ public class Text {
     private Long id;
 
     private String text;
-    @OneToMany()
-    private Theme themecontaining;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "theme_id", nullable = false)
+    private Theme themeContaining;
 
 
     public Text() {
@@ -21,7 +23,7 @@ public class Text {
 
     public Text(String text, Theme themecontaining) {
         this.text = text;
-        this.themecontaining = themecontaining;
+        this.themeContaining = themecontaining;
     }
 
     public Long getId() {
@@ -39,10 +41,10 @@ public class Text {
     }
 
     public Theme getThemecontaining() {
-        return themecontaining;
+        return themeContaining;
     }
 
     public void setThemecontaining(Theme themecontaining) {
-        this.themecontaining = themecontaining;
+        this.themeContaining = themecontaining;
     }
 }

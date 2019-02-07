@@ -3,11 +3,17 @@ package com.urjc.daw.practica.repository;
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.Theme;
 import org.assertj.core.api.Assertions;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -23,23 +29,23 @@ public class QuoteRepositoryTest {
     public void test_findById_found(){
 
         Quote currentQuote = dummyQuote(dummyTheme());
-        Assertions.assertThat(quotes.findById(currentQuote.getId()).equals(currentQuote));
+        Quote found = quotes.findQuoteById(currentQuote.getId());
+        Assert.assertEquals(found.getId(),currentQuote.getId());
     }
 
     @Test
     public void test_findById_notFound(){
         Quote currentQuote = dummyQuote(dummyTheme());
-
-
-        Assertions.assertThat(!quotes.findById(100L).equals(currentQuote));
+        Quote found = quotes.findQuoteById(10000000000L);
+        Assert.assertNull(found);
     }
 
     @Test
     public void test_findByTheme_found(){
-        Theme newTheme = dummyTheme();
-        Quote currentQuote = dummyQuote(newTheme);
-
-        Assertions.assertThat(quotes.findByThemesContains(newTheme).contains(currentQuote));
+        Theme currentTheme = dummyTheme();
+        Quote currentQuote = dummyQuote(currentTheme);
+        List<Quote> found = quotes.findByThemesContains(currentTheme);
+        Assert.assertTrue(found.contains(currentQuote) );
     }
 
     @Test
@@ -68,14 +74,14 @@ public class QuoteRepositoryTest {
     public Quote dummyQuote(Theme theme){
         Quote current = new Quote("SampleText","dummyAuthor","testBook");
         current.addTheme(theme);
-        quotes.save(current);
+        current=quotes.save(current);
         return current;
 
     }
 
     public Theme dummyTheme(){
         Theme current= new Theme();
-        themes.save(current);
+        current=themes.save(current);
         return current;
     }
 
