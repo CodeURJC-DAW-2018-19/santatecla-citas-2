@@ -40,10 +40,7 @@
 }
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
 /* Fixed navbar */
-body {
-    padding-top: 10px;
-}
-/* General sizing */
+
 ul.dropdown-lr {
   width: 300px;
 }
