@@ -23,7 +23,7 @@ public class Quote {
     private String book;
 
 
-    @ManyToMany(cascade = { CascadeType.MERGE })
+    @ManyToMany(fetch = FetchType.EAGER,cascade = { CascadeType.MERGE })
     @JoinTable(
             name = "Quotes_Themes",
             joinColumns = { @JoinColumn(name = "quote_id") },
@@ -73,5 +73,9 @@ public class Quote {
 
     public void addTheme(Theme theme){
         this.themes.add(theme);
+    }
+
+    public List<Theme> getThemes() {
+        return this.themes;
     }
 }

@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface QuoteRepository extends CrudRepository<Quote,Long> {
 
+    List<Quote> findAll();
     Quote findQuoteById(Long id);
     List<Quote> findByThemesContains(Theme theme);
     List<Quote> findByAuthor(String author);
