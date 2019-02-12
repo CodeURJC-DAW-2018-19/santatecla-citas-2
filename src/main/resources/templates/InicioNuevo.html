@@ -20,14 +20,14 @@
     <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="">
     <div class="wrapper ">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-absolute fixed-top ">
             <div class="container-fluid">
-                <div class="collapse navbar-collapse ">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
+                <div class="collapse navbar-collapse  justify-content-end">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item dropdown">
                             <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Registrarse
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu dropdown-lr flipInX" role="menu">
@@ -66,7 +66,7 @@
                                 </div>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                        <li class="nav-item dropdown">
                             <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Iniciar
                                 Sesión
                                 <span class="caret"></span></a>
@@ -121,160 +121,161 @@
         </nav>
         <!-- End Navbar -->
         <div class="content">
-            <div class="container-fluid border-container">
-                <div id="p-start">
-                    <p class="d-lg-inline-block d-md-inline-block">
-                        INICIO
-                    </p>
-                </div>
+            <div class="main-page-container">
+                <div class="container-fluid border-container">
+                    <div id="p-start">
+                        <p class="d-lg-inline-block d-md-inline-block">
+                            INICIO
+                        </p>
+                    </div>
 
-                <div class="row">
-                    <!--Topic container-->
-                    <div class="col-md-6">
-                        <div class="card">
-                            <!--Quote board header-->
-                            <div class="card-header card-header-success">
-                                <h1 class="card-title">TEMAS</h1>
-                            </div>
-
-                            <!-- Quote search bar -->
-                            <div class="container-fluid">
-                                <div class="col-md-12">
-                                    <form class="navbar-form">
-                                        <div class="input-group no-border">
-                                            <input type="text" value="" class="form-control" placeholder="Buscar un tema..." />
-                                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                                <i class="material-icons">search</i>
-                                            </button>
-                                        </div>
-                                    </form>
+                    <div class="row">
+                        <!--Topic container-->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <!--Quote board header-->
+                                <div class="card-header card-header-success">
+                                    <h2 class="card-title">Temas</h2>
                                 </div>
-                            </div>
-                            <!--Quote zone-->
-                            <div class="row">
 
-                                <!--Basic topic box -->
-                                <div class="col-lg-6 col-md-4 col-sm-6">
-                                    <div class="card card-stats">
-                                        <div class="card-header card-header-success card-header-icon">
-                                            <div class="card-icon">
-                                                <i class="material-icons">library_books</i>
+                                <!-- Quote search bar -->
+                                <div class="container-fluid">
+                                    <div class="col-md-12">
+                                        <form class="navbar-form">
+                                            <div class="input-group no-border">
+                                                <input type="text" value="" class="form-control" placeholder="Buscar un tema..." />
+                                                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                                    <i class="material-icons">search</i>
+                                                </button>
                                             </div>
-                                            <p class="card-category">Tema</p>
-                                            <div class="tim-typo">
-                                                <blockquote class="blockquote">
-                                                    <h3 style="color:black">
-                                                        Journey to the center of the Earth
-                                                    </h3>
-                                                    <small style="color:grey">
-                                                        Jules Verne
-                                                    </small>
-                                                </blockquote>
-                                                <td class="td-actions text-left">
-                                                    <button type="button" rel="tooltip" title="Editar tema" class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Borrar Cita" class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!--Quote zone-->
+                                <div class="row">
+
+                                    <!--Basic topic box -->
+                                    <div class="col-lg-6 col-md-4 col-sm-6">
+                                        <div class="card card-stats">
+                                            <div class="card-header card-header-success card-header-icon">
+                                                <div class="card-icon">
+                                                    <i class="material-icons">library_books</i>
+                                                </div>
+                                                <p class="card-category">Tema</p>
+                                                <div class="tim-typo">
+                                                    <blockquote class="blockquote">
+                                                        <h3 style="color:black">
+                                                            Journey to the center of the Earth
+                                                        </h3>
+                                                        <small style="color:grey">
+                                                            Jules Verne
+                                                        </small>
+                                                    </blockquote>
+                                                    <td class="td-actions text-left">
+                                                        <button type="button" rel="tooltip" title="Editar tema" class="btn btn-primary btn-link btn-sm">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="Borrar Cita" class="btn btn-danger btn-link btn-sm">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                    </td>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!--Add more quotes here-->
+                                    <!--Add more quotes here-->
 
-                            </div>
-                            <!--End of quote row-->
-                            <!--Add quote button-->
-                            <div class="col-md-12">
-                                <span class="pull-right">
-                                    Añadir tema
-                                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                        <a href="../templates/themes.html"><i class="material-icons">library_add</i></a>
-                                    </button>
-                                </span>
+                                </div>
+                                <!--End of quote row-->
+                                <!--Add quote button-->
+                                <div class="col-md-12">
+                                    <span class="pull-right">
+                                        Añadir tema
+                                        <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                            <a href="../templates/themes.html"><i class="material-icons">library_add</i></a>
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <!--Quotes container-->
-                        <div class="card">
-                            <!--Quote board header-->
-                            <div class="card-header card-header-warning">
-                                <h1 class="card-title">CITAS</h1>
-                            </div>
-
-                            <!-- Quote search bar -->
-                            <div class="container-fluid">
-                                <div class="col-md-12">
-                                    <form class="navbar-form">
-                                        <div class="input-group no-border">
-                                            <input type="text" value="" class="form-control" placeholder="Buscar..." />
-                                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                                <i class="material-icons">search</i>
-                                            </button>
-                                        </div>
-                                    </form>
+                        <div class="col-md-6">
+                            <!--Quotes container-->
+                            <div class="card">
+                                <!--Quote board header-->
+                                <div class="card-header card-header-warning">
+                                    <h2 class="card-title">Citas</h2>
                                 </div>
-                            </div>
 
-                            <!--Quote zone-->
-                            <div class="row">
-                                <!--Basic quote box -->
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="card card-stats">
-                                        <div class="card-header card-header-warning card-header-icon">
-                                            <div class="card-icon">
-                                                <i class="material-icons">speaker_notes</i>
+                                <!-- Quote search bar -->
+                                <div class="container-fluid">
+                                    <div class="col-md-12">
+                                        <form class="navbar-form">
+                                            <div class="input-group no-border">
+                                                <input type="text" value="" class="form-control" placeholder="Buscar..." />
+                                                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                                    <i class="material-icons">search</i>
+                                                </button>
                                             </div>
-                                            <p class="card-category">Cita</p>
-                                            <div class="tim-typo">
-                                                <blockquote class="blockquote">
-                                                    <p style="color:black">
-                                                        “We are of opinion that instead of letting books grow moldy
-                                                        behind an iron grating, far from the vulgar gaze, it is
-                                                        better to let them wear out by being read.”
-                                                    </p>
-                                                    <small style="color:grey">
-                                                        Jules Verne, Journey to the Center of the Earth
-                                                    </small>
-                                                </blockquote>
-                                                <td class="td-actions text-left">
-                                                    <button type="button" rel="tooltip" title="Editar cita" class="btn btn-primary btn-link btn-sm">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Borrar Cita" class="btn btn-danger btn-link btn-sm">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!--Quote zone-->
+                                <div class="row">
+                                    <!--Basic quote box -->
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="card card-stats">
+                                            <div class="card-header card-header-warning card-header-icon">
+                                                <div class="card-icon">
+                                                    <i class="material-icons">speaker_notes</i>
+                                                </div>
+                                                <p class="card-category">Cita</p>
+                                                <div class="tim-typo">
+                                                    <blockquote class="blockquote">
+                                                        <p style="color:black">
+                                                            “We are of opinion that instead of letting books grow moldy
+                                                            behind an iron grating, far from the vulgar gaze, it is
+                                                            better to let them wear out by being read.”
+                                                        </p>
+                                                        <small style="color:grey">
+                                                            Jules Verne, Journey to the Center of the Earth
+                                                        </small>
+                                                    </blockquote>
+                                                    <td class="td-actions text-left">
+                                                        <button type="button" rel="tooltip" title="Editar cita" class="btn btn-primary btn-link btn-sm">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="Borrar Cita" class="btn btn-danger btn-link btn-sm">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                    </td>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!--Add more quotes here-->
                                 </div>
-                                <!--Add more quotes here-->
-                            </div>
-                            <!--End of quote row-->
-                            <!--Add quote button-->
-                            <div class="col-md-12">
-                                <span class="pull-right">
-                                    Añadir cita
-                                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                        <a href="../templates/QuotesForm.html"><i class="material-icons">library_add</i></a>
-                                    </button>
-                                </span>
+                                <!--End of quote row-->
+                                <!--Add quote button-->
+                                <div class="col-md-12">
+                                    <span class="pull-right">
+                                        Añadir cita
+                                        <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                            <a href="../templates/QuotesForm.html"><i class="material-icons">library_add</i></a>
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="histogram">
-                        <a class="d-lg-inline-block d-md-inline-block" href="../templates/graphs.html">
-                            HISTOGRAMA
-                        </a>
+                        <div id="histogram">
+                            <a class="d-lg-inline-block d-md-inline-block" href="../templates/graphs.html">
+                                HISTOGRAMA
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
 </body>

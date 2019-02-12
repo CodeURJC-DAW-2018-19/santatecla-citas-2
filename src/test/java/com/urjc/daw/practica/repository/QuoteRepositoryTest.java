@@ -10,8 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -35,7 +34,7 @@ public class QuoteRepositoryTest {
 
     @Test
     public void test_findById_notFound(){
-        Quote currentQuote = dummyQuote(dummyTheme());
+        dummyQuote(dummyTheme());
         Quote found = quotes.findQuoteById(10000000000L);
         Assert.assertNull(found);
     }
@@ -45,15 +44,22 @@ public class QuoteRepositoryTest {
         Theme currentTheme = dummyTheme();
         Quote currentQuote = dummyQuote(currentTheme);
         List<Quote> found = quotes.findByThemesContains(currentTheme);
-        Assertions.assertThat(found).extracting(Quote::getThemes).contains(currentTheme);
+
+        for(Quote q:found){
+            Assertions.assertThat(q.getThemes()).extracting(Theme::getName).contains(currentTheme.getName());
+        }
+
     }
 
     @Test
     public void test_findByTheme_notFound(){
-        Theme newTheme = dummyTheme();
-        Quote currentQuote = dummyQuote(newTheme);
+        Theme currentTheme = dummyTheme();
+        Quote currentQuote = dummyQuote(currentTheme);
+        List<Quote> found = quotes.findByThemesContains(dummyTheme());
 
-        Assertions.assertThat(quotes.findByThemesContains(newTheme).contains(currentQuote));
+        for(Quote q:found){
+            Assertions.assertThat(q.getThemes()).extracting(Theme::getName).doesNotContain(currentTheme.getName());
+        }
     }
 
     @Test
@@ -74,15 +80,15 @@ public class QuoteRepositoryTest {
     public Quote dummyQuote(Theme theme){
         Quote current = new Quote("SampleText","dummyAuthor","testBook");
         current.addTheme(theme);
-        current=quotes.save(current);
-        return current;
+        return quotes.save(current);
+
 
     }
 
     public Theme dummyTheme(){
         Theme current= new Theme();
-        current=themes.save(current);
-        return current;
+        return themes.save(current);
+
     }
 
 }
