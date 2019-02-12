@@ -70,7 +70,6 @@ public class QuoteRepositoryTest {
     public void test_findByAuthor_notFound(){
         Quote currentQuote = dummyQuote(dummyTheme());
         currentQuote=quotes.save(currentQuote);
-
         Assertions.assertThat(!quotes.findByAuthor("").contains(currentQuote));
     }
 
@@ -78,14 +77,11 @@ public class QuoteRepositoryTest {
         Quote current = new Quote("SampleText","dummyAuthor","testBook");
         current.addTheme(theme);
         return quotes.save(current);
-
-
     }
 
     public Theme dummyTheme(){
         Theme current= new Theme();
         return themes.save(current);
-
     }
 
 }
