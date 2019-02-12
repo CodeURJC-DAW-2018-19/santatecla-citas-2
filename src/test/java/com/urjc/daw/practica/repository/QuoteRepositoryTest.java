@@ -45,7 +45,7 @@ public class QuoteRepositoryTest {
         Theme currentTheme = dummyTheme();
         Quote currentQuote = dummyQuote(currentTheme);
         List<Quote> found = quotes.findByThemesContains(currentTheme);
-        Assert.assertTrue(found.contains(currentQuote) );
+        Assertions.assertThat(found).extracting(Quote::getThemes).contains(currentTheme);
     }
 
     @Test

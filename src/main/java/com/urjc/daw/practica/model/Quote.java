@@ -74,4 +74,8 @@ public class Quote {
     public void addTheme(Theme theme){
         this.themes.add(theme);
     }
+
+    public List<Theme> getThemes(){
+        return this.themes;
+    }
 }
