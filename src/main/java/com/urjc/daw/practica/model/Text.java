@@ -21,9 +21,9 @@ public class Text extends Item{
         //JPA NEEDS A DEFAULT CONSTRUCTOR
     }
 
-    public Text(String text, Topic themecontaining) {
+    public Text(String text, Topic topiccontaining) {
         this.text = text;
-        this.topicContaining = themecontaining;
+        this.topicContaining = topiccontaining;
     }
 
     public Long getId() {
@@ -40,11 +40,11 @@ public class Text extends Item{
         this.text = text;
     }
 
-    public Topic getThemecontaining() {
+    public Topic getTopiccontaining() {
         return topicContaining;
     }
 
-    public void setThemecontaining(Topic themecontaining) {
-        this.topicContaining = themecontaining;
+    public void setTopiccontaining(Topic topiccontaining) {
+        this.topicContaining = topiccontaining;
     }
 }
