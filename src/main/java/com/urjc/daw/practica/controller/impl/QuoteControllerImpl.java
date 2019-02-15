@@ -10,7 +10,7 @@ import java.util.List;
 public class QuoteControllerImpl implements QuoteController {
     @Override
     @RequestMapping(value = "/quote/@{id}",method = RequestMethod.GET)
-    public Quote getQuote(@) {
+    public Quote getQuote() {
         return null;
     }
 

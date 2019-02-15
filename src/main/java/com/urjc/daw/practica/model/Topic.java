@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "theme")
-public class Theme {
+public class Topic {
 
     @Id
     @GeneratedValue
@@ -13,20 +13,18 @@ public class Theme {
 
     private String name;
 
-    @ManyToMany(mappedBy = "themes")
-    private List<Quote> quotes;
 
 
-    public Theme(){
+    public Topic(){
         //JPA NEEDS A DEFAULT CONSTRUCTOR
     }
 
-    public Theme(String name){
+    public Topic(String name){
         this.name=name;
     }
 
-    public Theme(String name, List<Quote> quotes){
-        this.quotes= quotes;
+    public Topic(String name, List<Quote> quotes){
+
         this.name= name;
     }
     public Long getId() {
@@ -43,11 +41,5 @@ public class Theme {
         this.name = name;
     }
 
-    public List<Quote> getQuotes() {
-        return quotes;
-    }
 
-    public void setQuotes(List<Quote> quotes) {
-        this.quotes = quotes;
-    }
 }
