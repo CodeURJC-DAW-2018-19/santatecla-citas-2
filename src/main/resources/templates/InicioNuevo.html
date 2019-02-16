@@ -1,4 +1,6 @@
 {{>header}}
+
+
 <!-- End Navbar -->
 <div class="content">
     <div class="main-page-container">
@@ -36,12 +38,12 @@
                         {{/logged}}
                         <!--Quote zone-->
                         <div class="row">
-                                {{#logged}}
-                                {{topicArray}}
-                                {{/logged}}
-                                {{^logged}}
-                                <p>You must be logged in to see the topic table.</p>
-                                {{/logged}}
+                            {{#logged}}
+                            {{topicArray}}
+                            {{/logged}}
+                            {{^logged}}
+                            <p>You must be logged in to see the topic table.</p>
+                            {{/logged}}
                         </div>
                         <!--End of quote row-->
                         <!--Add quote button-->
@@ -60,7 +62,7 @@
                     </div>
                 </div>
 
-                
+
                 <div class="col-md-6">
                     <!--Quotes container-->
                     <div class="card">
@@ -113,15 +115,16 @@
                         {{/logged}}
                     </div>
                 </div>
+                {{#logged}}
                 <div id="histogram">
                     <a class="d-lg-inline-block d-md-inline-block" href="../templates/graphs.html">
                         HISTOGRAMA
                     </a>
                 </div>
+                {{/logged}}
             </div>
         </div>
     </div>
-</div>
 </div>
 
 {{>footer}}
