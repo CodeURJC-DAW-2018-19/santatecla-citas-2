@@ -41,5 +41,9 @@ public class Topic {
         this.name = name;
     }
 
+    public boolean equals(Object o){
+        Topic topic = (Topic) o;
+        return this.getId().equals(topic.getId());
+    }
 
 }

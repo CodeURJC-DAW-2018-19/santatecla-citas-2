@@ -11,5 +11,5 @@ import java.util.List;
 public interface TextRepository extends CrudRepository<Text,Long> {
 
     List<Text> findAll();
-    List<Text> findByTopicContaining(Topic topic);
+    List<Text> findByTopic(Topic topic);
 }

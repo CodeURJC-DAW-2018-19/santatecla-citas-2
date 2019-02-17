@@ -12,9 +12,9 @@ public class Text extends Item{
 
     private String text;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "topic_id", nullable = false)
-    private Topic topicContaining;
+    private Topic topic;
 
 
     public Text() {
@@ -23,7 +23,7 @@ public class Text extends Item{
 
     public Text(String text, Topic topiccontaining) {
         this.text = text;
-        this.topicContaining = topiccontaining;
+        this.topic = topiccontaining;
     }
 
     public Long getId() {
@@ -41,10 +41,10 @@ public class Text extends Item{
     }
 
     public Topic getTopiccontaining() {
-        return topicContaining;
+        return topic;
     }
 
     public void setTopiccontaining(Topic topiccontaining) {
-        this.topicContaining = topiccontaining;
+        this.topic = topiccontaining;
     }
 }

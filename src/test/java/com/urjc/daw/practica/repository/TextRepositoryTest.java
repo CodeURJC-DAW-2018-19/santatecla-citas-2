@@ -34,10 +34,14 @@ public class TextRepositoryTest {
         Text current= dummyText();
         Topic currentTop = current.getTopiccontaining();
 
-        Assertions.assertThat(texts.findByTopicContaining(currentTop)).extracting(Text::getTopiccontaining).containsOnly(currentTop);
+        Assertions.assertThat(texts.findByTopic(currentTop)).extracting(Text::getTopiccontaining).containsOnly(currentTop);
     }
 
     @Test
+    public void test_findByTopic_notFound(){
+        Text currentText= dummyText();
+        Assertions.assertThat(texts.findByTopic(dummyTopic())).isEmpty();
+    }
 
     public Text dummyText(){
         Topic topic = dummyTopic();
