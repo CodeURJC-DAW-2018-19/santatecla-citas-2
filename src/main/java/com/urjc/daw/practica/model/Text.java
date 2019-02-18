@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "text")
-public class Text {
+public class Text extends Item{
 
     @Id
     @GeneratedValue
@@ -12,18 +12,18 @@ public class Text {
 
     private String text;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "theme_id", nullable = false)
-    private Theme themeContaining;
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "topic_id", nullable = false)
+    private Topic topic;
 
 
     public Text() {
         //JPA NEEDS A DEFAULT CONSTRUCTOR
     }
 
-    public Text(String text, Theme themecontaining) {
+    public Text(String text, Topic topiccontaining) {
         this.text = text;
-        this.themeContaining = themecontaining;
+        this.topic = topiccontaining;
     }
 
     public Long getId() {
@@ -40,11 +40,11 @@ public class Text {
         this.text = text;
     }
 
-    public Theme getThemecontaining() {
-        return themeContaining;
+    public Topic getTopiccontaining() {
+        return topic;
     }
 
-    public void setThemecontaining(Theme themecontaining) {
-        this.themeContaining = themecontaining;
+    public void setTopiccontaining(Topic topiccontaining) {
+        this.topic = topiccontaining;
     }
 }

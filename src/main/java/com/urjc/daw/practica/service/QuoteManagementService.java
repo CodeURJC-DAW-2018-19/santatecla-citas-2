@@ -1,7 +1,7 @@
 package com.urjc.daw.practica.service;
 
 import com.urjc.daw.practica.model.Quote;
-import com.urjc.daw.practica.model.Theme;
+import com.urjc.daw.practica.model.Topic;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 public interface QuoteManagementService {
     Quote getQuote(Long id);
     List<Quote> getAllQuotes();
-    List<Quote> getQuotesByTheme(Theme theme);
+   // List<Quote> getQuotesByTheme(Topic topic);
 
     Quote editQuote(Quote quote);
 

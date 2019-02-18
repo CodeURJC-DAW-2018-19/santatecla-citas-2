@@ -1,0 +1,85 @@
+{{>header}}
+
+<div class="content">
+    <div class="main-page-container">
+        <div class="container-fluid border-container">
+            <div id="p-start">
+                <p class="d-lg-inline-block d-md-inline-block">
+                    <a href="../templates/InicioNuevo.html">INICIO</a>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 card-group">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Editar Tema</h4>
+                            <p class="card-category">Añada citas y/o textos</p>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Titulo Tema</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{markdownArray}}
+                                    {{quoteOrText}}
+                                {{/markdownArray}}                            
+
+                                <form>
+                                    <fieldset>
+                                        <input type="radio" name="texto" value="cita" />Referencia a cita
+                                        <input type="radio" name="texto" value="texto" />Texto
+
+                                    </fieldset>
+                                </form>
+
+                                <button class="material-icons" id="addQuote">add</button>
+                                <button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-profile">
+                        <div class="card-avatar">
+                            <a href="#pablo">
+                                <img class="img" src="../assets/img/faces/marc.jpg" />
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-category text-gray">HTML del texto + citas</h6>
+                            <h4 class="card-title">Ejemplo HTML</h4>
+                            <p class="card-description">
+                                SAMPMLE HTML
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="quoteSelection" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close justify-content-end">X</span>
+        <div class="row">
+            {{#logged}}
+            {{topicArray}}
+            {{/logged}}
+            {{^logged}}
+            <p>You must be logged in to see the topic table.</p>
+            {{/logged}}
+        </div>
+    </div>
+</div>
+
+{{>footer}}

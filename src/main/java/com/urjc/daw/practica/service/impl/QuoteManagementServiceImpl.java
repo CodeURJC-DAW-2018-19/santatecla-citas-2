@@ -1,7 +1,7 @@
 package com.urjc.daw.practica.service.impl;
 
 import com.urjc.daw.practica.model.Quote;
-import com.urjc.daw.practica.model.Theme;
+import com.urjc.daw.practica.model.Topic;
 import com.urjc.daw.practica.repository.QuoteRepository;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +23,10 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
         return quotes.findAll();
     }
 
-    @Override
-    public List<Quote> getQuotesByTheme(Theme theme) {
-        return quotes.findByThemesContains(theme);
-    }
+//    @Override
+//    public List<Quote> getQuotesByTheme(Topic topic) {
+//        return quotes.findByThemesContains(topic);
+//    }
 
     @Override
     public Quote editQuote(Quote quote) {

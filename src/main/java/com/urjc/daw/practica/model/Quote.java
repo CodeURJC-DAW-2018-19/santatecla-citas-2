@@ -23,24 +23,16 @@ public class Quote {
     private String book;
 
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = { CascadeType.MERGE })
-    @JoinTable(
-            name = "Quotes_Themes",
-            joinColumns = { @JoinColumn(name = "quote_id") },
-            inverseJoinColumns = { @JoinColumn(name = "theme_id") }
-    )
-    private List<Theme> themes;
 
     public Quote(){
         //JPA NEEDS DEFAULT CONSTRUCTOR
-        this.themes= new ArrayList<>();
     }
 
     public Quote(String text, String author, String book){
         this.text=text;
         this.author=author;
         this.book=book;
-        this.themes= new ArrayList<>();
+
     }
 
     public String getText() {
@@ -71,11 +63,5 @@ public class Quote {
         return this.id;
     }
 
-    public void addTheme(Theme theme){
-        this.themes.add(theme);
-    }
 
-    public List<Theme> getThemes() {
-        return this.themes;
-    }
 }
