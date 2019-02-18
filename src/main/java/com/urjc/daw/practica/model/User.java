@@ -1,8 +1,8 @@
 package com.urjc.daw.practica.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
+
 
 @Entity
 public class User {
@@ -11,8 +11,17 @@ public class User {
     @GeneratedValue
     private Long id;
 
+    @Column
     private String email;
 
+    @Column
     private String password;
+
+    @ElementCollection(fetch=FetchType.EAGER)
+    private List<String> roles;
+
+    public User(){
+        //JPA NEEDS DEFAULT CONSTRUCTOR
+    }
 
 }
