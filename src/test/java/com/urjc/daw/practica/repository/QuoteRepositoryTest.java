@@ -51,18 +51,27 @@ public class QuoteRepositoryTest {
     public void test_findByAuthor_notFound(){
         Quote currentQuote = dummyQuote();
         currentQuote=quotes.save(currentQuote);
+<<<<<<< HEAD
+        Assertions.assertThat(!quotes.findByAuthor("").contains(currentQuote));
+=======
 
         Assertions.assertThat(quotes.findByAuthor("")).extracting(Quote::getAuthor).doesNotContain(currentQuote.getAuthor());
+>>>>>>> fd5012c0c418b2cb06b0a07088eb28ef975c7f2a
     }
 
     public Quote dummyQuote(){
         Quote current = new Quote("SampleText","dummyAuthor","testBook");
 
         return quotes.save(current);
-
-
     }
 
+<<<<<<< HEAD
+    public Theme dummyTheme(){
+        Theme current= new Theme();
+        return themes.save(current);
+    }
+=======
 
+>>>>>>> fd5012c0c418b2cb06b0a07088eb28ef975c7f2a
 
 }

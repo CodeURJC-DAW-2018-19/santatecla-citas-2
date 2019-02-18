@@ -1,19 +1,19 @@
 package com.urjc.daw.practica.controller;
 
-import com.urjc.daw.practica.model.Topic;
+import com.urjc.daw.practica.model.Theme;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
 @Controller
-public interface TopicController {
+public interface ThemeController {
 
-    Topic getTheme();
-    List<Topic> getAllThemes();
+    Theme getTheme();
+    List<Theme> getAllThemes();
 
-    boolean postText(Topic topic);
+    boolean postText(Theme theme);
 
-    boolean editTheme(Topic topic);
+    boolean editTheme(Theme theme);
 
-    boolean deleteTheme(Topic topic);
+    boolean deleteTheme(Theme theme);
 }

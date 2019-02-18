@@ -13,4 +13,5 @@ public interface QuoteRepository extends CrudRepository<Quote,Long> {
     List<Quote> findAll();
     Quote findQuoteById(Long id);
     List<Quote> findByAuthor(String author);
+
 }
