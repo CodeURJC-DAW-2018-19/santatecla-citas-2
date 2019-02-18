@@ -10,31 +10,36 @@ import java.util.List;
 public class QuoteControllerImpl implements QuoteController {
     @Override
     @RequestMapping(value = "/quote/@{id}",method = RequestMethod.GET)
-    public Quote getQuote() {
-        return null;
+    public String getQuote() {
+        //ToDo Pedir a quote service que devuelva el quote segun el id
+        return "quoteForm";
     }
 
     @Override
     @RequestMapping(value = "/quote",method = RequestMethod.GET)
-    public List<Quote> getAllQuotes() {
-        return null;
+    public String getAllQuotes() {
+        //ToDo Pedir al servicio de quote que devuelva todos los quotes
+        return "quote";
     }
 
     @Override
     @RequestMapping(value = "/quote/@{id}",method = RequestMethod.POST)
-    public boolean postQuote(Quote quote) {
-        return false;
+    public String postQuote(Quote quote) {
+        //ToDo Pedir al servicio de quotes que añada una quote nueva al repositorio
+        return "quote";
     }
 
     @Override
     @RequestMapping(value = "/quote/@{id}",method = RequestMethod.PUT)
-    public boolean editQuote(Quote quote) {
-        return false;
+    public String editQuote(Quote quote) {
+        //ToDo Pedir al sevicio de quotes que modifique una quote existente según el id
+        return "quote";
     }
 
     @Override
     @RequestMapping(value = "/quote/@{id}",method = RequestMethod.DELETE)
-    public boolean deleteQuote(Quote quote) {
-        return false;
+    public String deleteQuote(Quote quote) {
+        //ToDo Pedir al servicio de quotes que borre una quote segun el id
+        return "quote";
     }
 }
