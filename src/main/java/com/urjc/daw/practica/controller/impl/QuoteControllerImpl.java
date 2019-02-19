@@ -25,9 +25,8 @@ public class QuoteControllerImpl implements QuoteController {
 
     @Override
     @RequestMapping(value = "/quote",method = RequestMethod.GET)
-    public String getAllQuotes() {
 
-        quoteService.getAllQuotes(nPage,QUOTES_PER_PAGE);
+    public String findAll() {
         //ToDo Pedir al servicio de quote que devuelva todos los quotes
         return "quote";
     }

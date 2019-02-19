@@ -9,7 +9,7 @@ import java.util.List;
 public interface QuoteController {
 
     String getQuote();
-    String getAllQuotes();
+    String findAll();
 
     String postQuote(Quote quote);
 
