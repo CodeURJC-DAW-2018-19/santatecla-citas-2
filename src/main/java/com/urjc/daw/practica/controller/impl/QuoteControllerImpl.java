@@ -27,6 +27,7 @@ public class QuoteControllerImpl implements QuoteController {
     @RequestMapping(value = "/quote",method = RequestMethod.GET)
 
     public String findAll() {
+        quoteService.findAll(nPage,QUOTES_PER_PAGE);
         //ToDo Pedir al servicio de quote que devuelva todos los quotes
         return "quote";
     }
