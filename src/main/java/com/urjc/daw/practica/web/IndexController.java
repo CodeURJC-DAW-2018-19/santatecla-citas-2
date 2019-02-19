@@ -2,6 +2,8 @@ package es.codeurjc.daw.library.web;
 
 import java.util.Optional;
 
+import com.urjc.daw.practica.service.QuoteManagementService;
+import com.urjc.daw.practica.service.TextManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import es.codeurjc.daw.library.book.Book;
-import es.codeurjc.daw.library.book.BookService;
-import es.codeurjc.daw.library.user.UserComponent;
+
 
 @Controller
 public class BookWebController {
@@ -24,7 +24,7 @@ public class BookWebController {
     private TextManagementService textService;
 	
 	@Autowired
-	private UserComponent userComponent;
+	private User userComponent;
 
     //Login
 	@ModelAttribute
