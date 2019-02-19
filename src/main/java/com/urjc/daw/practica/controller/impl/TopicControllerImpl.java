@@ -1,33 +1,33 @@
 package com.urjc.daw.practica.controller.impl;
 
-import com.urjc.daw.practica.controller.ThemeController;
-import com.urjc.daw.practica.model.Theme;
+import com.urjc.daw.practica.controller.TopicController;
+import com.urjc.daw.practica.model.Topic;
 
 import java.util.List;
 
-public class TopicControllerImpl implements ThemeController {
+public class TopicControllerImpl implements TopicController {
     @Override
-    public Theme getTheme() {
+    public Topic getTopic() {
         return null;
     }
 
     @Override
-    public List<Theme> getAllThemes() {
+    public List<Topic> getAllTopics() {
         return null;
     }
 
     @Override
-    public boolean postText(Theme theme) {
+    public boolean postText(Topic Topic) {
         return false;
     }
 
     @Override
-    public boolean editTheme(Theme theme) {
+    public boolean editTopic(Topic Topic) {
         return false;
     }
 
     @Override
-    public boolean deleteTheme(Theme theme) {
+    public boolean deleteTopic(Topic Topic) {
         return false;
     }
 }
