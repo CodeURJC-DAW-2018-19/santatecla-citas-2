@@ -15,13 +15,18 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     QuoteRepository quotes;
 
     @Override
-    public Quote getQuote(Long id) {
+    public Quote findOne(Long id) {
         return quotes.findQuoteById(id);
     }
 
     @Override
     public Page<Quote> findAll(int nPage, int nQuotes) {
         return quotes.findAll(PageRequest.of(nPage,nQuotes));
+    }
+
+    @Override
+    public Quote save(Quote quote) {
+        return quotes.save(quote);
     }
 
     @Override

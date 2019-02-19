@@ -18,7 +18,7 @@ public class QuoteControllerImpl implements QuoteController {
 
     @Override
     @RequestMapping(value = "/quote/@{id}",method = RequestMethod.GET)
-    public String getQuote() {
+    public String findOne() {
         //ToDo Pedir a quote service que devuelva el quote segun el id
         return "quoteForm";
     }

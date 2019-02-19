@@ -13,6 +13,8 @@ public interface QuoteManagementService {
     Page<Quote> findAll(int nPage, int nQuotes);
    // List<Quote> getQuotesByTheme(Topic topic);
 
+    Quote save(Quote quote);
+
     Quote editQuote(Quote quote);
 
     Quote deleteQuote(Quote quote);

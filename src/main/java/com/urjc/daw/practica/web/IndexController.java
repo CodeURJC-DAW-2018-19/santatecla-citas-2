@@ -50,10 +50,12 @@ public class IndexController {
 	@GetMapping("/quotes/{id}")
 	public String showQuote(Model model, @PathVariable long id) {
 		
-		Optional<Quote> quote = quoteService.findOne(id);
+		Quote quote = quoteService.findOne(id);
 
-		if(quote.isPresent()) {
-			model.addAttribute("quote", quote.get());
+		if(quote != null) {
+			model.addAttribute("quoteAuthor", quote.getAuthor());
+			model.addAttribute("quoteText",quote.getText());
+			model.addAttribute("quoteBook",quote.getBook());
 		}
 
 		return "quote";
@@ -67,10 +69,12 @@ public class IndexController {
 	@GetMapping("/editQuote/{id}")
 	public String newQuote(Model model, @PathVariable long id) {
 		
-		Optional<Quote> quote = quoteService.findOne(id);
+		Quote quote = quoteService.findOne(id);
 		
-		if(quote.isPresent()) {
-			model.addAttribute("quote", quote.get());
+		if(quote != null) {
+			model.addAttribute("quoteAuthor", quote.getAuthor());
+			model.addAttribute("quoteText",quote.getText());
+			model.addAttribute("quoteBook",quote.getBook());
 		}
 		
 		return "quoteForm";
@@ -87,7 +91,7 @@ public class IndexController {
 	@GetMapping("/deleteQuote/{id}")
 	public String deleteQuote(Model model, @PathVariable long id) {
 		
-		quoteService.delete(id);
+		quoteService.deleteQuote(quoteService.findOne(id));
 		
 		return "quoteDeleted";
 	}

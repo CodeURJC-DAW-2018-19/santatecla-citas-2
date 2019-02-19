@@ -8,7 +8,8 @@ import java.util.List;
 @Controller
 public interface QuoteController {
 
-    String getQuote();
+    String findOne();
+
     String findAll();
 
     String postQuote(Quote quote);
