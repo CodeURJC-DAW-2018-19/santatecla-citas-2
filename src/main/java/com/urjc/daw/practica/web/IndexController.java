@@ -53,7 +53,7 @@ public class IndexController {
 	@GetMapping("/quotes/{id}")
 	public String showQuote(Model model, @PathVariable long id) {
 		
-		Quote quote = quoteService.getQuote(id);
+		Quote quote = quoteService.findOne(id);
 
 		if(quote != null) {
 			model.addAttribute("quoteAuthor", quote.getAuthor());
@@ -72,7 +72,7 @@ public class IndexController {
 	@GetMapping("/editQuote/{id}")
 	public String newQuote(Model model, @PathVariable long id) {
 		
-		Quote quote = quoteService.getQuote(id);
+		Quote quote = quoteService.findOne(id);
 		
 		if(quote != null) {
 			model.addAttribute("quoteAuthor", quote.getAuthor());
@@ -94,7 +94,7 @@ public class IndexController {
 	@GetMapping("/deleteQuote/{id}")
 	public String deleteQuote(Model model, @PathVariable long id) {
 		
-		quoteService.deleteQuote(quoteService.getQuote(id));
+		quoteService.deleteQuote(quoteService.findOne(id));
 		
 		return "quoteDeleted";
 	}
