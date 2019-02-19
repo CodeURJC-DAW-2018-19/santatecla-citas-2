@@ -4,6 +4,8 @@ import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.repository.QuoteRepository;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
 
@@ -18,8 +20,8 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     }
 
     @Override
-    public List<Quote> findAll() {
-        return quotes.findAll();
+    public Page<Quote> findAll(int nPage, int nQuotes) {
+        return quotes.findAll(PageRequest.of(nPage,nQuotes));
     }
 
     @Override
