@@ -18,7 +18,7 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     }
 
     @Override
-    public List<Quote> getAllQuotes() {
+    public List<Quote> findAll() {
         return quotes.findAll();
     }
 

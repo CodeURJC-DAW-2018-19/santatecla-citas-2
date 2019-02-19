@@ -1,4 +1,4 @@
-package es.codeurjc.daw.library.web;
+package com.urjc.daw.practica.web;
 
 import java.util.Optional;
 
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
-public class BookWebController {
+public class IndexController {
 
 	@Autowired
     private QuoteManagementService quoteService;
