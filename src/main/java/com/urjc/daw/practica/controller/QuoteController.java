@@ -8,12 +8,12 @@ import java.util.List;
 @Controller
 public interface QuoteController {
 
-    Quote getQuote();
-    List<Quote> getAllQuotes();
+    String getQuote();
+    String getAllQuotes();
 
-    boolean postQuote(Quote quote);
+    String postQuote(Quote quote);
 
-    boolean editQuote(Quote quote);
+    String editQuote(Quote quote);
 
-    boolean deleteQuote(Quote quote);
+    String deleteQuote(Quote quote);
 }

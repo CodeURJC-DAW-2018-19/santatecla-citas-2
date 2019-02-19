@@ -5,7 +5,7 @@ import com.urjc.daw.practica.model.Theme;
 
 import java.util.List;
 
-public class ThemeControllerImpl implements ThemeController {
+public class TopicControllerImpl implements ThemeController {
     @Override
     public Theme getTheme() {
         return null;
