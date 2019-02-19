@@ -2,6 +2,9 @@ package com.urjc.daw.practica.web;
 
 import java.util.Optional;
 
+import com.urjc.daw.practica.SecurityConfiguration;
+import com.urjc.daw.practica.UserAuthProvider;
+import com.urjc.daw.practica.UserComponent;
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.User;
 import com.urjc.daw.practica.service.QuoteManagementService;
@@ -26,12 +29,12 @@ public class IndexController {
     private TextManagementService textService;
 	
 	@Autowired
-	private User userComponent;
+	private UserComponent userComponent;
 
     //Login
 	@ModelAttribute
 	public void addUserToModel(Model model) {
-		boolean logged = userComponent.getLoggedUser() != null;
+		boolean logged = userComponent != null;
 		model.addAttribute("logged", logged);
 		if(logged) {
 			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
@@ -42,7 +45,7 @@ public class IndexController {
 	@GetMapping("/")
 	public String showQuotes(Model model) {
 
-		model.addAttribute("quotes", quoteService.findAll());
+		model.addAttribute("quotes", quoteService.findAll();
 	
 		return "quotes";
 	}
@@ -50,7 +53,7 @@ public class IndexController {
 	@GetMapping("/quotes/{id}")
 	public String showQuote(Model model, @PathVariable long id) {
 		
-		Quote quote = quoteService.findOne(id);
+		Quote quote = quoteService.getQuote(id);
 
 		if(quote != null) {
 			model.addAttribute("quoteAuthor", quote.getAuthor());
@@ -69,7 +72,7 @@ public class IndexController {
 	@GetMapping("/editQuote/{id}")
 	public String newQuote(Model model, @PathVariable long id) {
 		
-		Quote quote = quoteService.findOne(id);
+		Quote quote = quoteService.getQuote(id);
 		
 		if(quote != null) {
 			model.addAttribute("quoteAuthor", quote.getAuthor());
@@ -91,7 +94,7 @@ public class IndexController {
 	@GetMapping("/deleteQuote/{id}")
 	public String deleteQuote(Model model, @PathVariable long id) {
 		
-		quoteService.deleteQuote(quoteService.findOne(id));
+		quoteService.deleteQuote(quoteService.getQuote(id));
 		
 		return "quoteDeleted";
 	}
