@@ -1,13 +1,14 @@
 package com.urjc.daw.practica.repository;
 
 import com.urjc.daw.practica.model.Quote;
-import com.urjc.daw.practica.model.Theme;
+
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
@@ -20,79 +21,47 @@ public class QuoteRepositoryTest {
 
     @Autowired
     QuoteRepository quotes;
-kikioi
-    @Autowired
-    ThemeRepository themes;
+
 
     @Test
     public void test_findById_found(){
 
-        Quote currentQuote = dummyQuote(dummyTheme());
+        Quote currentQuote = dummyQuote();
         Quote found = quotes.findQuoteById(currentQuote.getId());
         Assert.assertEquals(found.getId(),currentQuote.getId());
     }
 
     @Test
     public void test_findById_notFound(){
-        dummyQuote(dummyTheme());
+        dummyQuote();
         Quote found = quotes.findQuoteById(10000000000L);
         Assert.assertNull(found);
     }
 
-    @Test
-    public void test_findByTheme_found(){
-        Theme currentTheme = dummyTheme();
-        Quote currentQuote = dummyQuote(currentTheme);
-        List<Quote> found = quotes.findByThemesContains(currentTheme);
-        for(Quote q:found){
-            Assertions.assertThat(q.getThemes()).extracting(Theme::getName).contains(currentTheme.getName());
-        }
-    }
-
-    @Test
-    public void test_findByTheme_notFound(){
-        Theme currentTheme = dummyTheme();
-        Quote currentQuote = dummyQuote(currentTheme);
-        List<Quote> found = quotes.findByThemesContains(dummyTheme());
-        for(Quote q:found){
-            Assertions.assertThat(q.getThemes()).extracting(Theme::getName).doesNotContain(currentTheme.getName());
-        }
-    }
 
     @Test
     public void test_findByAuthor_found(){
-        Quote currentQuote = dummyQuote(dummyTheme());
+        Quote currentQuote = dummyQuote();
 
-        Assertions.assertThat(quotes.findByAuthor(currentQuote.getAuthor()).contains(currentQuote));
+        Assertions.assertThat(quotes.findByAuthor(currentQuote.getAuthor(), PageRequest.of(0,100))).extracting(Quote::getAuthor).contains(currentQuote.getAuthor());
     }
 
     @Test
     public void test_findByAuthor_notFound(){
-        Quote currentQuote = dummyQuote(dummyTheme());
+        Quote currentQuote = dummyQuote();
         currentQuote=quotes.save(currentQuote);
-<<<<<<< HEAD
-        Assertions.assertThat(!quotes.findByAuthor("").contains(currentQuote));
-=======
 
 
-        Assertions.assertThat(quotes.findByAuthor("")).extracting(Quote::getAuthor).doesNotContain(currentQuote.getAuthor());
->>>>>>> 05cd92a9720351d583da04625368c9e3f90c19af
+
+        Assertions.assertThat(quotes.findByAuthor("",PageRequest.of(0,100))).extracting(Quote::getAuthor).doesNotContain(currentQuote.getAuthor());
     }
 
-    public Quote dummyQuote(Theme theme){
+    public Quote dummyQuote(){
         Quote current = new Quote("SampleText","dummyAuthor","testBook");
-        current.addTheme(theme);
         return quotes.save(current);
     }
 
-<<<<<<< HEAD
-    public Theme dummyTheme(){
-        Theme current= new Theme();
-        return themes.save(current);
-    }
-=======
 
 
->>>>>>> 05cd92a9720351d583da04625368c9e3f90c19af
 
 }
