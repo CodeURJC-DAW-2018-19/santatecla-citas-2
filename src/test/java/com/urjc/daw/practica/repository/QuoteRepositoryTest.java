@@ -70,7 +70,13 @@ kikioi
     public void test_findByAuthor_notFound(){
         Quote currentQuote = dummyQuote(dummyTheme());
         currentQuote=quotes.save(currentQuote);
+<<<<<<< HEAD
         Assertions.assertThat(!quotes.findByAuthor("").contains(currentQuote));
+=======
+
+
+        Assertions.assertThat(quotes.findByAuthor("")).extracting(Quote::getAuthor).doesNotContain(currentQuote.getAuthor());
+>>>>>>> 05cd92a9720351d583da04625368c9e3f90c19af
     }
 
     public Quote dummyQuote(Theme theme){
@@ -79,9 +85,14 @@ kikioi
         return quotes.save(current);
     }
 
+<<<<<<< HEAD
     public Theme dummyTheme(){
         Theme current= new Theme();
         return themes.save(current);
     }
+=======
+
+
+>>>>>>> 05cd92a9720351d583da04625368c9e3f90c19af
 
 }
