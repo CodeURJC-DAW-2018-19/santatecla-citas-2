@@ -2,6 +2,8 @@ package es.codeurjc.daw.library.web;
 
 import java.util.Optional;
 
+import com.urjc.daw.practica.model.Quote;
+import com.urjc.daw.practica.model.User;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.TextManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +42,7 @@ public class BookWebController {
 	@GetMapping("/")
 	public String showQuotes(Model model) {
 
-		model.addAttribute("quotes", service.findAll());
+		model.addAttribute("quotes", quoteService.findAll());
 	
 		return "quotes";
 	}
@@ -48,7 +50,7 @@ public class BookWebController {
 	@GetMapping("/quotes/{id}")
 	public String showQuote(Model model, @PathVariable long id) {
 		
-		Optional<Quote> quote = service.findOne(id);
+		Optional<Quote> quote = quoteService.findOne(id);
 
 		if(quote.isPresent()) {
 			model.addAttribute("quote", quote.get());
@@ -65,7 +67,7 @@ public class BookWebController {
 	@GetMapping("/editQuote/{id}")
 	public String newQuote(Model model, @PathVariable long id) {
 		
-		Optional<Quote> quote = service.findOne(id);
+		Optional<Quote> quote = quoteService.findOne(id);
 		
 		if(quote.isPresent()) {
 			model.addAttribute("quote", quote.get());
@@ -77,7 +79,7 @@ public class BookWebController {
 	@PostMapping("/saveTopic")
 	public String saveQuote(Model model, Quote quote) {
 		
-		service.save(quote);
+		quoteService.save(quote);
 		
 		return "quoteCreated";
 	}
@@ -85,7 +87,7 @@ public class BookWebController {
 	@GetMapping("/deleteQuote/{id}")
 	public String deleteQuote(Model model, @PathVariable long id) {
 		
-		service.delete(id);
+		quoteService.delete(id);
 		
 		return "quoteDeleted";
 	}
