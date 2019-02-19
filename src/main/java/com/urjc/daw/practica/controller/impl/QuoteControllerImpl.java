@@ -2,14 +2,21 @@ package com.urjc.daw.practica.controller.impl;
 
 import com.urjc.daw.practica.controller.QuoteController;
 import com.urjc.daw.practica.model.Quote;
+import com.urjc.daw.practica.service.QuoteManagementService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
 public class QuoteControllerImpl implements QuoteController {
-    @Override
 
+    private static final int QUOTES_PER_PAGE=10;
+
+    @Autowired
+    QuoteManagementService quoteService;
+
+    @Override
     @RequestMapping(value = "/quote/@{id}",method = RequestMethod.GET)
     public String getQuote() {
         //ToDo Pedir a quote service que devuelva el quote segun el id
@@ -19,6 +26,8 @@ public class QuoteControllerImpl implements QuoteController {
     @Override
     @RequestMapping(value = "/quote",method = RequestMethod.GET)
     public String getAllQuotes() {
+
+        quoteService.getAllQuotes(nPage,QUOTES_PER_PAGE);
         //ToDo Pedir al servicio de quote que devuelva todos los quotes
         return "quote";
     }
