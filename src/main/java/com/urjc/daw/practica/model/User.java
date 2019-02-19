@@ -12,7 +12,7 @@ public class User {
     private Long id;
 
     @Column
-    private String email;
+    private String name;
 
     @Column
     private String password;
@@ -32,12 +32,12 @@ public class User {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getName() {
+        return name;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String name) {
+        this.name = name;
     }
 
     public String getPassword() {

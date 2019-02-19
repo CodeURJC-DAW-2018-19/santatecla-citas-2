@@ -35,7 +35,7 @@ public class UserAuthProvider implements AuthenticationProvider {
         for(String role:user.getRoles()){
             roles.add(new SimpleGrantedAuthority(role));
         }
-        return new UsernamePasswordAuthenticationToken(user.getEmail(),password,roles);
+        return new UsernamePasswordAuthenticationToken(user.getName(),password,roles);
     }
 
     @Override
