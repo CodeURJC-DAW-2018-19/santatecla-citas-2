@@ -9,9 +9,8 @@ import java.util.List;
 
 @Service
 public interface QuoteManagementService {
-    Quote getQuote(Long id);
+    Quote findOne(Long id);
     Page<Quote> findAll(int nPage, int nQuotes);
-   // List<Quote> getQuotesByTheme(Topic topic);
 
     Quote save(Quote quote);
 
