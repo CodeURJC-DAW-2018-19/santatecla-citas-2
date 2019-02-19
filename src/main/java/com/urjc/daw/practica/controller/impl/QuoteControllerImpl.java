@@ -9,31 +9,31 @@ import java.util.List;
 
 public class QuoteControllerImpl implements QuoteController {
     @Override
-    @RequestMapping(value = "/quote/@{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/quotes/@{id}",method = RequestMethod.GET)
     public Quote getQuote() {
         return null;
     }
 
     @Override
-    @RequestMapping(value = "/quote",method = RequestMethod.GET)
+    @RequestMapping(value = "/quotes",method = RequestMethod.GET)
     public List<Quote> getAllQuotes() {
         return null;
     }
 
     @Override
-    @RequestMapping(value = "/quote/@{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "/quotes/@{id}",method = RequestMethod.POST)
     public boolean postQuote(Quote quote) {
         return false;
     }
 
     @Override
-    @RequestMapping(value = "/quote/@{id}",method = RequestMethod.PUT)
+    @RequestMapping(value = "/quotes/@{id}",method = RequestMethod.PUT)
     public boolean editQuote(Quote quote) {
         return false;
     }
 
     @Override
-    @RequestMapping(value = "/quote/@{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/quotes/@{id}",method = RequestMethod.DELETE)
     public boolean deleteQuote(Quote quote) {
         return false;
     }
