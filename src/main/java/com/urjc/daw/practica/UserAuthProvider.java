@@ -11,15 +11,16 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class UserAuthProvider implements AuthenticationProvider {
 
-    @Autowired
+    @Autowired(required=true)
     UserRepository users;
-
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {

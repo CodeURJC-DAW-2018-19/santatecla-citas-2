@@ -12,7 +12,8 @@ import java.util.List;
 @Repository
 public interface QuoteRepository extends CrudRepository<Quote,Long> {
 
-    Page<Quote> findAll(Pageable pageable);
+    //Page<Quote> findAll(Pageable pageable);
+    List<Quote> findAll();
     Quote findQuoteById(Long id);
     Page<Quote> findByAuthor(String author, Pageable pageable);
 
