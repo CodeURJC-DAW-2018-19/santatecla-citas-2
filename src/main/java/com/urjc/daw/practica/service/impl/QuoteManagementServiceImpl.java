@@ -39,4 +39,8 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
         quotes.delete(quote);
         return quote;
     }
+
+    public boolean checkValidQuote(Quote quote){
+
+    }
 }

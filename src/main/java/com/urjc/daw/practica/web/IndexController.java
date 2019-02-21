@@ -45,9 +45,7 @@ public class IndexController {
 	@GetMapping("/")
 	public String showQuotes(Model model) {
 
-		model.addAttribute("quotes", quoteService.findAll();
-	
-		return "quotes";
+		
 	}
 	
 	@GetMapping("/quotes/{id}")
