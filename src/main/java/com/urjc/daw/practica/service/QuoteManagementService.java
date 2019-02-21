@@ -10,7 +10,9 @@ import java.util.List;
 @Service
 public interface QuoteManagementService {
     Quote findOne(Long id);
-    Page<Quote> findAll(int nPage, int nQuotes);
+    //Page<Quote> findAll(int nPage, int nQuotes);
+
+    List<Quote> findAll();
 
     Quote save(Quote quote);
 

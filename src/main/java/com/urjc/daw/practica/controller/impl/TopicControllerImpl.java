@@ -5,7 +5,11 @@ import com.urjc.daw.practica.model.Topic;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class TopicControllerImpl implements TopicController {
+	
     @Override
     public Topic getTopic() {
         return null;

@@ -6,9 +6,11 @@ import com.urjc.daw.practica.service.QuoteManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     @Autowired
@@ -19,9 +21,14 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
         return quotes.findQuoteById(id);
     }
 
-    @Override
+    /*@Override
     public Page<Quote> findAll(int nPage, int nQuotes) {
         return quotes.findAll(PageRequest.of(nPage,nQuotes));
+    }*/
+    
+    @Override
+    public List<Quote> findAll() {
+        return quotes.findAll();
     }
 
     @Override
@@ -42,5 +49,6 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     public boolean checkValidQuote(Quote quote){
 
+        return quote != null;
     }
 }
