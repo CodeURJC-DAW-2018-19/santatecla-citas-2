@@ -16,10 +16,10 @@ public class Quote {
     @Column(name = "quoteText")
     private String text;
 
-    @Column(name = "author")
+    @Column(name = "quoteAuthor")
     private String author;
 
-    @Column(name = "book")
+    @Column(name = "quoteBook")
     private String book;
 
 

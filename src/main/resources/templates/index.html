@@ -42,7 +42,7 @@
                             {{topicArray}}
                             {{/logged}}
                             {{^logged}}
-                            <p>You must be logged in to see the topic table.</p>
+                            <span>You must be logged in to see the topic table.</span>
                             {{/logged}}
                         </div>
                         <!--End of quote row-->
@@ -90,11 +90,15 @@
                         <!--Quote zone-->
                         <div class="row">
 
-                            {{#logged}}
-                            {{quoteArray}}
+                            {{^logged}}
+                            
+                            {{#quote}}
+                            	<li>{{quote}}</li>
+                            {{/quote}}
+                                                      
                             {{/logged}}
                             {{^logged}}
-                            <p>You must be logged in to see the quote table.</p>
+                            <span>You must be logged in to see the quote table.</span>
                             {{/logged}}
 
                         </div>
