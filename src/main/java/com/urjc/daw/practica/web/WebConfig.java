@@ -7,11 +7,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-        @Override
+       /* @Override
         public void addResourceHandlers(ResourceHandlerRegistry registry) {
                 registry.addResourceHandler("/resources/**")
                         .addResourceLocations("/resources/");
                 registry.addResourceHandler("/js/core/**")
                 		.addResourceLocations("/js/core/");
-        }
+        }*/
 }

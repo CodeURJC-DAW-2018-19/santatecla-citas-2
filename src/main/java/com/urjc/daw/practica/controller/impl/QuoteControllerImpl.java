@@ -6,6 +6,8 @@ import com.urjc.daw.practica.service.QuoteManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -31,15 +33,15 @@ public class QuoteControllerImpl implements QuoteController {
     public String findAll() {
         //quoteService.findAll(nPage,QUOTES_PER_PAGE);
         quoteService.findAll();
-        //ToDo Pedir al servicio de quote que devuelva todos los quotes
+        
         return "quote";
     }
 
     @Override
-    @RequestMapping(value = "/quote/@{id}",method = RequestMethod.POST)
-    public String postQuote(Quote quote) {
-        //ToDo Pedir al servicio de quotes que añada una quote nueva al repositorio
-        return "quote";
+    @RequestMapping(value = "/quote",method = RequestMethod.POST)
+    public String postQuote(Model model,Quote quote) {
+    	quoteService.save(quote);
+        return "quoteCreated";
     }
 
     @Override
@@ -50,9 +52,9 @@ public class QuoteControllerImpl implements QuoteController {
     }
 
     @Override
-    @RequestMapping(value = "/quote/@{id}",method = RequestMethod.DELETE)
-    public String deleteQuote(Quote quote) {
-        //ToDo Pedir al servicio de quotes que borre una quote segun el id
-        return "quote";
+    @RequestMapping(value = "/deleteQuote/@{id}",method = RequestMethod.DELETE)
+    public String deleteQuote(Quote quote,@PathVariable long id) {
+        quoteService.deleteQuote(id);
+        return "quoteCreated";
     }
 }

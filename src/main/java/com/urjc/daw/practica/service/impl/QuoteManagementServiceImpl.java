@@ -34,7 +34,7 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     @Override
     public Quote save(Quote quote) {
-        return quotes.save(quote);
+        return quotes.save(new Quote(quote.getText(),quote.getAuthor(),quote.getBook()));
     }
 
     @Override
@@ -43,7 +43,8 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     }
 
     @Override
-    public Quote deleteQuote(Quote quote) {
+    public Quote deleteQuote(Long id) {
+        Quote quote = quotes.findById(id).get();
         quotes.delete(quote);
         return quote;
     }
