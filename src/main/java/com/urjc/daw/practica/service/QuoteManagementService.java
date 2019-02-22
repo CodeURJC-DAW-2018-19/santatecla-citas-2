@@ -6,10 +6,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public interface QuoteManagementService {
-    Quote findOne(Long id);
+    Optional<Quote> findOne(Long id);
     //Page<Quote> findAll(int nPage, int nQuotes);
 
     List<Quote> findAll();

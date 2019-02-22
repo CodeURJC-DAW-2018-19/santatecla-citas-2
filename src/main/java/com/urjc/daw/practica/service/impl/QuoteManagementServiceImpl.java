@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class QuoteManagementServiceImpl implements QuoteManagementService {
@@ -17,7 +18,7 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     QuoteRepository quotes;
 
     @Override
-    public Quote findOne(Long id) {
+    public Optional<Quote> findOne(Long id) {
         return quotes.findQuoteById(id);
     }
 
