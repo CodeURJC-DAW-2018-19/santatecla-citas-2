@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired(required=true)
+    @Autowired
     AuthenticationProvider authProvider;
 
     @Override

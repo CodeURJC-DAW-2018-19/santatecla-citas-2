@@ -22,6 +22,8 @@ public class UserAuthProvider implements AuthenticationProvider {
     @Autowired(required=true)
     UserRepository users;
 
+    BCryptPasswordEncoder encoder;
+
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         User user = users.findByName(authentication.getName());
@@ -30,7 +32,7 @@ public class UserAuthProvider implements AuthenticationProvider {
         }
         
         String password = (String) authentication.getCredentials();
-        if(!new BCryptPasswordEncoder().matches(password,user.getPassword())){
+        if(!encoder.matches(password,user.getPassword())){
             throw new BadCredentialsException("User not found");
         }
         
@@ -40,6 +42,10 @@ public class UserAuthProvider implements AuthenticationProvider {
         }
         
         return new UsernamePasswordAuthenticationToken(user.getName(),password,roles);
+    }
+
+    public BCryptPasswordEncoder getEncoder(){
+        return encoder;
     }
 
     @Override
