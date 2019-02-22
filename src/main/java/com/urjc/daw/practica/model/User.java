@@ -1,6 +1,11 @@
 package com.urjc.daw.practica.model;
 
 import javax.persistence.*;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -11,18 +16,19 @@ public class User {
     @GeneratedValue
     private Long id;
 
-    @Column
     private String name;
 
-    @Column
     private String password;
 
     @ElementCollection(fetch=FetchType.EAGER)
     private List<String> roles;
 
-    public User(){
-        //JPA NEEDS DEFAULT CONSTRUCTOR
-    }
+    public User(String name, String password, String... roles) {
+		this.name = name;
+		this.password = new BCryptPasswordEncoder().encode(password);
+		this.roles = new ArrayList<>(Arrays.asList(roles));
+	}
+
 
     public Long getId() {
         return id;

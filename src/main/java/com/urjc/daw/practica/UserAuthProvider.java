@@ -28,14 +28,17 @@ public class UserAuthProvider implements AuthenticationProvider {
         if(user == null){
             throw new BadCredentialsException("User not found");
         }
+        
         String password = (String) authentication.getCredentials();
         if(!new BCryptPasswordEncoder().matches(password,user.getPassword())){
             throw new BadCredentialsException("User not found");
         }
+        
         List<GrantedAuthority> roles = new ArrayList<>();
         for(String role:user.getRoles()){
             roles.add(new SimpleGrantedAuthority(role));
         }
+        
         return new UsernamePasswordAuthenticationToken(user.getName(),password,roles);
     }
 
