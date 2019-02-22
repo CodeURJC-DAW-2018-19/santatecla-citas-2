@@ -12,9 +12,9 @@ public class IndexController{
     
 	@GetMapping("/")
 	public String showBooks(Model model) {
-
-
-	
+		//Comentario mordaz y sarcástico para comprobar por que este hijo de mala madre
+		//no sabe que es un maldito get
+		System.out.println("pasa por aquí");	
 		return "index";
 	}
 
