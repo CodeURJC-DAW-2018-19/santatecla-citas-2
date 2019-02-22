@@ -25,7 +25,9 @@ public class UserAuthProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         User user = users.findByName(authentication.getName());
+        
         if(user == null){
+        	System.out.println(user.toString());
             throw new BadCredentialsException("User not found");
         }
         

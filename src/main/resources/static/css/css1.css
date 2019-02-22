@@ -24,6 +24,11 @@
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
+.login-index-container{
+	padding:40%;
+	padding-top:50px;
+}
+
 /* The Close Button */
 .close {
   color: #aaa;

@@ -34,7 +34,7 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     @Override
     public Quote save(Quote quote) {
-        return quotes.save(quote);
+        return quotes.save(new Quote(quote.getText(),quote.getAuthor(),quote.getBook()));
     }
 
     @Override

@@ -1,85 +1,109 @@
 {{>header}}
 
 <div class="content">
-    <div class="main-page-container">
-        <div class="container-fluid border-container">
-            <div id="p-start">
-                <p class="d-lg-inline-block d-md-inline-block">
-                    <a href="../templates/InicioNuevo.html">INICIO</a>
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-md-6 card-group">
-                    <div class="card">
-                        <div class="card-header card-header-primary">
-                            <h4 class="card-title">Editar Tema</h4>
-                            <p class="card-category">Añada citas y/o textos</p>
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating">Titulo Tema</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
+	<div class="main-page-container">
+		<div class="container-fluid border-container">
+			<div id="p-start">
+				<p class="d-lg-inline-block d-md-inline-block">
+					<a href="../templates/InicioNuevo.html">INICIO</a>
+				</p>
+			</div>
+			<div class="row">
+				<div class="col-md-6 card-group">
+					<div class="card">
+						<div class="card-header card-header-primary">
+							<h4 class="card-title">Editar Tema</h4>
+							<p class="card-category">Añada citas y/o textos</p>
+						</div>
+						<div class="card-body">
+							<form>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="bmd-label-floating">Titulo Tema</label> <input
+												type="text" class="form-control">
+										</div>
+									</div>
+								</div>
 
-                                {{markdownArray}}
-                                    {{quoteOrText}}
-                                {{/markdownArray}}                            
+								{{#}} {{quoteOrText}} {{/markdownArray}}
 
-                                <form>
-                                    <fieldset>
-                                        <input type="radio" name="texto" value="cita" />Referencia a cita
-                                        <input type="radio" name="texto" value="texto" />Texto
+								<form>
+									<fieldset>
+										<input type="radio" name="texto" value="cita" />Referencia a
+										cita <input type="radio" name="texto" value="texto" />Texto
 
-                                    </fieldset>
-                                </form>
+									</fieldset>
+								</form>
 
-                                <button class="material-icons" id="addQuote">add</button>
-                                <button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
+								<button class="material-icons" id="addQuote">add</button>
+								<button type="submit" class="btn btn-primary pull-right">Actualizar
+									tema</button>
 
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card card-profile">
-                        <div class="card-avatar">
-                            <a href="#pablo">
-                                <img class="img" src="../assets/img/faces/marc.jpg" />
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-category text-gray">HTML del texto + citas</h6>
-                            <h4 class="card-title">Ejemplo HTML</h4>
-                            <p class="card-description">
-                                SAMPMLE HTML
-                            </p>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="card card-profile">
+						<div class="card-avatar">
+							<a href="#pablo"> <img class="img"
+								src="../assets/img/faces/marc.jpg" />
+							</a>
+						</div>
+						<div class="card-body">
+							<h6 class="card-category text-gray">HTML del texto + citas</h6>
+							<h4 class="card-title">Ejemplo HTML</h4>
+							<p class="card-description">SAMPMLE HTML</p>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div id="quoteSelection" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close justify-content-end">X</span>
-        <div class="row">
-            {{#logged}}
-            {{topicArray}}
-            {{/logged}}
-            {{^logged}}
-            <p>You must be logged in to see the topic table.</p>
-            {{/logged}}
-        </div>
-    </div>
+	<!-- Modal content -->
+	<div class="modal-content">
+		<span class="close justify-content-end">X</span>
+		<div class="row">
+			{{^logged}} {{#quote}}
+
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="card card-stats">
+					<div class="card-header card-header-warning card-header-icon">
+						<div class="card-icon">
+							<i class="material-icons">speaker_notes</i>
+						</div>
+						<p class="card-category">Cita</p>
+						<div class="tim-typo">
+							<blockquote class="blockquote">
+								<p style="color: black">{{text}}</p>
+								<small style="color: grey"> {{author}},{{book}} </small>
+							</blockquote>
+							{{#admin}}
+							<td class="td-actions text-left">
+								<button type="button" rel="tooltip" title="Editar cita"
+									class="btn btn-primary btn-link btn-sm">
+									<i class="material-icons">edit</i>
+								</button>
+								<button type="button" rel="tooltip" title="Borrar Cita"
+									class="btn btn-danger btn-link btn-sm">
+									<i class="material-icons">close</i>
+								</button>
+							</td> {{/admin}}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{{/quote}} {{/logged}} {{^logged}}
+			<p>You must be logged in to see the topic table.</p>
+			{{/logged}}
+		</div>
+	</div>
 </div>
 
 {{>footer}}
