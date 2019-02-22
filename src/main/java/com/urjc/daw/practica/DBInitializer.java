@@ -38,8 +38,8 @@ public class DBInitializer {
 		// Sample Quotes
 		quotes.save(new Quote("Did I ever tell you the definition of insanity","Vaas Montenegor", "The Bible"));
 		// Sample users
-		userRepository.save(new User("user", authProvider.getEncoder().encode("pass"), "ROLE_USER"));
-		userRepository.save(new User("admin",authProvider.getEncoder().encode("pass"), "ROLE_USER", "ROLE_ADMIN"));
+		userRepository.save(new User("user", new BCryptPasswordEncoder().encode("pass"), "ROLE_USER"));
+		userRepository.save(new User("admin",new BCryptPasswordEncoder().encode("pass"), "ROLE_USER", "ROLE_ADMIN"));
 	}
 
 }
