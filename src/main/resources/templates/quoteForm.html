@@ -33,6 +33,7 @@
 			<div class="main-page-container">
 				<form action="/quote" method="post">
 					<div class="container-fluid border-container">
+					{{#quote}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/quote}}
 						<div id="p-start">
 							<p class="d-lg-inline-block d-md-inline-block">
 								<a href="../templates/InicioNuevo.html">INICIO</a>
@@ -45,12 +46,11 @@
 										<h4 class="card-title">Texto</h4>
 									</div>
 									<div class="card-body">
-										<textarea class="form-control" id="text" name="text"></textarea>
+										<textarea class="form-control" id="text" name="text">{{#quote}}{{text}}{{/quote}}</textarea>
 									</div>
 								</div>
 							</div>
 						</div>
-
 						<div class="row">
 							<div class="col-md-6 card-group">
 								<div class="card">
@@ -58,8 +58,7 @@
 										<h4 class="card-title">Autor</h4>
 									</div>
 									<div class="card-body">
-										<textarea class="form-control" id="author"
-											name="author"></textarea>
+										<textarea class="form-control" id="author" name="author">{{#quote}}{{author}}{{/quote}}</textarea>
 									</div>
 								</div>
 							</div>
@@ -69,7 +68,7 @@
 										<h4 class="card-title">Tema</h4>
 									</div>
 									<div class="card-body">
-										<textarea class="form-control" id="book" name="book"></textarea>
+										<textarea class="form-control" id="book" name="book">{{#quote}}{{book}}{{/quote}}</textarea>
 									</div>
 								</div>
 							</div>

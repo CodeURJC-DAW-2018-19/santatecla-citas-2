@@ -114,8 +114,7 @@
 						<!--Quote zone-->
 						<div class="row">
 
-							{{^logged}} 
-							{{#quote}}
+							{{^logged}} {{#quote}}
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="card card-stats">
 									<div class="card-header card-header-warning card-header-icon">
@@ -129,27 +128,25 @@
 												<small style="color: grey"> {{author}},{{book}} </small>
 											</blockquote>
 											{{^admin}}
-											<td class="td-actions text-left">
+											<div class="td-actions text-left">
+												<a href="editQuote/{{id}}">
 												<button type="button" rel="tooltip" title="Editar cita"
 													class="btn btn-primary btn-link btn-sm">
 													<i class="material-icons">edit</i>
-												</button>
-												<a href="/deleteQuote/{{id}}">
-												<button type="button" rel="tooltip" title="Borrar Cita"
-													class="btn btn-danger btn-link btn-sm">
-													<i class="material-icons">close</i>
-												</button>
+												</button> 
 												</a>
-											</td> 
-											{{/admin}}
+												<a href="/deleteQuote/{{id}}">
+													<button type="button" rel="tooltip" title="Borrar Cita"
+														class="btn btn-danger btn-link btn-sm">
+														<i class="material-icons">close</i>
+													</button>
+												</a>
+											</div> {{/admin}}
 										</div>
 									</div>
 								</div>
 							</div>
-							{{/quote}} 
-							{{/logged}} 
-							{{^logged}} 
-							<span>You must be
+							{{/quote}} {{/logged}} {{^logged}} <span>You must be
 								logged in to see the quote table.</span> {{/logged}}
 
 						</div>

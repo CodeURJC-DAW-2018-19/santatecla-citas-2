@@ -16,7 +16,7 @@ public interface QuoteController {
 
     String postQuote(Model model,Quote quote);
 
-    String editQuote(Quote quote);
+    String editQuote(Model model,@PathVariable long id);
 
     public String deleteQuote(Quote quote,@PathVariable long id);
 }

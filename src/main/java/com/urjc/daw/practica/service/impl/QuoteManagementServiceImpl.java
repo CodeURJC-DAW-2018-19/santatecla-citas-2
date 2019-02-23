@@ -19,7 +19,7 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     @Override
     public Optional<Quote> findOne(Long id) {
-        return quotes.findQuoteById(id);
+        return quotes.findById(id);
     }
 
     /*@Override
@@ -34,7 +34,8 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     @Override
     public Quote save(Quote quote) {
-        return quotes.save(new Quote(quote.getText(),quote.getAuthor(),quote.getBook()));
+        //return quotes.save(new Quote(quote.getText(),quote.getAuthor(),quote.getBook()));
+    	return quotes.save(quote);
     }
 
     @Override

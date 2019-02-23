@@ -3,15 +3,18 @@ package com.urjc.daw.practica.controller.impl;
 import com.urjc.daw.practica.controller.QuoteController;
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.service.QuoteManagementService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class QuoteControllerImpl implements QuoteController {
@@ -45,14 +48,18 @@ public class QuoteControllerImpl implements QuoteController {
     }
 
     @Override
-    @RequestMapping(value = "/quote/@{id}",method = RequestMethod.PUT)
-    public String editQuote(Quote quote) {
-        //ToDo Pedir al sevicio de quotes que modifique una quote existente según el id
-        return "quote";
+    @GetMapping("/editQuote/{id}")
+    public String editQuote(Model model,@PathVariable long id) {
+        Optional<Quote> quote = quoteService.findOne(id);
+        
+        if(quote.isPresent()) {
+        	model.addAttribute("quote",quote.get());
+        }
+        return "quoteForm";
     }
 
     @Override
-    @RequestMapping(value = "/deleteQuote/@{id}",method = RequestMethod.DELETE)
+    @GetMapping("/deleteQuote/{id}")
     public String deleteQuote(Quote quote,@PathVariable long id) {
         quoteService.deleteQuote(id);
         return "quoteCreated";
