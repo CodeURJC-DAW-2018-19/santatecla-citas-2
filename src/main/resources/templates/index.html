@@ -26,8 +26,7 @@
 									<div class="input-group no-border">
 										<input type="text" value="" class="form-control"
 											placeholder="Buscar un tema..." />
-										<button type="submit"
-											class="btn btn-white btn-round btn-just-icon">
+										<button type="submit" class="btn btn-white btn-round btn-just-icon">
 											<i class="material-icons">search</i>
 										</button>
 									</div>
@@ -35,9 +34,10 @@
 							</div>
 						</div>
 						{{/logged}}
-						<!--Quote zone-->
+						<!--Topic zone-->
 						<div class="row">
-							{{#logged}} {{#topic}}
+							{{^logged}}
+							{{#topic}}
 							<div class="col-lg-6 col-md-4 col-sm-6">
 								<div class="card card-stats">
 									<div class="card-header card-header-success card-header-icon">
@@ -65,20 +65,21 @@
 									</div>
 								</div>
 							</div>
-							{{/topic}} {{/logged}} {{^logged}} <span>You must be
-								logged in to see the topic table.</span> {{/logged}}
+							{{/topic}} {{/logged}} {{^logged}} <div class="row"><div class="col-md-12"><span class="alert alert-danger">You must be
+								logged in to see the topic table.</span></div></div> {{/logged}}
 						</div>
 						<!--End of quote row-->
 						<!--Add quote button-->
-						{{#logged}} {{#admin}}
+						{{^logged}} {{^admin}}
 						<div class="col-md-12">
-							<span class="pull-right"> Añadir tema
-								<button type="submit"
-									class="btn btn-white btn-round btn-just-icon">
-									<a href="../templates/topicForm.html"><i
-										class="material-icons">library_add</i></a>
-								</button>
-							</span>
+
+							<a href="topicForm">
+								<span class="pull-right"> Añadir tema
+									<button type="submit" class="btn btn-white btn-round btn-just-icon">
+										<i class="material-icons">library_add</i>
+									</button>
+								</span>
+							</a>
 						</div>
 						{{/admin}} {{/logged}}
 					</div>
@@ -99,10 +100,8 @@
 							<div class="col-md-12">
 								<form class="navbar-form">
 									<div class="input-group no-border">
-										<input type="text" value="" class="form-control"
-											placeholder="Buscar..." />
-										<button type="submit"
-											class="btn btn-white btn-round btn-just-icon">
+										<input type="text" value="" class="form-control" placeholder="Buscar..." />
+										<button type="submit" class="btn btn-white btn-round btn-just-icon">
 											<i class="material-icons">search</i>
 										</button>
 									</div>
@@ -130,10 +129,10 @@
 											{{^admin}}
 											<div class="td-actions text-left">
 												<a href="editQuote/{{id}}">
-												<button type="button" rel="tooltip" title="Editar cita"
-													class="btn btn-primary btn-link btn-sm">
-													<i class="material-icons">edit</i>
-												</button> 
+													<button type="button" rel="tooltip" title="Editar cita"
+														class="btn btn-primary btn-link btn-sm">
+														<i class="material-icons">edit</i>
+													</button>
 												</a>
 												<a href="/deleteQuote/{{id}}">
 													<button type="button" rel="tooltip" title="Borrar Cita"
@@ -155,20 +154,20 @@
 						{{^logged}} {{^admin}}
 						<!--Add quote button-->
 						<div class="col-md-12">
-							<span class="pull-right"> Añadir cita
-								<button type="submit"
-									class="btn btn-white btn-round btn-just-icon">
-									<a href="/quoteForm"><i class="material-icons">library_add</i></a>
-								</button>
-							</span>
+							<a href="/quoteForm">
+								<span class="pull-right"> Añadir cita
+									<button type="submit" class="btn btn-white btn-round btn-just-icon">
+										<i class="material-icons">library_add</i>
+									</button>
+								</span>
+							</a>
 						</div>
 						{{/admin}} {{/logged}}
 					</div>
 				</div>
 				{{#logged}}
 				<div id="histogram">
-					<a class="d-lg-inline-block d-md-inline-block"
-						href="../templates/graphs.html"> HISTOGRAMA </a>
+					<a class="d-lg-inline-block d-md-inline-block" href="../templates/graphs.html"> HISTOGRAMA </a>
 				</div>
 				{{/logged}}
 			</div>

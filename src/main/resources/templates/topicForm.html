@@ -1,11 +1,11 @@
-{{>header}}
+{{>navbar}}
 
 <div class="content">
 	<div class="main-page-container">
 		<div class="container-fluid border-container">
 			<div id="p-start">
 				<p class="d-lg-inline-block d-md-inline-block">
-					<a href="../templates/InicioNuevo.html">INICIO</a>
+					<a href="/">INICIO</a>
 				</p>
 			</div>
 			<div class="row">
@@ -16,29 +16,21 @@
 							<p class="card-category">Añada citas y/o textos</p>
 						</div>
 						<div class="card-body">
-							<form>
+							<form action="/createTopic" method="post">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label class="bmd-label-floating">Titulo Tema</label> <input
-												type="text" class="form-control">
+											<label class="bmd-label-floating">Titulo Tema</label> <input type="text"
+												class="form-control">
 										</div>
 									</div>
 								</div>
 
-								{{#}} {{quoteOrText}} {{/markdownArray}}
+								{{#quote}}{{/quote}}
 
-								<form>
-									<fieldset>
-										<input type="radio" name="texto" value="cita" />Referencia a
-										cita <input type="radio" name="texto" value="texto" />Texto
-
-									</fieldset>
-								</form>
-
-								<button class="material-icons" id="addQuote">add</button>
-								<button type="submit" class="btn btn-primary pull-right">Actualizar
-									tema</button>
+								<button class="btn btn-sm" type="menu">Añadir cita</button>
+								<button class="btn btn-sm" type="button">Añadir texto</button>
+								<button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
 
 							</form>
 						</div>
@@ -47,15 +39,13 @@
 				<div class="col-md-6">
 					<div class="card card-profile">
 						<div class="card-avatar">
-							<a href="#pablo"> <img class="img"
-								src="../assets/img/faces/marc.jpg" />
+							<a href="#pablo"> <img class="img" src="/img/faces/marc.jpg" />
 							</a>
 						</div>
 						<div class="card-body">
 							<h6 class="card-category text-gray">HTML del texto + citas</h6>
 							<h4 class="card-title">Ejemplo HTML</h4>
 							<p class="card-description">SAMPMLE HTML</p>
-
 						</div>
 					</div>
 				</div>
@@ -69,8 +59,7 @@
 	<div class="modal-content">
 		<span class="close justify-content-end">X</span>
 		<div class="row">
-			{{^logged}} {{#quote}}
-
+			{{#quote}}
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="card card-stats">
 					<div class="card-header card-header-warning card-header-icon">
@@ -84,7 +73,7 @@
 								<small style="color: grey"> {{author}},{{book}} </small>
 							</blockquote>
 							{{#admin}}
-							<td class="td-actions text-left">
+							<div class="td-actions text-left">
 								<button type="button" rel="tooltip" title="Editar cita"
 									class="btn btn-primary btn-link btn-sm">
 									<i class="material-icons">edit</i>
@@ -93,15 +82,12 @@
 									class="btn btn-danger btn-link btn-sm">
 									<i class="material-icons">close</i>
 								</button>
-							</td> {{/admin}}
+							</div> {{/admin}}
 						</div>
 					</div>
 				</div>
 			</div>
-
-			{{/quote}} {{/logged}} {{^logged}}
-			<p>You must be logged in to see the topic table.</p>
-			{{/logged}}
+			{{/quote}}
 		</div>
 	</div>
 </div>
