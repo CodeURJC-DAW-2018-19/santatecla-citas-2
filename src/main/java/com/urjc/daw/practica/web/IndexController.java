@@ -43,7 +43,9 @@ public class IndexController{
 	
 	@GetMapping("/topicForm")
 	public ModelAndView showTopicForm(Model model) {
-		return new ModelAndView("topicForm");
+		ModelAndView newModel = new ModelAndView("topicForm");
+		model.addAttribute("quote",qms.findAll());
+		return newModel;
 	}
 	
 
