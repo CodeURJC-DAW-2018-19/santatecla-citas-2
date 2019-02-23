@@ -110,6 +110,8 @@ poder compilar y ejecutar la aplicación.
 ## • Diagrama con las entidades de la base de datos: Se incluirá un diagrama con las entidades
 de la base de datos, sus campos y las relaciones entre ellas. Se usará un diagrama de las clases
 Java, no un diagrama entidad-relación de base de datos.
+https://drive.google.com/file/d/1Z89_eML_9YIrGaXmFbu-Z0z3xnwypS1N/view?usp=sharing
+https://docs.google.com/document/d/1vJgvrwgVRnIQIpyoXT9KIyV70pleEv0J80u-dqYfbkk/edit
 
 
 ## • Diagrama de clases y templates: Se creará un diagrama de clases de la aplicación. No se
@@ -118,3 +120,5 @@ incluirán ni atributos ni métodos en las clases. Se mostrarán las relaciones 
 @Service, Repository u otro tipo de clases. Para ello se puede usar un código de colores, una
 distribución de las clases por partes u otro mecanismo. En este diagrama también se incluirán
 los ficheros que contienen los templates y se indicará con qué @Controller se relacionan
+https://drive.google.com/file/d/1Z89_eML_9YIrGaXmFbu-Z0z3xnwypS1N/view?usp=sharing
+https://docs.google.com/document/d/1vJgvrwgVRnIQIpyoXT9KIyV70pleEv0J80u-dqYfbkk/edit
