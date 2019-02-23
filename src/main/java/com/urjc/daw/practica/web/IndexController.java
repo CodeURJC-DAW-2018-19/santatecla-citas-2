@@ -37,8 +37,13 @@ public class IndexController{
 	}
 	
 	@GetMapping("/quoteForm")
-	public ModelAndView showLogin(Model model) {
+	public ModelAndView showQuoteForm(Model model) {
 		return new ModelAndView("quoteForm");
+	}
+	
+	@GetMapping("/topicForm")
+	public ModelAndView showTopicForm(Model model) {
+		return new ModelAndView("topicForm");
 	}
 	
 
