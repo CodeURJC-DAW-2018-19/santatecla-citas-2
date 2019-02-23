@@ -45,7 +45,9 @@ public class TextRepositoryTest {
 
     public Text dummyText(){
         Topic topic = dummyTopic();
+        topic=topics.save(topic);
         Text currentText= new Text("TESTING TEXT",topic);
+
         currentText=texts.save(currentText);
         return currentText;
     }

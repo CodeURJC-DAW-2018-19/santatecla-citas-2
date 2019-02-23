@@ -16,7 +16,7 @@
 							<p class="card-category">Añada citas y/o textos</p>
 						</div>
 						<div class="card-body">
-							<form action="/createTopic" method="post">
+							<form action="/createTopic" method="post" class="topicForm">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
@@ -28,11 +28,12 @@
 
 								{{#quote}}{{/quote}}
 
-								<button class="btn btn-sm" type="menu">Añadir cita</button>
-								<button class="btn btn-sm" type="button">Añadir texto</button>
+
 								<button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
 
 							</form>
+							<button id="addQuote" class="btn btn-sm" type="menu">Añadir cita</button>
+							<button id="addText" class="btn btn-sm" type="button">Añadir texto</button>
 						</div>
 					</div>
 				</div>
