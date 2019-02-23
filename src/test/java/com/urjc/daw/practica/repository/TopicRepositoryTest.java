@@ -25,12 +25,15 @@ public class TopicRepositoryTest {
     @Test
     public void test_findById_found(){
         Topic topic = dummyTopic();
-//        Assertions.assertThat(topics.findTopicById(topic.getId())).isEqualTo(topic);
+        topics.save(topic);
+        Assertions.assertThat(topics.findById(topic.getId()).get()).isEqualTo(topic);
     }
 
     @Test
     public void test_findById_notFound(){
-        
+        Topic topic = dummyTopic();
+        topics.save(topic);
+        Assertions.assertThat(topics.findById(100000000000000000L)).isEmpty();
     }
 
     public Topic dummyTopic(){
