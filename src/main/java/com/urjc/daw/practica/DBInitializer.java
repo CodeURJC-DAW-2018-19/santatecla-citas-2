@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.urjc.daw.practica.model.User;
 import com.urjc.daw.practica.repository.UserRepository;
+import com.urjc.daw.practica.security.UserAuthProvider;
 
 @Component
 public class DBInitializer {

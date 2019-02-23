@@ -1,4 +1,4 @@
-package com.urjc.daw.practica;
+package com.urjc.daw.practica.security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,17 +35,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 		// Web resources
 		http.authorizeRequests().antMatchers("/static/**").permitAll();
-		
 
 		// Login form
-		http.formLogin().loginPage("/login");
+		http.formLogin().loginPage("/login").permitAll();
 		http.formLogin().usernameParameter("username");
 		http.formLogin().passwordParameter("password");
 		http.formLogin().defaultSuccessUrl("/");
 		http.formLogin().failureUrl("/loginerror");
-		http.csrf().disable();
-		//http.authorizeRequests().antMatchers("/topicForm").hasRole("ADMIN").antMatchers("/quoteForm").hasRole("USER")
-			//	.antMatchers("/", "main").permitAll().anyRequest().authenticated().and().httpBasic();
 
 		// Logout
 		http.logout().logoutUrl("/logout");
