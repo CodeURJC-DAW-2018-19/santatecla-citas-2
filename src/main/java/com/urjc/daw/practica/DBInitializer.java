@@ -40,9 +40,9 @@ public class DBInitializer {
 		topics.save(new Topic());
 		
 		// Sample Quotes
-		quotes.save(new Quote("Did I ever tell you the definition of insanity","Vaas Montenegor", "The Bible"));
-		quotes.save(new Quote("Did I ever tell you the definition of insanity","Vaas Montenegor", "The Bible"));
-		quotes.save(new Quote("Did I ever tell you the definition of insanity","Vaas Montenegor", "The Bible"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegor", "The Bible"));
+		quotes.save(new Quote("Hola, me llamo Íñigo Montoya, tu mataste a mi padre, preparate a morir","Íñigo Montoya", "The Princess Bride"));
+		quotes.save(new Quote("Que va si no estaba durmiendo, solo estaba mirando pa´dentro","Tragabuche", "Bandolero"));
 		// Sample users
 		userRepository.save(new User("user", new BCryptPasswordEncoder().encode("pass"), "ROLE_USER"));
 		userRepository.save(new User("admin",new BCryptPasswordEncoder().encode("pass"), "ROLE_USER", "ROLE_ADMIN"));
