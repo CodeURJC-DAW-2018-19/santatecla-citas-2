@@ -1,6 +1,6 @@
 package com.urjc.daw.practica.repository;
 
-import com.sun.org.apache.xpath.internal.operations.Quo;
+
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.Topic;
 import org.springframework.data.domain.Page;
