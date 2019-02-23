@@ -37,7 +37,7 @@
                             <a href="http://phpoll.com/register" class="dropdown-toggle"
                                 data-toggle="dropdown">Registrarse
                                 <span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdown-lr flipInX" role="menu">
+                            <ul class="dropdown-menu  dropdown-menu-right dropdown-lr " role="menu">
                                 <div class="col-lg-12">
                                     <div class="text-center">
                                         <h3><b>Formulario de Registro</b></h3>
@@ -47,16 +47,16 @@
                                             method="post" role="form" autocomplete="off">
 
                                             <div class="form-group">
-                                                <input type="text" name="username" id="username" tabindex="1"
-                                                    class="form-control" placeholder="Username" value="">
+                                                <!--<input type="text" name="username" id="username" tabindex="1"-->
+                                                    <!--class="form-control" placeholder="Username" value="">-->
                                             </div>
                                             <div class="form-group">
                                                 <input type="email" name="email" id="email" tabindex="1"
                                                     class="form-control" placeholder="Email Address" value="">
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" name="password" id="password" tabindex="2"
-                                                    class="form-control" placeholder="Password">
+                                                <!--<input type="password" name="password" id="password" tabindex="2"-->
+                                                    <!--class="form-control" placeholder="Password">-->
                                             </div>
                                             <div class="form-group">
                                                 <input type="password" name="confirm-password" id="confirm-password"
@@ -71,8 +71,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="hidden" class="hide" name="token" id="token"
-                                                value="7c6f19960d63f53fcd05c3e0cbc434c0" />
+                                            <!--<input type="hidden" class="hide" name="token" id="token"-->
+                                                <!--value="7c6f19960d63f53fcd05c3e0cbc434c0" />-->
                                         </form>
                                     </div>
                                 </div>
@@ -84,14 +84,18 @@
                             <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Iniciar
                                 Sesión
                                 <span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdown-lr slideInRight" role="menu">
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-lr slideInRight" role="menu">
                                 <div class="col-lg-12">
                                     <div class="text-center">
                                         <h3><b>Iniciar Sesión</b></h3>
                                     </div>
                                     <div class="container-fluid">
-                                        <form id="ajax-login-form" action="http://phpoll.com/login/process"
+                                        <form id="ajax-login-form" action="/login"
+<<<<<<< HEAD
                                             method="post" role="form" autocomplete="off">
+=======
+                                            method="POST" role="form" autocomplete="off">
+>>>>>>> 33474a0d36eb4ef316b8bee215340d53f91817f8
                                             <div class="form-group">
                                                 <input type="text" name="username" id="username" tabindex="1"
                                                     class="form-control" placeholder="Usuario" value=""

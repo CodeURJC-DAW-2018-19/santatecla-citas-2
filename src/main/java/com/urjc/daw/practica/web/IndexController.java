@@ -24,31 +24,22 @@ public class IndexController{
 	
 	@GetMapping("/")
 	public ModelAndView showIndex(Model model) {
-		//Comentario mordaz y sarcástico para comprobar por que este hijo de mala madre
-		//no sabe que es un maldito get
 		ModelAndView mav = new  ModelAndView("index");
-		
 		model.addAttribute("quote", qms.findAll());
-		System.out.println(mav.toString());
-		System.out.println(qms.findAll().toString());
 		return mav;
 	}
 	
-	@GetMapping("/quote/{id}")
-	public String showBook(Model model, @PathVariable long id) {
-		
-		Optional<Quote> quote = qms.findOne(id);
-
-		if(quote.isPresent()) {
-			model.addAttribute("book", quote.get());
-		}
-		return "book";
-	}
 	
-	@GetMapping("/error")
+	@GetMapping("/loginerror")
 	public ModelAndView showError(Model model) {
-		ModelAndView mav = new ModelAndView("index");
+		ModelAndView mav = new ModelAndView("loginerror");
 		return mav;
 	}
+	
+	@GetMapping("/quoteForm")
+	public ModelAndView showLogin(Model model) {
+		return new ModelAndView("quoteForm");
+	}
+	
 
 }

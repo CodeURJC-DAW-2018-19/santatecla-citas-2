@@ -19,5 +19,5 @@ public interface QuoteManagementService {
 
     Quote editQuote(Quote quote);
 
-    Quote deleteQuote(Quote quote);
+    Quote deleteQuote(Long id);
 }

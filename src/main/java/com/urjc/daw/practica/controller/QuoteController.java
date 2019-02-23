@@ -2,6 +2,8 @@ package com.urjc.daw.practica.controller;
 
 import com.urjc.daw.practica.model.Quote;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -12,9 +14,9 @@ public interface QuoteController {
 
     String findAll();
 
-    String postQuote(Quote quote);
+    String postQuote(Model model,Quote quote);
 
-    String editQuote(Quote quote);
+    String editQuote(Model model,@PathVariable long id);
 
-    String deleteQuote(Quote quote);
+    public String deleteQuote(Quote quote,@PathVariable long id);
 }

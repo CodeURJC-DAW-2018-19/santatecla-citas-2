@@ -3,132 +3,177 @@
 
 <!-- End Navbar -->
 <div class="content">
-    <div class="main-page-container">
-        <div class="container-fluid border-container">
-            <div id="p-start">
-                <p class="d-lg-inline-block d-md-inline-block">
-                    INICIO
-                </p>
-            </div>
+	<div class="main-page-container">
+		<div class="container-fluid border-container">
+			<div id="p-start">
+				<p class="d-lg-inline-block d-md-inline-block">INICIO</p>
+			</div>
 
-            <div class="row">
-                <!--Topic container-->
-                <div class="col-md-6">
-                    <div class="card">
-                        <!--Quote board header-->
-                        <div class="card-header card-header-success">
-                            <h2 class="card-title">Temas</h2>
-                        </div>
+			<div class="row">
+				<!--Topic container-->
+				<div class="col-md-6">
+					<div class="card">
+						<!--Quote board header-->
+						<div class="card-header card-header-success">
+							<h2 class="card-title">Temas</h2>
+						</div>
 
-                        <!-- Quote search bar -->
-                        {{#logged}}
-                        <div class="container-fluid">
-                            <div class="col-md-12">
-                                <form class="navbar-form">
-                                    <div class="input-group no-border">
-                                        <input type="text" value="" class="form-control"
-                                            placeholder="Buscar un tema..." />
-                                        <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                            <i class="material-icons">search</i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        {{/logged}}
-                        <!--Quote zone-->
-                        <div class="row">
-                            {{#logged}}
-                            {{topicArray}}
-                            {{/logged}}
-                            {{^logged}}
-                            <span>You must be logged in to see the topic table.</span>
-                            {{/logged}}
-                        </div>
-                        <!--End of quote row-->
-                        <!--Add quote button-->
-                        {{#logged}}
-                        {{#admin}}
-                        <div class="col-md-12">
-                            <span class="pull-right">
-                                Añadir tema
-                                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                    <a href="../templates/topicForm.html"><i class="material-icons">library_add</i></a>
-                                </button>
-                            </span>
-                        </div>
-                        {{/admin}}
-                        {{/logged}}
-                    </div>
-                </div>
+						<!-- Quote search bar -->
+						{{#logged}}
+						<div class="container-fluid">
+							<div class="col-md-12">
+								<form class="navbar-form">
+									<div class="input-group no-border">
+										<input type="text" value="" class="form-control"
+											placeholder="Buscar un tema..." />
+										<button type="submit"
+											class="btn btn-white btn-round btn-just-icon">
+											<i class="material-icons">search</i>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						{{/logged}}
+						<!--Quote zone-->
+						<div class="row">
+							{{#logged}} {{#topic}}
+							<div class="col-lg-6 col-md-4 col-sm-6">
+								<div class="card card-stats">
+									<div class="card-header card-header-success card-header-icon">
+										<div class="card-icon">
+											<i class="material-icons">library_books</i>
+										</div>
+										<p class="card-category">Tema</p>
+										<div class="tim-typo">
+											<blockquote class="blockquote">
+												<h3 style="color: black">{{title}}</h3>
+												<small style="color: grey"> {{author}} </small>
+											</blockquote>
+											{{^admin}}
+											<td class="td-actions text-left">
+												<button type="button" rel="tooltip" title="Editar tema"
+													class="btn btn-primary btn-link btn-sm">
+													<i class="material-icons">edit</i>
+												</button>
+												<button type="button" rel="tooltip" title="Borrar Cita"
+													class="btn btn-danger btn-link btn-sm">
+													<i class="material-icons">close</i>
+												</button>
+											</td> {{/admin}}
+										</div>
+									</div>
+								</div>
+							</div>
+							{{/topic}} {{/logged}} {{^logged}} <span>You must be
+								logged in to see the topic table.</span> {{/logged}}
+						</div>
+						<!--End of quote row-->
+						<!--Add quote button-->
+						{{#logged}} {{#admin}}
+						<div class="col-md-12">
+							<span class="pull-right"> Añadir tema
+								<button type="submit"
+									class="btn btn-white btn-round btn-just-icon">
+									<a href="../templates/topicForm.html"><i
+										class="material-icons">library_add</i></a>
+								</button>
+							</span>
+						</div>
+						{{/admin}} {{/logged}}
+					</div>
+				</div>
 
 
-                <div class="col-md-6">
-                    <!--Quotes container-->
-                    <div class="card">
-                        <!--Quote board header-->
-                        <div class="card-header card-header-warning">
-                            <h2 class="card-title">Citas</h2>
-                        </div>
+				<div class="col-md-6">
+					<!--Quotes container-->
+					<div class="card">
+						<!--Quote board header-->
+						<div class="card-header card-header-warning">
+							<h2 class="card-title">Citas</h2>
+						</div>
 
-                        <!-- Quote search bar -->
-                        {{#logged}}
-                        <div class="container-fluid">
-                            <div class="col-md-12">
-                                <form class="navbar-form">
-                                    <div class="input-group no-border">
-                                        <input type="text" value="" class="form-control" placeholder="Buscar..." />
-                                        <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                            <i class="material-icons">search</i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        {{/logged}}
+						<!-- Quote search bar -->
+						{{#logged}}
+						<div class="container-fluid">
+							<div class="col-md-12">
+								<form class="navbar-form">
+									<div class="input-group no-border">
+										<input type="text" value="" class="form-control"
+											placeholder="Buscar..." />
+										<button type="submit"
+											class="btn btn-white btn-round btn-just-icon">
+											<i class="material-icons">search</i>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						{{/logged}}
 
-                        <!--Quote zone-->
-                        <div class="row">
+						<!--Quote zone-->
+						<div class="row">
 
-                            {{^logged}}
-                            
-                            {{#quote}}
-                            	<li>{{quote}}</li>
-                            {{/quote}}
-                                                      
-                            {{/logged}}
-                            {{^logged}}
-                            <span>You must be logged in to see the quote table.</span>
-                            {{/logged}}
+							{{^logged}} {{#quote}}
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div class="card card-stats">
+									<div class="card-header card-header-warning card-header-icon">
+										<div class="card-icon">
+											<i class="material-icons">speaker_notes</i>
+										</div>
+										<p class="card-category">Cita</p>
+										<div class="tim-typo">
+											<blockquote class="blockquote">
+												<p style="color: black">{{text}}</p>
+												<small style="color: grey"> {{author}},{{book}} </small>
+											</blockquote>
+											{{^admin}}
+											<div class="td-actions text-left">
+												<a href="editQuote/{{id}}">
+												<button type="button" rel="tooltip" title="Editar cita"
+													class="btn btn-primary btn-link btn-sm">
+													<i class="material-icons">edit</i>
+												</button> 
+												</a>
+												<a href="/deleteQuote/{{id}}">
+													<button type="button" rel="tooltip" title="Borrar Cita"
+														class="btn btn-danger btn-link btn-sm">
+														<i class="material-icons">close</i>
+													</button>
+												</a>
+											</div> {{/admin}}
+										</div>
+									</div>
+								</div>
+							</div>
+							{{/quote}} {{/logged}} {{^logged}} <span>You must be
+								logged in to see the quote table.</span> {{/logged}}
 
-                        </div>
-                        <!--End of quote row-->
+						</div>
+						<!--End of quote row-->
 
-                        {{#logged}}
-                        {{#admin}}
-                        <!--Add quote button-->
-                        <div class="col-md-12">
-                            <span class="pull-right">
-                                Añadir cita
-                                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                    <!-- <a href="../templates/quoteForm.html"><i class="material-icons">library_add</i></a>-->
-                                </button>
-                            </span>
-                        </div>
-                        {{/admin}}
-                        {{/logged}}
-                    </div>
-                </div>
-                {{#logged}}
-                <div id="histogram">
-                    <a class="d-lg-inline-block d-md-inline-block" href="../templates/graphs.html">
-                        HISTOGRAMA
-                    </a>
-                </div>
-                {{/logged}}
-            </div>
-        </div>
-    </div>
+						{{^logged}} {{^admin}}
+						<!--Add quote button-->
+						<div class="col-md-12">
+							<span class="pull-right"> Añadir cita
+								<button type="submit"
+									class="btn btn-white btn-round btn-just-icon">
+									<a href="/quoteForm"><i class="material-icons">library_add</i></a>
+								</button>
+							</span>
+						</div>
+						{{/admin}} {{/logged}}
+					</div>
+				</div>
+				{{#logged}}
+				<div id="histogram">
+					<a class="d-lg-inline-block d-md-inline-block"
+						href="../templates/graphs.html"> HISTOGRAMA </a>
+				</div>
+				{{/logged}}
+			</div>
+		</div>
+	</div>
 </div>
 
 {{>footer}}

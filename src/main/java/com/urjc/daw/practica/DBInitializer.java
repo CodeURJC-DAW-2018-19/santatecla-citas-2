@@ -3,6 +3,7 @@ package com.urjc.daw.practica;
 import javax.annotation.PostConstruct;
 
 import com.urjc.daw.practica.model.Quote;
+import com.urjc.daw.practica.model.Topic;
 import com.urjc.daw.practica.repository.QuoteRepository;
 import com.urjc.daw.practica.repository.TextRepository;
 import com.urjc.daw.practica.repository.TopicRepository;
@@ -28,15 +29,23 @@ public class DBInitializer {
 	@Autowired
 	private TextRepository texts;
 
+	@Autowired
+	UserAuthProvider authProvider;
+
 
 	@PostConstruct
 	public void init() {
-
+		
+		//SampleTopics
+		topics.save(new Topic());
+		
 		// Sample Quotes
+		quotes.save(new Quote("Did I ever tell you the definition of insanity","Vaas Montenegor", "The Bible"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity","Vaas Montenegor", "The Bible"));
 		quotes.save(new Quote("Did I ever tell you the definition of insanity","Vaas Montenegor", "The Bible"));
 		// Sample users
 		userRepository.save(new User("user", new BCryptPasswordEncoder().encode("pass"), "ROLE_USER"));
-		userRepository.save(new User("admin", new BCryptPasswordEncoder().encode("pass"), "ROLE_USER", "ROLE_ADMIN"));
+		userRepository.save(new User("admin",new BCryptPasswordEncoder().encode("pass"), "ROLE_USER", "ROLE_ADMIN"));
 	}
 
 }
