@@ -31,6 +31,9 @@ public class DBInitializer {
 
 	@Autowired
 	UserAuthProvider authProvider;
+	
+	@Autowired
+    private BCryptPasswordEncoder passEncoder;
 
 
 	@PostConstruct
@@ -44,8 +47,8 @@ public class DBInitializer {
 		quotes.save(new Quote("Did I ever tell you the definition of insanity","Vaas Montenegor", "The Bible"));
 		quotes.save(new Quote("Did I ever tell you the definition of insanity","Vaas Montenegor", "The Bible"));
 		// Sample users
-		userRepository.save(new User("user", new BCryptPasswordEncoder().encode("pass"), "ROLE_USER"));
-		userRepository.save(new User("admin",new BCryptPasswordEncoder().encode("pass"), "ROLE_USER", "ROLE_ADMIN"));
+		userRepository.save(new User("user", passEncoder.encode("pass"), "ROLE_USER"));
+		userRepository.save(new User("admin",passEncoder.encode("pass"), "ROLE_USER", "ROLE_ADMIN"));
 	}
 
 }
