@@ -2,9 +2,10 @@ package com.urjc.daw.practica.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "theme")
+@Table(name = "topic")
 public class Topic {
 
     @Id
@@ -13,6 +14,11 @@ public class Topic {
 
     private String name;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "topic")
+    private Set<Text> texts;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "topic")
+    private Set<Reference> references;
 
 
     public Topic(){

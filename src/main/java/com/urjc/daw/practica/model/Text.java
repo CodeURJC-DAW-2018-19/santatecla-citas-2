@@ -12,7 +12,7 @@ public class Text extends Item{
 
     private String text;
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(cascade = CascadeType.MERGE,fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "topic_id", nullable = false)
     private Topic topic;
 
