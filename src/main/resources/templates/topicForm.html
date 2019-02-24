@@ -72,8 +72,8 @@
 								<button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
 								<input type="hidden" name="_csrf" value="{{token}}" />
 							</form>
-							<button id="addQuote" class="btn btn-sm" type="menu">Añadir cita</button>
-							<button id="addText" class="btn btn-sm" type="button">Añadir texto</button>
+							<button id="addQuote" class="btn btn-sm" type="menu" onclick="displayModal()">Añadir cita</button>
+							<button id="addText" class="btn btn-sm" type="button" onclick="addText()">Añadir texto</button>
 						</div>
 					</div>
 				</div>
@@ -98,7 +98,7 @@
 
 	<!-- Modal content -->
 	<div class="modal-content">
-		<span class="close justify-content-end">X</span>
+		<span class="close justify-content-end" onclick="closeOnX()">X</span>
 		<div class="row" id="quoteSelectionDiv">
 
 			{{#quote}}

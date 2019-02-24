@@ -54,13 +54,14 @@
 											<div class="td-actions text-left">
 												<a href="editTopic/{{id}}">
 													<button type="button" rel="tooltip" title="Edit topìc"
-															class="btn btn-primary btn-link btn-sm">
+														class="btn btn-primary btn-link btn-sm">
 														<i class="material-icons">edit</i>
 													</button>
 												</a>
 												<a>
-													<button type="button" onclick="deleteTopic({{id}});" rel="tooltip" title="Delete Quote"
-															class="btn btn-danger btn-link btn-sm btn-delete">
+													<button type="button" onclick="deleteTopic({{id}});" rel="tooltip"
+														title="Delete Quote"
+														class="btn btn-danger btn-link btn-sm btn-delete">
 														<i class="material-icons">close</i>
 													</button>
 												</a>
@@ -184,12 +185,49 @@
 				</div>
 				{{#logged}}
 				<div id="histogram">
-					<a class="d-lg-inline-block d-md-inline-block" href="../templates/graphs.html"> HISTOGRAMA </a>
+					<a class="d-lg-inline-block d-md-inline-block" onclick="displayModal()"> HISTOGRAMA </a>
 				</div>
 				{{/logged}}
 			</div>
 		</div>
 	</div>
 </div>
+
+<div id="quoteSelection" class="modal">
+	<div class="modal-content">
+		<span class="close justify-content-end" onclick="closeOnX()">X</span>
+		<div class="wrapper">
+			<div class="content">
+				<div class="container-fluid">
+					<div class="card card-chart">
+						<div class="card-header card-header-success">
+							<div class="ct-chart"></div>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Cantidad de citas por Tema</h4>
+						</div>
+						<div class="card-footer">
+							<div class="stats">
+								<i class="material-icons">access_time</i> actualizado hace 4 minutos
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/chartist.min.js"></script>
+		<script>
+			var data = {
+				labels: [{{#topic}}'{{name}}',{{/topic}}],
+				series: [
+					[{{#topic}}{{nQuotes}},{{/topic}}]
+				]
+			};
+			new Chartist.Bar('.ct-chart', data);
+		</script>
+	</div>
+</div>
+
+
 
 {{>footer}}

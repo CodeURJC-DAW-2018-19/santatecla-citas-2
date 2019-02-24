@@ -60,7 +60,7 @@ public class IndexController{
 	}
 	
 	@GetMapping("/loginerror")
-	public ModelAndView showError(Model model) {
+	public ModelAndView showLoginError(Model model) {
 		ModelAndView mav = new ModelAndView("loginerror");
 		return mav;
 	}
@@ -83,5 +83,16 @@ public class IndexController{
 		return newModel;
 	}
 	
+	@GetMapping("/graph")
+	public ModelAndView showGraph(Model model) {
+		ModelAndView newModel = new ModelAndView("graphs");
+		return newModel;
+	}
+	
+	@GetMapping("/error")
+	public ModelAndView showError(Model model) {
+		ModelAndView newModel = new ModelAndView("error");
+		return newModel;
+	}
 
 }

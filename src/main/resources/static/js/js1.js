@@ -22,25 +22,24 @@ var textInput = '<div class="row"> <div class="col-md-6"> <div class="form-group
 var id;
 var delTopic = "deleteTopic/";
 
-btn.onclick = function () {
+function displayModal(){
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
+function closeOnX(){
   modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    closeOnX();
   }
 }
 
-addTextBtn.onclick = function () {
-  $(".topicForm").append(textInput);
-  //formHTML();
+function addText() {
+    $(".topicForm").append(textInput);
+    //formHTML();
 }
 
 
