@@ -14,8 +14,16 @@ import org.springframework.stereotype.Component;
 import com.urjc.daw.practica.model.User;
 import com.urjc.daw.practica.repository.UserRepository;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 @Component
 public class DBInitializer {
+
+
+	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
 
 	@Autowired
 	private UserRepository userRepository;
@@ -37,7 +45,7 @@ public class DBInitializer {
 
 
 	@PostConstruct
-	public void init() {
+	public void init() throws IOException {
 		
 		//SampleTopics
 		topics.save(new Topic());
@@ -49,6 +57,9 @@ public class DBInitializer {
 		// Sample users
 		userRepository.save(new User("user", passEncoder.encode("pass"), "ROLE_USER"));
 		userRepository.save(new User("admin",passEncoder.encode("pass"), "ROLE_USER", "ROLE_ADMIN"));
+		if (!Files.exists(FILES_FOLDER)) {
+			Files.createDirectories(FILES_FOLDER);
+		}
 	}
 
 }

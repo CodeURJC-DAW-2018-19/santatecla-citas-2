@@ -24,6 +24,11 @@ public class Quote {
 
 
 
+
+    private String imageId;
+
+
+
     public Quote(){
         //JPA NEEDS DEFAULT CONSTRUCTOR
     }
@@ -65,6 +70,14 @@ public class Quote {
     
     public void setId(long id) {
     	this.id = id;
+    }
+
+    public String getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
     }
 
 
