@@ -49,7 +49,7 @@
 											<blockquote class="blockquote">
 												<h3 style="color: black">{{name}}</h3>
 											</blockquote>
-											{{#admin}}
+											{{^admin}}
 											<td class="td-actions text-left">
 												<button type="button" rel="tooltip" title="Editar tema"
 													class="btn btn-primary btn-link btn-sm">
@@ -59,16 +59,16 @@
 													class="btn btn-danger btn-link btn-sm">
 													<i class="material-icons">close</i>
 												</button>
-											</td> {{/admin}}
+											</td>
+											{{/admin}}
 										</div>
 									</div>
 								</div>
-
 							</div>
 							{{/topic}}
 							<!--{{^logged}} -->
 							<!--<div class="row"><div class="col-md-12"><span class="alert alert-danger">You must be-->
-								<!--logged in to see the topic table.</span></div></div> -->
+							<!--logged in to see the topic table.</span></div></div> -->
 							<!--{{/logged}}-->
 						</div>
 						<!--End of quote row-->
@@ -126,8 +126,12 @@
 										<p class="card-category">Cita</p>
 										<div class="tim-typo">
 											<blockquote class="blockquote">
-												<p style="color: black">{{text}}</p>
-												<small style="color: grey"> {{author}} ,{{book}} </small>
+												{{#logged}}
+												<a href="editQuote/{{id}}">{{/logged}}
+													<p style="color: black">{{text}}</p>
+													<small style="color: grey"> {{author}} ,{{book}} </small>
+													{{#logged}}</a>{{/logged}}
+
 											</blockquote>
 											{{#admin}}
 											<div class="td-actions text-left">
@@ -138,7 +142,8 @@
 													</button>
 												</a>
 												<a>
-													<button type="button" onclick="deleteButton({{id}});" rel="tooltip" title="Borrar Cita"
+													<button type="button" onclick="deleteButton({{id}});" rel="tooltip"
+														title="Borrar Cita"
 														class="btn btn-danger btn-link btn-sm btn-delete">
 														<i class="material-icons">close</i>
 													</button>
