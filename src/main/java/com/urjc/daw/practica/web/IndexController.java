@@ -2,6 +2,7 @@ package com.urjc.daw.practica.web;
 
 import java.util.Optional;
 
+import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +23,9 @@ public class IndexController{
     
 	@Autowired
 	private QuoteManagementService qms;
+
+	@Autowired
+	private TopicManagementService topicService;
 	
 	@Autowired
 	private UserComponent userComponent;
@@ -44,6 +48,7 @@ public class IndexController{
 	public ModelAndView showIndex(Model model) {
 		ModelAndView mav = new  ModelAndView("index");
 		model.addAttribute("quote", qms.findAll());
+		model.addAttribute("topic",topicService.findAll());
 		return mav;
 	}
 	

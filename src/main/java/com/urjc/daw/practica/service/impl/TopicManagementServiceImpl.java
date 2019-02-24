@@ -6,6 +6,8 @@ import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TopicManagementServiceImpl implements TopicManagementService {
     @Autowired
@@ -16,5 +18,10 @@ public class TopicManagementServiceImpl implements TopicManagementService {
 
         topics.save(topic);
         return null;
+    }
+
+    @Override
+    public List<Topic> findAll() {
+        return topics.findAll();
     }
 }
