@@ -59,6 +59,12 @@ public class IndexController{
 		return mav;
 	}
 	
+	@GetMapping("/logout")
+	public ModelAndView showLogoutScreen(Model model) {
+		ModelAndView mav = new ModelAndView("logout");
+		return mav;
+	}
+	
 	@GetMapping("/quoteForm")
 	public ModelAndView showQuoteForm(Model model) {
 		return new ModelAndView("quoteForm");
