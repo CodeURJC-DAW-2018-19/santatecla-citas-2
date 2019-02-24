@@ -13,6 +13,8 @@ public class Topic {
     private Long id;
 
     private String name;
+    
+    private int nQuotes = 0;
 
     @ElementCollection
     private List<Long> quoteIds;
@@ -34,13 +36,13 @@ public class Topic {
     }
 
     public Topic(String name, List<Quote> quotes){
-
         this.name= name;
+        this.nQuotes = quotes.size();
     }
+    
     public Long getId() {
         return id;
     }
-
 
 
     public String getName() {
@@ -65,6 +67,7 @@ public class Topic {
 
     public void setQuoteIds(List<Long> quoteIds) {
         this.quoteIds = quoteIds;
+        this.nQuotes = quoteIds.size();
     }
 
     public List<String> getTexts() {

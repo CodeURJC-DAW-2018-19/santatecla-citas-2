@@ -10,8 +10,8 @@ var addTextBtn = document.getElementById("addText");
 var textInput = '<div class="row"> <div class="col-md-6"> <div class="form-group"> <label class="bmd-label-floating">Texto</label> <textarea type="text"class="form-control"/> </div> </div> </div>'
 
 var deleteQuote = '<span id="'
-var deleteQuoteX = 'Button"> Quitar cita<button type="button" onclick="delQuote('
-var deleteQuoteY = ');" class="btn btn-white btn-round btn-just-icon"><i class="material-icons">cancel_presentation</i></button></span>'
+var deleteQuoteX = 'Button">Quitar cita<button type="button" onclick="delQuote('
+var deleteQuoteY = ')" class="btn btn-white btn-round btn-just-icon"><i class="material-icons">cancel_presentation</i></button></span>'
 
 var buttonAdd = '<span class="pull-right" id="'
 var buttonAddX = 'AddButton">Añadir cita<button type="submit" onclick="addQuote('
@@ -20,28 +20,26 @@ var buttonAddY = ');" class="btn btn-white btn-round btn-just-icon"><i class="ma
 var textInput = '<div class="row"> <div class="col-md-6"> <div class="form-group"> <label class="bmd-label-floating">Titulo Tema</label> <input name="texts" type="text"class="form-control"> </div> </div> </div>'
 // When the user clicks on the button, open the modal
 var id;
-var delQuote = "deleteQuote/";
 var delTopic = "deleteTopic/";
 
-btn.onclick = function () {
+function displayModal(){
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
+function closeOnX(){
   modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    closeOnX();
   }
 }
 
-addTextBtn.onclick = function () {
-  $(".topicForm").append(textInput);
-  formHTML();
+function addText() {
+    $(".topicForm").append(textInput);
+    //formHTML();
 }
 
 

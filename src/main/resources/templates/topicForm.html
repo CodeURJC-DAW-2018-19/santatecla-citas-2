@@ -50,10 +50,11 @@
 										</div>
 									</div>
 
-									<span id="{{id}}Button"> Quitar cita<button type="button"
-											onclick="delQuote({{id}});"
-											class="btn btn-white btn-round btn-just-icon"><i
-												class="material-icons">cancel_presentation</i></button></span>
+									<span id="{{id}}Button"> Quitar cita
+										<button type="button" onclick="delQuote({{id}});" class="btn btn-white btn-round btn-just-icon">
+											<i class="material-icons">cancel_presentation</i>
+										</button>
+									</span>
 									{{/quoteReference}}
 									{{#textReference}}
 									<div class="row">
@@ -75,16 +76,15 @@
 								<button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
 								<input type="hidden" name="_csrf" value="{{token}}" />
 							</form>
-							<button id="addQuote" class="btn btn-sm" type="menu">Añadir cita</button>
-							<button id="addText" class="btn btn-sm" type="button">Añadir texto</button>
+							<button id="addQuote" class="btn btn-sm" type="menu" onclick="displayModal()">Añadir cita</button>
+							<button id="addText" class="btn btn-sm" type="button" onclick="addText()">Añadir texto</button>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="card card-profile">
 						<div class="card-avatar">
-							<a href="#pablo"> <img class="img" src="/img/faces/marc.jpg" />
-							</a>
+
 						</div>
 						<div class="card-body">
 							<h6 class="card-category text-gray">HTML del texto + citas</h6>
@@ -102,7 +102,7 @@
 
 	<!-- Modal content -->
 	<div class="modal-content">
-		<span class="close justify-content-end">X</span>
+		<span class="close justify-content-end" onclick="closeOnX()">X</span>
 		<div class="row" id="quoteSelectionDiv">
 
 			{{#quote}}
@@ -125,7 +125,6 @@
 				</div>
 			</div>
 			<span class="pull-right" id="{{id}}AddButton"> Añadir cita
-
 				<button type="submit" onclick="addQuote({{id}})" class="btn btn-white btn-round btn-just-icon">
 					<i class="material-icons">library_add</i>
 				</button>
