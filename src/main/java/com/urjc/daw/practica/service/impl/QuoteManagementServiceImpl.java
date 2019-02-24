@@ -4,14 +4,13 @@ import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.repository.QuoteRepository;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Component;
+
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Service
 public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     @Autowired
