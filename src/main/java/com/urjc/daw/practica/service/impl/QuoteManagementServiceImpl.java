@@ -3,6 +3,7 @@ package com.urjc.daw.practica.service.impl;
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.repository.QuoteRepository;
 import com.urjc.daw.practica.service.QuoteManagementService;
+import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     @Autowired
     QuoteRepository quotes;
+
+    @Autowired
+    TopicManagementService topicService;
 
     @Override
     public Optional<Quote> findOne(Long id) {
@@ -46,6 +50,7 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     public Quote deleteQuote(Long id) {
         Quote quote = quotes.findById(id).get();
         quotes.delete(quote);
+        topicService.deleteReference(quote.getId());
         return quote;
     }
 
