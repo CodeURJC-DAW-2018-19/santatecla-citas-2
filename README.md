@@ -104,7 +104,9 @@ navegación.
 
 
 ## • Entorno de desarrollo: Se indicarán cómo instalar y configurar el entorno de desarrollo para
-poder compilar y ejecutar la aplicación.
+poder compilar y ejecutar la aplicación:
+
+- spring initializing,seinicia un nuevo proyectocon spring sts..
 
 
 ## • Diagrama con las entidades de la base de datos: Se incluirá un diagrama con las entidades
@@ -121,6 +123,7 @@ incluirán ni atributos ni métodos en las clases. Se mostrarán las relaciones 
 @Service, Repository u otro tipo de clases. Para ello se puede usar un código de colores, una
 distribución de las clases por partes u otro mecanismo. En este diagrama también se incluirán
 los ficheros que contienen los templates y se indicará con qué @Controller se relacionan
-En los siguientes enlaces estan losdiagramas:
+- En los siguientes enlaces estan losdiagramas:
+
 https://drive.google.com/file/d/1Z89_eML_9YIrGaXmFbu-Z0z3xnwypS1N/view?usp=sharing
 https://docs.google.com/document/d/1vJgvrwgVRnIQIpyoXT9KIyV70pleEv0J80u-dqYfbkk/edit
