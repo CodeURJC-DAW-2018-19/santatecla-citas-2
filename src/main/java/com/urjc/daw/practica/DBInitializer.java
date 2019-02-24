@@ -41,8 +41,8 @@ public class DBInitializer {
 	public void init() {
 		
 		//SampleTopics
-		topics.save(new Topic());
-		
+		topics.save(new Topic("Test"));
+
 		// Sample Quotes
 		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegor", "The Bible"));
 		quotes.save(new Quote("Hola, me llamo Íñigo Montoya, tu mataste a mi padre, preparate a morir","Íñigo Montoya", "The Princess Bride"));
