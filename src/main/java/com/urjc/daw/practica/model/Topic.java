@@ -26,7 +26,11 @@ public class Topic {
     }
 
     public Topic(String name){
-        this.name=name;
+        if (name==null){
+            this.name="";
+        }else {
+            this.name = name;
+        }
     }
 
     public Topic(String name, List<Quote> quotes){
@@ -44,7 +48,11 @@ public class Topic {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name==null){
+            this.name="";
+        }else {
+            this.name = name;
+        }
     }
 
     public boolean equals(Object o){

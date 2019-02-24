@@ -17,7 +17,7 @@ var buttonAdd = '<span class="pull-right" id="'
 var buttonAddX = 'AddButton">Añadir cita<button type="submit" onclick="addQuote('
 var buttonAddY = ');" class="btn btn-white btn-round btn-just-icon"><i class="material-icons">library_add</i></button></span>'
 
-var textInput= '<div class="row"> <div class="col-md-6"> <div class="form-group"> <label class="bmd-label-floating">Titulo Tema</label> <input type="text"class="form-control"> </div> </div> </div>'
+var textInput= '<div class="row"> <div class="col-md-6"> <div class="form-group"> <label class="bmd-label-floating">Titulo Tema</label> <input name="texts" type="text"class="form-control"> </div> </div> </div>'
 // When the user clicks on the button, open the modal
 var id;
 var delUri = "deleteQuote/";

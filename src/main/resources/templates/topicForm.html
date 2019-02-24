@@ -69,6 +69,7 @@
 							<div class="card-icon">
 								<i class="material-icons">speaker_notes</i>
 							</div>
+							<input type="hidden" name="quoteIds" value="{{id}}" class="form-control"/>
 							<p class="card-category">Cita</p>
 							<div class="tim-typo">
 								<blockquote class="blockquote">
@@ -80,6 +81,7 @@
 					</div>
 				</div>
 				<span class="pull-right" id="{{id}}AddButton"> Añadir cita
+
 					<button type="submit" onclick="addQuote({{id}})" class="btn btn-white btn-round btn-just-icon">
 						<i class="material-icons">library_add</i>
 					</button>
