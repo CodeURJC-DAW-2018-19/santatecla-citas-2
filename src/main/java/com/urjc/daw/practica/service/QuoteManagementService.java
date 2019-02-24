@@ -22,4 +22,6 @@ public interface QuoteManagementService {
     Quote deleteQuote(Long id);
 
     List<Quote> findByIdDiferrentThan(List<Long> ids);
+
+    List<Quote> findByKeyword(String keyword);
 }

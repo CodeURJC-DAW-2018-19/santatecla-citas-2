@@ -22,9 +22,9 @@
 						{{#logged}}
 						<div class="container-fluid">
 							<div class="col-md-12">
-								<form class="navbar-form">
+								<form class="navbar-form" action="/searchTopic">
 									<div class="input-group no-border">
-										<input type="text" value="" class="form-control"
+										<input type="text" value="{{#topicKeyword}}{{topicKeyword}}{{/topicKeyword}}" name="keyword" class="form-control"
 											placeholder="Buscar un tema..." />
 										<button type="submit" class="btn btn-white btn-round btn-just-icon">
 											<i class="material-icons">search</i>
@@ -47,7 +47,7 @@
 										<p class="card-category">Tema</p>
 										<div class="tim-typo">
 											<blockquote class="blockquote">
-												<h3 style="color: black">{{name}}</h3>
+												<h3 style="color: black">{{#name}}{{name}}{{/name}}</h3>
 											</blockquote>
 
 											{{#admin}}
@@ -108,9 +108,9 @@
 						{{#logged}}
 						<div class="container-fluid">
 							<div class="col-md-12">
-								<form class="navbar-form">
+								<form class="navbar-form" action="/searchQuote" method="get">
 									<div class="input-group no-border">
-										<input type="text" value="" class="form-control" placeholder="Buscar..." />
+										<input type="text" value="{{#quoteKeyword}}{{quoteKeyword}}{{/quoteKeyword}}" name="keyword" class="form-control" placeholder="Buscar..." />
 										<button type="submit" class="btn btn-white btn-round btn-just-icon">
 											<i class="material-icons">search</i>
 										</button>
@@ -135,7 +135,7 @@
 											<blockquote class="blockquote">
 												{{#logged}}
 												<a href="editQuote/{{id}}">{{/logged}}
-													<p style="color: black">{{text}}</p>
+													<p style="color: black">{{#text}}{{text}}{{/text}}</p>
 													<small style="color: grey"> {{author}} ,{{book}} </small>
 													{{#logged}}</a>{{/logged}}
 

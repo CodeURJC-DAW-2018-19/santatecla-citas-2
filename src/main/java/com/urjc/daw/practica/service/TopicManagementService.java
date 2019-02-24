@@ -19,4 +19,6 @@ public interface TopicManagementService {
     void deleteReference(Long id);
 
     void deleteTopic(Topic topic);
+
+    List<Topic> findByKeyword(String keyword);
 }

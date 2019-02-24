@@ -59,6 +59,11 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
         return quotes.findByIdNotIn(ids);
     }
 
+    @Override
+    public List<Quote> findByKeyword(String keyword) {
+        return quotes.findByTextContaining(keyword);
+    }
+
     public boolean checkValidQuote(Quote quote){
 
         return quote != null;

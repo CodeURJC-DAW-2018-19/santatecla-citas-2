@@ -5,16 +5,14 @@ import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.security.UserComponent;
 import com.urjc.daw.practica.service.QuoteManagementService;
 
+import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +24,9 @@ public class QuoteControllerImpl implements QuoteController {
     
     @Autowired
     QuoteManagementService quoteService;
+
+    @Autowired
+    TopicManagementService topicService;
     
     @Autowired
     UserComponent userComponent;
@@ -86,4 +87,15 @@ public class QuoteControllerImpl implements QuoteController {
         model.addAttribute("cod","eliminada");
         return "quoteCreated";
     }
+
+    @Override
+    @GetMapping("/searchQuote")
+    public String findByKeyword(@RequestParam(value = "keyword") String keyword, Model model) {
+        model.addAttribute("quote",quoteService.findByKeyword(keyword));
+        model.addAttribute("topic",topicService.findAll());
+        model.addAttribute("quoteKeyword",keyword);
+        return "index";
+    }
+
+
 }

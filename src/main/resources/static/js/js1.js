@@ -81,6 +81,6 @@ function deleteTopic(id) {
 }
 
 function formHTML(){
-  var form = "" + getElementById("topicForm");
+  var form =  ''+getElementById("topicForm");
   $("#htmlSection").replaceWith(form);
 }
