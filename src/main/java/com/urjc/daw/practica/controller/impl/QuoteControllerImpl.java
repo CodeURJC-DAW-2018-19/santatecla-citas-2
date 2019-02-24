@@ -2,6 +2,7 @@ package com.urjc.daw.practica.controller.impl;
 
 import com.urjc.daw.practica.controller.QuoteController;
 import com.urjc.daw.practica.model.Quote;
+import com.urjc.daw.practica.security.UserComponent;
 import com.urjc.daw.practica.service.QuoteManagementService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,8 +23,26 @@ public class QuoteControllerImpl implements QuoteController {
 
     private static final int QUOTES_PER_PAGE=10;
 
+    
     @Autowired
     QuoteManagementService quoteService;
+    
+    @Autowired
+    UserComponent userComponent;
+    
+    @ModelAttribute
+	public void addUserToModel(Model model) {
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
+		if(logged) {
+			model.addAttribute("role", userComponent.getLoggedUser().toString());
+			model.addAttribute("username",userComponent.getLoggedUser().getName());
+			if(userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN")){
+				model.addAttribute("admin",userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+				model.addAttribute("user",userComponent.getLoggedUser().getRoles().contains("ROLE_USER"));
+			}
+		}
+	}
 
     @Override
     @RequestMapping(value = "/quote/@{id}",method = RequestMethod.GET)

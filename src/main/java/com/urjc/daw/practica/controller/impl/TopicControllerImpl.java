@@ -32,18 +32,19 @@ public class TopicControllerImpl implements TopicController {
 
     @Override
     @PostMapping("/createTopic")
-    public String postTopic(Topic topic) {
+    public String postTopic(Model model,Topic topic) {
         topicService.save(topic);
-        return "index";
+        model.addAttribute("cod","creado");
+        return "topicCreated";
     }
 
     @Override
-    @GetMapping("/editQuote/{id}")
+    @GetMapping("/editTopic/{id}")
     public String editTopic(Model model, @PathVariable long id) {
         Optional<Topic> topic = topicService.findOne(id);
 
         if(topic.isPresent()) {
-            model.addAttribute("quote",topic.get());
+            model.addAttribute("topic",topic.get());
         }
         return "topicForm";
     }

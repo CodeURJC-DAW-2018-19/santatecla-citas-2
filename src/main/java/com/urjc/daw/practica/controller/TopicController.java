@@ -13,7 +13,7 @@ public interface TopicController {
     Topic getTopic();
     List<Topic> getAllTopics();
 
-    String postTopic(Topic topic);
+    String postTopic(Model model,Topic topic);
 
     String editTopic(Model model, @PathVariable long id);
 
