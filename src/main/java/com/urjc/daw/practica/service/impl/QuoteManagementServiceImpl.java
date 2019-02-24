@@ -7,7 +7,10 @@ import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,7 +64,28 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     @Override
     public List<Quote> findByKeyword(String keyword) {
-        return quotes.findByTextContaining(keyword);
+        List<Quote> quotesFound = new ArrayList<>();
+        if(!CollectionUtils.containsAny(quotesFound,findByAuthor(keyword))){
+            quotesFound.addAll(findByAuthor(keyword));
+        }
+        if(!CollectionUtils.containsAny(quotesFound,findByBook(keyword))){
+            quotesFound.addAll(findByBook(keyword));
+        }
+        if(!CollectionUtils.containsAny(quotesFound,quotes.findByTextContaining(keyword))){
+            quotesFound.addAll(quotes.findByTextContaining(keyword));
+        }
+
+        return quotesFound;
+    }
+
+    @Override
+    public List<Quote> findByAuthor(String author) {
+        return quotes.findByAuthorContaining(author);
+    }
+
+    @Override
+    public List<Quote> findByBook(String book) {
+        return quotes.findByBookContaining(book);
     }
 
     public boolean checkValidQuote(Quote quote){

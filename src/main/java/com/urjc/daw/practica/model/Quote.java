@@ -67,5 +67,10 @@ public class Quote {
     	this.id = id;
     }
 
+    public boolean equals (Object o1){
+        Quote quote = (Quote) o1;
+        return this.getId().equals(quote.getId());
+    }
+
 
 }
