@@ -16,7 +16,7 @@
 							<p class="card-category">Añada citas y/o textos</p>
 						</div>
 						<div class="card-body">
-							<form action="/createTopic" method="post" class="topicForm">
+							<form action="/createTopic" method="post">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
@@ -25,10 +25,9 @@
 										</div>
 									</div>
 								</div>
+								<div class="topicForm">
 
-								{{#quote}}{{/quote}}
-
-
+								</div>
 								<button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
 								<input type="hidden" name="_csrf" value="{{token}}" />
 							</form>
