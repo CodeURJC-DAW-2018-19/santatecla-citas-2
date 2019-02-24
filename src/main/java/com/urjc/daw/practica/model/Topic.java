@@ -55,6 +55,26 @@ public class Topic {
         }
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Long> getQuoteIds() {
+        return quoteIds;
+    }
+
+    public void setQuoteIds(List<Long> quoteIds) {
+        this.quoteIds = quoteIds;
+    }
+
+    public List<String> getTexts() {
+        return texts;
+    }
+
+    public void setTexts(List<String> texts) {
+        this.texts = texts;
+    }
+
     public boolean equals(Object o){
         Topic topic = (Topic) o;
         return this.getId().equals(topic.getId());
