@@ -11,7 +11,7 @@ public interface TopicController {
     Topic getTopic();
     List<Topic> getAllTopics();
 
-    boolean postText(Topic topic);
+    String postTopic(Topic topic);
 
     boolean editTopic(Topic topic);
 

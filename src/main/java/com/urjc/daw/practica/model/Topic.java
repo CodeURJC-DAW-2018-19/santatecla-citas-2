@@ -14,11 +14,11 @@ public class Topic {
 
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "topic")
-    private Set<Text> texts;
+    @ElementCollection
+    private List<Long> quoteIds;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "topic")
-    private Set<Reference> references;
+    @ElementCollection
+    private List<String> texts;
 
 
     public Topic(){

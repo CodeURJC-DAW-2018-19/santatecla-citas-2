@@ -5,11 +5,17 @@ import com.urjc.daw.practica.model.Topic;
 
 import java.util.List;
 
+import com.urjc.daw.practica.service.TopicManagementService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 
-@Component
+@Controller
 public class TopicControllerImpl implements TopicController {
-	
+
+	@Autowired
+    TopicManagementService topicService;
     @Override
     public Topic getTopic() {
         return null;
@@ -21,8 +27,10 @@ public class TopicControllerImpl implements TopicController {
     }
 
     @Override
-    public boolean postText(Topic Topic) {
-        return false;
+    @PostMapping("/createTopic")
+    public String postTopic(Topic topic) {
+        topicService.save(topic);
+        return "index";
     }
 
     @Override
