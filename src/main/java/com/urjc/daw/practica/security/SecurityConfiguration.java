@@ -1,7 +1,6 @@
-package com.urjc.daw.practica;
+package com.urjc.daw.practica.security;
 
 
-import com.urjc.daw.practica.service.impl.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.context.annotation.Bean;
@@ -21,7 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
 	@Autowired
-	CustomUserDetailsService userDetailsService;
+	AuthenticationProvider authProvider;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -39,36 +38,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
 		// Login form
-		http.formLogin().loginPage("/login").loginProcessingUrl("/login");
-		http.formLogin().usernameParameter("user");
+		http.formLogin().loginPage("/login").permitAll();
+		http.formLogin().usernameParameter("username");
 		http.formLogin().passwordParameter("password");
 		http.formLogin().defaultSuccessUrl("/");
 		http.formLogin().failureUrl("/loginerror");
-		http.csrf().disable();
-		//http.authorizeRequests().antMatchers("/topicForm").hasRole("ADMIN").antMatchers("/quoteForm").hasRole("USER")
-			//	.antMatchers("/", "main").permitAll().anyRequest().authenticated().and().httpBasic();
 
 		// Logout
 		http.logout().logoutUrl("/logout");
 		http.logout().logoutSuccessUrl("/logout");
 
 	}
-	@Bean
-	public DaoAuthenticationProvider authenticationProvider() {
-		DaoAuthenticationProvider authProvider
-				= new DaoAuthenticationProvider();
-		authProvider.setUserDetailsService(userDetailsService);
-		authProvider.setPasswordEncoder(getEncoder());
-		return authProvider;
-	}
-	@Bean
-	public BCryptPasswordEncoder getEncoder(){
 
-		return new BCryptPasswordEncoder();
-	}
+	
 
 
 	protected void configure(AuthenticationManagerBuilder auth) {
-		auth.authenticationProvider(authenticationProvider());
+		auth.authenticationProvider(this.authProvider);
 	}
 }
