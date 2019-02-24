@@ -1,8 +1,8 @@
 package com.urjc.daw.practica.service.impl;
 
+import com.urjc.daw.practica.model.CustomUserDetails;
 import com.urjc.daw.practica.model.User;
 import com.urjc.daw.practica.repository.UserRepository;
-import com.urjc.daw.practica.user.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,15 +11,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
-    @Autowired
-    private UserRepository userRepository;
 
+    @Autowired
+    UserRepository users;
     @Override
-    public UserDetails loadUserByUsername(String username) {
-        User user = userRepository.findByName(username);
+    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+        User user = users.findByName(name);
         if (user == null) {
-            throw new UsernameNotFoundException(username);
+            throw new UsernameNotFoundException(name);
         }
-        return new UserPrincipal(user);
+        return new CustomUserDetails(user);
     }
 }

@@ -3,6 +3,7 @@ package com.urjc.daw.practica;
 import com.urjc.daw.practica.model.User;
 import com.urjc.daw.practica.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -46,9 +47,7 @@ public class UserAuthProvider implements AuthenticationProvider {
         return new UsernamePasswordAuthenticationToken(user.getName(),password,roles);
     }
 
-    public BCryptPasswordEncoder getEncoder(){
-        return encoder;
-    }
+
 
     @Override
     public boolean supports(Class<?> aClass) {
