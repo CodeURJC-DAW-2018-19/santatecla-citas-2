@@ -8,15 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.urjc.daw.practica.security.UserComponent;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class TopicControllerImpl implements TopicController {
@@ -27,7 +26,23 @@ public class TopicControllerImpl implements TopicController {
 	@Autowired
     QuoteManagementService quoteService;
 
+    @Autowired
+    UserComponent userComponent;
 
+
+    @ModelAttribute
+    public void addUserToModel(Model model) {
+        boolean logged = userComponent.getLoggedUser() != null;
+        model.addAttribute("logged", logged);
+        if(logged) {
+            model.addAttribute("role", userComponent.getLoggedUser().toString());
+            model.addAttribute("username",userComponent.getLoggedUser().getName());
+            if(userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN")){
+                model.addAttribute("admin",userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+                model.addAttribute("user",userComponent.getLoggedUser().getRoles().contains("ROLE_USER"));
+            }
+        }
+    }
     @Override
     public Topic getTopic() {
         return null;
@@ -57,7 +72,8 @@ public class TopicControllerImpl implements TopicController {
             model.addAttribute("name",currentTopic.getName());
             model.addAttribute("quoteReference",quotesReferenced);
             model.addAttribute("textReference",currentTopic.getTexts());
-            model.addAttribute("topic",currentTopic);model.addAttribute(model.addAttribute("quote",quoteService.findByIdDiferrentThan(currentTopic.getQuoteIds())));
+            model.addAttribute("topic",currentTopic);
+            model.addAttribute("quote",quoteService.findByIdDiferrentThan(currentTopic.getQuoteIds()));
         }
         return "topicForm";
     }
@@ -76,5 +92,13 @@ public class TopicControllerImpl implements TopicController {
             return "topicCreated";
         }
 
+    }
+
+    @Override
+    @GetMapping("/searchTopic")
+    public String findByKeyword(@RequestParam(value = "keyword") String keyword, Model model) {
+        model.addAttribute("quote",quoteService.findAll());
+        model.addAttribute("topic",topicService.findAll());
+        return "index";
     }
 }
