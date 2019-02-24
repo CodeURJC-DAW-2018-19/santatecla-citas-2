@@ -21,7 +21,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="bmd-label-floating">Titulo Tema</label> <input name="name" type="text"
-												class="form-control">
+												class="form-control" {{#name}} value="{{name}}"{{/name}}>
 										</div>
 									</div>
 								</div>
@@ -50,7 +50,7 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="bmd-label-floating">Titulo Tema</label>
-												<input name="texts" type="text"class="form-control">
+												<input name="texts" type="text"class="form-control" value="{{textReference}}">
 											</div>
 										</div>
 									</div>
