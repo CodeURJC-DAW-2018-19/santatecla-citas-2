@@ -44,6 +44,7 @@ public class QuoteControllerImpl implements QuoteController {
     @RequestMapping(value = "/quote",method = RequestMethod.POST)
     public String postQuote(Model model,Quote quote) {
     	quoteService.save(quote);
+        model.addAttribute("cod","creada");
         return "quoteCreated";
     }
 
@@ -60,8 +61,9 @@ public class QuoteControllerImpl implements QuoteController {
 
     @Override
     @GetMapping("/deleteQuote/{id}")
-    public String deleteQuote(Quote quote,@PathVariable long id) {
+    public String deleteQuote(Model model,@PathVariable long id) {
         quoteService.deleteQuote(id);
+        model.addAttribute("cod","eliminada");
         return "quoteCreated";
     }
 }

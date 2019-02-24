@@ -44,7 +44,6 @@ public class UserAuthProvider implements AuthenticationProvider {
         if(!this.encoder.matches(password,user.getPassword())){
             throw new BadCredentialsException("Password failed");
         }else {
-        	
         	users.setLoggedUser(user);        	
 	        List<GrantedAuthority> roles = new ArrayList<>();
 	        for(String role:user.getRoles()){
