@@ -14,11 +14,11 @@ public class Topic {
 
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "topic")
-    private Set<Text> texts;
+    @ElementCollection
+    private List<Long> quoteIds;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "topic")
-    private Set<Reference> references;
+    @ElementCollection
+    private List<String> texts;
 
 
     public Topic(){
@@ -26,7 +26,11 @@ public class Topic {
     }
 
     public Topic(String name){
-        this.name=name;
+        if (name==null){
+            this.name="";
+        }else {
+            this.name = name;
+        }
     }
 
     public Topic(String name, List<Quote> quotes){
@@ -44,7 +48,31 @@ public class Topic {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name==null){
+            this.name="";
+        }else {
+            this.name = name;
+        }
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Long> getQuoteIds() {
+        return quoteIds;
+    }
+
+    public void setQuoteIds(List<Long> quoteIds) {
+        this.quoteIds = quoteIds;
+    }
+
+    public List<String> getTexts() {
+        return texts;
+    }
+
+    public void setTexts(List<String> texts) {
+        this.texts = texts;
     }
 
     public boolean equals(Object o){

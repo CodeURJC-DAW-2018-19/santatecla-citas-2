@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -16,7 +18,7 @@ public interface QuoteController {
 
     String postQuote(Model model,Quote quote);
 
-    String editQuote(Model model,@PathVariable long id);
+    String editQuote(Model model,@PathVariable long id, HttpServletResponse res) throws IOException;
 
-    public String deleteQuote(Quote quote,@PathVariable long id);
+    public String deleteQuote(Model model,@PathVariable long id);
 }

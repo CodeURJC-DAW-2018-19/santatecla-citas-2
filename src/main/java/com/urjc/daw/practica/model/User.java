@@ -4,6 +4,8 @@ import javax.persistence.*;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,19 +15,24 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
 
+    @JsonIgnore
     private String password;
 
     @ElementCollection(fetch=FetchType.EAGER)
     private List<String> roles;
 
+    public User(){
+        //JPA NEEDS THIS
+    }
+
     public User(String name, String password, String... roles) {
 		this.name = name;
-		this.password = new BCryptPasswordEncoder().encode(password);
+		this.password = password;
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
 
@@ -60,5 +67,13 @@ public class User {
 
     public void setRoles(List<String> roles) {
         this.roles = roles;
+    }
+
+    public String toString(){
+        if(this.roles.contains("ROLE_ADMIN")){
+            return "admin";
+        }else{
+            return "user";
+        }
     }
 }

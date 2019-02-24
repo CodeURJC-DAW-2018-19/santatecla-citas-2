@@ -1,4 +1,4 @@
-package com.urjc.daw.practica;
+package com.urjc.daw.practica.security;
 
 import com.urjc.daw.practica.model.User;
 import org.springframework.stereotype.Component;

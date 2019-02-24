@@ -36,7 +36,7 @@
 						{{/logged}}
 						<!--Topic zone-->
 						<div class="row">
-							{{^logged}}
+
 							{{#topic}}
 							<div class="col-lg-6 col-md-4 col-sm-6">
 								<div class="card card-stats">
@@ -47,30 +47,39 @@
 										<p class="card-category">Tema</p>
 										<div class="tim-typo">
 											<blockquote class="blockquote">
-												<h3 style="color: black">{{title}}</h3>
-												<small style="color: grey"> {{author}} </small>
+												<h3 style="color: black">{{name}}</h3>
 											</blockquote>
-											{{^admin}}
-											<td class="td-actions text-left">
-												<button type="button" rel="tooltip" title="Editar tema"
-													class="btn btn-primary btn-link btn-sm">
-													<i class="material-icons">edit</i>
-												</button>
-												<button type="button" rel="tooltip" title="Borrar Cita"
-													class="btn btn-danger btn-link btn-sm">
-													<i class="material-icons">close</i>
-												</button>
-											</td> {{/admin}}
+
+											{{#admin}}
+											<div class="td-actions text-left">
+												<a href="editTopic/{{id}}">
+													<button type="button" rel="tooltip" title="Edit topìc"
+															class="btn btn-primary btn-link btn-sm">
+														<i class="material-icons">edit</i>
+													</button>
+												</a>
+												<a>
+													<button type="button" onclick="deleteTopic({{id}});" rel="tooltip" title="Delete Quote"
+															class="btn btn-danger btn-link btn-sm btn-delete">
+														<i class="material-icons">close</i>
+													</button>
+												</a>
+											</div>
+
+											{{/admin}}
 										</div>
 									</div>
 								</div>
 							</div>
-							{{/topic}} {{/logged}} {{^logged}} <div class="row"><div class="col-md-12"><span class="alert alert-danger">You must be
-								logged in to see the topic table.</span></div></div> {{/logged}}
+							{{/topic}}
+							<!--{{^logged}} -->
+							<!--<div class="row"><div class="col-md-12"><span class="alert alert-danger">You must be-->
+							<!--logged in to see the topic table.</span></div></div> -->
+							<!--{{/logged}}-->
 						</div>
 						<!--End of quote row-->
 						<!--Add quote button-->
-						{{^logged}} {{^admin}}
+						{{#logged}} {{#admin}}
 						<div class="col-md-12">
 
 							<a href="topicForm">
@@ -113,7 +122,7 @@
 						<!--Quote zone-->
 						<div class="row">
 
-							{{^logged}} {{#quote}}
+							{{#quote}}
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="card card-stats">
 									<div class="card-header card-header-warning card-header-icon">
@@ -123,10 +132,14 @@
 										<p class="card-category">Cita</p>
 										<div class="tim-typo">
 											<blockquote class="blockquote">
-												<p style="color: black">{{text}}</p>
-												<small style="color: grey"> {{author}},{{book}} </small>
+												{{#logged}}
+												<a href="editQuote/{{id}}">{{/logged}}
+													<p style="color: black">{{text}}</p>
+													<small style="color: grey"> {{author}} ,{{book}} </small>
+													{{#logged}}</a>{{/logged}}
+
 											</blockquote>
-											{{^admin}}
+											{{#admin}}
 											<div class="td-actions text-left">
 												<a href="editQuote/{{id}}">
 													<button type="button" rel="tooltip" title="Editar cita"
@@ -135,23 +148,27 @@
 													</button>
 												</a>
 												<a>
-													<button type="button" onclick="deleteButton({{id}});" rel="tooltip" title="Borrar Cita"
+													<button type="button" onclick="deleteButton({{id}});" rel="tooltip"
+														title="Borrar Cita"
 														class="btn btn-danger btn-link btn-sm btn-delete">
 														<i class="material-icons">close</i>
 													</button>
 												</a>
-											</div> {{/admin}}
+											</div>
+											{{/admin}}
 										</div>
 									</div>
 								</div>
 							</div>
-							{{/quote}} {{/logged}} {{^logged}} <span>You must be
-								logged in to see the quote table.</span> {{/logged}}
+							{{/quote}}
+							{{^logged}} <span>You must be
+								logged in to see the quote table.</span>
+							{{/logged}}
 
 						</div>
 						<!--End of quote row-->
 
-						{{^logged}} {{^admin}}
+						{{#logged}} {{#admin}}
 						<!--Add quote button-->
 						<div class="col-md-12">
 							<a href="/quoteForm">

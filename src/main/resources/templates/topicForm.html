@@ -16,21 +16,60 @@
 							<p class="card-category">Añada citas y/o textos</p>
 						</div>
 						<div class="card-body">
-							<form action="/createTopic" method="post" class="topicForm">
+							<form action="/createTopic" method="post">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label class="bmd-label-floating">Titulo Tema</label> <input type="text"
-												class="form-control">
+											<label class="bmd-label-floating">Titulo Tema</label> <input name="name"
+												type="text" class="form-control" {{#name}} value="{{name}}" {{/name}}>
 										</div>
 									</div>
 								</div>
 
-								{{#quote}}{{/quote}}
+								<div id="topicForm" class="topicForm">
+									{{#topic}}
+									<input type="hidden" name="id" value="{{id}}" />
 
+									{{#quoteReference}}
+									<div class="col-lg-12 col-md-12 col-sm-12" id="{{id}}.Quote">
+										<div class="card card-stats">
+											<div class="card-header card-header-warning card-header-icon">
+												<div class="card-icon">
+													<i class="material-icons">speaker_notes</i>
+												</div>
+												<input type="hidden" name="quoteIds" value="{{id}}"
+													class="form-control" />
+												<p class="card-category">Cita</p>
+												<div class="tim-typo">
+													<blockquote class="blockquote">
+														<p style="color: black">{{text}}</p>
+														<small style="color: grey"> {{author}},{{book}}</small>
+													</blockquote>
+												</div>
+											</div>
+										</div>
+									</div>
 
+									<span id="{{id}}Button"> Quitar cita<button type="button"
+											onclick="delQuote({{id}});"
+											class="btn btn-white btn-round btn-just-icon"><i
+												class="material-icons">cancel_presentation</i></button></span>
+									{{/quoteReference}}
+									{{#textReference}}
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="bmd-label-floating">Titulo Tema</label>
+												<input name="texts" type="text" class="form-control" value="{{.}}">
+											</div>
+										</div>
+									</div>
+									{{/textReference}}
+									{{/topic}}
+
+								</div>
 								<button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
-
+								<input type="hidden" name="_csrf" value="{{token}}" />
 							</form>
 							<button id="addQuote" class="btn btn-sm" type="menu">Añadir cita</button>
 							<button id="addText" class="btn btn-sm" type="button">Añadir texto</button>
@@ -46,7 +85,7 @@
 						<div class="card-body">
 							<h6 class="card-category text-gray">HTML del texto + citas</h6>
 							<h4 class="card-title">Ejemplo HTML</h4>
-							<p class="card-description">SAMPMLE HTML</p>
+							<p class="card-description" id="htmlSection">SAMPMLE HTML</p>
 						</div>
 					</div>
 				</div>
@@ -56,41 +95,44 @@
 </div>
 
 <div id="quoteSelection" class="modal">
+
 	<!-- Modal content -->
 	<div class="modal-content">
 		<span class="close justify-content-end">X</span>
-		<div class="row">
+		<div class="row" id="quoteSelectionDiv">
+
 			{{#quote}}
-			<div class="col-lg-6 col-md-6 col-sm-6">
+
+			<div class="col-lg-12 col-md-12 col-sm-12" id="{{id}}">
 				<div class="card card-stats">
 					<div class="card-header card-header-warning card-header-icon">
 						<div class="card-icon">
 							<i class="material-icons">speaker_notes</i>
 						</div>
+						<input type="hidden" name="quoteIds" value="{{id}}" class="form-control" />
 						<p class="card-category">Cita</p>
 						<div class="tim-typo">
 							<blockquote class="blockquote">
 								<p style="color: black">{{text}}</p>
-								<small style="color: grey"> {{author}},{{book}} </small>
+								<small style="color: grey"> {{author}},{{book}}</small>
 							</blockquote>
-							{{#admin}}
-							<div class="td-actions text-left">
-								<button type="button" rel="tooltip" title="Editar cita"
-									class="btn btn-primary btn-link btn-sm">
-									<i class="material-icons">edit</i>
-								</button>
-								<button type="button" rel="tooltip" title="Borrar Cita"
-									class="btn btn-danger btn-link btn-sm">
-									<i class="material-icons">close</i>
-								</button>
-							</div> {{/admin}}
 						</div>
 					</div>
 				</div>
 			</div>
+			<span class="pull-right" id="{{id}}AddButton"> Añadir cita
+
+				<button type="submit" onclick="addQuote({{id}})" class="btn btn-white btn-round btn-just-icon">
+					<i class="material-icons">library_add</i>
+				</button>
+			</span>
+
+
 			{{/quote}}
+
 		</div>
 	</div>
 </div>
+
 
 {{>footer}}

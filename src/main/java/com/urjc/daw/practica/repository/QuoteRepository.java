@@ -19,5 +19,6 @@ public interface QuoteRepository extends JpaRepository<Quote,Long> {
     List<Quote> findAll();
     Optional<Quote> findQuoteById(Long id);*/
     Page<Quote> findByAuthor(String author, Pageable pageable);
+    List<Quote> findByIdNotIn(List<Long> ids);
 
 }

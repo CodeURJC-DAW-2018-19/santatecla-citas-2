@@ -20,4 +20,6 @@ public interface QuoteManagementService {
     Quote editQuote(Quote quote);
 
     Quote deleteQuote(Long id);
+
+    List<Quote> findByIdDiferrentThan(List<Long> ids);
 }

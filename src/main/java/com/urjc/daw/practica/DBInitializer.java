@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.urjc.daw.practica.model.User;
 import com.urjc.daw.practica.repository.UserRepository;
+import com.urjc.daw.practica.security.UserAuthProvider;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -48,10 +49,10 @@ public class DBInitializer {
 	public void init() throws IOException {
 		
 		//SampleTopics
-		topics.save(new Topic());
-		
+		topics.save(new Topic("Test"));
+
 		// Sample Quotes
-		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegor", "The Bible"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
 		quotes.save(new Quote("Hola, me llamo Íñigo Montoya, tu mataste a mi padre, preparate a morir","Íñigo Montoya", "The Princess Bride"));
 		quotes.save(new Quote("Que va si no estaba durmiendo, solo estaba mirando pa´dentro","Tragabuche", "Bandolero"));
 		// Sample users
