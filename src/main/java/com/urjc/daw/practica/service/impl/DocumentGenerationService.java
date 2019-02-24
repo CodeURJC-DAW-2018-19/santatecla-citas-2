@@ -62,13 +62,12 @@ public class DocumentGenerationService {
             metadata.addFieldAsImage(variable.getKey());
             context.put(variable.getKey(), new FileImageProvider(new File(variable.getValue()), true));
         }
-
         report.setFieldsMetadata(metadata);
     }
 
 
     public byte[] generateDocument(String templatePath, TemplateEngineKind templateEngine,
-            Map<String, Object> variablesMap, Map<String, String> imagenesPathMap, boolean convertirPdf)
+            Map<String, Object> variablesMap, Map<String, String> imagesPathMap, boolean converPdf)
                     throws IOException, XDocReportException {
     	
         // Cargar el fichero y configurar el Template Engine
@@ -78,11 +77,11 @@ public class DocumentGenerationService {
         // Se crea el contexto y se cargan las variables de reemplazo
         IContext context = xdocReport.createContext();
         loadVariables(variablesMap, context);
-        loadImages(xdocReport, imagenesPathMap, context);
+        loadImages(xdocReport, imagesPathMap, context);
 
         // Se genera la salida a partir de la plantilla.
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        if (convertirPdf) {
+        if (converPdf) {
             // Se configura PDF como el formato de salida del conversor
             Options options = Options.getTo(ConverterTypeTo.PDF);
 
