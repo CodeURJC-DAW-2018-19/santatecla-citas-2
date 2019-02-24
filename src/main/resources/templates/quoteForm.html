@@ -45,7 +45,7 @@
 										<h4 class="card-title">Texto</h4>
 									</div>
 									<div class="card-body">
-										<textarea class="form-control" id="text" name="text">{{#quote}}{{text}}{{/quote}}</textarea>
+										<textarea class="form-control" id="text" name="text" {{^admin}}readonly{{/admin}}>{{#quote}}{{text}}{{/quote}}</textarea>
 									</div>
 								</div>
 							</div>
@@ -57,7 +57,7 @@
 										<h4 class="card-title">Autor</h4>
 									</div>
 									<div class="card-body">
-										<textarea class="form-control" id="author" name="author">{{#quote}}{{author}}{{/quote}}</textarea>
+										<textarea class="form-control" id="author" name="author" {{^admin}}readonly{{/admin}}>{{#quote}}{{author}}{{/quote}}</textarea>
 									</div>
 								</div>
 							</div>
@@ -67,12 +67,13 @@
 										<h4 class="card-title">Tema</h4>
 									</div>
 									<div class="card-body">
-										<textarea class="form-control" id="book" name="book">{{#quote}}{{book}}{{/quote}}</textarea>
+										<textarea class="form-control" id="book" name="book" {{^admin}}readonly{{/admin}}>{{#quote}}{{book}}{{/quote}}</textarea>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					{{#admin}}
 					<div class="col-md-12">
 						<span class="pull-right"> Añadir cita
 							<button type="submit"
@@ -82,6 +83,7 @@
 							<input type="hidden" name="_csrf" value="{{token}}" />
 						</span>
 					</div>
+					{{/admin}}
 				</form>
 			</div>
 		</div>

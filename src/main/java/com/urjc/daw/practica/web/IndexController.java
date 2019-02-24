@@ -39,6 +39,7 @@ public class IndexController{
 			model.addAttribute("username",userComponent.getLoggedUser().getName());
 			if(userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN")){
 				model.addAttribute("admin",userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+				model.addAttribute("user",userComponent.getLoggedUser().getRoles().contains("ROLE_USER"));
 			}
 		}
 	}
