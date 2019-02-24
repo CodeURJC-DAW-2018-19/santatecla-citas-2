@@ -3,6 +3,7 @@ package com.urjc.daw.practica.controller;
 import com.urjc.daw.practica.model.Topic;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
@@ -17,5 +18,5 @@ public interface TopicController {
 
     String editTopic(Model model, @PathVariable long id);
 
-    boolean deleteTopic(Topic topic);
+    String deleteTopic(Model model, @PathVariable Long id);
 }

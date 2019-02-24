@@ -62,8 +62,19 @@ public class TopicControllerImpl implements TopicController {
         return "topicForm";
     }
 
+
     @Override
-    public boolean deleteTopic(Topic Topic) {
-        return false;
+    @GetMapping("/deleteTopic/{id}")
+    public String deleteTopic(Model model, @PathVariable Long id) {
+        Optional<Topic> current = topicService.findOne(id);
+        if (current.isPresent()){
+            topicService.deleteTopic(current.get());
+            model.addAttribute("cod","eliminado");
+            return "topicCreated";
+        }else{
+            model.addAttribute("cod","error al borrar, no encontrado");
+            return "topicCreated";
+        }
+
     }
 }

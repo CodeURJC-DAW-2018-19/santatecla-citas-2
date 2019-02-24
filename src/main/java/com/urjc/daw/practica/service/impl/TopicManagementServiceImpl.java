@@ -61,4 +61,9 @@ public class TopicManagementServiceImpl implements TopicManagementService {
         }
 
     }
+
+    @Override
+    public void deleteTopic(Topic topic) {
+        topics.delete(topic);
+    }
 }

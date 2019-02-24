@@ -17,4 +17,6 @@ public interface TopicManagementService {
     List<Quote> getReferencedQuotes(Topic currentTopic);
 
     void deleteReference(Long id);
+
+    void deleteTopic(Topic topic);
 }

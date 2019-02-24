@@ -20,7 +20,9 @@ var buttonAddY = ');" class="btn btn-white btn-round btn-just-icon"><i class="ma
 var textInput = '<div class="row"> <div class="col-md-6"> <div class="form-group"> <label class="bmd-label-floating">Titulo Tema</label> <input name="texts" type="text"class="form-control"> </div> </div> </div>'
 // When the user clicks on the button, open the modal
 var id;
-var delUri = "deleteQuote/";
+var delQuote = "deleteQuote/";
+var delTopic = "deleteTopic/";
+
 btn.onclick = function () {
   modal.style.display = "block";
 }
@@ -69,7 +71,14 @@ function delQuote(id) {
 function deleteButton(id) {
   var estaSeguro = confirm("¿Estas seguro?");
   if (estaSeguro == true) {
-    window.location.replace(delUri + id);
+    window.location.replace(delQuote + id);
+  }
+}
+
+function deleteTopic(id) {
+  var estaSeguro = confirm("¿Estas seguro?");
+  if (estaSeguro == true) {
+    window.location.replace(delTopic + id);
   }
 }
 
