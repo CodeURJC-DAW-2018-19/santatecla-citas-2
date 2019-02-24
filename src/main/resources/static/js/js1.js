@@ -42,6 +42,7 @@ addTextBtn.onclick = function () {
   formHTML();
 }
 
+
 function addQuote(id) {
   var quotes = document.getElementById(id);
   quotes.id = id + ".Quote";
