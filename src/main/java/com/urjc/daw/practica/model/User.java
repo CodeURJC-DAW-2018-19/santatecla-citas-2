@@ -68,4 +68,12 @@ public class User {
     public void setRoles(List<String> roles) {
         this.roles = roles;
     }
+
+    public String toString(){
+        if(this.roles.contains("ROLE_ADMIN")){
+            return "admin";
+        }else{
+            return "user";
+        }
+    }
 }

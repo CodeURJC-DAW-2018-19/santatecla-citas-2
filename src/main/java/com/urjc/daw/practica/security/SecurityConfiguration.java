@@ -33,6 +33,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/logout").permitAll();
 		http.headers().frameOptions().disable();
 
+		http.authorizeRequests().antMatchers("/quote","/topicForm").hasAuthority("ROLE_ADMIN");
+
 		// Web resources
 		http.authorizeRequests().antMatchers("/static/**").permitAll();
 

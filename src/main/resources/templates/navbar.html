@@ -33,6 +33,7 @@
                     <ul class="nav navbar-nav">
 
                         <!--Register-->
+                        {{^logged}}
                         <li class="nav-item dropdown">
                             <a href="http://phpoll.com/register" class="dropdown-toggle"
                                 data-toggle="dropdown">Registrarse
@@ -78,8 +79,10 @@
                                 </div>
                             </ul>
                         </li>
+                        {{/logged}}
 
                         <!--Log in-->
+                        {{^logged}}
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown">Iniciar
                                 Sesión
@@ -117,6 +120,7 @@
                                 </div>
                             </ul>
                         </li>
+                        {{/logged}}
                         {{#logged}}
                         <li>
                             {{username}}

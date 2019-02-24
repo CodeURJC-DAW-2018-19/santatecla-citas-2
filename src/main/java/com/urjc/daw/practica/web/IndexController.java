@@ -31,8 +31,11 @@ public class IndexController{
 		boolean logged = userComponent.getLoggedUser() != null;
 		model.addAttribute("logged", logged);
 		if(logged) {
-			model.addAttribute("role", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+			model.addAttribute("role", userComponent.getLoggedUser().toString());
 			model.addAttribute("username",userComponent.getLoggedUser().getName());
+			if(userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN")){
+				model.addAttribute("admin",userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+			}
 		}
 	}
 	
