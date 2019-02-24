@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -91,6 +92,7 @@ public class QuoteControllerImpl implements QuoteController {
     @Override
     @GetMapping("/searchQuote")
     public String findByKeyword(@RequestParam(value = "keyword") String keyword, Model model) {
+
         model.addAttribute("quote",quoteService.findByKeyword(keyword));
         model.addAttribute("topic",topicService.findAll());
         model.addAttribute("quoteKeyword",keyword);

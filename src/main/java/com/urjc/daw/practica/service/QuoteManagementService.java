@@ -24,4 +24,8 @@ public interface QuoteManagementService {
     List<Quote> findByIdDiferrentThan(List<Long> ids);
 
     List<Quote> findByKeyword(String keyword);
+
+    List<Quote> findByAuthor(String author);
+
+    List<Quote> findByBook(String book);
 }

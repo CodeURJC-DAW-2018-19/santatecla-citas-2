@@ -5,15 +5,17 @@ import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.Topic;
 import com.urjc.daw.practica.security.UserComponent;
 
+<<<<<<< HEAD
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+=======
+>>>>>>> 34edae24b351302ac4ebb3e51a48dfbf2fac33c0
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import com.urjc.daw.practica.security.UserComponent;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.TopicManagementService;
 import com.urjc.daw.practica.service.impl.DocumentGenerationService;
@@ -22,15 +24,17 @@ import fr.opensagres.xdocreport.core.XDocReportException;
 import fr.opensagres.xdocreport.template.TemplateEngineKind;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.*;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+=======
+>>>>>>> 34edae24b351302ac4ebb3e51a48dfbf2fac33c0
 
 @Controller
 public class TopicControllerImpl implements TopicController {

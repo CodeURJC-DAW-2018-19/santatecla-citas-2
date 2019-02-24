@@ -86,12 +86,21 @@
 						<div class="card-avatar">
 
 						</div>
-						<div class="card-body">
-							<h6 class="card-category text-gray">HTML del texto + citas</h6>
-							<h4 class="card-title">Ejemplo HTML</h4>
-							<p class="card-description" id="htmlSection">SAMPMLE HTML</p>
+						{{#topic}}
+						<div class="card-theme-text-box card-theme-html">
+							<h1>{{name}}</h1>
+							{{#quoteReference}}
+							<blockquote class="blockquote">
+								<p class="mb-0"><strong>"{{text}}"</strong></p>
+								<footer class="blockquote-footer"><bold>{{author}}</bold> , <i title="Source Title">{{book}}</i></footer>
+							</blockquote>
+							{{/quoteReference}}
+							{{#textReference}}
+							<h4>"{{.}}"</h4>
+							{{/textReference}}
 						</div>
-					</div>
+						{{/topic}}
+
 				</div>
 			</div>
 		</div>
