@@ -26,6 +26,35 @@
 									</div>
 								</div>
 								<div class="topicForm">
+									{{#quoteReference}}
+									<div class="col-lg-12 col-md-12 col-sm-12" id="{{id}}.quote">
+										<div class="card card-stats">
+											<div class="card-header card-header-warning card-header-icon">
+												<div class="card-icon">
+													<i class="material-icons">speaker_notes</i>
+												</div>
+												<input type="hidden" name="quoteIds" value="{{id}}" class="form-control"/>
+												<p class="card-category">Cita</p>
+												<div class="tim-typo">
+													<blockquote class="blockquote">
+														<p style="color: black">{{text}}</p>
+														<small style="color: grey"> {{author}},{{book}}</small>
+													</blockquote>
+												</div>
+											</div>
+										</div>
+									</div>
+									{{/quoteReference}}
+									{{#textReference}}
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="bmd-label-floating">Titulo Tema</label>
+												<input name="texts" type="text"class="form-control">
+											</div>
+										</div>
+									</div>
+									{{/textReference}}
 
 								</div>
 								<button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
