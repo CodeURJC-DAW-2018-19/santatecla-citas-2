@@ -3,6 +3,7 @@ package com.urjc.daw.practica.controller.impl;
 import com.urjc.daw.practica.controller.TopicController;
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.Topic;
+import com.urjc.daw.practica.security.UserComponent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -27,7 +29,23 @@ public class TopicControllerImpl implements TopicController {
 	@Autowired
     QuoteManagementService quoteService;
 
-
+	@Autowired
+	UserComponent userComponent;
+	
+	@ModelAttribute
+	public void addUserToModel(Model model) {
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
+		if(logged) {
+			model.addAttribute("role", userComponent.getLoggedUser().toString());
+			model.addAttribute("username",userComponent.getLoggedUser().getName());
+			if(userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN")){
+				model.addAttribute("admin",userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+				model.addAttribute("user",userComponent.getLoggedUser().getRoles().contains("ROLE_USER"));
+			}
+		}
+	}
+	
     @Override
     public Topic getTopic() {
         return null;
