@@ -49,6 +49,11 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
         return quote;
     }
 
+    @Override
+    public List<Quote> findByIdDiferrentThan(List<Long> ids) {
+        return quotes.findByIdNotIn(ids);
+    }
+
     public boolean checkValidQuote(Quote quote){
 
         return quote != null;

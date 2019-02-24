@@ -24,6 +24,9 @@ public class TopicControllerImpl implements TopicController {
 	@Autowired
     TopicManagementService topicService;
 
+	@Autowired
+    QuoteManagementService quoteService;
+
 
     @Override
     public Topic getTopic() {
@@ -54,6 +57,7 @@ public class TopicControllerImpl implements TopicController {
             model.addAttribute("name",currentTopic.getName());
             model.addAttribute("quoteReference",quotesReferenced);
             model.addAttribute("textReference",currentTopic.getTexts());
+            model.addAttribute("topic",currentTopic);model.addAttribute(model.addAttribute("quote",quoteService.findByIdDiferrentThan(currentTopic.getQuoteIds())));
         }
         return "topicForm";
     }
