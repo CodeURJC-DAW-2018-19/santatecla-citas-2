@@ -40,7 +40,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class QuoteControllerImpl implements QuoteController {
 
     private static final int QUOTES_PER_PAGE=10;
-    private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
+    private static final Path FILES_FOLDER = Paths.get("/images");
     private AtomicInteger imageId = new AtomicInteger();
     private Map<Integer, Image> images = new ConcurrentHashMap<>();
 
