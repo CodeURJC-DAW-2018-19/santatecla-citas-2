@@ -1,11 +1,14 @@
 package com.urjc.daw.practica.controller.impl;
 
 import com.urjc.daw.practica.controller.TopicController;
+import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.Topic;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,6 +23,8 @@ public class TopicControllerImpl implements TopicController {
 
 	@Autowired
     TopicManagementService topicService;
+
+
     @Override
     public Topic getTopic() {
         return null;
@@ -44,7 +49,11 @@ public class TopicControllerImpl implements TopicController {
         Optional<Topic> topic = topicService.findOne(id);
 
         if(topic.isPresent()) {
-            model.addAttribute("topic",topic.get());
+            Topic currentTopic = topic.get();
+            List<Quote> quotesReferenced = topicService.getReferencedQuotes(currentTopic);
+            model.addAttribute("name",currentTopic.getName());
+            model.addAttribute("quoteReference",quotesReferenced);
+            model.addAttribute("textReference",currentTopic.getTexts());
         }
         return "topicForm";
     }
