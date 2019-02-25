@@ -5,16 +5,19 @@ import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.security.UserComponent;
 import com.urjc.daw.practica.service.QuoteManagementService;
 
+import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,9 +26,15 @@ public class QuoteControllerImpl implements QuoteController {
 
     private static final int QUOTES_PER_PAGE=10;
 
-    
+    private static final Path IMAGES_FOLDER = Paths.get(System.getProperty("user.dir")+"/src/main/resources/static/images/quote/");
+
+
+
     @Autowired
     QuoteManagementService quoteService;
+
+    @Autowired
+    TopicManagementService topicService;
     
     @Autowired
     UserComponent userComponent;
@@ -62,8 +71,19 @@ public class QuoteControllerImpl implements QuoteController {
 
     @Override
     @RequestMapping(value = "/quote",method = RequestMethod.POST)
-    public String postQuote(Model model,Quote quote) {
+    public String postQuote(Model model, Quote quote,
+                            @RequestParam("file") MultipartFile file) {
     	quoteService.save(quote);
+        if (!file.isEmpty()) {
+            String imageName = "image-" + quote.getId() + ".jpg";
+            try {
+                File uploadedFile = new File(IMAGES_FOLDER.toFile(), imageName);
+                file.transferTo(uploadedFile);
+            } catch (Exception e) {
+                model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
+            }
+        }
+
         model.addAttribute("cod","creada");
         return "quoteCreated";
     }
@@ -75,6 +95,7 @@ public class QuoteControllerImpl implements QuoteController {
         
         if(quote.isPresent()) {
         	model.addAttribute("quote",quote.get());
+        	model.addAttribute("rnd",Math.random());
         }
         return "quoteForm";
     }
@@ -86,4 +107,15 @@ public class QuoteControllerImpl implements QuoteController {
         model.addAttribute("cod","eliminada");
         return "quoteCreated";
     }
+
+    @Override
+    @GetMapping("/searchQuote")
+    public String findByKeyword(@RequestParam(value = "keyword") String keyword, Model model) {
+        model.addAttribute("quote",quoteService.findByKeyword(keyword));
+        model.addAttribute("topic",topicService.findAll());
+        model.addAttribute("quoteKeyword",keyword);
+        return "index";
+    }
+
+
 }

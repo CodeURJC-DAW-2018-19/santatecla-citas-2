@@ -48,7 +48,7 @@ public class QuoteRepositoryTest {
     public void test_findByAuthor_found(){
         Quote currentQuote = dummyQuote();
 
-        Assertions.assertThat(quotes.findByAuthor(currentQuote.getAuthor(), PageRequest.of(0,100))).extracting(Quote::getAuthor).contains(currentQuote.getAuthor());
+        Assertions.assertThat(quotes.findByAuthorContaining(currentQuote.getAuthor())).extracting(Quote::getAuthor).contains(currentQuote.getAuthor());
     }
 
     @Test
@@ -58,7 +58,7 @@ public class QuoteRepositoryTest {
 
 
 
-        Assertions.assertThat(quotes.findByAuthor("",PageRequest.of(0,100))).extracting(Quote::getAuthor).doesNotContain(currentQuote.getAuthor());
+        Assertions.assertThat(quotes.findByAuthorContaining("")).extracting(Quote::getAuthor).doesNotContain(currentQuote.getAuthor());
     }
 
     public Quote dummyQuote(){

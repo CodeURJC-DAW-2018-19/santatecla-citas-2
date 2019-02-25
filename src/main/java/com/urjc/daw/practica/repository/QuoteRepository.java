@@ -1,6 +1,7 @@
 package com.urjc.daw.practica.repository;
 
 
+
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.Topic;
 import org.springframework.data.domain.Page;
@@ -18,6 +19,10 @@ public interface QuoteRepository extends JpaRepository<Quote,Long> {
     /*Page<Quote> findAll(Pageable pageable);
     List<Quote> findAll();
     Optional<Quote> findQuoteById(Long id);*/
-    Page<Quote> findByAuthor(String author, Pageable pageable);
+    List<Quote> findByAuthorContaining(String author);
+    List<Quote> findByIdNotIn(List<Long> ids);
+    List<Quote> findByTextContaining(String keyWord);
+    List<Quote> findByBookContaining(String keyword);
+
 
 }

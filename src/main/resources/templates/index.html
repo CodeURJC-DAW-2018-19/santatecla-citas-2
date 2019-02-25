@@ -22,9 +22,9 @@
 						{{#logged}}
 						<div class="container-fluid">
 							<div class="col-md-12">
-								<form class="navbar-form">
+								<form class="navbar-form" action="/searchTopic">
 									<div class="input-group no-border">
-										<input type="text" value="" class="form-control"
+										<input type="text" value="{{#topicKeyword}}{{topicKeyword}}{{/topicKeyword}}" name="keyword" class="form-control"
 											placeholder="Buscar un tema..." />
 										<button type="submit" class="btn btn-white btn-round btn-just-icon">
 											<i class="material-icons">search</i>
@@ -38,7 +38,7 @@
 						<div class="row">
 
 							{{#topic}}
-							<div class="col-lg-6 col-md-4 col-sm-6">
+							<div class="col-lg-12 col-md-12 col-sm-12">
 								<div class="card card-stats">
 									<div class="card-header card-header-success card-header-icon">
 										<div class="card-icon">
@@ -46,21 +46,25 @@
 										</div>
 										<p class="card-category">Tema</p>
 										<div class="tim-typo">
+											
 											<blockquote class="blockquote">
-												<h3 style="color: black">{{name}}</h3>
+													<a href="editTopic/{{id}}">
+												<h3 style="color: black">{{#name}}{{name}}{{/name}}</h3>
+												</a>
 											</blockquote>
 
 											{{#admin}}
 											<div class="td-actions text-left">
 												<a href="editTopic/{{id}}">
 													<button type="button" rel="tooltip" title="Edit topìc"
-															class="btn btn-primary btn-link btn-sm">
+														class="btn btn-primary btn-link btn-sm">
 														<i class="material-icons">edit</i>
 													</button>
 												</a>
 												<a>
-													<button type="button" onclick="deleteButton({{id}});" rel="tooltip" title="Delete Quote"
-															class="btn btn-danger btn-link btn-sm btn-delete">
+													<button type="button" onclick="deleteTopic({{id}});" rel="tooltip"
+														title="Delete Quote"
+														class="btn btn-danger btn-link btn-sm btn-delete">
 														<i class="material-icons">close</i>
 													</button>
 												</a>
@@ -107,9 +111,9 @@
 						{{#logged}}
 						<div class="container-fluid">
 							<div class="col-md-12">
-								<form class="navbar-form">
+								<form class="navbar-form" action="/searchQuote" method="get">
 									<div class="input-group no-border">
-										<input type="text" value="" class="form-control" placeholder="Buscar..." />
+										<input type="text" value="{{#quoteKeyword}}{{quoteKeyword}}{{/quoteKeyword}}" name="keyword" class="form-control" placeholder="Buscar..." />
 										<button type="submit" class="btn btn-white btn-round btn-just-icon">
 											<i class="material-icons">search</i>
 										</button>
@@ -134,7 +138,7 @@
 											<blockquote class="blockquote">
 												{{#logged}}
 												<a href="editQuote/{{id}}">{{/logged}}
-													<p style="color: black">{{text}}</p>
+													<p style="color: black">{{#text}}{{text}}{{/text}}</p>
 													<small style="color: grey"> {{author}} ,{{book}} </small>
 													{{#logged}}</a>{{/logged}}
 
@@ -184,12 +188,49 @@
 				</div>
 				{{#logged}}
 				<div id="histogram">
-					<a class="d-lg-inline-block d-md-inline-block" href="../templates/graphs.html"> HISTOGRAMA </a>
+					<a class="d-lg-inline-block d-md-inline-block" onclick="displayModal()"> HISTOGRAMA </a>
 				</div>
 				{{/logged}}
 			</div>
 		</div>
 	</div>
 </div>
+
+<div id="quoteSelection" class="modal">
+	<div class="modal-content">
+		<span class="close justify-content-end" onclick="closeOnX()">X</span>
+		<div class="wrapper">
+			<div class="content">
+				<div class="container-fluid">
+					<div class="card card-chart">
+						<div class="card-header card-header-success">
+							<div class="ct-chart"></div>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Cantidad de citas por Tema</h4>
+						</div>
+						<div class="card-footer">
+							<div class="stats">
+								<i class="material-icons">access_time</i> actualizado hace 4 minutos
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/chartist.min.js"></script>
+		<script>
+			var data = {
+				labels: [{{#topic}}'{{name}}',{{/topic}}],
+				series: [
+					[{{#topic}}{{nQuotes}},{{/topic}}]
+				]
+			};
+			new Chartist.Bar('.ct-chart', data);
+		</script>
+	</div>
+</div>
+
+
 
 {{>footer}}

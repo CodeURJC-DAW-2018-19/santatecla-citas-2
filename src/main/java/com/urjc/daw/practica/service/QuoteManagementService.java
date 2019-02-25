@@ -20,4 +20,12 @@ public interface QuoteManagementService {
     Quote editQuote(Quote quote);
 
     Quote deleteQuote(Long id);
+
+    List<Quote> findByIdDiferrentThan(List<Long> ids);
+
+    List<Quote> findByKeyword(String keyword);
+
+    List<Quote> findByAuthor(String author);
+
+    List<Quote> findByBook(String book);
 }

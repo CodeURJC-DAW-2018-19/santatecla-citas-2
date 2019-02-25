@@ -20,20 +20,26 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label class="bmd-label-floating">Titulo Tema</label> <input name="name" type="text"
-												class="form-control">
+											<label class="bmd-label-floating">Titulo Tema</label> <input required
+												name="name" type="text" class="form-control" {{#name}} value="{{name}}"
+												{{/name}} {{^admin}}readonly{{/admin}}>
 										</div>
 									</div>
 								</div>
-								<div class="topicForm">
+
+								<div id="topicForm" class="topicForm">
+									{{#topic}}
+									<input type="hidden" name="id" value="{{id}}" />
+
 									{{#quoteReference}}
-									<div class="col-lg-12 col-md-12 col-sm-12" id="{{id}}.quote">
+									<div class="col-lg-12 col-md-12 col-sm-12" id="{{id}}.Quote">
 										<div class="card card-stats">
 											<div class="card-header card-header-warning card-header-icon">
 												<div class="card-icon">
 													<i class="material-icons">speaker_notes</i>
 												</div>
-												<input type="hidden" name="quoteIds" value="{{id}}" class="form-control"/>
+												<input type="hidden" name="quoteIds" value="{{id}}"
+													class="form-control" />
 												<p class="card-category">Cita</p>
 												<div class="tim-typo">
 													<blockquote class="blockquote">
@@ -44,53 +50,92 @@
 											</div>
 										</div>
 									</div>
+									{{#admin}}
+									<span id="{{id}}Button"> Quitar cita
+										<button type="button" onclick="delQuote({{id}});"
+											class="btn btn-white btn-round btn-just-icon">
+											<i class="material-icons">cancel_presentation</i>
+										</button>
+									</span>
+									{{/admin}}
 									{{/quoteReference}}
 									{{#textReference}}
+
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<label class="bmd-label-floating">Titulo Tema</label>
-												<input name="texts" type="text"class="form-control">
+												<label class="bmd-label-floating">Texto</label>
+												<input name="texts" type="text" class="form-control" value="{{.}}"
+													{{^admin}}readonly{{/admin}}>
 											</div>
+											{{#admin}}
+											<span id="{{id}}Button"> Quitar texto<button type="button"
+													onclick="delQuote({{id}});"
+													class="btn btn-white btn-round btn-just-icon"><i
+														class="material-icons">cancel_presentation</i></button></span>
+											{{/admin}}
 										</div>
 									</div>
+
 									{{/textReference}}
+									{{/topic}}
 
 								</div>
-								<button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
+
+								{{#admin}}<button type="submit" class="btn btn-primary pull-right">Actualizar
+									tema</button>{{/admin}}
 								<input type="hidden" name="_csrf" value="{{token}}" />
 							</form>
-							<button id="addQuote" class="btn btn-sm" type="menu">Añadir cita</button>
-							<button id="addText" class="btn btn-sm" type="button">Añadir texto</button>
+							{{#admin}}
+							<button id="addQuote" class="btn btn-sm" type="menu" onclick="displayModal()">Añadir
+								cita</button>
+							<button id="addText" class="btn btn-sm" type="button" onclick="addText()">Añadir
+								texto</button>
+							{{/admin}}
+
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="card card-profile">
 						<div class="card-avatar">
-							<a href="#pablo"> <img class="img" src="/img/faces/marc.jpg" />
-							</a>
+
 						</div>
-						<div class="card-body">
-							<h6 class="card-category text-gray">HTML del texto + citas</h6>
-							<h4 class="card-title">Ejemplo HTML</h4>
-							<p class="card-description">SAMPMLE HTML</p>
+						{{#topic}}
+						<div class="card-theme-text-box card-theme-html">
+
+							<h1>{{name}}</h1>
+							{{#quoteReference}}
+							<blockquote class="blockquote">
+								<p class="mb-0"><strong>"{{text}}"</strong></p>
+								<footer class="blockquote-footer">
+									<bold>{{author}}</bold> , <i title="Source Title">{{book}}</i>
+								</footer>
+							</blockquote>
+							{{/quoteReference}}
+							{{#textReference}}
+							<h4>"{{.}}"</h4>
+							{{/textReference}}
 						</div>
+						<form action="/generatePDF/{{id}}">
+							<button type="submit" class="btn btn-primary pull-right">Generar PDF<i
+									class="material-icons">picture_as_pdf</i></button>
+						</form>
+						{{/topic}}
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<div id="quoteSelection" class="modal">
+	<div id="quoteSelection" class="modal">
 
-	<!-- Modal content -->
-	<div class="modal-content">
-		<span class="close justify-content-end">X</span>
-		<div class="row" id="quoteSelectionDiv">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close justify-content-end" onclick="closeOnX()">X</span>
+			<div class="row" id="quoteSelectionDiv">
 
-			{{#quote}}
+				{{#quote}}
 
 				<div class="col-lg-12 col-md-12 col-sm-12" id="{{id}}">
 					<div class="card card-stats">
@@ -98,7 +143,7 @@
 							<div class="card-icon">
 								<i class="material-icons">speaker_notes</i>
 							</div>
-							<input type="hidden" name="quoteIds" value="{{id}}" class="form-control"/>
+							<input type="hidden" name="quoteIds" value="{{id}}" class="form-control" />
 							<p class="card-category">Cita</p>
 							<div class="tim-typo">
 								<blockquote class="blockquote">
@@ -110,18 +155,17 @@
 					</div>
 				</div>
 				<span class="pull-right" id="{{id}}AddButton"> Añadir cita
-
 					<button type="submit" onclick="addQuote({{id}})" class="btn btn-white btn-round btn-just-icon">
 						<i class="material-icons">library_add</i>
 					</button>
 				</span>
 
 
-			{{/quote}}
+				{{/quote}}
 
+			</div>
 		</div>
 	</div>
-</div>
 
 
-{{>footer}}
+	{{>footer}}
