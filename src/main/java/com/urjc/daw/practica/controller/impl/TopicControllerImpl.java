@@ -120,10 +120,10 @@ public class TopicControllerImpl implements TopicController {
     @Autowired
     DocumentGenerationService dgs;
     
-    @GetMapping("/generatePDF")
-    public byte[] generatePDF(Model model,Topic topic) {
+    @GetMapping("/generatePDF/{id}")
+    public byte[] generatePDF(Model model,@PathVariable Long id) {
         Map<String,Object> map = new HashMap<String,Object>();
-        
+        Topic topic = topicService.findOne(id).get();
         Iterator it = topic.getQuoteIds().iterator();
         String quotes = "";
         while(it.hasNext()){
@@ -142,7 +142,7 @@ public class TopicControllerImpl implements TopicController {
     	
         byte[] document = null;
     	try {
-			document = dgs.generateDocument("template", TemplateEngineKind.Velocity, map, null, true);
+			document = dgs.generateDocument("src/main/resources/static/template.odt", TemplateEngineKind.Velocity, map, null, true);
 		} catch (IOException | XDocReportException e) {
 			e.printStackTrace();
 		}

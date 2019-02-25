@@ -92,7 +92,6 @@ public class QuoteControllerImpl implements QuoteController {
     @Override
     @GetMapping("/searchQuote")
     public String findByKeyword(@RequestParam(value = "keyword") String keyword, Model model) {
-
         model.addAttribute("quote",quoteService.findByKeyword(keyword));
         model.addAttribute("topic",topicService.findAll());
         model.addAttribute("quoteKeyword",keyword);
