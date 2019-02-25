@@ -1,80 +1,95 @@
 {{>navbar}}
-	<div class="wrapper">
-		<div class="content">
-			<div class="main-page-container">
-				<form action="/quote" method="post" enctype="multipart/form-data">
-					<div class="container-fluid border-container">
-						{{#quote}}<input type="hidden" name="id" value="{{id}}" class="form-control" />{{/quote}}
-						<div id="p-start">
-							<p class="d-lg-inline-block d-md-inline-block">
-								<a href="index.html">INICIO</a>
-							</p>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<img  src="images/quote/image-{{id}}.jpg?ver={{rnd}}" class="rounded float-left img-quote"/>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-6 card-group">
-								<div class="card">
-									<div class="card-header card-header-primary">
-										<h4 class="card-title">Texto</h4>
-									</div>
-									<div class="card-body">
-
-										<textarea class="form-control" id="text" name="text"
-											{{^admin}}readonly{{/admin}}>{{#quote}}{{text}}{{/quote}}</textarea>
-									</div>
+<div class="wrapper">
+	<div class="content">
+		<div class="main-page-container">
+			<form action="/quote" method="post" enctype="multipart/form-data">
+				<div class="container-fluid border-container">
+					{{#quote}}<input type="hidden" name="id" value="{{id}}" class="form-control" />{{/quote}}
+					<div id="p-start">
+						<p class="d-lg-inline-block d-md-inline-block">
+							<a href="/">INICIO</a>
+						</p>
+					</div>
+					{{#quote}}
+					<div class="row">
+						<div class="container-fluid">
+							<div class="card">
+								<div class="col-md-6">
+									<img src="images/quote/image-{{id}}.jpg?ver={{rnd}}"
+										class="rounded float-left img-quote" />
 								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-3 card-group">
-								<div class="card">
-									<div class="card-header card-header-primary">
-										<h4 class="card-title">Autor</h4>
-									</div>
-									<div class="card-body">
-										<textarea class="form-control" id="author" name="author"
-											{{^admin}}readonly{{/admin}}>{{#quote}}{{author}}{{/quote}}</textarea>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 card-group">
-								<div class="card">
-									<div class="card-header card-header-primary">
-										<h4 class="card-title">Tema</h4>
-									</div>
-									<div class="card-body">
-										<textarea class="form-control" id="book" name="book"
-											{{^admin}}readonly{{/admin}}>{{#quote}}{{book}}{{/quote}}</textarea>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<p>Añada una imagen</p>
-								<input type="file" class="inputFileHidden" name="file">
-							</div>
-
 						</div>
 					</div>
-					{{#admin}}
-					<div class="col-md-12">
-						<span class="pull-right"> Añadir cita
-							<button type="submit" class="btn btn-white btn-round btn-just-icon">
-								<i class="material-icons">library_add</i>
-							</button>
-							<input type="hidden" name="_csrf" value="{{token}}" />
-						</span>
+					{{/quote}}
+
+					<div class="row">
+						<div class="col-md-12 card-group">
+							<div class="card">
+								<div class="card-header card-header-primary">
+									<h4 class="card-title">Texto</h4>
+								</div>
+								<div class="card-body">
+
+									<textarea class="form-control" id="text" name="text"
+										{{^admin}}readonly{{/admin}}>{{#quote}}{{text}}{{/quote}}</textarea>
+								</div>
+							</div>
+						</div>
 					</div>
-					{{/admin}}
-				</form>
-			</div>
+					<div class="row">
+						<div class="col-md-6 card-group">
+							<div class="card">
+								<div class="card-header card-header-primary">
+									<h4 class="card-title">Autor</h4>
+								</div>
+								<div class="card-body">
+									<textarea class="form-control" id="author" name="author"
+										{{^admin}}readonly{{/admin}}>{{#quote}}{{author}}{{/quote}}</textarea>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 card-group">
+							<div class="card">
+								<div class="card-header card-header-primary">
+									<h4 class="card-title">Tema</h4>
+								</div>
+								<div class="card-body">
+									<textarea class="form-control" id="book" name="book"
+										{{^admin}}readonly{{/admin}}>{{#quote}}{{book}}{{/quote}}</textarea>
+								</div>
+							</div>
+						</div>
+
+						{{#admin}}
+						<div class="container-fluid">
+							<div class="card">
+								<div class="card-body">
+									<div class="row">
+										<p>Añada una imagen</p>
+										<input type="file" class="inputFileHidden" name="file">
+									</div>
+								</div>
+							</div>
+						</div>
+						{{/admin}}
+
+					</div>
+				</div>
+				{{#admin}}
+				<div class="col-md-12">
+					<span class="pull-right"> Añadir cita
+						<button type="submit" class="btn btn-white btn-round btn-just-icon">
+							<i class="material-icons">library_add</i>
+						</button>
+						<input type="hidden" name="_csrf" value="{{token}}" />
+					</span>
+				</div>
+				{{/admin}}
+			</form>
 		</div>
 	</div>
+</div>
 </body>
 
 </html>
