@@ -99,6 +99,9 @@ http://www.plantuml.com/plantuml/uml/SoWkIImgAStDuKhEIImkLl18BIfApCrCpIj9X8g45fS
 ### Navegación: Se actualizarán las capturas de pantalla de las páginas principales de la aplicación.
 En caso de que haya cambiado la navegación, se deberá actualizar el diagrama de
 navegación.
+
+las capturas de pantalla son:
+https://docs.google.com/document/d/1vJgvrwgVRnIQIpyoXT9KIyV70pleEv0J80u-dqYfbkk/edit
 - Encuanto a diagramas de navegacion no ha habido cambios, con lo cual se conserva el mismo diagrama de navegacion.
 
 
