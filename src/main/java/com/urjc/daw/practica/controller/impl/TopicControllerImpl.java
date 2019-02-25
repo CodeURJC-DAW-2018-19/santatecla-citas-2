@@ -5,7 +5,10 @@ import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.Topic;
 import com.urjc.daw.practica.security.UserComponent;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -29,19 +32,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class TopicControllerImpl implements TopicController {
 
-	@Autowired
-    TopicManagementService topicService;
 
 	@Autowired
-    QuoteManagementService quoteService;
+    private TopicManagementService topicService;
+
+	@Autowired
+    private QuoteManagementService quoteService;
 
 
     @Autowired
-    UserComponent userComponent;
+    private UserComponent userComponent;
 
 
     @ModelAttribute
@@ -70,8 +75,9 @@ public class TopicControllerImpl implements TopicController {
 
     @Override
     @PostMapping("/createTopic")
-    public String postTopic(Model model,Topic topic) {
+    public String saveTopic(Model model, Topic topic){
         topicService.save(topic);
+
         model.addAttribute("cod","creado");
         return "topicCreated";
     }
@@ -88,7 +94,11 @@ public class TopicControllerImpl implements TopicController {
             model.addAttribute("quoteReference",quotesReferenced);
             model.addAttribute("textReference",currentTopic.getTexts());
             model.addAttribute("topic",currentTopic);
-            model.addAttribute("quote",quoteService.findByIdDiferrentThan(currentTopic.getQuoteIds()));
+            if(((List<Quote>)model.asMap().get("quoteReference")).isEmpty()){
+                model.addAttribute("quote",quoteService.findAll());
+            }else {
+                model.addAttribute("quote", quoteService.findByIdDiferrentThan(currentTopic.getQuoteIds()));
+            }
         }
         return "topicForm";
     }

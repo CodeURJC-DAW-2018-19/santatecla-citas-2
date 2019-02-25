@@ -37,6 +37,10 @@
   font-weight: bold;
 }
 
+.img-quote{
+    width: 100%;
+}
+
 .main-page-container{
   padding:80px;
 }

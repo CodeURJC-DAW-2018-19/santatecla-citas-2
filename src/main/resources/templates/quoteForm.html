@@ -2,7 +2,7 @@
 	<div class="wrapper">
 		<div class="content">
 			<div class="main-page-container">
-				<form action="/quote" method="post">
+				<form action="/quote" method="post" enctype="multipart/form-data">
 					<div class="container-fluid border-container">
 						{{#quote}}<input type="hidden" name="id" value="{{id}}" class="form-control" />{{/quote}}
 						<div id="p-start">
@@ -11,7 +11,13 @@
 							</p>
 						</div>
 						<div class="row">
-							<div class="col-md-12 card-group">
+							<div class="col-md-6">
+								<img  src="images/quote/image-{{id}}.jpg?ver={{rnd}}" class="rounded float-left img-quote"/>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6 card-group">
 								<div class="card">
 									<div class="card-header card-header-primary">
 										<h4 class="card-title">Texto</h4>
@@ -25,7 +31,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6 card-group">
+							<div class="col-md-3 card-group">
 								<div class="card">
 									<div class="card-header card-header-primary">
 										<h4 class="card-title">Autor</h4>
@@ -36,7 +42,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6 card-group">
+							<div class="col-md-3 card-group">
 								<div class="card">
 									<div class="card-header card-header-primary">
 										<h4 class="card-title">Tema</h4>
@@ -47,6 +53,12 @@
 									</div>
 								</div>
 							</div>
+
+							<div class="row">
+								<p>Añada una imagen</p>
+								<input type="file" class="inputFileHidden" name="file">
+							</div>
+
 						</div>
 					</div>
 					{{#admin}}

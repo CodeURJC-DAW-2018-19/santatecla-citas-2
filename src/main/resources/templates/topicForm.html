@@ -16,11 +16,11 @@
 							<p class="card-category">Añada citas y/o textos</p>
 						</div>
 						<div class="card-body">
-							<form action="/createTopic" method="post">
+							<form action="/createTopic" method="post" >
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label class="bmd-label-floating">Titulo Tema</label> <input name="name"
+											<label class="bmd-label-floating">Titulo Tema</label> <input required name="name"
 												type="text" class="form-control" {{#name}} value="{{name}}" {{/name}}>
 										</div>
 									</div>
@@ -73,11 +73,18 @@
 									{{/topic}}
 
 								</div>
+
+
+
+
+
+
 								<button type="submit" class="btn btn-primary pull-right">Actualizar tema</button>
 								<input type="hidden" name="_csrf" value="{{token}}" />
 							</form>
 							<button id="addQuote" class="btn btn-sm" type="menu" onclick="displayModal()">Añadir cita</button>
 							<button id="addText" class="btn btn-sm" type="button" onclick="addText()">Añadir texto</button>
+
 						</div>
 					</div>
 				</div>
@@ -88,6 +95,7 @@
 						</div>
 						{{#topic}}
 						<div class="card-theme-text-box card-theme-html">
+
 							<h1>{{name}}</h1>
 							{{#quoteReference}}
 							<blockquote class="blockquote">

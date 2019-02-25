@@ -11,8 +11,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -22,7 +26,10 @@ public class QuoteControllerImpl implements QuoteController {
 
     private static final int QUOTES_PER_PAGE=10;
 
-    
+    private static final Path IMAGES_FOLDER = Paths.get(System.getProperty("user.dir")+"/src/main/resources/static/images/quote/");
+
+
+
     @Autowired
     QuoteManagementService quoteService;
 
@@ -64,8 +71,19 @@ public class QuoteControllerImpl implements QuoteController {
 
     @Override
     @RequestMapping(value = "/quote",method = RequestMethod.POST)
-    public String postQuote(Model model,Quote quote) {
+    public String postQuote(Model model, Quote quote,
+                            @RequestParam("file") MultipartFile file) {
     	quoteService.save(quote);
+        if (!file.isEmpty()) {
+            String imageName = "image-" + quote.getId() + ".jpg";
+            try {
+                File uploadedFile = new File(IMAGES_FOLDER.toFile(), imageName);
+                file.transferTo(uploadedFile);
+            } catch (Exception e) {
+                model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
+            }
+        }
+
         model.addAttribute("cod","creada");
         return "quoteCreated";
     }
@@ -77,6 +95,7 @@ public class QuoteControllerImpl implements QuoteController {
         
         if(quote.isPresent()) {
         	model.addAttribute("quote",quote.get());
+        	model.addAttribute("rnd",Math.random());
         }
         return "quoteForm";
     }
