@@ -113,7 +113,7 @@ public class TopicControllerImpl implements TopicController {
     @GetMapping("/searchTopic")
     public String findByKeyword(@RequestParam(value = "keyword") String keyword, Model model) {
         model.addAttribute("quote",quoteService.findAll());
-        model.addAttribute("topic",topicService.findAll());
+        model.addAttribute("topic",topicService.findByKeyword(keyword));
         return "index";
     }
     
