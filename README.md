@@ -116,7 +116,7 @@ poder compilar y ejecutar la aplicación:
 de la base de datos, sus campos y las relaciones entre ellas. Se usará un diagrama de las clases
 Java, no un diagrama entidad-relación de base de datos. Acontinuacion tenemos los enlaces a los diagramas de bbdd
 
-https://drive.google.com/file/d/1Z89_eML_9YIrGaXmFbu-Z0z3xnwypS1N/view?usp=sharing
+
 https://docs.google.com/document/d/1vJgvrwgVRnIQIpyoXT9KIyV70pleEv0J80u-dqYfbkk/edit
 
 
@@ -128,5 +128,5 @@ distribución de las clases por partes u otro mecanismo. En este diagrama tambi�
 los ficheros que contienen los templates y se indicará con qué @Controller se relacionan
 - En los siguientes enlaces estan losdiagramas:
 
-https://drive.google.com/file/d/1Z89_eML_9YIrGaXmFbu-Z0z3xnwypS1N/view?usp=sharing
+
 https://docs.google.com/document/d/1vJgvrwgVRnIQIpyoXT9KIyV70pleEv0J80u-dqYfbkk/edit
