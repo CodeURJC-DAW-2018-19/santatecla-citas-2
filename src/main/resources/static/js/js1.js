@@ -21,6 +21,7 @@ var textInput = '<div class="row"> <div class="col-md-6"> <div class="form-group
 // When the user clicks on the button, open the modal
 var id;
 var delTopic = "deleteTopic/";
+var deleteQuote ="deleteQuote/"
 
 function displayModal(){
   modal.style.display = "block";
@@ -69,7 +70,7 @@ function delQuote(id) {
 function deleteButton(id) {
   var estaSeguro = confirm("¿Estas seguro?");
   if (estaSeguro == true) {
-    window.location.replace(delQuote + id);
+    window.location.replace(deleteQuote + id);
   }
 }
 
