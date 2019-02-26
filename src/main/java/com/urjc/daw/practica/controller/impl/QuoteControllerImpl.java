@@ -7,18 +7,14 @@ import com.urjc.daw.practica.service.QuoteManagementService;
 
 import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -84,8 +80,8 @@ public class QuoteControllerImpl implements QuoteController {
             }
         }
 
-        model.addAttribute("cod","creada");
-        return "quoteCreated";
+        model.addAttribute("cod","La cita ha sido creada");
+        return "created";
     }
 
     @Override
@@ -104,8 +100,8 @@ public class QuoteControllerImpl implements QuoteController {
     @GetMapping("/deleteQuote/{id}")
     public String deleteQuote(Model model,@PathVariable long id) {
         quoteService.deleteQuote(id);
-        model.addAttribute("cod","eliminada");
-        return "quoteCreated";
+        model.addAttribute("cod","La cita ha sido eliminada");
+        return "created";
     }
 
     @Override

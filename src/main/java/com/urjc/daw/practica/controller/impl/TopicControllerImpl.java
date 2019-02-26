@@ -78,8 +78,8 @@ public class TopicControllerImpl implements TopicController {
     public String saveTopic(Model model, Topic topic){
         topicService.save(topic);
 
-        model.addAttribute("cod","creado");
-        return "topicCreated";
+        model.addAttribute("cod","El tema ha sido creado");
+        return "created";
     }
 
     @Override
@@ -110,11 +110,11 @@ public class TopicControllerImpl implements TopicController {
         Optional<Topic> current = topicService.findOne(id);
         if (current.isPresent()){
             topicService.deleteTopic(current.get());
-            model.addAttribute("cod","eliminado");
-            return "topicCreated";
+            model.addAttribute("cod","El tema ha sido eliminado");
+            return "created";
         }else{
             model.addAttribute("cod","error al borrar, no encontrado");
-            return "topicCreated";
+            return "created";
         }
 
     }

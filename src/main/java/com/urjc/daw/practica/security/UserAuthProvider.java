@@ -30,8 +30,9 @@ public class UserAuthProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        
-    	User user = userRepo.findByName(authentication.getName());
+
+        List<User> savedUsers = userRepo.findAll();
+    	User user = userRepo.findByUserName(authentication.getName());
         
         if(user == null){
             throw new BadCredentialsException("User not found");

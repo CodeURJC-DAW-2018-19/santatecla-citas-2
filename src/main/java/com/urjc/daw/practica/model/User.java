@@ -18,7 +18,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name;
+    private String userName;
 
     @JsonIgnore
     private String password;
@@ -31,7 +31,7 @@ public class User {
     }
 
     public User(String name, String password, String... roles) {
-		this.name = name;
+		this.userName = name;
 		this.password = password;
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
@@ -46,11 +46,11 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return userName;
     }
 
-    public void setEmail(String name) {
-        this.name = name;
+    public void setUserName(String name) {
+        this.userName = name;
     }
 
     public String getPassword() {

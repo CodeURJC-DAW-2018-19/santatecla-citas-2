@@ -5,7 +5,6 @@ import javax.annotation.PostConstruct;
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.Topic;
 import com.urjc.daw.practica.repository.QuoteRepository;
-import com.urjc.daw.practica.repository.TextRepository;
 import com.urjc.daw.practica.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -26,9 +25,6 @@ public class DBInitializer {
 
 	@Autowired
 	private TopicRepository topics;
-
-	@Autowired
-	private TextRepository texts;
 
 	@Autowired
 	UserAuthProvider authProvider;
