@@ -8,7 +8,7 @@
 
 ### Un ejemplo concreto (diagrama de objetos) para el tema “El sentido de la vida” sería:
 
-¡[Imagen no cargada](http://www.plantuml.com/plantuml/uml/PP71IWD138RlynG_lGY5BgYtWbAf7ZpeGOhtT2VLARi9p6JH8hwxORhk7WfxoEpt9VmXcsAKRUYxeFiZjuR5UfkC5g22rWly1C3usnHtU5LyqWa7xbAR8aKeaiolfcbSfi4qk_pGyP4aPiNZq5DneljC3fuwj2gHuT-BYZ6sEHNJy3jbSAMmM8hg4Zh2Uug4DNRSdwEDT6fOxXWnVIXClUS4yMhy8tIrX4UhxRv7xQyRpIk_yO4pIvkeqZmz9sMSy6pSLoLv4VupBbTHlsHrVnxhslKbccSwlxdWTQ2Jsp2B65azHDYmHB_J7m00)
+![Imagen no cargada](http://www.plantuml.com/plantuml/uml/PP71IWD138RlynG_lGY5BgYtWbAf7ZpeGOhtT2VLARi9p6JH8hwxORhk7WfxoEpt9VmXcsAKRUYxeFiZjuR5UfkC5g22rWly1C3usnHtU5LyqWa7xbAR8aKeaiolfcbSfi4qk_pGyP4aPiNZq5DneljC3fuwj2gHuT-BYZ6sEHNJy3jbSAMmM8hg4Zh2Uug4DNRSdwEDT6fOxXWnVIXClUS4yMhy8tIrX4UhxRv7xQyRpIk_yO4pIvkeqZmz9sMSy6pSLoLv4VupBbTHlsHrVnxhslKbccSwlxdWTQ2Jsp2B65azHDYmHB_J7m00)
 
 
 ## Y la estructura (diagrama de clases) correspondiente sería:
