@@ -48,14 +48,14 @@
 										<div class="tim-typo">
 											
 											<blockquote class="blockquote">
-													<a href="editTopic/{{id}}">
+													<a href="topic/{{id}}">
 												<h3 style="color: black">{{#name}}{{name}}{{/name}}</h3>
 												</a>
 											</blockquote>
 
 											{{#admin}}
 											<div class="td-actions text-left">
-												<a href="editTopic/{{id}}">
+												<a href="topic/{{id}}">
 													<button type="button" rel="tooltip" title="Edit topìc"
 														class="btn btn-primary btn-link btn-sm">
 														<i class="material-icons">edit</i>
@@ -137,7 +137,7 @@
 										<div class="tim-typo">
 											<blockquote class="blockquote">
 												{{#logged}}
-												<a href="editQuote/{{id}}">{{/logged}}
+												<a href="quote/{{id}}">{{/logged}}
 													<p style="color: black">{{#text}}{{text}}{{/text}}</p>
 													<small style="color: grey"> {{author}} ,{{book}} </small>
 													{{#logged}}</a>{{/logged}}
@@ -145,7 +145,7 @@
 											</blockquote>
 											{{#admin}}
 											<div class="td-actions text-left">
-												<a href="editQuote/{{id}}">
+												<a href="quote/{{id}}">
 													<button type="button" rel="tooltip" title="Editar cita"
 														class="btn btn-primary btn-link btn-sm">
 														<i class="material-icons">edit</i>

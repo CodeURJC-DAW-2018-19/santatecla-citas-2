@@ -89,7 +89,7 @@ public class QuoteControllerImpl implements QuoteController {
     }
 
     @Override
-    @GetMapping("/editQuote/{id}")
+    @GetMapping("/quote/{id}")
     public String editQuote(Model model,@PathVariable long id) {
         Optional<Quote> quote = quoteService.findOne(id);
         

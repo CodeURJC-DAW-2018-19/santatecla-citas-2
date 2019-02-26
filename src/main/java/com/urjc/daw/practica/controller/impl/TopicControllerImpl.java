@@ -83,7 +83,7 @@ public class TopicControllerImpl implements TopicController {
     }
 
     @Override
-    @GetMapping("/editTopic/{id}")
+    @GetMapping("/topic/{id}")
     public String editTopic(Model model, @PathVariable long id) {
         Optional<Topic> topic = topicService.findOne(id);
 
