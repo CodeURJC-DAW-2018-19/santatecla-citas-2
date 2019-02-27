@@ -30,8 +30,8 @@ var currentPage;
 //Used to load more images
 var appendQuote =   '<div class="col-lg-6 col-md-6 col-sm-6 "> <div class="card card-stats"> <div class="card-header card-header-warning card-header-icon">'+
     '<div class="card-icon"> <i class="material-icons">speaker_notes</i> </div> <p class="card-category">Cita</p> <div class="tim-typo"> <blockquote class="blockquote">{{#logged}} ' +
-    '<a href="quote/{{id}}">{{/logged}} <p style="color: black">' +
-var appendQuote2=    '</p> <small style="color: grey"> ' +
+    '<a href="quote/{{id}}">{{/logged}} <p style="color: black">';
+var appendQuote2=    '</p> <small style="color: grey"> ';
 var appendQuote3=    '</small>{{#logged}}</a>{{/logged}} ' +
     '</blockquote>{{#admin}} <div class="td-actions text-left"> <a href="quote/{{id}}"><button type="button" rel="tooltip" title="Editar cita" class="btn btn-primary btn-link btn-sm"> ' +
     '<i class="material-icons">edit</i> </button> </a> <a> <button type="button" onclick="deleteButton({{id}});" rel="tooltip"title="Borrar Cita"class="btn btn-danger btn-link btn-sm btn-delete"> ' +
