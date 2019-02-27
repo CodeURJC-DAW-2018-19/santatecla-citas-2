@@ -1,21 +1,19 @@
 package com.urjc.daw.practica.web;
 
-import java.util.Optional;
-
 import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.security.UserComponent;
 import com.urjc.daw.practica.service.QuoteManagementService;
 
 @RestController
 public class IndexController{
-    
+
+	private static final int DEFAULT_PAGE=0;
+	private static final int QUOTES_PER_PAGE=10;
 	@Autowired
 	private QuoteManagementService qms;
 
@@ -43,7 +41,7 @@ public class IndexController{
 	@GetMapping("/")
 	public ModelAndView showIndex(Model model) {
 		ModelAndView mav = new  ModelAndView("index");
-		model.addAttribute("quote", qms.findAll());
+		model.addAttribute("quote", qms.findAll(DEFAULT_PAGE,QUOTES_PER_PAGE));
 		model.addAttribute("topic",topicService.findAll());
 		return mav;
 	}
@@ -74,7 +72,7 @@ public class IndexController{
 	@GetMapping("/topicForm")
 	public ModelAndView showTopicForm(Model model) {
 		ModelAndView newModel = new ModelAndView("topicForm");
-		model.addAttribute("quote",qms.findAll());
+		model.addAttribute("quote",qms.findAll(DEFAULT_PAGE, QUOTES_PER_PAGE));
 		return newModel;
 	}
 

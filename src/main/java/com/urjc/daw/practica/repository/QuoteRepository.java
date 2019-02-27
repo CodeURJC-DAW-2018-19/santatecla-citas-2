@@ -16,8 +16,8 @@ import java.util.Optional;
 @Repository
 public interface QuoteRepository extends JpaRepository<Quote,Long> {
 
-    /*Page<Quote> findAll(Pageable pageable);
-    List<Quote> findAll();
+    Page<Quote> findAll(Pageable pageable);
+    /*List<Quote> findAll();
     Optional<Quote> findQuoteById(Long id);*/
     List<Quote> findByAuthorContaining(String author);
     List<Quote> findByIdNotIn(List<Long> ids);

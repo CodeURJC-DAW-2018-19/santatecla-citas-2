@@ -13,7 +13,7 @@ public class Quote {
     @Column(name = "quote_id")
     private Long id;
 
-    @Column(name = "quoteText")
+    @Column(name = "quoteText",length = 1000)
     private String text;
 
     @Column(name = "quoteAuthor")

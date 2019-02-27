@@ -7,6 +7,8 @@ import com.urjc.daw.practica.service.QuoteManagementService;
 
 import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -57,12 +60,11 @@ public class QuoteControllerImpl implements QuoteController {
     }
 
     @Override
-    @RequestMapping(value = "/quote",method = RequestMethod.GET)
-    public String findAll() {
-        //quoteService.findAll(nPage,QUOTES_PER_PAGE);
-        quoteService.findAll();
-        
-        return "quote";
+    @RequestMapping(value = "/{nPag}",method = RequestMethod.GET)
+    public ResponseEntity<List<Quote>> findAll(@PathVariable int nPag) {
+
+        return new ResponseEntity<>(quoteService.findAll(nPag,QUOTES_PER_PAGE), HttpStatus.OK);
+
     }
 
     @Override

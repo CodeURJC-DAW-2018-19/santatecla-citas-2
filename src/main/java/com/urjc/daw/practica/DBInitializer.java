@@ -43,6 +43,18 @@ public class DBInitializer {
 		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
 		quotes.save(new Quote("Hola, me llamo Íñigo Montoya, tu mataste a mi padre, preparate a morir","Íñigo Montoya", "The Princess Bride"));
 		quotes.save(new Quote("Que va si no estaba durmiendo, solo estaba mirando pa´dentro","Tragabuche", "Bandolero"));
+		quotes.save(new Quote("Self discipline is self love","Will Smith", "Video"));
+		quotes.save(new Quote("Get busy living or get busy dying","Stephen King", "The Shawshank Redemption"));
+		quotes.save(new Quote("Experience is merely the name men gave to their mistakes","Oscar Wilde", "The Picture of Dorian Gray"));
+		quotes.save(new Quote("All men dream: but not equally. Those who dream by night in the dusty recesses of their minds wake in the day to find that it was vanity: but the dreamers of the day are dangerous men, for they may act their dreams with open eyes, to make it possible. This I did","Lawrence of Arabia", "Seven Pilars of Wisdom"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+
 		// Sample users
 		userRepository.save(new User("user", passEncoder.encode("pass"), "ROLE_USER"));
 		userRepository.save(new User("admin",passEncoder.encode("pass"), "ROLE_USER", "ROLE_ADMIN"));
