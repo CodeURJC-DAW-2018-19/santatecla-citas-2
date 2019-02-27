@@ -139,9 +139,11 @@ $(document).ready(function () {
         method: "GET",
         url: "http://127.0.0.1:8080/"+currentPage
       }).done(function (quotes) {
-        for (var i = 0; i < quotes.length; i++)
+        for (var i = 0; i < quotes.length; i++) {
           console.log("loadNotes");
-          $('#quotes').append(appendQuote+quotes[i].text+appendQuote2+quotes[i].author+' ,'+ quotes[i].book+appendQuote3);
+          console.log(quotes[i]);
+          $(".quotes").append(appendQuote + quotes[i].text + appendQuote2 + quotes[i].author + ' ,' + quotes[i].book + appendQuote3);
+        }
         currentPage++;
       })
 
