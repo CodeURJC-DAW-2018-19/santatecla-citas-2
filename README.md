@@ -101,6 +101,7 @@ http://www.plantuml.com/plantuml/uml/SoWkIImgAStDuKhEIImkLl18BIfApCrCpIj9X8g45fS
 En caso de que haya cambiado la navegación, se deberá actualizar el diagrama de
 navegación.
 Diagrama de navegaciion:
+
 https://docs.google.com/document/d/1vJgvrwgVRnIQIpyoXT9KIyV70pleEv0J80u-dqYfbkk/edit
 
 las capturas de pantalla son:
@@ -130,6 +131,7 @@ incluirán ni atributos ni métodos en las clases. Se mostrarán las relaciones 
 distribución de las clases por partes u otro mecanismo. En este diagrama también se incluirán
 los ficheros que contienen los templates y se indicará con qué @Controller se relacionan
 - En los siguientes enlaces estan losdiagramas:
+
 
 
 https://docs.google.com/document/d/1vJgvrwgVRnIQIpyoXT9KIyV70pleEv0J80u-dqYfbkk/edit
