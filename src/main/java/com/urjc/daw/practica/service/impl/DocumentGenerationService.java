@@ -1,76 +1,84 @@
 package com.urjc.daw.practica.service.impl;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
-import java.util.zip.ZipInputStream;
+import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.Context;
+import org.xhtmlrenderer.pdf.ITextRenderer;
 
-import fr.opensagres.xdocreport.converter.ConverterTypeTo;
-import fr.opensagres.xdocreport.converter.Options;
-import fr.opensagres.xdocreport.core.XDocReportException;
-import fr.opensagres.xdocreport.document.IXDocReport;
-import fr.opensagres.xdocreport.document.images.FileImageProvider;
-import fr.opensagres.xdocreport.document.registry.XDocReportRegistry;
-import fr.opensagres.xdocreport.template.IContext;
-import fr.opensagres.xdocreport.template.TemplateEngineKind;
-import fr.opensagres.xdocreport.template.formatter.FieldsMetadata;
+import com.urjc.daw.practica.model.Quote;
+import com.urjc.daw.practica.model.Topic;
 
 @Service
 public class DocumentGenerationService {
 
+	private static final String TEMPLATE_NAME = "pdfTemplate";
 
-    public InputStream loadDocumentAsStream(String filePath) throws IOException {
-        URL url = new File(filePath).toURI().toURL();
-        InputStream documentAsStream = url.openStream();
-        ZipInputStream zip = new ZipInputStream(documentAsStream);
-        return zip;
-    }
+	@Autowired
+	private TemplateEngine templateEngine;
 
+	@Autowired
+	private QuoteManagementServiceImpl quoteService;
 
-    public IContext loadVariables(Map<String, Object> variables, IContext context) throws XDocReportException {
-        for (Map.Entry<String,Object> variable : variables.entrySet()) {
-            context.put(variable.getKey(), variable.getValue());
-        }
+	public File generateDocument(Topic topic)  {
 
-        return context;
-    }
+		Map<String, String> map = new HashMap<String, String>();
 
+		// Iterate the quotes and text inside each topic
+		Iterator<Long> it = topic.getQuoteIds().iterator();
+		String quotes = "";
+		while (it.hasNext()) {
+			Quote q = quoteService.findOne((long) it.next()).get();
+			quotes += q.getText() + "/" + q.getAuthor() + "/" + q.getBook() + ";";
+		}
+		
+		Iterator<String> iter = topic.getTexts().iterator();
+		String texts = "";
+		while (iter.hasNext()) {
+			texts += iter.next() + ";";
+		}
 
-    public void loadImages(IXDocReport report, Map<String, String> variables, IContext context) {
-        FieldsMetadata metadata = new FieldsMetadata();
-        for (Map.Entry<String,String> variable : variables.entrySet()) {
-            metadata.addFieldAsImage(variable.getKey());
-            context.put(variable.getKey(), new FileImageProvider(new File(variable.getValue()), true));
-        }
-        report.setFieldsMetadata(metadata);
-    }
+		map.put("quote", quotes);
+		map.put("texts", texts);
 
+		Assert.notNull(TEMPLATE_NAME, "The templateName can not be null");
+		Context ctx = new Context();
+		if (map != null) {
+			Iterator<Map.Entry<String, String>> itMap = map.entrySet().iterator();
+			while (itMap.hasNext()) {
+				Map.Entry<String, String> pair = itMap.next();
+				ctx.setVariable(pair.getKey().toString(), pair.getValue());
+			}
+		}
 
-    public byte[] generateDocument(String templatePath, TemplateEngineKind templateEngine,
-            Map<String, Object> variablesMap, Map<String, String> imagesPathMap, boolean converPdf)
-                    throws IOException, XDocReportException {
+		String processedHtml = templateEngine.process(TEMPLATE_NAME, ctx);
+		FileOutputStream os = null;
+		String fileName = UUID.randomUUID().toString();
+		File outputFile = null;
+		try {
+			outputFile = File.createTempFile(fileName, ".pdf");
+			os = new FileOutputStream(outputFile);
 
-        InputStream inputStream = loadDocumentAsStream(templatePath);
-        IXDocReport xdocReport = XDocReportRegistry.getRegistry().loadReport(inputStream, templateEngine);
+			ITextRenderer renderer = new ITextRenderer();
+			renderer.setDocumentFromString(processedHtml);
+			renderer.layout();
+			renderer.createPDF(os, false);
+			renderer.finishPDF();
+			os.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-        IContext context = xdocReport.createContext();
-        loadVariables(variablesMap, context);
-        loadImages(xdocReport, imagesPathMap, context);
+		return outputFile;
 
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        if (converPdf) {
-            Options options = Options.getTo(ConverterTypeTo.PDF);
-            xdocReport.convert(context, options, out);
-        } else {
-            xdocReport.process(context, out);
-        }
-
-        return out.toByteArray();
-    }
+	}
 }
