@@ -28,11 +28,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		// Public pages
-		//http.authorizeRequests().antMatchers("/").permitAll();
-		//http.authorizeRequests().antMatchers("/login").permitAll();
-		//http.authorizeRequests().antMatchers("/loginerror").permitAll();
-		//http.authorizeRequests().antMatchers("/logout").permitAll();
-		//http.headers().frameOptions().disable();
+		http.authorizeRequests().antMatchers("/").permitAll();
+		http.authorizeRequests().antMatchers("/login").permitAll();
+		http.authorizeRequests().antMatchers("/loginerror").permitAll();
+		http.authorizeRequests().antMatchers("/logout").permitAll();
+		http.headers().frameOptions().disable();
 		http.requiresChannel().antMatchers("/*").requiresSecure();
 
 		http.authorizeRequests().antMatchers("/quote", "/topicForm", "createTopic", "editTopic")
