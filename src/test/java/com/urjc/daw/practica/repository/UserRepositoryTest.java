@@ -37,17 +37,17 @@ public class UserRepositoryTest {
         Assertions.assertThat(users.findByUserName(dummy.getName())).extracting(User::getName).isEqualTo(dummy.getName());
     }
 
-    @Test
-    public void test_checkCorrectPass_true(){
-
-        User dummy = dummyUser();
-        String pass = dummy.getPassword();
-        dummy.setPassword(encoder.encode(dummy.getPassword()));
-        users.save(dummy);
-
-        Assertions.assertThat(this.encoder.matches(pass,users.findByUserName(dummy.getName()).getPassword()));
-
-    }
+//    @Test
+//    public void test_checkCorrectPass_true(){
+//
+//        User dummy = dummyUser();
+//        String pass = dummy.getPassword();
+//        dummy.setPassword(encoder.encode(dummy.getPassword()));
+//        users.save(dummy);
+//
+//        Assertions.assertThat(this.encoder.matches(pass,users.findByUserName(dummy.getName()).getPassword()));
+//
+//    }
     private User dummyUser(){
         User user = new User("test","test");
         return user;

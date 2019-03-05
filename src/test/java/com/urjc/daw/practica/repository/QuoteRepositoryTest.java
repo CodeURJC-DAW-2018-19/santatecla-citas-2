@@ -5,6 +5,7 @@ import com.urjc.daw.practica.model.Quote;
 import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
 
 import org.assertj.core.api.Assertions;
+import org.assertj.core.internal.bytebuddy.utility.RandomString;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -58,7 +59,7 @@ public class QuoteRepositoryTest {
 
 
 
-        Assertions.assertThat(quotes.findByAuthorContaining("")).extracting(Quote::getAuthor).doesNotContain(currentQuote.getAuthor());
+        Assertions.assertThat(quotes.findByAuthorContaining(RandomString.make())).extracting(Quote::getAuthor).doesNotContain(currentQuote.getAuthor());
     }
 
     public Quote dummyQuote(){

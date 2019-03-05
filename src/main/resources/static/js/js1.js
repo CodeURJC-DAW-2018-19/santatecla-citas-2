@@ -131,9 +131,7 @@ $(document).ready(function () {
 
   loadBtn.onclick = function () {
 
-      console.log("loadNotes");
-
-      var dataAux;
+      console.log("loadQuotes");
 
       $.ajax({
         method: "GET",
