@@ -76,10 +76,6 @@ public class IndexController{
 		return newModel;
 	}
 
-
-
-
-
 	
 	@GetMapping("/graph")
 	public ModelAndView showGraph(Model model) {

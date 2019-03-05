@@ -24,8 +24,8 @@
 							<div class="col-md-12">
 								<form class="navbar-form" action="/searchTopic">
 									<div class="input-group no-border">
-										<input type="text" value="{{#topicKeyword}}{{topicKeyword}}{{/topicKeyword}}" name="keyword" class="form-control"
-											placeholder="Buscar un tema..." />
+										<input type="text" value="{{#topicKeyword}}{{topicKeyword}}{{/topicKeyword}}"
+											name="keyword" class="form-control" placeholder="Buscar un tema..." />
 										<button type="submit" class="btn btn-white btn-round btn-just-icon">
 											<i class="material-icons">search</i>
 										</button>
@@ -47,10 +47,10 @@
 										</div>
 										<p class="card-category">Tema</p>
 										<div class="tim-typo">
-											
+
 											<blockquote class="blockquote">
-													<a href="topic/{{id}}">
-												<h3 style="color: black">{{#name}}{{name}}{{/name}}</h3>
+												<a href="topic/{{id}}">
+													<h3 style="color: black">{{#name}}{{name}}{{/name}}</h3>
 												</a>
 											</blockquote>
 
@@ -114,7 +114,8 @@
 							<div class="col-md-12">
 								<form class="navbar-form" action="/searchQuote" method="get">
 									<div class="input-group no-border">
-										<input type="text" value="{{#quoteKeyword}}{{quoteKeyword}}{{/quoteKeyword}}" name="keyword" class="form-control" placeholder="Buscar..." />
+										<input type="text" value="{{#quoteKeyword}}{{quoteKeyword}}{{/quoteKeyword}}"
+											name="keyword" class="form-control" placeholder="Buscar..." />
 										<button type="submit" class="btn btn-white btn-round btn-just-icon">
 											<i class="material-icons">search</i>
 										</button>
@@ -166,7 +167,8 @@
 								</div>
 							</div>
 							{{/quote}}
-							<button id="loadMore" type="button" title="loadMore"><i class="material-icons">add_circle_outline</i></button>
+							<button id="loadMore" type="button" title="loadMore"><i
+									class="material-icons">add_circle_outline</i></button>
 							{{^logged}} <span>You must be
 								logged in to see the quote table.</span>
 							{{/logged}}
@@ -220,18 +222,21 @@
 				</div>
 			</div>
 		</div>
-		<script src="/chartist.min.js"></script>
-		<script>
+		<script src="/chartist.min.js" ></script>
+		<script type="text/javascript">
 			var data = {
-				labels: [{{#topic}}'{{name}}',{{/topic}}],
+				labels: [{{ #topic }}'{{name}}', {{
+					/topic}}],
 				series: [
-					[{{#topic}}{{nQuotes}},{{/topic}}]
+					[{{#topic}} {{nQuotes}}, {{/topic}}]
 				]
-			};
-			new Chartist.Bar('.ct-chart', data);
+						};
+				new Chartist.Bar('.ct-chart', data);
 		</script>
 	</div>
 </div>
+
+
 
 
 
