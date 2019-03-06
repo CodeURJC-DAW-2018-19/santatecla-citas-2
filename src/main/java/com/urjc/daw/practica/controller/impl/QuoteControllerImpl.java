@@ -27,8 +27,6 @@ public class QuoteControllerImpl implements QuoteController {
 
     private static final Path IMAGES_FOLDER = Paths.get(System.getProperty("user.dir")+"/src/main/resources/static/images/quote/");
 
-
-
     @Autowired
     QuoteManagementService quoteService;
 
