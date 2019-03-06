@@ -1,16 +1,9 @@
 FROM openjdk:8
 
-RUN apt-get update
-RUN apt-get install -y maven
+WORKDIR /src
 
-WORKDIR ./
-
-ADD pom.xml /pom.xml
-RUN ["mvn", "install"]
-RUN ["mvn", "verify"]
-
-ADD src /src
-RUN ["mvn", "package"]
+COPY target/practica-0.0.1-SNAPSHOT.jar.original practica.jar
 
 EXPOSE 8443
-CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/practica.jar"]
+
+CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "practica.jar"]
