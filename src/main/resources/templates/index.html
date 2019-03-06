@@ -222,16 +222,15 @@
 				</div>
 			</div>
 		</div>
-		<script src="/chartist.min.js" ></script>
+		<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 		<script type="text/javascript">
 			var data = {
-				labels: [{{ #topic }}'{{name}}', {{
-					/topic}}],
+				labels: [{{ #topic }}'{{name}}', {{/topic}}],
 				series: [
 					[{{#topic}} {{nQuotes}}, {{/topic}}]
-				]
-						};
-				new Chartist.Bar('.ct-chart', data);
+					]
+				};
+			new Chartist.Bar('.ct-chart', data);
 		</script>
 	</div>
 </div>
