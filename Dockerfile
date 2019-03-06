@@ -2,7 +2,7 @@ FROM openjdk:8
 
 WORKDIR /src
 
-COPY target/practica-0.0.1-SNAPSHOT.jar.original practica.jar
+COPY target/practica-0.0.1-SNAPSHOT.jar practica.jar
 
 EXPOSE 8443
 
