@@ -1,0 +1,31 @@
+
+<div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="card card-stats">
+        <div class="card-header card-header-warning card-header-icon">
+            <div class="card-icon">
+                <i class="material-icons">speaker_notes</i>
+            </div>
+            <p class="card-category">Cita</p>
+            <div class="tim-typo">
+                <blockquote class="blockquote">
+                    <p style="color:black">
+                        {{quoteText}}
+                    </p>
+                    <small style="color:grey">
+                        {{quoteAuthor}},{{quoteBook}}
+                    </small>
+                </blockquote>
+                {{#admin}}
+                <td class="td-actions text-left">
+                    <button type="button" rel="tooltip" title="Editar cita" class="btn btn-primary btn-link btn-sm">
+                        <i class="material-icons">edit</i>
+                    </button>
+                    <button type="button" rel="tooltip" title="Borrar Cita" class="btn btn-danger btn-link btn-sm">
+                        <i class="material-icons">close</i>
+                    </button>
+                </td>
+                {{/admin}}
+            </div>
+        </div>
+    </div>
+</div>
