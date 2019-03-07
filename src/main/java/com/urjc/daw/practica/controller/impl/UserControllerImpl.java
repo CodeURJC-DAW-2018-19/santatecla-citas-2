@@ -20,7 +20,6 @@ public class UserControllerImpl implements UserController {
     @Override
     @PostMapping("/register")
     public String register(Model model, User user) {
-
         user.setRoles(Arrays.asList("ROLE_USER"));
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         users.save(user);

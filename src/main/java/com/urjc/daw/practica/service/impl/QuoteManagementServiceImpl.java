@@ -5,12 +5,13 @@ import com.urjc.daw.practica.repository.QuoteRepository;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-
-import java.awt.print.Pageable;
+import org.springframework.web.multipart.MultipartFile;
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +19,8 @@ import java.util.Optional;
 @Service
 public class QuoteManagementServiceImpl implements QuoteManagementService {
 
+	private static final Path IMAGES_FOLDER = Paths.get(System.getProperty("user.dir")+"/src/main/resources/static/images/quote/");
+	
     @Autowired
     QuoteRepository quotes;
 
@@ -89,9 +92,20 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     public List<Quote> findByBook(String book) {
         return quotes.findByBookContaining(book);
     }
+    
+    public void saveQuoteImage(MultipartFile file, Quote quote) {
+    	if (!file.isEmpty()) {
+            String imageName = "image-" + quote.getId() + ".jpg";
+            try {
+                File uploadedFile = new File(IMAGES_FOLDER.toFile(), imageName);
+                file.transferTo(uploadedFile);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public boolean checkValidQuote(Quote quote){
-
         return quote != null;
     }
 }
