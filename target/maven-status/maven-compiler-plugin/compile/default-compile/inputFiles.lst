@@ -8,6 +8,7 @@
 /src/src/main/java/com/urjc/daw/practica/service/QuoteManagementService.java
 /src/src/main/java/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.java
 /src/src/main/java/com/urjc/daw/practica/controller/impl/TopicControllerImpl.java
+/src/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java
 /src/src/main/java/com/urjc/daw/practica/controller/impl/QuoteControllerImpl.java
 /src/src/main/java/com/urjc/daw/practica/web/IndexController.java
 /src/src/main/java/com/urjc/daw/practica/service/impl/ThymeleafConfiguration.java
