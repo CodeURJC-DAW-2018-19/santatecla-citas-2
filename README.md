@@ -1,5 +1,6 @@
-# santatecla-citas-2
 # Gestor de citas 
+## Equipo
+
 ## Entorno de Desarrollo
 - [Intellij Idea](https://www.jetbrains.com/idea/)
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -21,6 +22,10 @@ Pantalla de Visualización y edición de Citas
 
 ![Pantalla Admin](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaAdmin.png?raw=true)
 > Pantalla inicial para gestionar citas y temas
+
+## Diagrama de Navegación
+![Diagrama de Navegación](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/diagrama-Navegacion.png?raw=true)
+> Diagrama de Navegación del Sistema
 
 ## MODELO DEL DOMINIO https://docs.google.com/document/d/1PKqs6eayJti3jBymaytm1CKXEUqmyDpC4xDh7tM-wEk/edit?usp=sharing
 
