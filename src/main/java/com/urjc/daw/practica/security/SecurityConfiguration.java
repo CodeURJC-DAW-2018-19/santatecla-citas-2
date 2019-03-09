@@ -5,12 +5,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-@EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	AuthenticationProvider authProvider;
@@ -26,8 +24,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.headers().frameOptions().disable();
 		http.requiresChannel().antMatchers("/*").requiresSecure();
 
-		http.authorizeRequests().antMatchers("/quote", "/topicForm", "createTopic", "editTopic")
-				.hasAuthority("ROLE_ADMIN");
+		//http.authorizeRequests().antMatchers("/quote", "/topicForm", "createTopic", "editTopic")
+		//		.hasAuthority("ROLE_ADMIN");
 
 		// Web resources
 		http.authorizeRequests().antMatchers("/static/**").permitAll();
