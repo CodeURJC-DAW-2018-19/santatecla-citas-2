@@ -73,7 +73,20 @@ Page used by admins to delete items or enter de edition pages
     - PUT (If admin)
     - DELETE ( If admin)
   3. Input/Output
-    # Insertar JSON de Cita
+    - Input:
+    `{
+      "id": 18,
+      "text": "Amigo, esto es una cita de prueba",
+      "author": "Grupo 4",
+      "book": "Pruebas Daw"
+    }`
+    - Output:
+    `{
+      "id": 4,
+      "text": "Que va si no estaba durmiendo, solo estaba mirando pa´dentro",
+      "author": "Tragabuche",
+      "book": "Bandolero"
+    }`
   4. Status Codes
 
   5. Examples
