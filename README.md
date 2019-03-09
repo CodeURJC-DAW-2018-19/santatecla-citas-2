@@ -19,7 +19,7 @@ Pantalla de Visualización y edición de Citas
 ![PopUp](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PopUpCitas.png?raw=true)
 > PopUp para añadir citas a un determinado tema
 
-![Pantalla Admin](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/PantallaAdmin.png?raw=true)
+![Pantalla Admin](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaAdmin.png?raw=true)
 > Pantalla inicial para gestionar citas y temas
 
 ## MODELO DEL DOMINIO https://docs.google.com/document/d/1PKqs6eayJti3jBymaytm1CKXEUqmyDpC4xDh7tM-wEk/edit?usp=sharing
