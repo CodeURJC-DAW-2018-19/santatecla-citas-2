@@ -16,7 +16,7 @@ Pantalla de Visualización y edición de Citas
 ![Pantalla Temas](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaTema.png?raw=true)
 > Pantalla de visualización y edición de Temas
 
-![PopUp](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/PopUpCitas.png?raw=true)
+![PopUp](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PopUpCitas.png?raw=true)
 > PopUp para añadir citas a un determinado tema
 
 ![Pantalla Admin](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/PantallaAdmin.png?raw=true)
