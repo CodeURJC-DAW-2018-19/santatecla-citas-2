@@ -7,7 +7,7 @@
 
 ##Capturas de pantalla
 
-![Página Principal](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/PantallaInicio.png)
+![Página Principal](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaInicio.png?raw=true)
 > Pantalla de Inicio
 
 ![Pantalla Citas](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaCitas.png?raw=true)
