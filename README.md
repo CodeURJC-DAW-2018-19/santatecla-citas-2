@@ -7,19 +7,19 @@
 
 ##Capturas de pantalla
 
-![Página Principal](images\Pantalla Inicio.png)
+![Página Principal](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/Pantalla Inicio.png)
 > Pantalla de Inicio
 
-![Pantalla Citas](images\Pantalla Citas.png)
+![Pantalla Citas](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/Pantalla Citas.png)
 Pantalla de Visualización y edición de Citas
 
-![Pantalla Temas](images\Pantalla Tema.png)
+![Pantalla Temas](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/Pantalla Tema.png)
 > Pantalla de visualización y edición de Temas
 
-![PopUp](images\PopUpCitas.png)
+![PopUp](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/PopUpCitas.png)
 > PopUp para añadir citas a un determinado tema
 
-![Pantalla Admin](images\Pantalla Admin.png)
+![Pantalla Admin](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/Pantalla Admin.png)
 > Pantalla inicial para gestionar citas y temas
 
 ## MODELO DEL DOMINIO https://docs.google.com/document/d/1PKqs6eayJti3jBymaytm1CKXEUqmyDpC4xDh7tM-wEk/edit?usp=sharing
