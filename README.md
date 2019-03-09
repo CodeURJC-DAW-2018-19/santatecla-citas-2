@@ -86,6 +86,10 @@ Page used by admins to delete items or enter de edition pages
      - PUT (If admin
      - DELETE (If admin)
   3. Input/Output
+  
     # Insertar JSON de Tema
   
-
+## Dockerized App execution
+1. Run the script *DAW_BuildScript.sh*
+2. Run the script *DockerBuild_Run.sh*
+3. ENJOY
