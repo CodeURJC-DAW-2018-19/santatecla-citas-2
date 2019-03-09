@@ -66,26 +66,26 @@ Page used by admins to delete items or enter de edition pages
 ## API REST Endpoints
 
 - Quote Endpoint
-1. URI ´/api/quote´
-2. Supported Operations
-  - GET (If Logged)
-  - POST (If admin)
-  - PUT (If admin)
-  - DELETE ( If admin)
-3. Input/Output
-# Insertar JSON de Cita
-4. Status Codes
+  1. URI ´/api/quote´
+  2. Supported Operations
+    - GET (If Logged)
+    - POST (If admin)
+    - PUT (If admin)
+    - DELETE ( If admin)
+  3. Input/Output
+    # Insertar JSON de Cita
+  4. Status Codes
 
-5. Examples
+  5. Examples
 
 -Topic Endpoint
-1. URI ´/api/topic´
-2. Supported Operations
-  - GET (ALL)
-  - POST (If admin)
-  - PUT (If admin
-  - DELETE (If admin)
-3. Input/Output
-# Insertar JSON de Tema
+  1. URI ´/api/topic´
+  2. Supported Operations
+     - GET (ALL)
+     - POST (If admin)
+     - PUT (If admin
+     - DELETE (If admin)
+  3. Input/Output
+    # Insertar JSON de Tema
   
 
