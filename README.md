@@ -10,10 +10,10 @@
 - [Brackets](http://brackets.io/) 
 
 ### IDE Configuration and Installation
-1. Clone the Repository using 'git clone https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch'
+1. Clone the Repository using `git clone https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch`
 2. Open one of the three IDEs from above
   - Intellij
-    1. Open de project
+    1. Open the project
     2. Set JDK to version 8
     3. Update maven dependencies 'mvn clean install'
     4. Build the .jar file 'mvn package'
