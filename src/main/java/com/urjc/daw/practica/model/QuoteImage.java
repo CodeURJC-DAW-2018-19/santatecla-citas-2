@@ -1,3 +1,4 @@
+
 package com.urjc.daw.practica.model;
 
 import javax.persistence.Entity;
@@ -17,7 +18,7 @@ public class QuoteImage {
     @Lob
     private byte[] image;
 
-    public QuoteImage(){
+    public QuoteImage(String fileName, byte[] bytes){
         //JPA NEEDS THIS
     }
 
