@@ -63,28 +63,29 @@ Page used by admins to delete items or enter de edition pages
 ![Diagrama de Clases](https://raw.githubusercontent.com/CodeURJC-DAW-2018-19/santatecla-citas-2/working_branch/images/diagramaAplicacion.png)
 >
 
-## • Entorno de desarrollo: Se indicarán cómo instalar y configurar el entorno de desarrollo para
-poder compilar y ejecutar la aplicación:
+## API REST Endpoints
 
-- spring initializing,seinicia un nuevo proyectocon spring sts..
+- Quote Endpoint
+1. URI ´/api/quote´
+2. Supported Operations
+  - GET (If Logged)
+  - POST (If admin)
+  - PUT (If admin)
+  - DELETE ( If admin)
+3. Input/Output
+# Insertar JSON de Cita
+4. Status Codes
 
+5. Examples
 
-## • Diagrama con las entidades de la base de datos: Se incluirá un diagrama con las entidades
-de la base de datos, sus campos y las relaciones entre ellas. Se usará un diagrama de las clases
-Java, no un diagrama entidad-relación de base de datos. Acontinuacion tenemos los enlaces a los diagramas de bbdd
+-Topic Endpoint
+1. URI ´/api/topic´
+2. Supported Operations
+  - GET (ALL)
+  - POST (If admin)
+  - PUT (If admin
+  - DELETE (If admin)
+3. Input/Output
+# Insertar JSON de Tema
+  
 
-
-https://docs.google.com/document/d/1vJgvrwgVRnIQIpyoXT9KIyV70pleEv0J80u-dqYfbkk/edit
-
-
-## • Diagrama de clases y templates: Se creará un diagrama de clases de la aplicación. No se
-incluirán ni atributos ni métodos en las clases. Se mostrarán las relaciones entre las clases
-(asociación, composición o herencia) y se diferenciará claramente qué clases son @Controller,
-@Service, Repository u otro tipo de clases. Para ello se puede usar un código de colores, una
-distribución de las clases por partes u otro mecanismo. En este diagrama también se incluirán
-los ficheros que contienen los templates y se indicará con qué @Controller se relacionan
-- En los siguientes enlaces estan losdiagramas:
-
-
-
-https://docs.google.com/document/d/1vJgvrwgVRnIQIpyoXT9KIyV70pleEv0J80u-dqYfbkk/edit
