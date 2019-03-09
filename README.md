@@ -15,7 +15,7 @@
   - Intellij
     1. Open the project
     2. Set JDK to version 8
-    3. Update maven dependencies ´mvn clean install´
+    3. Update maven dependencies `mvn clean install´
     4. Build the .jar file `mvn package`
   - Visual Studio Code
     1.
