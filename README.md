@@ -2,8 +2,8 @@
 ## Team (*Group 4*)
 
 ## Tools
- [Git](https://git-scm.com/)
- [Trello](https://trello.com/b/lzf2xt3j/daw-grupo-4)
+- [Git](https://git-scm.com/)
+- [Trello](https://trello.com/b/lzf2xt3j/daw-grupo-4)
 ## Development Environment
 - [Intellij Idea](https://www.jetbrains.com/idea/)
 - [Visual Studio Code](https://code.visualstudio.com/)
