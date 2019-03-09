@@ -76,4 +76,11 @@ public class Quote {
     }
 
 
+    public Long getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(Long imageId) {
+        this.imageId = imageId;
+    }
 }
