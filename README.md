@@ -1,11 +1,11 @@
 # santatecla-citas-2
 # Gestor de citas 
-##Entorno de Desarrollo
+## Entorno de Desarrollo
 - [Intellij Idea](https://www.jetbrains.com/idea/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Brackets](http://brackets.io/) 
 
-##Capturas de pantalla
+## Capturas de pantalla
 
 ![Página Principal](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaInicio.png?raw=true)
 > Pantalla de Inicio
