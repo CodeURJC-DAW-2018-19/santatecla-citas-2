@@ -1,5 +1,6 @@
 # Quote Manager 
-## Equipo
+## Team (*Group 4*)
+
 
 ## Development Environment
 - [Intellij Idea](https://www.jetbrains.com/idea/)
