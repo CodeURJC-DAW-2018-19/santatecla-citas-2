@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.urjc.daw.practica.model.User;
@@ -19,7 +20,7 @@ public class LoginController {
     @Autowired
     private UserComponent userComponent;
 
-    @GetMapping("/api/login")
+    @RequestMapping("/api/login")
     public ResponseEntity<User>login(){
         if(!userComponent.isLoggedUser()){
             log.info("usuario no registrado");
@@ -31,7 +32,7 @@ public class LoginController {
         }
     }
 
-    @GetMapping("/api/logout")
+    @RequestMapping("/api/logout")
     public ResponseEntity<Boolean>logout(HttpSession session){
         if(!userComponent.isLoggedUser()){
             log.info("Usuario no registrado");

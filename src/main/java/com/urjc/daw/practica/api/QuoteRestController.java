@@ -28,7 +28,7 @@ public class QuoteRestController {
 	@Autowired
 	QuoteManagementServiceImpl quoteService;
 
-	@GetMapping("/@{id}")
+	@GetMapping("/{id}")
 	public Optional<Quote> findOne(@PathVariable long id) {
 		return quoteService.findOne(id);
 	}
