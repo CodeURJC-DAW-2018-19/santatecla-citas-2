@@ -66,7 +66,7 @@ Page used by admins to delete items or enter de edition pages
 ## API REST Endpoints
 
 - Quote Endpoint
-  1. URI ´/api/quote´
+  1. URI `/api/quote`
   2. Supported Operations
     - GET (If Logged)
     - POST (If admin)
@@ -79,7 +79,7 @@ Page used by admins to delete items or enter de edition pages
   5. Examples
 
 -Topic Endpoint
-  1. URI ´/api/topic´
+  1. URI `/api/topic`
   2. Supported Operations
      - GET (ALL)
      - POST (If admin)
