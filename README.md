@@ -10,7 +10,7 @@
 ![Página Principal](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/PantallaInicio.png)
 > Pantalla de Inicio
 
-![Pantalla Citas](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/PantallaCitas.png)
+![Pantalla Citas](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaCitas.png?raw=true)
 Pantalla de Visualización y edición de Citas
 
 ![Pantalla Temas](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch/images/PantallaTema.png)
