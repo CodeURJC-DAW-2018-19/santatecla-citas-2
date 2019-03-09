@@ -5,15 +5,22 @@ import com.urjc.daw.practica.repository.QuoteRepository;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
+import org.springframework.util.CollectionUtils;
+import org.springframework.web.multipart.MultipartFile;
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class QuoteManagementServiceImpl implements QuoteManagementService {
 
+	private static final Path IMAGES_FOLDER = Paths.get(System.getProperty("user.dir")+"/src/main/resources/static/images/quote/");
+	
     @Autowired
     QuoteRepository quotes;
 
@@ -31,8 +38,9 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     }*/
     
     @Override
-    public List<Quote> findAll() {
-        return quotes.findAll();
+    public List<Quote> findAll(int nPag, int quotesPerPage) {
+        List<Quote> list =   quotes.findAll(PageRequest.of(nPag,quotesPerPage)).getContent();
+        return list;
     }
 
     @Override
@@ -59,8 +67,45 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
         return quotes.findByIdNotIn(ids);
     }
 
-    public boolean checkValidQuote(Quote quote){
+    @Override
+    public List<Quote> findByKeyword(String keyword) {
+        List<Quote> quotesFound = new ArrayList<>();
+        if(!CollectionUtils.containsAny(quotesFound,findByAuthor(keyword))){
+            quotesFound.addAll(findByAuthor(keyword));
+        }
+        if(!CollectionUtils.containsAny(quotesFound,findByBook(keyword))){
+            quotesFound.addAll(findByBook(keyword));
+        }
+        if(!CollectionUtils.containsAny(quotesFound,quotes.findByTextContaining(keyword))){
+            quotesFound.addAll(quotes.findByTextContaining(keyword));
+        }
 
+        return quotesFound;
+    }
+
+    @Override
+    public List<Quote> findByAuthor(String author) {
+        return quotes.findByAuthorContaining(author);
+    }
+
+    @Override
+    public List<Quote> findByBook(String book) {
+        return quotes.findByBookContaining(book);
+    }
+    
+    public void saveQuoteImage(MultipartFile file, Quote quote) {
+    	if (!file.isEmpty()) {
+            String imageName = "image-" + quote.getId() + ".jpg";
+            try {
+                File uploadedFile = new File(IMAGES_FOLDER.toFile(), imageName);
+                file.transferTo(uploadedFile);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean checkValidQuote(Quote quote){
         return quote != null;
     }
 }

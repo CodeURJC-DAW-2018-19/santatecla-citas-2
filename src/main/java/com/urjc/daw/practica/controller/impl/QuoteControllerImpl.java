@@ -1,52 +1,39 @@
 package com.urjc.daw.practica.controller.impl;
 
 import com.urjc.daw.practica.controller.QuoteController;
-import com.urjc.daw.practica.model.Image;
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.security.UserComponent;
 import com.urjc.daw.practica.service.QuoteManagementService;
 
+import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-
-import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Controller
 public class QuoteControllerImpl implements QuoteController {
 
     private static final int QUOTES_PER_PAGE=10;
-    private static final Path FILES_FOLDER = Paths.get("/images");
-    private AtomicInteger imageId = new AtomicInteger();
-    private Map<Integer, Image> images = new ConcurrentHashMap<>();
 
-    
+    private static final Path IMAGES_FOLDER = Paths.get(System.getProperty("user.dir")+"/src/main/resources/static/images/quote/");
+
+
+
     @Autowired
     QuoteManagementService quoteService;
+
+    @Autowired
+    TopicManagementService topicService;
     
     @Autowired
     UserComponent userComponent;
@@ -65,8 +52,6 @@ public class QuoteControllerImpl implements QuoteController {
 		}
 	}
 
-
-
     @Override
     @RequestMapping(value = "/quote/@{id}",method = RequestMethod.GET)
     public String findOne() {
@@ -75,41 +60,40 @@ public class QuoteControllerImpl implements QuoteController {
     }
 
     @Override
-    @RequestMapping(value = "/quote",method = RequestMethod.GET)
-    public String findAll() {
-        //quoteService.findAll(nPage,QUOTES_PER_PAGE);
-        quoteService.findAll();
-        
-        return "quote";
+    @RequestMapping(value = "/{nPag}",method = RequestMethod.GET)
+    public ResponseEntity<List<Quote>> findAll(@PathVariable int nPag) {
+
+        return new ResponseEntity<>(quoteService.findAll(nPag,QUOTES_PER_PAGE), HttpStatus.OK);
+
     }
 
     @Override
     @RequestMapping(value = "/quote",method = RequestMethod.POST)
-    public String postQuote(Model model,Quote quote) {
+    public String postQuote(Model model, Quote quote,
+                            @RequestParam("file") MultipartFile file) {
     	quoteService.save(quote);
-        model.addAttribute("cod","creada");
-        return "quoteCreated";
+        if (!file.isEmpty()) {
+            String imageName = "image-" + quote.getId() + ".jpg";
+            try {
+                File uploadedFile = new File(IMAGES_FOLDER.toFile(), imageName);
+                file.transferTo(uploadedFile);
+            } catch (Exception e) {
+                model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
+            }
+        }
+
+        model.addAttribute("cod","La cita ha sido creada");
+        return "created";
     }
 
     @Override
-    @GetMapping("/editQuote/{id}")
-    public String editQuote(Model model,@PathVariable long id , HttpServletResponse res) throws IOException {
+    @GetMapping("/quote/{id}")
+    public String editQuote(Model model,@PathVariable long id) {
         Optional<Quote> quote = quoteService.findOne(id);
         
         if(quote.isPresent()) {
         	model.addAttribute("quote",quote.get());
-            String fileName = "image-" + id + ".jpg";
-
-            Path image = FILES_FOLDER.resolve(fileName);
-
-            if (Files.exists(image)) {
-                res.setContentType("image/jpeg");
-                res.setContentLength((int) image.toFile().length());
-                FileCopyUtils.copy(Files.newInputStream(image), res.getOutputStream());
-
-            } else {
-                res.sendError(404, "File" + fileName + "(" + image.toAbsolutePath() + ") does not exist");
-            }
+        	model.addAttribute("rnd",Math.random());
         }
         return "quoteForm";
     }
@@ -118,45 +102,17 @@ public class QuoteControllerImpl implements QuoteController {
     @GetMapping("/deleteQuote/{id}")
     public String deleteQuote(Model model,@PathVariable long id) {
         quoteService.deleteQuote(id);
-        model.addAttribute("cod","eliminada");
-        return "quoteCreated";
+        model.addAttribute("cod","La cita ha sido eliminada");
+        return "created";
     }
-    @RequestMapping("/quoteForm")
-    public String index(Model model) {
 
-        model.addAttribute("images", images.values());
-
-        return "quoteForm";
-    }
-    @RequestMapping(value = "/image/upload", method = RequestMethod.POST)
-    public String handleFileUpload(Model model, @RequestParam("imageTitle") String imageTitle, @RequestParam("file") MultipartFile file) {
-
-        int id = imageId.getAndIncrement();
-
-        String fileName = "image-" + id + ".jpg";
-
-        if (!file.isEmpty()) {
-            try {
-
-                File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-                file.transferTo(uploadedFile);
-
-                images.put(id, new Image(id, imageTitle));
-
-                return "uploaded";
-
-            } catch (Exception e) {
-
-                model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
-
-                return "uploaded";
-            }
-        } else {
-
-            model.addAttribute("error", "The file is empty");
-
-            return "uploaded";
-        }
+    @Override
+    @GetMapping("/searchQuote")
+    public String findByKeyword(@RequestParam(value = "keyword") String keyword, Model model) {
+        model.addAttribute("quote",quoteService.findByKeyword(keyword));
+        model.addAttribute("topic",topicService.findAll());
+        model.addAttribute("quoteKeyword",keyword);
+        return "index";
     }
 
 

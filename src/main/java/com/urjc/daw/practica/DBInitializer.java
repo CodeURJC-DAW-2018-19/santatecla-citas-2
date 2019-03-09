@@ -5,7 +5,6 @@ import javax.annotation.PostConstruct;
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.Topic;
 import com.urjc.daw.practica.repository.QuoteRepository;
-import com.urjc.daw.practica.repository.TextRepository;
 import com.urjc.daw.practica.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,16 +14,8 @@ import com.urjc.daw.practica.model.User;
 import com.urjc.daw.practica.repository.UserRepository;
 import com.urjc.daw.practica.security.UserAuthProvider;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 @Component
 public class DBInitializer {
-
-
-	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
 
 	@Autowired
 	private UserRepository userRepository;
@@ -36,9 +27,6 @@ public class DBInitializer {
 	private TopicRepository topics;
 
 	@Autowired
-	private TextRepository texts;
-
-	@Autowired
 	UserAuthProvider authProvider;
 	
 	@Autowired
@@ -46,7 +34,7 @@ public class DBInitializer {
 
 
 	@PostConstruct
-	public void init() throws IOException {
+	public void init() {
 		
 		//SampleTopics
 		topics.save(new Topic("Test"));
@@ -55,12 +43,21 @@ public class DBInitializer {
 		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
 		quotes.save(new Quote("Hola, me llamo Íñigo Montoya, tu mataste a mi padre, preparate a morir","Íñigo Montoya", "The Princess Bride"));
 		quotes.save(new Quote("Que va si no estaba durmiendo, solo estaba mirando pa´dentro","Tragabuche", "Bandolero"));
+		quotes.save(new Quote("Self discipline is self love","Will Smith", "Video"));
+		quotes.save(new Quote("Get busy living or get busy dying","Stephen King", "The Shawshank Redemption"));
+		quotes.save(new Quote("Experience is merely the name men gave to their mistakes","Oscar Wilde", "The Picture of Dorian Gray"));
+		quotes.save(new Quote("All men dream: but not equally. Those who dream by night in the dusty recesses of their minds wake in the day to find that it was vanity: but the dreamers of the day are dangerous men, for they may act their dreams with open eyes, to make it possible. This I did","Lawrence of Arabia", "Seven Pilars of Wisdom"));
+		quotes.save(new Quote("Allé voy","Cloud", "Final Fantasy VII"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+
 		// Sample users
 		userRepository.save(new User("user", passEncoder.encode("pass"), "ROLE_USER"));
 		userRepository.save(new User("admin",passEncoder.encode("pass"), "ROLE_USER", "ROLE_ADMIN"));
-		if (!Files.exists(FILES_FOLDER)) {
-			Files.createDirectories(FILES_FOLDER);
-		}
 	}
 
 }

@@ -1,8 +1,6 @@
 package com.urjc.daw.practica.service;
 
 import com.urjc.daw.practica.model.Quote;
-import com.urjc.daw.practica.model.Topic;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +11,7 @@ public interface QuoteManagementService {
     Optional<Quote> findOne(Long id);
     //Page<Quote> findAll(int nPage, int nQuotes);
 
-    List<Quote> findAll();
+    List<Quote> findAll(int nPag, int quotesPerPage);
 
     Quote save(Quote quote);
 
@@ -22,4 +20,10 @@ public interface QuoteManagementService {
     Quote deleteQuote(Long id);
 
     List<Quote> findByIdDiferrentThan(List<Long> ids);
+
+    List<Quote> findByKeyword(String keyword);
+
+    List<Quote> findByAuthor(String author);
+
+    List<Quote> findByBook(String book);
 }

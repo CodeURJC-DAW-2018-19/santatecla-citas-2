@@ -13,7 +13,7 @@ public class Quote {
     @Column(name = "quote_id")
     private Long id;
 
-    @Column(name = "quoteText")
+    @Column(name = "quoteText",length = 1000)
     private String text;
 
     @Column(name = "quoteAuthor")
@@ -22,10 +22,8 @@ public class Quote {
     @Column(name = "quoteBook")
     private String book;
 
-
-
-
-    private String imageId;
+    @Column(name = "image")
+    private Long imageId;
 
 
 
@@ -72,12 +70,9 @@ public class Quote {
     	this.id = id;
     }
 
-    public String getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
+    public boolean equals (Object o1){
+        Quote quote = (Quote) o1;
+        return this.getId().equals(quote.getId());
     }
 
 

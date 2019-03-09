@@ -66,4 +66,9 @@ public class TopicManagementServiceImpl implements TopicManagementService {
     public void deleteTopic(Topic topic) {
         topics.delete(topic);
     }
+
+    @Override
+    public List<Topic> findByKeyword(String keyword) {
+        return topics.findByNameContains(keyword);
+    }
 }
