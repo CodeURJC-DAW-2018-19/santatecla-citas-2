@@ -22,6 +22,9 @@ public class Quote {
     @Column(name = "quoteBook")
     private String book;
 
+    @Column(name = "image")
+    private Long imageId;
+
 
 
     public Quote(){
