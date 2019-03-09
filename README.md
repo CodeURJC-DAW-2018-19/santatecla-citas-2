@@ -1,39 +1,44 @@
-# Gestor de citas 
+# Quote Manager 
 ## Equipo
 
-## Entorno de Desarrollo
+## Development Environment
 - [Intellij Idea](https://www.jetbrains.com/idea/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Brackets](http://brackets.io/) 
 
-## Capturas de pantalla
+## Scrennshots
 
 ![Página Principal](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaInicio.png?raw=true)
-> Pantalla de Inicio
+> Index page
+Page shown when searching the default url
 
 ![Pantalla Citas](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaCitas.png?raw=true)
-Pantalla de Visualización y edición de Citas
+> Quote Management and visualization Page
+Page used by admins to create or edit Quotes, and by users to visualize Quotes
 
 ![Pantalla Temas](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaTema.png?raw=true)
-> Pantalla de visualización y edición de Temas
+> Topic Management and visualization Page
+Page used by admis to create or edit Topics, and by users to visualize Topics
 
 ![PopUp](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PopUpCitas.png?raw=true)
-> PopUp para añadir citas a un determinado tema
+> Quote addition PopUp
+PopUp generated when the admin wants so add a quote to a certain topic, used to choose existing quotes 
 
 ![Pantalla Admin](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/PantallaAdmin.png?raw=true)
-> Pantalla inicial para gestionar citas y temas
+> Index page for admins
+Page used by admins to delete items or enter de edition pages
 
-## Diagrama de Navegación
+## Navigation Diagram
 ![Diagrama de Navegación](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/diagrama-Navegacion.png?raw=true)
-> Diagrama de Navegación del Sistema
+>
 
-## Diagrama de Entidades de Base de Datos
+## Entity Diagram
 ![Diagrama de Entidades](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/diagramBBDD.png?raw=true)
-> Diagrama de Entidades
+> 
 
-## Diagrama de Clases
+## Class Diagram
 ![Diagrama de Clases](https://raw.githubusercontent.com/CodeURJC-DAW-2018-19/santatecla-citas-2/working_branch/images/diagramaAplicacion.png)
-> Diagrama de Clases
+> 
 
 ## MODELO DEL DOMINIO https://docs.google.com/document/d/1PKqs6eayJti3jBymaytm1CKXEUqmyDpC4xDh7tM-wEk/edit?usp=sharing
 
