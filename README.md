@@ -27,8 +27,13 @@ Pantalla de Visualización y edición de Citas
 ![Diagrama de Navegación](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/diagrama-Navegacion.png?raw=true)
 > Diagrama de Navegación del Sistema
 
+## Diagrama de Entidades de Base de Datos
+![Diagrama de Entidades](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/diagramBBDD.png?raw=true)
+> Diagrama de Entidades
+
 ## Diagrama de Clases
 ![Diagrama de Clases](https://raw.githubusercontent.com/CodeURJC-DAW-2018-19/santatecla-citas-2/working_branch/images/diagramaAplicacion.png)
+> Diagrama de Clases
 
 ## MODELO DEL DOMINIO https://docs.google.com/document/d/1PKqs6eayJti3jBymaytm1CKXEUqmyDpC4xDh7tM-wEk/edit?usp=sharing
 
