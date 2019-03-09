@@ -8,6 +8,7 @@
 - [Intellij Idea](https://www.jetbrains.com/idea/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Brackets](http://brackets.io/) 
+## [Software Requirement Specification](https://docs.google.com/document/d/1PKqs6eayJti3jBymaytm1CKXEUqmyDpC4xDh7tM-wEk/edit?usp=sharing)
 
 ## Scrennshots
 
