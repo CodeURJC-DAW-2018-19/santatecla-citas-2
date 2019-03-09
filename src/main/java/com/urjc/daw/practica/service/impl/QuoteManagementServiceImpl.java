@@ -94,7 +94,7 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     }
     
     public void saveQuoteImage(MultipartFile file, Quote quote) {
-    	if (!file.isEmpty()) {
+    	if (file != null &&!file.isEmpty()) {
             String imageName = "image-" + quote.getId() + ".jpg";
             try {
 

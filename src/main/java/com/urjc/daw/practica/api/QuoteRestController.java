@@ -62,7 +62,7 @@ public class QuoteRestController {
 	}
 
 	@GetMapping("/")
-	public List<Quote> findByKeyword(@RequestBody String keyword, Model model) {
+	public List<Quote> findByKeyword(@RequestBody String keyword) {
 		return quoteService.findByKeyword(keyword);
 	}
 
