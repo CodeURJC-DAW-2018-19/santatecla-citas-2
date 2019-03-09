@@ -42,4 +42,7 @@ public class QuoteImageStorageService {
 
     }
 
+    public QuoteImage save(QuoteImage storage) {
+        return imageRepository.save(storage);
+    }
 }
