@@ -8,6 +8,25 @@
 - [Intellij Idea](https://www.jetbrains.com/idea/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Brackets](http://brackets.io/) 
+
+### IDE Configuration and Installation
+1. Clone the Repository using 'git clone https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/tree/working_branch'
+2. Open one of the three IDEs from above
+  - Intellij
+    1. Open de project
+    2. Set JDK to version 8
+    3. Update maven dependencies 'mvn clean install'
+    4. Build the .jar file 'mvn package'
+  - Visual Studio Code
+    1.
+    2.
+    3.
+  - Brackets (Used only for the html files, so the application does not run from brackets
+  
+3. Go to the directory where the .jar has been created
+4. Using a console, write 'java -jar jar-name.jar' this should start the application
+5. Enjoy
+
 ## [Software Requirement Specification](https://docs.google.com/document/d/1PKqs6eayJti3jBymaytm1CKXEUqmyDpC4xDh7tM-wEk/edit?usp=sharing)
 
 ## Scrennshots
