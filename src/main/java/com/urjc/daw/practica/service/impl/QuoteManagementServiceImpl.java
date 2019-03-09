@@ -97,8 +97,7 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     	if (!file.isEmpty()) {
             String imageName = "image-" + quote.getId() + ".jpg";
             try {
-                File uploadedFile = new File(IMAGES_FOLDER.toFile(), imageName);
-                file.transferTo(uploadedFile);
+                file.getBytes();
             } catch (Exception e) {
                 e.printStackTrace();
             }

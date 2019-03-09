@@ -72,7 +72,7 @@ public class QuoteControllerImpl implements QuoteController {
     public String postQuote(Model model, Quote quote,
                             @RequestParam("file") MultipartFile file) {
     	quoteService.save(quote);
-        if (!file.isEmpty()) {
+        /*if (!file.isEmpty()) {
             String imageName = "image-" + quote.getId() + ".jpg";
             try {
                 File uploadedFile = new File(IMAGES_FOLDER.toFile(), imageName);
@@ -81,7 +81,7 @@ public class QuoteControllerImpl implements QuoteController {
                 model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
             }
         }
-
+        */
         model.addAttribute("cod","La cita ha sido creada");
         return "created";
     }

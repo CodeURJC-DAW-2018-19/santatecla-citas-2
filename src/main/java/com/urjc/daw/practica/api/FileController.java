@@ -24,7 +24,7 @@ public class FileController {
         this.service = service;
     }
 
-    @GetMapping(value = "/images/{id:.+}")
+    @GetMapping(value = "/images/{id}")
     public ResponseEntity<byte[]> get(@PathVariable Long id) throws MyFileNotFoundException {
         final QuoteImage quoteImage = this.service.getFile(id);
         HttpHeaders headers = new HttpHeaders();
