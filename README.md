@@ -104,6 +104,6 @@ Page used by admins to delete items or enter de edition pages
   
 ## Dockerized App execution
 1. Run the script *DAW_BuildScript.sh*
-2. Tag the new image called app
-3. Push image to the repository
+2. Tag the new image called app `docker tag app user/repo:tag`
+3. Push image to the repository `docker push user/repo:tah`
 4. Run the command `docker-compose up` this should Start the app
