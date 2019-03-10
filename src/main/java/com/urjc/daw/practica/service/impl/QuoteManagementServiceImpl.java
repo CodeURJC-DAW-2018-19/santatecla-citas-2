@@ -1,6 +1,7 @@
 package com.urjc.daw.practica.service.impl;
 
 import com.urjc.daw.practica.model.Quote;
+import com.urjc.daw.practica.model.QuoteImage;
 import com.urjc.daw.practica.repository.QuoteRepository;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.TopicManagementService;
@@ -26,6 +27,9 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     @Autowired
     TopicManagementService topicService;
+
+    @Autowired
+    QuoteImageStorageService imageStorageService;
 
     @Override
     public Optional<Quote> findOne(Long id) {
@@ -94,12 +98,15 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     }
     
     public void saveQuoteImage(MultipartFile file, Quote quote) {
-    	if (!file.isEmpty()) {
+    	if (file != null &&!file.isEmpty()) {
             String imageName = "image-" + quote.getId() + ".jpg";
             try {
 
-                File uploadedFile = new File(IMAGES_FOLDER.toFile(), imageName);
-                file.transferTo(uploadedFile);
+             QuoteImage  storage= new QuoteImage(imageName,file.getBytes());
+             storage = imageStorageService.save(storage);
+             quote.setImageId(storage.getId());
+             quotes.save(quote);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

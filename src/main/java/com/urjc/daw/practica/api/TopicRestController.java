@@ -40,9 +40,9 @@ public class TopicRestController {
 
 	@Autowired
 	private TopicManagementService topicService;
-
+	
 	@Autowired
-	private QuoteManagementService quoteService;
+	DocumentGenerationService dgs;
 	
 	public Topic getTopic() {
 		return null;
@@ -52,7 +52,7 @@ public class TopicRestController {
 		return null;
 	}
 
-	@PostMapping("/createTopic")
+	@PostMapping("/")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Topic saveTopic(@RequestBody Topic topic) {
 		topicService.save(topic);
@@ -69,27 +69,17 @@ public class TopicRestController {
 	}
 
 
-	@DeleteMapping("/deleteTopic/{id}")
-	public String deleteTopic(Model model, @PathVariable Long id) {
-		Optional<Topic> current = topicService.findOne(id);
-		if (current.isPresent()) {
-			topicService.deleteTopic(current.get());
-			model.addAttribute("cod", "El tema ha sido eliminado");
-			return "created";
-		} else {
-			model.addAttribute("cod", "error al borrar, no encontrado");
-			return "created";
-		}
-
+	@DeleteMapping("/{id}")
+	public Optional<Topic> deleteTopic(@PathVariable Long id) {
+		Optional<Topic> deleted = topicService.findOne(id);
+		topicService.deleteTopic(deleted.get());
+		return deleted;
 	}
 
-	@GetMapping("/searchTopic")
+	@GetMapping("/")
 	public List<Topic> findByKeyword(@RequestParam(value = "keyword") String keyword) {
 		return topicService.findByKeyword(keyword);
 	}
-
-	@Autowired
-	DocumentGenerationService dgs;
 
 	@GetMapping("/generatePDF/{id}")
 	public ResponseEntity<ByteArrayResource> generatePDF(Model model, @PathVariable Long id) {
