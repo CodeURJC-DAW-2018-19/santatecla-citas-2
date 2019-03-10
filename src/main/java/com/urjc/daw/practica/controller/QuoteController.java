@@ -19,10 +19,10 @@ public interface QuoteController {
     String postQuote(Model model, Quote quote,
                      @RequestParam("file") MultipartFile file);
 
+
     String editQuote(Model model, @PathVariable long id);
 
-    public String deleteQuote(Model model,@PathVariable long id);
+    public String deleteQuote(Model model, @PathVariable long id);
 
-    @GetMapping("/searchQuote")
     String findByKeyword(@RequestParam(value = "keyword") String keyword, Model model);
 }

@@ -16,6 +16,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class QuoteManagementServiceImpl implements QuoteManagementService {
@@ -96,12 +97,15 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     public List<Quote> findByBook(String book) {
         return quotes.findByBookContaining(book);
     }
-    
+
+    @Override
     public void saveQuoteImage(MultipartFile file, Quote quote) {
     	if (file != null &&!file.isEmpty()) {
-            String imageName = "image-" + quote.getId() + ".jpg";
+            String imageName = "image-" + UUID.randomUUID() + ".jpg";
             try {
-
+                if(quote.getImageId()!=null){
+                    imageStorageService.removeImage(quote.getImageId());
+                }
              QuoteImage  storage= new QuoteImage(imageName,file.getBytes());
              storage = imageStorageService.save(storage);
              quote.setImageId(storage.getId());
