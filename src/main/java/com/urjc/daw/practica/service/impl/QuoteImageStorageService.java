@@ -40,4 +40,9 @@ public class QuoteImageStorageService {
     public QuoteImage save(QuoteImage storage) {
         return imageRepository.save(storage);
     }
+
+	public void removeImage(Long imageId) {
+
+		imageRepository.delete(imageRepository.findById(imageId).get());
+	}
 }

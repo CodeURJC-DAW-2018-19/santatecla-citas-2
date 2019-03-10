@@ -18,8 +18,12 @@ public class QuoteImage {
     @Lob
     private byte[] image;
 
-    public QuoteImage(String fileName, byte[] bytes){
+    public  QuoteImage(){
         //JPA NEEDS THIS
+    }
+    public QuoteImage(String fileName, byte[] bytes){
+        this.imageName=fileName;
+        this.image=bytes;
     }
 
     public Long getId() {

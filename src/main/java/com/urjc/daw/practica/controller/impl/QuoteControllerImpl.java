@@ -71,19 +71,7 @@ public class QuoteControllerImpl implements QuoteController {
     @RequestMapping(value = "/quote",method = RequestMethod.POST)
     public String postQuote(Model model, Quote quote,
                             @RequestParam("file") MultipartFile file) {
-    	quoteService.save(quote);
-
-        if (!file.isEmpty()) {
-            String imageName = "image-" + quote.getId() + ".jpg";
-            try {
-                File uploadedFile = new File(IMAGES_FOLDER.toFile(), imageName);
-                file.transferTo(uploadedFile);
-            } catch (Exception e) {
-                model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
-            }
-        }
-
-
+    	quoteService.saveQuoteImage(file,quote);
         model.addAttribute("cod","La cita ha sido creada");
         return "created";
     }

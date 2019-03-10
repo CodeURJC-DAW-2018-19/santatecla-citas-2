@@ -2,6 +2,7 @@ package com.urjc.daw.practica.service;
 
 import com.urjc.daw.practica.model.Quote;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,4 +27,6 @@ public interface QuoteManagementService {
     List<Quote> findByAuthor(String author);
 
     List<Quote> findByBook(String book);
+
+    void saveQuoteImage(MultipartFile file, Quote quote);
 }
