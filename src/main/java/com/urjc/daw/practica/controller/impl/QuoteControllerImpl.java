@@ -60,7 +60,7 @@ public class QuoteControllerImpl implements QuoteController {
     }
 
     @Override
-    @RequestMapping(value = "/{nPag}",method = RequestMethod.GET)
+    @RequestMapping(value = "/nPag")
     public ResponseEntity<List<Quote>> findAll(@PathVariable int nPag) {
 
         return new ResponseEntity<>(quoteService.findAll(nPag,QUOTES_PER_PAGE), HttpStatus.OK);
