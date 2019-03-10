@@ -2,7 +2,6 @@ package com.urjc.daw.practica.model;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "topic")
@@ -38,6 +37,12 @@ public class Topic {
     public Topic(String name, List<Quote> quotes){
         this.name= name;
         this.nQuotes = quotes.size();
+    }
+    
+    public Topic(String name,List<Long> quote,List<String> texts) {
+    	this.name = name;
+    	this.quoteIds = quote;
+    	this.texts = texts;
     }
     
     public Long getId() {

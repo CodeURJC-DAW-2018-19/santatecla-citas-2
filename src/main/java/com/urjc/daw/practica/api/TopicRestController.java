@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.Topic;
@@ -31,7 +32,7 @@ import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.TopicManagementService;
 import com.urjc.daw.practica.service.impl.DocumentGenerationService;
 
-@Controller
+@RestController
 @RequestMapping("/api/topic")
 public class TopicRestController {
 
@@ -44,12 +45,14 @@ public class TopicRestController {
 	@Autowired
 	DocumentGenerationService dgs;
 	
-	public Topic getTopic() {
-		return null;
+	@GetMapping("/{id}")
+	public Optional<Topic> getTopic(@PathVariable long id) {
+		return topicService.findOne(id);
 	}
-
+	
+	@GetMapping("/all")
 	public List<Topic> getAllTopics() {
-		return null;
+		return topicService.findAll();
 	}
 
 	@PostMapping("/")
@@ -70,9 +73,9 @@ public class TopicRestController {
 
 
 	@DeleteMapping("/{id}")
-	public Optional<Topic> deleteTopic(@PathVariable Long id) {
+	public Optional<Topic> deleteTopic(@PathVariable long id) {
 		Optional<Topic> deleted = topicService.findOne(id);
-		topicService.deleteTopic(deleted.get());
+		topicService.deleteReference(id);
 		return deleted;
 	}
 

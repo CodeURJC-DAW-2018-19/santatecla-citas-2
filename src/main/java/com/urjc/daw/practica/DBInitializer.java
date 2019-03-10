@@ -1,5 +1,8 @@
 package com.urjc.daw.practica;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import com.urjc.daw.practica.model.Quote;
@@ -13,6 +16,7 @@ import org.springframework.stereotype.Component;
 import com.urjc.daw.practica.model.User;
 import com.urjc.daw.practica.repository.UserRepository;
 import com.urjc.daw.practica.security.UserAuthProvider;
+import com.urjc.daw.practica.service.impl.QuoteManagementServiceImpl;
 
 @Component
 public class DBInitializer {
@@ -22,6 +26,9 @@ public class DBInitializer {
 
 	@Autowired
 	private QuoteRepository quotes;
+	
+	@Autowired
+	private QuoteManagementServiceImpl quoteService;
 
 	@Autowired
 	private TopicRepository topics;
@@ -35,9 +42,6 @@ public class DBInitializer {
 
 	@PostConstruct
 	public void init() {
-		
-		//SampleTopics
-		topics.save(new Topic("Test"));
 
 		// Sample Quotes
 		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
@@ -54,6 +58,37 @@ public class DBInitializer {
 		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
 		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
 		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		
+		//SampleTopics
+				
+		List<Long> quoteId = new ArrayList<Long>();
+		quoteId.add(quoteService.findOne(2L).get().getId());
+		quoteId.add(quoteService.findOne(3L).get().getId());
+		quoteId.add(quoteService.findOne(4L).get().getId());
+		List<String> textList = new ArrayList<String>();
+		textList.add("Esto es un texto1");
+		textList.add("Esto es un texto2");
+		textList.add("Esto es un texto3");
+		textList.add("Esto es un texto4");
+		
+		topics.save(new Topic("Test"));
+		topics.save(new Topic("Test2",quoteId,textList));
+		
+		quoteId.add(quoteService.findOne(5L).get().getId());
+		quoteId.add(quoteService.findOne(6L).get().getId());
+		textList.add("Esto es un texto5");
+		textList.add("Esto es un texto6");
+		
+		topics.save(new Topic("Test3",quoteId,textList));
+		
+		quoteId.clear();
+		quoteId.add(quoteService.findOne(5L).get().getId());
+		quoteId.add(quoteService.findOne(6L).get().getId());
+		textList.clear();
+		textList.add("Esto es un texto2");
+		textList.add("Esto es un texto3");
+		
+		topics.save(new Topic("Test4",quoteId,textList));
 
 		// Sample users
 		userRepository.save(new User("user", passEncoder.encode("pass"), "ROLE_USER"));
