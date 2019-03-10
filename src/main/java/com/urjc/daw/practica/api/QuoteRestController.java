@@ -33,9 +33,14 @@ public class QuoteRestController {
 		return quoteService.findOne(id);
 	}
 
-	@GetMapping("/nPag")
+	@GetMapping("/all/{nPag}")
 	public List<Quote> findAll(@PathVariable int nPag) {
 		return quoteService.findAll(nPag, QUOTES_PER_PAGE);
+	}
+	
+	@GetMapping("/all")
+	public List<Quote> findAll(){
+		return quoteService.findAll(1, QUOTES_PER_PAGE);
 	}
 
 	@PostMapping("/")

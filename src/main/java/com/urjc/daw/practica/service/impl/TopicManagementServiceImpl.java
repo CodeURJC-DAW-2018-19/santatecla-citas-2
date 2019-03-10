@@ -55,7 +55,6 @@ public class TopicManagementServiceImpl implements TopicManagementService {
     @Override
     public void deleteReference(Long id) {
         List<Topic> updated = topics.findByQuoteIdsContains(id);
-
         for(Topic topic:updated){
             topic.getQuoteIds().remove(id);
         }
