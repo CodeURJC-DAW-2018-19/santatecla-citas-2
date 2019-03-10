@@ -11,7 +11,7 @@ services:
             MYSQL_PASSWORD: pass
     app:
         # replace username/repo:tag with your name and image details
-        image: christiantaidi/daw_citas:0.0.2
+        image: christiantaidi/daw_citas:latest
         restart: always
         links:
             - db
