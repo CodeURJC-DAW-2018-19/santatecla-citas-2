@@ -86,7 +86,7 @@ Page used by admins to delete items or enter de edition pages
 
   5. Examples
 
--Topic Endpoint
+- Topic Endpoint
   1. URI `/api/topic`
   2. Supported Operations
      - GET (ALL)
@@ -110,7 +110,6 @@ Page used by admins to delete items or enter de edition pages
       ]
     }`
   
-    # Insertar JSON de Tema
  #ac #tualizacion de diagramas de clase:https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/Diagrama-Rest.png
 ## Dockerized App execution
 1. Run the script *DAW_BuildScript.sh*
