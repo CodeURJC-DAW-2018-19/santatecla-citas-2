@@ -60,7 +60,7 @@ Page used by admins to delete items or enter de edition pages
 > 
 
 ## Class Diagram
-![Diagrama de Clases](https://raw.githubusercontent.com/CodeURJC-DAW-2018-19/santatecla-citas-2/working_branch/images/Diagrama_Rest.png)
+![Diagrama de Clases](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/Diagrama-Rest.png?raw=true)
 >
 
 ## API REST Endpoints
