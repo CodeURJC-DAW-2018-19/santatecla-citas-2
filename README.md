@@ -74,19 +74,15 @@ Page used by admins to delete items or enter de edition pages
     - DELETE ( If admin)
   3. Input/Output
     - Input:
-    `{
-      "id": 18,
-      "text": "Amigo, esto es una cita de prueba",
-      "author": "Grupo 4",
-      "book": "Pruebas Daw"
-    }`
+    `https://localhost:8443/api/quote/7`
     - Output:
     `{
-      "id": 4,
-      "text": "Que va si no estaba durmiendo, solo estaba mirando pa´dentro",
-      "author": "Tragabuche",
-      "book": "Bandolero"
-    }`
+    "id": 7,
+    "text": "All men dream: but not equally. Those who dream by night in the dusty recesses of their minds wake in the day to find that      it was vanity: but the dreamers of the day are dangerous men, for they may act their dreams with open eyes, to make it possible.        This I did",
+    "author": "Lawrence of Arabia",
+    "book": "Seven Pilars of Wisdom",
+    "imageId": null
+  }`
   4. Status Codes
 
   5. Examples
@@ -99,6 +95,21 @@ Page used by admins to delete items or enter de edition pages
      - PUT (If admin
      - DELETE (If admin)
   3. Input/Output
+    - Input:
+    `https://localhost:8443/api/topic/18`
+    - Output:
+    `{
+      "id": 18,
+      "name": "Test4",
+      "quoteIds": [
+          5,
+          6
+      ],
+      "texts": [
+          "Esto es un texto2",
+          "Esto es un texto3"
+      ]
+    }`
   
     # Insertar JSON de Tema
  #ac #tualizacion de diagramas de clase:https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/Diagrama-Rest.png
