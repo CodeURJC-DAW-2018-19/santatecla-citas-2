@@ -2,51 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5ddb4e6-5607-42f7-a550-45ebbedec2c4" name="Default Changelist" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/practica-0.0.1-SNAPSHOT.jar.original" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/PracticaApplication.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/PracticaApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/QuoteRestController.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/QuoteRestController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/RestControllerExceptionHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/RestControllerExceptionHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/QuoteController.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/QuoteController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/impl/TopicControllerImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/impl/TopicControllerImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/impl/UserControllerImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/impl/UserControllerImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/exception/FileStorageException.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/exception/FileStorageException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/exception/MyFileNotFoundException.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/exception/MyFileNotFoundException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/model/CustomUserDetails.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/model/CustomUserDetails.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/model/Quote.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/model/Quote.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/model/User.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/repository/ImageRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/repository/ImageRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/repository/QuoteRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/repository/QuoteRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/repository/UserRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/repository/UserRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/ConnectorConfig$1.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/ConnectorConfig$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/ConnectorConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/ConnectorConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/RestSecurityConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/RestSecurityConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/SimpleCorsFilter.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/SimpleCorsFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/UserAuthProvider.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/UserAuthProvider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/UserComponent.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/UserComponent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/WebSecurityConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/WebSecurityConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/QuoteManagementService.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/QuoteManagementService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/TopicManagementService.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/TopicManagementService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/CustomUserDetailsService.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/CustomUserDetailsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/DocumentGenerationService.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/DocumentGenerationService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/QuoteImageStorageService.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/QuoteImageStorageService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/ThymeleafConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/ThymeleafConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/TopicManagementServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/TopicManagementServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/user/UserPrincipal.class" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/user/UserPrincipal.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/practica-0.0.1-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/practica-0.0.1-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/urjc/daw/practica/PracticaApplicationTests.class" afterPath="$PROJECT_DIR$/target/test-classes/com/urjc/daw/practica/PracticaApplicationTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/urjc/daw/practica/repository/QuoteRepositoryTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/urjc/daw/practica/repository/QuoteRepositoryTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/urjc/daw/practica/repository/UserRepositoryTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/urjc/daw/practica/repository/UserRepositoryTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dockerfile" afterPath="$PROJECT_DIR$/Dockerfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/practica-0.0.1-SNAPSHOT.jar.original" afterPath="$PROJECT_DIR$/target/practica-0.0.1-SNAPSHOT.jar.original" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/model/Quote.java" afterPath="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/model/Quote.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/service/impl/TopicManagementServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/service/impl/TopicManagementServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.urjc.daw.practica.PracticaApplicationTests.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.urjc.daw.practica.PracticaApplicationTests.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.urjc.daw.practica.repository.QuoteRepositoryTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.urjc.daw.practica.repository.QuoteRepositoryTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.urjc.daw.practica.repository.TopicRepositoryTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.urjc.daw.practica.repository.TopicRepositoryTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.urjc.daw.practica.repository.UserRepositoryTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.urjc.daw.practica.repository.UserRepositoryTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/com.urjc.daw.practica.PracticaApplicationTests.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/com.urjc.daw.practica.PracticaApplicationTests.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/com.urjc.daw.practica.repository.QuoteRepositoryTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/com.urjc.daw.practica.repository.QuoteRepositoryTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/com.urjc.daw.practica.repository.TopicRepositoryTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/com.urjc.daw.practica.repository.TopicRepositoryTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/com.urjc.daw.practica.repository.UserRepositoryTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/com.urjc.daw.practica.repository.UserRepositoryTest.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -82,25 +51,31 @@
       <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
               <folding>
-                <marker date="1552260598534" expanded="true" signature="14:794" ph="services: &lt;2 keys&gt;" />
-                <marker date="1552260598534" expanded="true" signature="28:132" ph="db: &lt;4 keys&gt;" />
-                <marker date="1552260598534" expanded="true" signature="612:794" ph="app: &lt;7 keys&gt;" />
-                <marker date="1552260598534" expanded="true" signature="621:793" ph="environment: &lt;1 key&gt;" />
-                <marker date="1552260598534" expanded="true" signature="669:793" ph="jdbc:mysq…mezone=UTC" />
-                <marker date="1552260598534" expanded="true" signature="937:951" ph="networks: &lt;1 key&gt;" />
+                <marker date="1552288016890" expanded="true" signature="14:40" ph="services: &lt;2 keys&gt;" />
+                <marker date="1552288016890" expanded="true" signature="28:40" ph="db: &lt;5 keys&gt;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+              <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -156,16 +131,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuoteRestController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -207,6 +172,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/controller/impl/QuoteControllerImpl.java" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
       </list>
     </option>
   </component>
@@ -248,8 +214,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -310,11 +274,20 @@
               <item name="practica" type="462c0819:PsiDirectoryNode" />
               <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="practica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="santatecla-citas-2-1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -667,32 +640,33 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -727,6 +701,54 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/js1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2873">
+          <caret line="169" column="34" lean-forward="false" selection-start-line="169" selection-start-column="34" selection-end-line="169" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/quoteForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="90" column="26" lean-forward="false" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/service/impl/QuoteImageStorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/controller/impl/QuoteControllerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -748,12 +770,8 @@
         <state relative-caret-position="408">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <marker date="1552260598534" expanded="true" signature="14:794" ph="services: &lt;2 keys&gt;" />
-            <marker date="1552260598534" expanded="true" signature="28:132" ph="db: &lt;4 keys&gt;" />
-            <marker date="1552260598534" expanded="true" signature="612:794" ph="app: &lt;7 keys&gt;" />
-            <marker date="1552260598534" expanded="true" signature="621:793" ph="environment: &lt;1 key&gt;" />
-            <marker date="1552260598534" expanded="true" signature="669:793" ph="jdbc:mysq…mezone=UTC" />
-            <marker date="1552260598534" expanded="true" signature="937:951" ph="networks: &lt;1 key&gt;" />
+            <marker date="1552288016890" expanded="true" signature="14:40" ph="services: &lt;2 keys&gt;" />
+            <marker date="1552288016890" expanded="true" signature="28:40" ph="db: &lt;5 keys&gt;" />
           </folding>
         </state>
       </provider>
@@ -1030,15 +1048,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="391">
+          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
           <folding>
-            <marker date="1552260598534" expanded="true" signature="14:794" ph="services: &lt;2 keys&gt;" />
-            <marker date="1552260598534" expanded="true" signature="28:132" ph="db: &lt;4 keys&gt;" />
-            <marker date="1552260598534" expanded="true" signature="612:794" ph="app: &lt;7 keys&gt;" />
-            <marker date="1552260598534" expanded="true" signature="621:793" ph="environment: &lt;1 key&gt;" />
-            <marker date="1552260598534" expanded="true" signature="669:793" ph="jdbc:mysq…mezone=UTC" />
-            <marker date="1552260598534" expanded="true" signature="937:951" ph="networks: &lt;1 key&gt;" />
+            <marker date="1552288016890" expanded="true" signature="14:40" ph="services: &lt;2 keys&gt;" />
+            <marker date="1552288016890" expanded="true" signature="28:40" ph="db: &lt;5 keys&gt;" />
           </folding>
         </state>
       </provider>
@@ -1046,7 +1060,15 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
