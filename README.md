@@ -60,7 +60,7 @@ Page used by admins to delete items or enter de edition pages
 > 
 
 ## Class Diagram
-![Diagrama de Clases](https://raw.githubusercontent.com/CodeURJC-DAW-2018-19/santatecla-citas-2/working_branch/images/diagramaAplicacion.png)
+![Diagrama de Clases](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/Diagrama-Rest.png?raw=true)
 >
 
 ## API REST Endpoints
@@ -113,8 +113,6 @@ Page used by admins to delete items or enter de edition pages
           "Esto es un texto3"
       ]
     }`
-  
- #ac #tualizacion de diagramas de clase:https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/Diagrama-Rest.png
 ## Dockerized App execution
 1. Run the script *DAW_BuildScript.sh*
 2. Tag the new image called app `docker tag app user/repo:tag`
