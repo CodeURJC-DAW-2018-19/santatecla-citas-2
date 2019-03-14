@@ -17,21 +17,19 @@ import com.urjc.daw.practica.model.User;
 import com.urjc.daw.practica.repository.UserRepository;
 import com.urjc.daw.practica.security.UserAuthProvider;
 import com.urjc.daw.practica.service.impl.QuoteManagementServiceImpl;
+import com.urjc.daw.practica.service.impl.TopicManagementServiceImpl;
 
 @Component
 public class DBInitializer {
 
 	@Autowired
 	private UserRepository userRepository;
-
-	@Autowired
-	private QuoteRepository quotes;
 	
 	@Autowired
 	private QuoteManagementServiceImpl quoteService;
 
 	@Autowired
-	private TopicRepository topics;
+	private TopicManagementServiceImpl topics;
 
 	@Autowired
 	UserAuthProvider authProvider;
@@ -44,20 +42,20 @@ public class DBInitializer {
 	public void init() {
 
 		// Sample Quotes
-		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
-		quotes.save(new Quote("Hola, me llamo Íñigo Montoya, tu mataste a mi padre, preparate a morir","Íñigo Montoya", "The Princess Bride"));
-		quotes.save(new Quote("Que va si no estaba durmiendo, solo estaba mirando pa´dentro","Tragabuche", "Bandolero"));
-		quotes.save(new Quote("Self discipline is self love","Will Smith", "Video"));
-		quotes.save(new Quote("Get busy living or get busy dying","Stephen King", "The Shawshank Redemption"));
-		quotes.save(new Quote("Experience is merely the name men gave to their mistakes","Oscar Wilde", "The Picture of Dorian Gray"));
-		quotes.save(new Quote("All men dream: but not equally. Those who dream by night in the dusty recesses of their minds wake in the day to find that it was vanity: but the dreamers of the day are dangerous men, for they may act their dreams with open eyes, to make it possible. This I did","Lawrence of Arabia", "Seven Pilars of Wisdom"));
-		quotes.save(new Quote("Allé voy","Cloud", "Final Fantasy VII"));
-		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
-		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
-		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
-		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
-		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
-		quotes.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quoteService.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quoteService.save(new Quote("Hola, me llamo Íñigo Montoya, tu mataste a mi padre, preparate a morir","Íñigo Montoya", "The Princess Bride"));
+		quoteService.save(new Quote("Que va si no estaba durmiendo, solo estaba mirando pa´dentro","Tragabuche", "Bandolero"));
+		quoteService.save(new Quote("Self discipline is self love","Will Smith", "Video"));
+		quoteService.save(new Quote("Get busy living or get busy dying","Stephen King", "The Shawshank Redemption"));
+		quoteService.save(new Quote("Experience is merely the name men gave to their mistakes","Oscar Wilde", "The Picture of Dorian Gray"));
+		quoteService.save(new Quote("All men dream: but not equally. Those who dream by night in the dusty recesses of their minds wake in the day to find that it was vanity: but the dreamers of the day are dangerous men, for they may act their dreams with open eyes, to make it possible. This I did","Lawrence of Arabia", "Seven Pilars of Wisdom"));
+		quoteService.save(new Quote("Allé voy","Cloud", "Final Fantasy VII"));
+		quoteService.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quoteService.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quoteService.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quoteService.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quoteService.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
+		quoteService.save(new Quote("Did I ever tell you the definition of insanity?..","Vaas Montenegro", "Far Cry 3"));
 		
 		//SampleTopics
 				

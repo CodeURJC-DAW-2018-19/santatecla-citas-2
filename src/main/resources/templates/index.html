@@ -49,9 +49,11 @@
 										<div class="tim-typo">
 
 											<blockquote class="blockquote">
-												<a href="topic/{{id}}">
+												{{#logged}}
+												<a href="topic/{{id}}">{{/logged}}
 													<h3 style="color: black">{{#name}}{{name}}{{/name}}</h3>
-												</a>
+													{{#logged}}</a>
+												{{/logged}}
 											</blockquote>
 
 											{{#admin}}
@@ -141,7 +143,7 @@
 												{{#logged}}
 												<a href="quote/{{id}}">{{/logged}}
 													<p style="color: black">{{#text}}{{text}}{{/text}}</p>
-													<small style="color: grey"> {{author}} ,{{book}} </small>
+													{{#logged}}<small style="color: grey"> {{author}} ,{{book}} </small>{{/logged}}
 													{{#logged}}</a>{{/logged}}
 
 											</blockquote>

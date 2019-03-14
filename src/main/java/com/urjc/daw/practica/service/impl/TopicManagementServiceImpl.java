@@ -6,6 +6,8 @@ import com.urjc.daw.practica.repository.TopicRepository;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -29,8 +31,8 @@ public class TopicManagementServiceImpl implements TopicManagementService {
     }
 
     @Override
-    public List<Topic> findAll() {
-        return topics.findAll();
+    public Page<Topic> findAll(int nPage,int topicsPerPage) {
+        return topics.findAll(PageRequest.of(nPage,topicsPerPage));
     }
 
     @Override

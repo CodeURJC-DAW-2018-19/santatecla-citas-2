@@ -32,7 +32,6 @@ com\urjc\daw\practica\service\impl\DocumentGenerationService.class
 com\urjc\daw\practica\security\WebSecurityConfiguration.class
 com\urjc\daw\practica\model\Quote.class
 com\urjc\daw\practica\service\impl\ThymeleafConfiguration.class
-com\urjc\daw\practica\api\FileController.class
 com\urjc\daw\practica\security\LoginController.class
 com\urjc\daw\practica\PracticaApplication.class
 com\urjc\daw\practica\service\impl\QuoteImageStorageService.class

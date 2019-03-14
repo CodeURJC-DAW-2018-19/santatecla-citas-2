@@ -43,6 +43,7 @@ public class Topic {
     	this.name = name;
     	this.quoteIds = quote;
     	this.texts = texts;
+    	this.nQuotes = quote.size();
     }
     
     public Long getId() {
@@ -87,5 +88,13 @@ public class Topic {
         Topic topic = (Topic) o;
         return this.getId().equals(topic.getId());
     }
+
+	public int getnQuotes() {
+		return nQuotes;
+	}
+
+	public void setnQuotes(int nQuotes) {
+		this.nQuotes = nQuotes;
+	}
 
 }

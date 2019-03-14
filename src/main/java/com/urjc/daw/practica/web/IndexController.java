@@ -14,6 +14,8 @@ public class IndexController{
 
 	private static final int DEFAULT_PAGE=0;
 	private static final int QUOTES_PER_PAGE=10;
+	private static final int TOPICS_PER_PAGE=10;
+	
 	@Autowired
 	private QuoteManagementService qms;
 
@@ -42,7 +44,7 @@ public class IndexController{
 	public ModelAndView showIndex(Model model) {
 		ModelAndView mav = new  ModelAndView("index");
 		model.addAttribute("quote", qms.findAll(DEFAULT_PAGE,QUOTES_PER_PAGE));
-		model.addAttribute("topic",topicService.findAll());
+		model.addAttribute("topic",topicService.findAll(DEFAULT_PAGE,TOPICS_PER_PAGE));
 		return mav;
 	}
 	

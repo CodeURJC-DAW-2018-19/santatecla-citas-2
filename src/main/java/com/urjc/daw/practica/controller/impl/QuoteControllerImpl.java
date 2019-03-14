@@ -23,7 +23,9 @@ import java.util.Optional;
 @Controller
 public class QuoteControllerImpl implements QuoteController {
 
-    private static final int QUOTES_PER_PAGE=10;
+	private static final int DEFAULT_PAGE=0;
+	private static final int QUOTES_PER_PAGE=10;
+	private static final int TOPICS_PER_PAGE=10;
 
     private static final Path IMAGES_FOLDER = Paths.get(System.getProperty("user.dir")+"/src/main/resources/static/images/quote/");
 
@@ -60,15 +62,15 @@ public class QuoteControllerImpl implements QuoteController {
     }
 
     @Override
-    @RequestMapping(value = "/nPag")
+    @RequestMapping(value = "/{nPag}")
     public ResponseEntity<List<Quote>> findAll(@PathVariable int nPag) {
 
-        return new ResponseEntity<>(quoteService.findAll(nPag,QUOTES_PER_PAGE), HttpStatus.OK);
+        return new ResponseEntity<>(quoteService.findAll(nPag,QUOTES_PER_PAGE).getContent(), HttpStatus.OK);
 
     }
 
     @Override
-    @RequestMapping(value = "/quote",method = RequestMethod.POST)
+    @PostMapping("/quote")
     public String postQuote(Model model, Quote quote,
                             @RequestParam("file") MultipartFile file) {
     	quoteService.saveQuoteImage(file,quote);
@@ -101,7 +103,7 @@ public class QuoteControllerImpl implements QuoteController {
     @GetMapping("/searchQuote")
     public String findByKeyword(@RequestParam(value = "keyword") String keyword, Model model) {
         model.addAttribute("quote",quoteService.findByKeyword(keyword));
-        model.addAttribute("topic",topicService.findAll());
+        model.addAttribute("topic",topicService.findAll(DEFAULT_PAGE,TOPICS_PER_PAGE));
         model.addAttribute("quoteKeyword",keyword);
         return "index";
     }

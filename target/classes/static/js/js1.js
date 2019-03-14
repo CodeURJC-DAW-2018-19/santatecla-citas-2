@@ -38,22 +38,6 @@ var appendQuote3 = '</small>{{#logged}}</a>{{/logged}} ' +
   '<i class="material-icons">close</i> </button> </a> </div>{{/admin}} </div> </div> </div> </div>';
 
 
-function loadMore(callback) {
-
-  console.log("loadNotes");
-  var dataAux;
-
-  $.ajax({
-    method: "GET",
-    url: "https://127.0.0.1:8443/" + currentPage
-  }).done(function (quoteList) {
-    dataAux = quoteList;
-    callback(quoteList);
-  })
-
-  callback([]);
-}
-
 function addOne(quote) {
   $('#quotes').append(appendQuote);
 }

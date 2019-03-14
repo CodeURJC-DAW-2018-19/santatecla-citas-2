@@ -1,22 +1,26 @@
-version: "3"
+version: "3.3"
 
 services:
     db:
-         image: mysql
+         image: mysql:latest
          restart: always
          environment:
-             MYSQL_ROOT_HOST: 127.0.0.1
+             MYSQL_DATABASE: g4database
              MYSQL_ROOT_PASSWORD: pass
-             MYSQL_USER: user
-             MYSQL_PASSWORD: pass
          expose:
-           - 3306
-         ports:
-           - 127.0.0.1:3306:8080
+          - 3306
+
     app:
-        image: christiantaidi/daw_cita:0.1.1
+        image: app
         restart: always
         links:
           - db
+        depends_on:
+          - db
+        expose:
+        - 8443
         ports:
-          - 8080:8080
+          - 8443:8443
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/g4database?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+

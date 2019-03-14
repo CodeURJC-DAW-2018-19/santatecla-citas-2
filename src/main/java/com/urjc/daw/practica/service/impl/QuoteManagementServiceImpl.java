@@ -6,6 +6,7 @@ import com.urjc.daw.practica.repository.QuoteRepository;
 import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -43,14 +44,13 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     }*/
     
     @Override
-    public List<Quote> findAll(int nPag, int quotesPerPage) {
-        List<Quote> list =   quotes.findAll(PageRequest.of(nPag,quotesPerPage)).getContent();
+    public Page<Quote> findAll(int nPag, int quotesPerPage) {
+        Page<Quote> list =   quotes.findAll(PageRequest.of(nPag,quotesPerPage));
         return list;
     }
 
     @Override
     public Quote save(Quote quote) {
-        //return quotes.save(new Quote(quote.getText(),quote.getAuthor(),quote.getBook()));
     	return quotes.save(quote);
     }
 

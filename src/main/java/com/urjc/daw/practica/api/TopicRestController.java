@@ -10,6 +10,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +38,8 @@ import com.urjc.daw.practica.service.impl.DocumentGenerationService;
 public class TopicRestController {
 
 	private static final int DEFAULT_PAGE = 0;
-	private static final int QUOTES_PER_PAGE = 10;
+	private static final int TOPICS_PER_PAGE = 10;
+	private static final String FILENAME = "topicContent.pdf";
 
 	@Autowired
 	private TopicManagementService topicService;
@@ -46,13 +48,23 @@ public class TopicRestController {
 	DocumentGenerationService dgs;
 	
 	@GetMapping("/{id}")
-	public Optional<Topic> getTopic(@PathVariable long id) {
-		return topicService.findOne(id);
+	public ResponseEntity<Optional<Topic>> getTopic(@PathVariable long id) {
+		Optional<Topic> found = topicService.findOne(id);
+		if(found.isPresent()) {
+			return new ResponseEntity<>(found,HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
 	
-	@GetMapping("/all")
-	public List<Topic> getAllTopics() {
-		return topicService.findAll();
+	@GetMapping(params = {"page"}) 
+	public ResponseEntity<Page<Topic>> getAllTopics(@RequestParam("page") int nPag) {
+		Page<Topic> pageable = topicService.findAll(DEFAULT_PAGE,TOPICS_PER_PAGE);
+		if(pageable.hasContent()) {
+			return new ResponseEntity<>(pageable,HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
 
 	@PostMapping("/")
@@ -62,29 +74,41 @@ public class TopicRestController {
 		return topic;
 	}
 
-
 	@PutMapping("/{id}")
-	public Topic editTopic(@PathVariable long id,@RequestBody Topic topic) {
-		topicService.findOne(id).get();
-		topic.setId(id);
-		topicService.save(topic);
-		return topic;
+	public ResponseEntity<Topic> editTopic(@PathVariable long id,@RequestBody Topic topic) {
+		Optional<Topic> found = topicService.findOne(id);
+		if(found.isPresent()) {
+			topic.setId(id);
+			topicService.save(topic);
+			return new ResponseEntity<>(found.get(),HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
 
 
 	@DeleteMapping("/{id}")
-	public Optional<Topic> deleteTopic(@PathVariable long id) {
+	public ResponseEntity<Optional<Topic>> deleteTopic(@PathVariable long id) {
 		Optional<Topic> deleted = topicService.findOne(id);
-		topicService.deleteReference(id);
-		return deleted;
+		if(deleted.isPresent()) {
+			topicService.deleteReference(id);
+			return new ResponseEntity<>(deleted,HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
 
 	@GetMapping("/")
-	public List<Topic> findByKeyword(@RequestParam(value = "keyword") String keyword) {
-		return topicService.findByKeyword(keyword);
+	public ResponseEntity<List<Topic>> findByKeyword(@RequestParam(value = "keyword") String keyword) {
+		List<Topic> found = topicService.findByKeyword(keyword);
+		if(!found.isEmpty()) {
+			return new ResponseEntity<>(found,HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
 
-	@GetMapping("/generatePDF/{id}")
+	@GetMapping("/pdf/{id}")
 	public ResponseEntity<ByteArrayResource> generatePDF(Model model, @PathVariable Long id) {
 		Topic topic = topicService.findOne(id).get();
 		File file = null;
@@ -95,10 +119,11 @@ public class TopicRestController {
 			resource = new ByteArrayResource(Files.readAllBytes(path));
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
+			return new ResponseEntity<ByteArrayResource>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
 		HttpHeaders headers = new HttpHeaders(); 
-		headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=topicContent.pdf");
+		headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename="+FILENAME);
 		
 		return ResponseEntity.ok()
             .headers(headers)

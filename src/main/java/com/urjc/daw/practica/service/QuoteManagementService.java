@@ -1,6 +1,8 @@
 package com.urjc.daw.practica.service;
 
 import com.urjc.daw.practica.model.Quote;
+
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -12,7 +14,7 @@ public interface QuoteManagementService {
     Optional<Quote> findOne(Long id);
     //Page<Quote> findAll(int nPage, int nQuotes);
 
-    List<Quote> findAll(int nPag, int quotesPerPage);
+    Page<Quote> findAll(int nPag, int quotesPerPage);
 
     Quote save(Quote quote);
 
