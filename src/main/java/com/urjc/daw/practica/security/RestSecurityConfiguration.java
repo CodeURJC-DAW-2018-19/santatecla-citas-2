@@ -25,20 +25,20 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter{
 
 
 		// URLs that need authentication to access to it
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/quotes/").hasAnyAuthority("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/quotes/").hasAnyRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/quotes/**").hasAnyRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/quotes/**").hasAnyAuthority("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/quotes/**").hasAnyAuthority("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/quotes/**").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/quotes/**").hasAnyRole("ADMIN");
 		
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/topic/").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/topic/**").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/topic/**").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/topic/**").hasRole("ADMIN");	
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/topic/").hasAnyRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/topic/**").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/topic/**").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/topic/**").hasAnyRole("ADMIN");
 		
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/graph").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/graph").hasAnyRole("USER");
 		
 		// Other URLs can be accessed without authentication
-	//	http.authorizeRequests().anyRequest().permitAll();
+		http.authorizeRequests().anyRequest().permitAll();
 
 		// Disable CSRF protection (it is difficult to implement in REST APIs)
 		http.csrf().disable();
