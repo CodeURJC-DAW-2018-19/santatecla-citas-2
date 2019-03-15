@@ -121,7 +121,7 @@ loadBtn.onclick = function () {
 
   $.ajax({
     method: "GET",
-    url: "https//127.0.0.1:8443/" + currentPage
+    url: "/" + currentPage
   }).done(function (quotes) {
     for (var i = 0; i < quotes.length; i++) {
       console.log("loadNotes");
@@ -129,6 +129,8 @@ loadBtn.onclick = function () {
       $(".quotes").append(appendQuote + quotes[i].text + appendQuote2 + quotes[i].author + ' ,' + quotes[i].book + appendQuote3);
     }
     currentPage++;
+  }).fail(function(){
+    console.log("Failed to load: "+ currentPage);
   })
 
 
