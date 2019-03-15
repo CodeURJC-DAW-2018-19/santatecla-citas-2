@@ -21,7 +21,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/login").permitAll();
 		http.authorizeRequests().antMatchers("/loginerror").permitAll();
 		http.authorizeRequests().antMatchers("/logout").permitAll();
-		http.headers().frameOptions().disable();
+		//http.headers().frameOptions().disable();
 		http.requiresChannel().antMatchers("/*").requiresSecure();
 
 		//http.authorizeRequests().antMatchers("/quote", "/topicForm", "createTopic", "editTopic")

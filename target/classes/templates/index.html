@@ -143,7 +143,8 @@
 												{{#logged}}
 												<a href="quote/{{id}}">{{/logged}}
 													<p style="color: black">{{#text}}{{text}}{{/text}}</p>
-													{{#logged}}<small style="color: grey"> {{author}} ,{{book}} </small>{{/logged}}
+													{{#logged}}<small style="color: grey"> {{author}} ,{{book}}
+													</small>{{/logged}}
 													{{#logged}}</a>{{/logged}}
 
 											</blockquote>
@@ -169,16 +170,12 @@
 								</div>
 							</div>
 							{{/quote}}
-							<form>
-							<button id="loadMore" type="button" title="loadMore"><i
-									class="material-icons">add_circle_outline</i></button>
-							<input type="hidden" name="_csrf" value="{{token}}" />
-
-							</form>
-
-							{{^logged}} <span>You must be
-								logged in to see the quote table.</span>
-							{{/logged}}
+							<div class="card-body" id="loadMore">
+								<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+									<button type="button" title="loadMore" class="btn btn-primary"><i
+												class="material-icons">add_circle_outline</i></button>
+								</div>
+							</div>
 
 						</div>
 						<!--End of quote row-->
@@ -232,12 +229,12 @@
 		<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 		<script type="text/javascript">
 			var data = {
-				labels: [{{ #topic }}'{{name}}', {{/topic}}],
+				labels: [{{#topic}}'{{name}}',{{/topic}}],
 				series: [
-					[{{#topic}} {{nQuotes}}, {{/topic}}]
+					[{{#topic}}{{nQuotes}}, {{/topic}}]
 					]
-				};
-			new Chartist.Bar('.ct-chart', data);
+						};
+				new Chartist.Bar('.ct-chart', data);
 		</script>
 	</div>
 </div>
