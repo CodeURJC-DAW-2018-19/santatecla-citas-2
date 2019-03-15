@@ -169,18 +169,19 @@
 								</div>
 							</div>
 							{{/quote}}
-							<form>
-							<button id="loadMore" type="button" title="loadMore"><i
-									class="material-icons">add_circle_outline</i></button>
-							<input type="hidden" name="_csrf" value="{{token}}" />
 
-							</form>
 
-							{{^logged}} <span>You must be
-								logged in to see the quote table.</span>
-							{{/logged}}
+
 
 						</div>
+						<form>
+						<button id="loadMore" type="button" title="loadMore"><i
+								class="material-icons">add_circle_outline</i></button>
+						<input type="hidden" name="_csrf" value="{{token}}" />
+						</form>
+						{{^logged}} <span>You must be
+								logged in to see the quote table.</span>
+						{{/logged}}
 						<!--End of quote row-->
 
 						{{#logged}} {{#admin}}
