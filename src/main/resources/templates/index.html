@@ -143,7 +143,8 @@
 												{{#logged}}
 												<a href="quote/{{id}}">{{/logged}}
 													<p style="color: black">{{#text}}{{text}}{{/text}}</p>
-													{{#logged}}<small style="color: grey"> {{author}} ,{{book}} </small>{{/logged}}
+													{{#logged}}<small style="color: grey"> {{author}} ,{{book}}
+													</small>{{/logged}}
 													{{#logged}}</a>{{/logged}}
 
 											</blockquote>
@@ -169,9 +170,6 @@
 								</div>
 							</div>
 							{{/quote}}
-
-
-
 
 						</div>
 						<form>
@@ -233,12 +231,12 @@
 		<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 		<script type="text/javascript">
 			var data = {
-				labels: [{{ #topic }}'{{name}}', {{/topic}}],
+				labels: [{{#topic}}'{{name}}',{{/topic}}],
 				series: [
-					[{{#topic}} {{nQuotes}}, {{/topic}}]
+					[{{#topic}}{{nQuotes}}, {{/topic}}]
 					]
-				};
-			new Chartist.Bar('.ct-chart', data);
+						};
+				new Chartist.Bar('.ct-chart', data);
 		</script>
 	</div>
 </div>
