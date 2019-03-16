@@ -55,9 +55,8 @@ public class QuoteRestController {
 
 	@PostMapping("/")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Quote postQuote(@RequestBody Quote quote, MultipartFile file) {
+	public Quote postQuote(@RequestBody Quote quote) {
 		quoteService.save(quote);
-		quoteService.saveQuoteImage(file, quote);
 		return quote;
 	}
 

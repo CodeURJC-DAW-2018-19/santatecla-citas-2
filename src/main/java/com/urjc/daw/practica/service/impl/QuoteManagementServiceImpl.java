@@ -11,7 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.multipart.MultipartFile;
-import java.io.File;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -99,22 +99,25 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
     }
 
     @Override
-    public void saveQuoteImage(MultipartFile file, Quote quote) {
+    public QuoteImage saveQuoteImage(MultipartFile file, Quote quote) {
+        QuoteImage  storage = null;
     	if (file != null &&!file.isEmpty()) {
             String imageName = "image-" + UUID.randomUUID() + ".jpg";
             try {
                 if(quote.getImageId()!=null){
                     imageStorageService.removeImage(quote.getImageId());
                 }
-             QuoteImage  storage= new QuoteImage(imageName,file.getBytes());
-             storage = imageStorageService.save(storage);
-             quote.setImageId(storage.getId());
-             quotes.save(quote);
+                storage= new QuoteImage(imageName,file.getBytes());
+                storage = imageStorageService.save(storage);
+                quote.setImageId(storage.getId());
+                quotes.save(quote);
+
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+        return storage;
     }
 
     public boolean checkValidQuote(Quote quote){

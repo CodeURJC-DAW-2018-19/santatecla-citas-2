@@ -2,20 +2,26 @@ package com.urjc.daw.practica.service.impl;
 
 import com.urjc.daw.practica.exception.FileStorageException;
 import com.urjc.daw.practica.exception.MyFileNotFoundException;
+import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.model.QuoteImage;
 import com.urjc.daw.practica.repository.ImageRepository;
+import com.urjc.daw.practica.repository.QuoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Service
 public class QuoteImageStorageService {
 
 	@Autowired
 	private ImageRepository imageRepository;
+
+	@Autowired
+	private QuoteRepository quotes;
 
 	public QuoteImage storeImage(MultipartFile file) throws FileStorageException, IOException {
 
@@ -31,9 +37,17 @@ public class QuoteImageStorageService {
 
 	}
 
-	public QuoteImage getFile(Long fileId) throws MyFileNotFoundException {
-		return imageRepository.findById(fileId)
-				.orElseThrow(() -> new MyFileNotFoundException("File  not found with id" + fileId));
+	public QuoteImage getFile(Long quoteId) throws MyFileNotFoundException {
+		Optional<Quote> optional = quotes.findById(quoteId);
+		if(optional.isPresent()) {
+			if(optional.get().getImageId()!= null) {
+				Optional<QuoteImage> imgOpt = imageRepository.findById(optional.get().getImageId());
+				if (imgOpt.isPresent()) {
+					return imgOpt.get();
+				}
+			}
+		}
+		throw new MyFileNotFoundException("Image not found");
 
 	}
 
