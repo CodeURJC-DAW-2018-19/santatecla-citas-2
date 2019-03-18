@@ -52,51 +52,31 @@
  `  "content": [
  
         {
-	
-	    "id": 1,
-	    
-            "text": "Did I ever tell you the definition of insanity?..",
-	    
-            "author": "Vaas Montenegro",
-	    
+	    "id": 1,	    
+            "text": "Did I ever tell you the definition of insanity?..",	    
+            "author": "Vaas Montenegro",	    
             "book": "Far Cry 3",
-	    
-            "imageId": null
-	    
+            "imageId": null	    
         },
 	
-        {
-	
-            "id": 2,
-	    
-            "text": "Hola, me llamo Íñigo Montoya, tu mataste a mi padre, preparate a morir",
-	    
-            "author": "Íñigo Montoya",
-	    
+        {	
+            "id": 2,	    
+            "text": "Hola, me llamo Íñigo Montoya, tu mataste a mi padre, preparate a morir",    
+            "author": "Íñigo Montoya",	    
             "book": "The Princess Bride",
-	    
-            "imageId": null
-	    
+            "imageId": null    
         },
 	
-        {
-	
-            "id": 3,
-	    
-            "text": "Que va si no estaba durmiendo, solo estaba mirando pa´dentro",
-	    
-            "author": "Tragabuche",
-	    
-            "book": "Bandolero",
-	    
-            "imageId": null
-	    
+        {	
+            "id": 3,    
+            "text": "Que va si no estaba durmiendo, solo estaba mirando pa´dentro",	    
+            "author": "Tragabuche",	    
+            "book": "Bandolero",	    
+            "imageId": null	    
         },
 	
-        {
-	
-            "id": 4,
-	    
+        {	
+            "id": 4,    
             "text": "Self discipline is self love",
             "author": "Will Smith",
             "book": "Video",
@@ -132,29 +112,18 @@
         },
 	
         {
-	
-            "id": 9,
-	    
-            "text": "Did I ever tell you the definition of insanity?..",
-	    
-            "author": "Vaas Montenegro",
-	    
-            "book": "Far Cry 3",
-	    
-            "imageId": null
-	    
+            "id": 9,    
+            "text": "Did I ever tell you the definition of insanity?..",    
+            "author": "Vaas Montenegro",    
+            "book": "Far Cry 3",    
+            "imageId": null    
         },
 	
         {
-	
-            "id": 10,
-	    
-            "text": "Did I ever tell you the definition of insanity?..",
-	    
-            "author": "Vaas Montenegro",
-	    
-            "book": "Far Cry 3",
-	    
+            "id": 10,    
+            "text": "Did I ever tell you the definition of insanity?..",    
+            "author": "Vaas Montenegro",    
+            "book": "Far Cry 3",    
             "imageId": null
 	    
         }
@@ -164,8 +133,7 @@
     "pageable": {
     
         "sort": {
-	
-            "sorted`
+	    "sorted`
             
 ### POST
 
