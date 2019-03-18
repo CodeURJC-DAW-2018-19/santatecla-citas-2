@@ -196,7 +196,9 @@ Empty For delete request
 
 
  `{
+ 
     "content": [  
+   
         {
             "id": 15,
             "name": "Test",
@@ -279,38 +281,57 @@ Empty For delete request
     "numberOfElements": 4,
     "first": true,
     "empty": false
+    
 }`
             
 ### POST
 
 - URL
 
-`https://localhost:8443/api/quotes`
+`https://localhost:8443/api/topics`
 - Body
 
 `{
 
-    "text": "Did I ever tell you the definition of insanity?..",
-	"author": "Vaas Montenegro",
-    "book": "Far Cry 3"
+            "name": "Test API",
+            "quoteIds": [
+                2,
+                3,
+                4
+            ],
+            "texts": [
+                "Esto es un texto1",
+                "Esto es un texto2",
+                "Esto es un texto3",
+                "Esto es un texto4"
+            ]
+
 }`
 
 ### Result
 
 `{
-
-    "id": 21,
-    "text": "Did I ever tell you the definition of insanity?..",
-    "author": "Vaas Montenegro",
-    "book": "Far Cry 3",
-    "imageId": null
-}`
+            "id": 27,
+            "name": "Test API",
+            "nQuotes": 3,
+            "quoteIds": [
+                2,
+                3,
+                4
+            ],
+            "texts": [
+                "Esto es un texto1",
+                "Esto es un texto2",
+                "Esto es un texto3",
+                "Esto es un texto4"
+            ]
+        },`
 
 ### Delete
 
 - URL
 
-`https://localhost:8443/api/quotes/21`
+`https://localhost:8443/api/topics/16`
 - Body
 Empty For delete request
 
@@ -318,11 +339,21 @@ Empty For delete request
 
 `{
 
-    "id": 21,
-    "text": "Did I ever tell you the definition of insanity?..",
-    "author": "Vaas Montenegro",
-    "book": "Far Cry 3",
-    "imageId": null
+    "id": 16,
+    "name": "Test2",
+    "nQuotes": 3,
+    "quoteIds": [
+        2,
+        3,
+        4
+    ],
+    "texts": [
+        "Esto es un texto1",
+        "Esto es un texto2",
+        "Esto es un texto3",
+        "Esto es un texto4"
+    ]
+    
 }`
 
 
