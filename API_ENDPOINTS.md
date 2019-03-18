@@ -179,6 +179,153 @@ Empty For delete request
     "imageId": null
 }`
 
+### Resource
+
+`https://localhost:8443/api/topics/`
+
+### GET
+
+- URL
+
+`https://localhost:8443/api/topics?page=0`
+
+- Body
+ Empty for the get request
+
+### Result
+
+
+ `{
+    "content": [
+    
+        {
+            "id": 15,
+            "name": "Test",
+            "nQuotes": 0,
+            "quoteIds": [],
+            "texts": []
+        },
+        {
+            "id": 16,
+            "name": "Test2",
+            "nQuotes": 3,
+            "quoteIds": [
+                2,
+                3,
+                4
+            ],
+            "texts": [
+                "Esto es un texto1",
+                "Esto es un texto2",
+                "Esto es un texto3",
+                "Esto es un texto4"
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Test3",
+            "nQuotes": 5,
+            "quoteIds": [
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "texts": [
+                "Esto es un texto1",
+                "Esto es un texto2",
+                "Esto es un texto3",
+                "Esto es un texto4",
+                "Esto es un texto5",
+                "Esto es un texto6"
+            ]
+        },
+        {
+            "id": 18,
+            "name": "Test4",
+            "nQuotes": 2,
+            "quoteIds": [
+                5,
+                6
+            ],
+            "texts": [
+                "Esto es un texto2",
+                "Esto es un texto3"
+            ]
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "sorted": false,
+            "unsorted": true,
+            "empty": true
+        },
+        "offset": 0,
+        "pageNumber": 0,
+        "pageSize": 10,
+        "unpaged": false,
+        "paged": true
+    },
+    "totalPages": 1,
+    "totalElements": 4,
+    "last": true,
+    "size": 10,
+    "number": 0,
+    "sort": {
+        "sorted": false,
+        "unsorted": true,
+        "empty": true
+    },
+    "numberOfElements": 4,
+    "first": true,
+    "empty": false
+}`
+            
+### POST
+
+- URL
+
+`https://localhost:8443/api/quotes`
+- Body
+
+`{
+
+    "text": "Did I ever tell you the definition of insanity?..",
+	"author": "Vaas Montenegro",
+    "book": "Far Cry 3"
+}`
+
+### Result
+
+`{
+
+    "id": 21,
+    "text": "Did I ever tell you the definition of insanity?..",
+    "author": "Vaas Montenegro",
+    "book": "Far Cry 3",
+    "imageId": null
+}`
+
+### Delete
+
+- URL
+
+`https://localhost:8443/api/quotes/21`
+- Body
+Empty For delete request
+
+### Result
+
+`{
+
+    "id": 21,
+    "text": "Did I ever tell you the definition of insanity?..",
+    "author": "Vaas Montenegro",
+    "book": "Far Cry 3",
+    "imageId": null
+}`
+
 
 
 
