@@ -48,11 +48,11 @@
 
 ### Result
 
-`{
-    "content": [
-        {
-	"id": 1,
-            "text": "Did I ever tell you the definition of insanity?..",
+`{`
+ `   "content": [`
+  `      {`
+	`"id": 1,`
+      `      "text": "Did I ever tell you the definition of insanity?..",`
             "author": "Vaas Montenegro",
             "book": "Far Cry 3",
             "imageId": null
