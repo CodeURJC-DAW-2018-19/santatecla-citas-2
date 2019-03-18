@@ -196,8 +196,7 @@ Empty For delete request
 
 
  `{
-    "content": [
-    
+    "content": [  
         {
             "id": 15,
             "name": "Test",
