@@ -30,10 +30,9 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/quotes/**").hasAnyRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/quotes/**").hasAnyRole("ADMIN");
 		
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/topic/").hasAnyRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/topic/**").hasAnyRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/topic/**").hasAnyRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/topic/**").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/topics/**").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/topics/**").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/topics/**").hasAnyRole("ADMIN");
 		
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/graph").hasAnyRole("USER");
 		
@@ -44,6 +43,14 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter{
 		http.csrf().disable();
 
 		// Use Http Basic Authentication
+		http.formLogin().loginPage("/api/login")
+				.usernameParameter("username")
+				.passwordParameter("password")
+				.defaultSuccessUrl("/api/quotes")
+				.failureUrl("/api/error");
+
+		http.logout().logoutUrl("/api/logout").logoutSuccessUrl("/api/topics");
+
 		http.httpBasic();
 
 		// Do not redirect when logout

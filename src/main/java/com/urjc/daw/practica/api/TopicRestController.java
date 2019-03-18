@@ -34,7 +34,7 @@ import com.urjc.daw.practica.service.TopicManagementService;
 import com.urjc.daw.practica.service.impl.DocumentGenerationService;
 
 @RestController
-@RequestMapping("/api/topic")
+@RequestMapping("/api/topics")
 public class TopicRestController {
 
 	private static final int DEFAULT_PAGE = 0;
