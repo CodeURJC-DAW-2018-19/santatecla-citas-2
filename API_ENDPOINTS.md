@@ -23,7 +23,7 @@
 | Topic           | https://localhost:8443/api/topics/?page=pageNumber | GET |
 | Topic           | https://localhost:8443/api/topics/id      |   GET/PUT/DELETE |
 | Topic           | https://localhost:8443/api/topics/ |    POST |
-| Topic           | https://localhost:8443/api/quotes/pdf/id | GET |
+| Topic           | https://localhost:8443/api/topics/pdf/id | GET |
 | Image           | https://localhost:8443/api/images/quoteId      |   POST/GET |
 | Graph           | https://localhost:8443/api/graph | GET |
 | Login           | https://localhost:8443/api/login/     |   GET/POST|
