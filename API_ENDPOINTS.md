@@ -139,14 +139,34 @@
 
 - URL
 
-`https://localhost:8443/api/quotes?page=0`
+`https://localhost:8443/api/quotes`
 - Body
 
 `{
+
     "text": "Did I ever tell you the definition of insanity?..",
 	"author": "Vaas Montenegro",
     "book": "Far Cry 3"
 }`
+
+### Result
+
+`{
+
+    "id": 21,
+    "text": "Did I ever tell you the definition of insanity?..",
+    "author": "Vaas Montenegro",
+    "book": "Far Cry 3",
+    "imageId": null
+}`
+
+### Delete
+
+- URL
+
+`https://localhost:8443/api/quotes/21`
+- Body
+Empty For delete request
 
 ### Result
 
