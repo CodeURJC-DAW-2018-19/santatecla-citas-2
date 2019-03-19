@@ -63,56 +63,9 @@ Page used by admins to delete items or enter de edition pages
 ![Diagrama de Clases](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/Diagrama-Rest.png?raw=true)
 >
 
-## API REST Endpoints
+## [API REST Endpoints](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/API_ENDPOINTS.md)
 
-- Quote Endpoint
-  1. URI `/api/quote`
-  2. Supported Operations
-    - GET (If Logged)
-    - POST (If admin)
-    - PUT (If admin)
-    - DELETE ( If admin)
-  3. Input/Output
-    - Input:
-    `https://localhost:8443/api/quote/7`
-    - Output:
-    `{
-    "id": 7,
-    "text": "All men dream: but not equally. Those who dream by night in the dusty recesses of their minds wake in the day to find that      it was vanity: but the dreamers of the day are dangerous men, for they may act their dreams with open eyes, to make it possible.        This I did",
-    "author": "Lawrence of Arabia",
-    "book": "Seven Pilars of Wisdom",
-    "imageId": null}`
-  4. Status Codes
-      The status codes are the usual in HTTP format:
-      - 1xx: Informational:	Communicates transfer protocol-level information.
-      - 2xx: Success:	Indicates that the client’s request was accepted successfully.
-      - 3xx: Redirection:	Indicates that the client must take some additional action in order to complete their request.
-      - 4xx: Client Error:	This category of error status codes points the finger at clients.
-      - 5xx: Server Error:	The server takes responsibility for these error status codes.
 
-- Topic Endpoint
-  1. URI `/api/topic`
-  2. Supported Operations
-     - GET (ALL)
-     - POST (If admin)
-     - PUT (If admin
-     - DELETE (If admin)
-  3. Input/Output
-    - Input:
-    `https://localhost:8443/api/topic/18`
-    - Output:
-    `{
-      "id": 18,
-      "name": "Test4",
-      "quoteIds": [
-          5,
-          6
-      ],
-      "texts": [
-          "Esto es un texto2",
-          "Esto es un texto3"
-      ]
-    }`
 ## Dockerized App execution
 1. Run the script *DAW_BuildScript.sh*
 2. Tag the new image called app `docker tag app user/repo:tag`
