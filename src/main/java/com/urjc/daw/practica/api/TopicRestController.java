@@ -98,7 +98,7 @@ public class TopicRestController {
 		}
 	}
 
-	@GetMapping("/")
+	@GetMapping(params = {"keyword"}) 
 	public ResponseEntity<List<Topic>> findByKeyword(@RequestParam(value = "keyword") String keyword) {
 		List<Topic> found = topicService.findByKeyword(keyword);
 		if(!found.isEmpty()) {

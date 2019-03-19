@@ -83,9 +83,14 @@ public class QuoteRestController {
 		}
 	}
 
-	@GetMapping("/")
-	public List<Quote> findByKeyword(@RequestBody String keyword) {
-		return quoteService.findByKeyword(keyword);
+	@GetMapping(params = {"keyword"}) 
+	public ResponseEntity<List<Quote>> findByKeyword(@RequestParam("keyword") String keyword) {
+		List<Quote> found = quoteService.findByKeyword(keyword);
+		if(found != null) {
+			return new ResponseEntity<>(found,HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
 
 }

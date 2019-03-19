@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.urjc.daw.practica.service.impl.GraphService;
 
 @RestController
-@RequestMapping("api/graph")
+@RequestMapping("api/chart")
 public class GraphRestController {
 	
 	@Autowired
