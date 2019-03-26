@@ -1,0 +1,22 @@
+<div *ngIf="quote">
+    <h2>Book "{{quote.text}}"</h2>
+    <div *ngIf="quote.id">
+      <label>Id: </label>{{book.id}}
+    </div>
+    <div>
+      <label>Author: </label>
+      <input [(ngModel)]="quote.author" placeholder="Author"/>
+    </div>
+    <div>
+        <label>Book: </label>
+        <input [(ngModel)]="quote.book" placeholder="Book"/>
+      </div>
+    <div>
+      <label>Text: </label>
+      <textarea [(ngModel)]="quote.text" placeholder="text"></textarea>
+    </div>
+    <p>
+      <button (click)="cancel()">Cancel</button>
+      <button (click)="save()">Save</button>
+    </p>
+    </div>`
