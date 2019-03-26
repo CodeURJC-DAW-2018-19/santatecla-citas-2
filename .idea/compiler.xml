@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DAW" />
+        <module name="practica" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="DAW" target="1.8" />
+      <module name="practica" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
