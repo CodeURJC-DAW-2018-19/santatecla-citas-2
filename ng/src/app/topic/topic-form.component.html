@@ -1,0 +1,34 @@
+<div *ngIf="quote">
+    <h2>Book "{{quote.text}}"</h2>
+    <div *ngIf="quote.id">
+      <label>Id: </label>{{book.id}}
+    </div>
+    <div>
+      <label>Name: </label>
+      <input [(ngModel)]="topic.Name" placeholder="Name"/>
+    </div>
+
+    <div *ngIf=topic.hasQuotes>
+
+      <div *ngFor='let quote of topic.quotes'>
+        <label>Reference</label>
+        <div>
+          <p >{{quote.text}}</p>
+          <p>{{quote.author</p>
+          <p>{{quote.book}}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf=topic.hasTexts>
+
+        <div *ngFor='let text of topic.texts'>
+          <label>Texts</label>
+          <input [(ngModel)]="text" placeholder="Text"/>
+        </div>
+    </div>
+    
+    <p>
+      <button (click)="cancel()">Cancel</button>
+      <button (click)="save()">Save</button>
+    </p>
+    </div>`
