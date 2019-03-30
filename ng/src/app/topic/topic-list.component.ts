@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {Topic, TopicService} from './topic.service';
-import {LoginService} from '../login.service';
+import {LoginService} from '../user/login.service';
 
 @Component({
     templateUrl:'quote-list.component.html'

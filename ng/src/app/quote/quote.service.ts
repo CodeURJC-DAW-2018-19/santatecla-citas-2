@@ -12,11 +12,13 @@ export interface Quote{
     book: string;
     
 }
-const URL ='/api/quotes';
+const URL ='/api/quotes/';
 
 
 @Injectable()
 export class QuoteService{
+
+    
 
 
     constructor(private http: Http){}
@@ -35,7 +37,7 @@ export class QuoteService{
     }
 
     findOne(id:number){
-        return this.http.get(URL+"/"+id,{withCredentials: true})
+        return this.http.get(URL+id,{withCredentials: true})
         .pipe(
             map(response=>response.json),
             catchError(error=> this.handleError(error))
@@ -68,6 +70,13 @@ export class QuoteService{
             );
         }
 
+    }
+
+    postImage(id: number, image:File) {
+        const body = JSON.stringify(image);
+        //ToDo Ask for how to post this image to the server, json can stringify an image?
+        return this.http.post()
+        throw new Error("Method not implemented.");
     }
 
     removeQuote(quote:Quote){

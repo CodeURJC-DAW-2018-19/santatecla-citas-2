@@ -5,16 +5,17 @@
     </div>
     <div>
       <label>Author: </label>
-      <input [(ngModel)]="quote.author" placeholder="Author"/>
+      <input [(ngModel)]="author" placeholder="Author"/>
     </div>
     <div>
         <label>Book: </label>
-        <input [(ngModel)]="quote.book" placeholder="Book"/>
+        <input [(ngModel)]="book" placeholder="Book"/>
       </div>
     <div>
       <label>Text: </label>
-      <textarea [(ngModel)]="quote.text" placeholder="text"></textarea>
+      <textarea [(ngModel)]="text" placeholder="text"></textarea>
     </div>
+    <input type="file" (change)="onFileChanged($event)" #fileInput/>
     <p>
       <button (click)="cancel()">Cancel</button>
       <button (click)="save()">Save</button>

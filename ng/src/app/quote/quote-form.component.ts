@@ -8,6 +8,7 @@ import {Quote, QuoteService} from './quote.service';
 export class QuoteFormComponent{
     newQuote: boolean;
     quote: Quote;
+    file: File
 
     constructor(private router:Router,
         activatedRoute:ActivatedRoute,
@@ -36,6 +37,15 @@ export class QuoteFormComponent{
             quote=>{},
             error=> console.error('Error creating quote: '+ error),
         );
+        this.service.postImage(this.quote.id,this.file).subscribe(
+            file =>{},
+            error => console.error('Error uploading image: '+error),
+            
+        )
         window.history.back();
+    }
+
+    onFileChanged(event){
+        this.file = event.target.files[0]
     }
 }
