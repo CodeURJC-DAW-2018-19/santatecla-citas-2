@@ -62,6 +62,17 @@ import { BookFormComponent } from './book-form.component';
 import { LoginComponent } from './user/login.component';
 import { routing } from './app.routing';
 
+import {Quote, QuoteService} from './quote/quote.service';
+import {QuoteListComponent} from './quote/quote-list.component';
+import {QuoteFormComponent} from './quote/quote-form.component';
+import {QuoteDetailComponent} from './quote/quote-detail.component'
+
+import {Topic, TopicService} from './Topic/topic.service';
+import {TopicListComponent} from './topic/topic-list.component';
+import {TopicFormComponent} from './topic/topic-form.component';
+import {TopicDetailComponent} from './topic/topic-detail.component'
+import { from } from 'rxjs';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -114,7 +125,7 @@ import { routing } from './app.routing';
         HttpModule, //Remove when migrated to HttpClient
         routing
     ],
-    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent],
+    declarations: [AppComponent,QuoteDetailComponent,QuoteFormComponent,QuoteListComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent],
     bootstrap: [AppComponent],
     providers: [BookService, LoginService]
 })

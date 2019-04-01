@@ -3,12 +3,13 @@ import {Router,ActivatedRoute} from '@angular/router';
 import {Quote, QuoteService} from './quote.service';
 
 @Component({
-    templateUrl: 'quote-form.component.html'
+    templateUrl: `quote-form.component.html`
 })
 export class QuoteFormComponent{
     newQuote: boolean;
     quote: Quote;
-    file: File
+    file: File;
+    codedFile: string;
 
     constructor(private router:Router,
         activatedRoute:ActivatedRoute,
@@ -46,6 +47,7 @@ export class QuoteFormComponent{
     }
 
     onFileChanged(event){
-        this.file = event.target.files[0]
+        this.file = event.target.files[0];
+        
     }
 }
