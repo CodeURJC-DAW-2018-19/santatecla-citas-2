@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators'
 
 const URL = '/api';
 
-export interface User {
+export interface UserLog {
     id?: number;
     name: string;
     roles: string[];
@@ -16,7 +16,7 @@ export class LoginService {
 
     isLogged = false;
     isAdmin = false;
-    user: User;
+    user: UserLog;
 
     constructor(private http: Http) {
         this.reqIsLogged();
