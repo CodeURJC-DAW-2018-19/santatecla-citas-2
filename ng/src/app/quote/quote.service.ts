@@ -46,13 +46,7 @@ export class QuoteService{
 
     }
 
-    findImage(id: number){
-        return this.http.get("/api/images/"+id,{withCredentials: true})
-        .pipe(
-            map(response => response.json),
-            catchError(error => this.handleError(error))
-        );
-    }
+    
 
 
     postQuote (quote: Quote){
@@ -85,9 +79,15 @@ export class QuoteService{
         const headers = new Headers({
             'Content-Type' : 'application/x-www-form-urlencoded',
 
-        })
+        });
+        const options = new RequestOptions({withCredentials:true, headers});
+
         //ToDo Ask for how to post this image to the server, json can stringify an image?
-        return this.http.post("/api/images/id",image)
+        return this.http.post("/api/images/id",image, options)
+        .pipe(
+            map(response => response.json()),
+            catchError(error => this.handleError(error))
+        );
 
         throw new Error("Method not implemented.");
     }
