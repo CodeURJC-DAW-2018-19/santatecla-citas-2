@@ -39,7 +39,7 @@ export class QuoteService{
     findOne(id:number){
         return this.http.get(URL+id,{withCredentials: true})
         .pipe(
-            map(response=>response.json),
+            map(response=>response.json()),
             catchError(error=> this.handleError(error))
         );
 
@@ -82,8 +82,13 @@ export class QuoteService{
 
     postImage(id: number, image:File) {
         const body = JSON.stringify(image);
+        const headers = new Headers({
+            'Content-Type' : 'application/x-www-form-urlencoded',
+
+        })
         //ToDo Ask for how to post this image to the server, json can stringify an image?
-        return this.http.post()
+        return this.http.post("/api/images/id",image)
+
         throw new Error("Method not implemented.");
     }
 
@@ -94,7 +99,7 @@ export class QuoteService{
         const options = new RequestOptions({withCredentials:true, headers})
         return this.http.delete(URL+"/"+quote.id,options)
         .pipe(
-            map(response=>response.json),
+            map(response=>response.json()),
             catchError(error=> this.handleError(error))
         );
 
