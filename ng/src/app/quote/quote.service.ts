@@ -46,6 +46,14 @@ export class QuoteService{
 
     }
 
+    findImage(id: number){
+        return this.http.get("/api/images/"+id,{withCredentials: true})
+        .pipe(
+            map(response => response.json),
+            catchError(error => this.handleError(error))
+        );
+    }
+
 
     postQuote (quote: Quote){
         const body = JSON.stringify(quote);
