@@ -5,7 +5,7 @@ import { map, catchError } from 'rxjs/operators'
 
 export interface User {
   id?: number;
-  emai: string;
+  email: string;
   passwar: string;
 }
 
