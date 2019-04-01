@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
-import { Quote } from '@angular/compiler';
 import { Router, ActivatedRoute } from '@angular/router';
-import { QuoteService } from './quote.service';
+import { QuoteService, Quote } from './quote.service';
 import { LoginService } from '../user/login.service';
 
 @Component({

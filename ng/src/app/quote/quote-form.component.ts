@@ -48,11 +48,6 @@ export class QuoteFormComponent{
 
     onFileChanged(event){
         this.file = event.target.files[0];
-        if (this.file) {
-            const reader = new FileReader();
         
-            reader.onload = this.handleReaderLoaded.bind(this);
-            reader.readAsBinaryString(file);
-          }
     }
 }

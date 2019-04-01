@@ -4,7 +4,7 @@ import { BookListComponent } from './book-list.component';
 import { BookDetailComponent } from './book-detail.component';
 import { BookFormComponent } from './book-form.component';
 import { QuoteListComponent } from './quote/quote-list.component';
-import { QuoteFormComponent } from './topic/topic-form.component';
+import { QuoteFormComponent } from './quote/quote-form.component';
 
 const appRoutes = [
   { path: 'quotes', component: QuoteListComponent, useAsDefault: true },
