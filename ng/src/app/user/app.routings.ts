@@ -16,8 +16,7 @@ const appRoutes = [
   { path: 'quote/new', component: QuoteFormComponent },
   { path: 'quote/:id', component: QuoteDetailComponent },
   { path: 'quote/edit/:id', component: QuoteFormComponent },
-  { path: '', redirectTo: 'quotes', pathMatch: 'full' }
-
+  { path: '', redirectTo: 'quotes', pathMatch: 'full' },
   { path: 'topics', component: TopicListComponent, useAsDefault: true },
   { path: 'topic/new', component: TopicFormComponent },
   { path: 'topic/:id', component: TopicDetailComponent },
