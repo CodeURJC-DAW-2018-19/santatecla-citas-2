@@ -1,8 +1,9 @@
+import { QuoteDetailComponent } from './../quote/quote-detail.component';
 import { Routes, RouterModule } from '@angular/router';
 
-import { BookListComponent } from './book-list.component';
-import { BookDetailComponent } from './book-detail.component';
-import { BookFormComponent } from './book-form.component';
+import { QuoteListComponent } from './quote-list.component';
+import { QuoteDetailComponent } from './quote-detail.Component';
+import { QuoteFormComponent } from './quote-form.component';
 import { QuoteListComponent } from './quote/quote-list.component';
 import { QuoteFormComponent } from './quote/quote-form.component';
 
