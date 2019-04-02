@@ -4,7 +4,7 @@ import { TopicService, Topic } from './topic.service';
 import { LoginService } from '../user/login.service';
 
 @Component({
-    templateUrl: `quote-detail.component.html`
+    templateUrl: `topic-detail.component.html`
 })
 export class TopicDetailComponent{
     

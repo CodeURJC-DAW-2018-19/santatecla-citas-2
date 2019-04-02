@@ -5,7 +5,7 @@ import {Topic, TopicService} from './topic.service';
 import {LoginService} from '../user/login.service';
 
 @Component({
-    templateUrl:'quote-list.component.html'
+    templateUrl:'topic-list.component.html'
 })
 
 export class TopicListComponent implements OnInit{
