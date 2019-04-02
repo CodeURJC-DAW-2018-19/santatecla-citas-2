@@ -25,7 +25,7 @@ import com.urjc.daw.practica.model.Quote;
 import com.urjc.daw.practica.service.impl.QuoteManagementServiceImpl;
 
 @RestController
-@RequestMapping("/api/quotes")
+@RequestMapping("/api/quotes/")
 public class QuoteRestController {
 
 	private static final int QUOTES_PER_PAGE = 10;
@@ -33,7 +33,7 @@ public class QuoteRestController {
 	@Autowired
 	QuoteManagementServiceImpl quoteService;
 
-	@GetMapping("/{id}")
+	@GetMapping("{id}")
 	public ResponseEntity<Optional<Quote>> findOne(@PathVariable long id) {
 		Optional<Quote> found = quoteService.findOne(id);
 		if(found.isPresent()) {
@@ -53,14 +53,14 @@ public class QuoteRestController {
 		}
 	}
 
-	@PostMapping("/")
+	@PostMapping("")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Quote postQuote(@RequestBody Quote quote) {
 		quoteService.save(quote);
 		return quote;
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("{id}")
 	public ResponseEntity<Quote> editQuote(@PathVariable long id,@RequestBody Quote quote) {
 		Quote found = quoteService.findOne(id).get();
 		if(found != null) {
@@ -72,7 +72,7 @@ public class QuoteRestController {
 		}
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("{id}")
 	public ResponseEntity<Optional<Quote>> deleteQuote(@PathVariable long id) {
 		Optional<Quote> deleted = quoteService.findOne(id);
 		if(deleted.isPresent()) {

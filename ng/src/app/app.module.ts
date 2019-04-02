@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { JsonpModule, HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -67,11 +67,13 @@ import {QuoteListComponent} from './quote/quote-list.component';
 import {QuoteFormComponent} from './quote/quote-form.component';
 import {QuoteDetailComponent} from './quote/quote-detail.component'
 
-import {Topic, TopicService} from './Topic/topic.service';
+import {Topic, TopicService} from './topic/topic.service';
 import {TopicListComponent} from './topic/topic-list.component';
 import {TopicFormComponent} from './topic/topic-form.component';
 import {TopicDetailComponent} from './topic/topic-detail.component'
-import { from } from 'rxjs';
+import { BasicAuthInterceptor } from './auth/auth.interceptor';
+import { ErrorInterceptor } from './auth/error.interceptor';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
     imports: [
@@ -125,9 +127,12 @@ import { from } from 'rxjs';
         HttpModule, //Remove when migrated to HttpClient
         routing
     ],
-    declarations: [AppComponent,QuoteDetailComponent,QuoteFormComponent,QuoteListComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent],
+    declarations: [AppComponent,QuoteDetailComponent,QuoteFormComponent,QuoteListComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent, TopicListComponent,TopicDetailComponent,TopicFormComponent],
     bootstrap: [AppComponent],
-    providers: [BookService, LoginService]
+    providers: [TopicService,BookService, LoginService,QuoteService,
+    {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true},
+{provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+{provide: LocationStrategy, useClass: HashLocationStrategy}],
 })
 export class AppModule {
     constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {

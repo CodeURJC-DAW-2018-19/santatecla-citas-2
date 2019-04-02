@@ -28,7 +28,7 @@ export class QuoteService{
      * depending on the app state
      */
     findAll(page:number){
-        return this.http.get(URL+"?="+page,{withCredentials: true})
+        return this.http.get(URL+"?page="+page,{withCredentials: true})
         .pipe(
             map(response => response.json()),
             catchError(error => this.handleError(error))

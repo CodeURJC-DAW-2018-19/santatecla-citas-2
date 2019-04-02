@@ -7,8 +7,8 @@
     </mat-card-title>
     <mat-divider></mat-divider>
 
-    <mat-nav-list *ngIf="loginService.isLogged">
-        <a *ngFor='let topic of Topics' mat-list-item [routerLink]="['/topic', topic.id]">
+    <mat-nav-list>
+        <a *ngFor='let topic of topics' mat-list-item [routerLink]="['/topic', topic.id]">
             {{topic.name}}
         </a>
     </mat-nav-list>
