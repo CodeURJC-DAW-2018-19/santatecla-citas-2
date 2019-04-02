@@ -29,7 +29,7 @@ export class TopicService{
     findAll(page:number){
         return this.http.get(URL+"?page="+page,{withCredentials: true})
         .pipe(
-            map(response => response.json()),
+            map(response => response.json().content),
             catchError(error => this.handleError(error))
             );
 
