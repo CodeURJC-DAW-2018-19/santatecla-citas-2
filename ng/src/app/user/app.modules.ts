@@ -1,4 +1,4 @@
-import { UserService } from './user/user.service';
+import { UserService } from './user.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +9,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from '../app.component';
 
 import {
     MatButtonModule,
@@ -55,17 +55,17 @@ import {
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DomSanitizer } from '@angular/platform-browser';
-import { QuoteService } from './quote/quote.service';
-import { LoginService } from './auth/login.service';
-import { QuoteDetailComponent } from './quote/quote-detail.component';
-import { QuoteListComponent } from './quote/quote-list.component';
-import { QuoteFormComponent } from './quote/quote-form.component';
-import { LoginComponent } from './user/login.component';
-import { routing } from './app.routing';
-import { ErrorInterceptor } from './auth/error.interceptor';
-import { BasicAuthInterceptor } from './auth/auth.interceptor';
+import { QuoteService } from '../quote/quote.service';
+import { LoginService } from '../auth/login.service';
+import { QuoteDetailComponent } from '../quote/quote-detail.component';
+import { QuoteListComponent } from '../quote/quote-list.component';
+import { QuoteFormComponent } from '../quote/quote-form.component';
+import { LoginComponent } from './login.component';
+import { routing } from '../app.routing';
+import { ErrorInterceptor } from '../auth/error.interceptor';
+import { BasicAuthInterceptor } from '../auth/auth.interceptor';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { TopicService } from './topic/topic.service';
+import { TopicService } from '../topic/topic.service';
 
 @NgModule({
     imports: [
