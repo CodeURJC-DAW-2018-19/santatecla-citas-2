@@ -5,7 +5,7 @@ import {Topic, TopicService} from './topic.service';
 @Component({
     templateUrl: 'topic-form.component.html'
 })
-export class QuoteFormComponent{
+export class TopicFormComponent{
     newTopic: boolean;
     topic: Topic;
 

@@ -38,7 +38,7 @@ export class TopicService{
     findOne(id:number){
         return this.http.get(URL+"/"+id,{withCredentials: true})
         .pipe(
-            map(response=>response.json),
+            map(response=>response.json()),
             catchError(error=> this.handleError(error))
         );
 
