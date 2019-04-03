@@ -13,7 +13,7 @@
         </a>
     </mat-nav-list>
 
-    <mat-nav-list *ngIf="!loginService.isLogged">
+    <mat-nav-list *ngIf="loginService.isLogged">
         <mat-list-item [ngStyle]="{'cursor':'auto'}" *ngFor='let quote of quotes'>
             {{quote.text}}
         </mat-list-item>
