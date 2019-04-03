@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5ddb4e6-5607-42f7-a550-45ebbedec2c4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/security/RestSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/security/RestSecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/QuoteRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/QuoteRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.class" afterDir="false" />
-    </list>
+    <list default="true" id="b5ddb4e6-5607-42f7-a550-45ebbedec2c4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -191,7 +184,6 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="630" />
-    <option name="y" value="25" />
     <option name="width" value="1197" />
     <option name="height" value="1047" />
   </component>
@@ -657,7 +649,7 @@
       <workItem from="1554131106089" duration="635000" />
       <workItem from="1554177295063" duration="8340000" />
       <workItem from="1554266393379" duration="40000" />
-      <workItem from="1554299397357" duration="5213000" />
+      <workItem from="1554299397357" duration="6411000" />
     </task>
     <servers />
   </component>
@@ -676,7 +668,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61143000" />
+    <option name="totallyTimeSpent" value="62341000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -688,10 +680,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="630" y="25" width="1197" height="1047" extended-state="0" />
+    <frame x="630" y="0" width="1197" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21635884" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21635884" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -702,7 +694,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32827735" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.4037199" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4037199" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32881773" />
