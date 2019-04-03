@@ -44,13 +44,18 @@ public class QuoteRestController {
 	}
 
 	@GetMapping(params = {"page"}) 
-	public ResponseEntity<Page<Quote>> findAll(@RequestParam("page") int nPag) {
+	public ResponseEntity<Page<Quote>> findAllPaged(@RequestParam("page") int nPag) {
 		Page<Quote> pageable = quoteService.findAll(nPag, QUOTES_PER_PAGE);
 		if(pageable.hasContent()) {
 			return new ResponseEntity<>(pageable,HttpStatus.OK);
 		}else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
+	}
+
+	@GetMapping()
+	public ResponseEntity<List<Quote>> findAll() {
+		return new ResponseEntity<>(this.quoteService.findAllUnpaged(),HttpStatus.OK);
 	}
 
 	@PostMapping("")

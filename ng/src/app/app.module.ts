@@ -74,6 +74,7 @@ import {TopicDetailComponent} from './topic/topic-detail.component'
 import { BasicAuthInterceptor } from './auth/auth.interceptor';
 import { ErrorInterceptor } from './auth/error.interceptor';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { QuotePopupComponent } from './topic/quote-popup.component';
 
 @NgModule({
     imports: [
@@ -127,7 +128,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
         HttpModule, //Remove when migrated to HttpClient
         routing
     ],
-    declarations: [AppComponent,QuoteDetailComponent,QuoteFormComponent,QuoteListComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent, TopicListComponent,TopicDetailComponent,TopicFormComponent],
+    declarations: [AppComponent,QuoteDetailComponent,QuoteFormComponent,QuoteListComponent,QuotePopupComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent, TopicListComponent,TopicDetailComponent,TopicFormComponent],
     bootstrap: [AppComponent],
     providers: [TopicService,BookService, LoginService,QuoteService,
     {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true},

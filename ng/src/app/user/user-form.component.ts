@@ -1,4 +1,4 @@
-import { UserLog } from './login.service';
+/*import { UserLog } from './login.service';
 import {Component} from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import { User,UserService} from './user.service';
@@ -39,4 +39,4 @@ export class UserFormComponent{
         );
         window.history.back();
     }
-}
+}*/

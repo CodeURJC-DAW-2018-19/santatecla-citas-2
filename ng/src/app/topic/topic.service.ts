@@ -9,8 +9,10 @@ import { Quote } from '../quote/quote.service';
 export interface Topic{
     id?: number;
     name: string;
+    nQuotes:number;
+    quoteIds: number[];
     texts: string[];
-    quotes: Quote[];
+    
     
 }
 const URL ='/api/topics';
@@ -38,7 +40,7 @@ export class TopicService{
     findOne(id:number){
         return this.http.get(URL+"/"+id,{withCredentials: true})
         .pipe(
-            map(response=>response.json()),
+            map(response=>response.json().content),
             catchError(error=> this.handleError(error))
         );
 

@@ -30,10 +30,17 @@ export class QuoteService{
     findAll(page:number){
         return this.http.get(URL+"?page="+page,{withCredentials: true})
         .pipe(
-            map(response => response.json()),
+            map(response => response.json().content),
             catchError(error => this.handleError(error))
             );
 
+    }
+    findAllUnpaged(){
+        return this.http.get(URL, {withCredentials: true})
+        .pipe(
+            map(response => response.json()),
+            catchError(error => this.handleError(error))
+        );
     }
 
     findOne(id:number){

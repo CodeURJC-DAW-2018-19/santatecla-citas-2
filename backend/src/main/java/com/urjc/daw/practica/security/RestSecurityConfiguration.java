@@ -25,7 +25,7 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter{
 
 
 		// URLs that need authentication to access to it
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/quotes/").hasAnyRole("USER");
+		//http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/quotes/").hasAnyRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/quotes/**").hasAnyRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/quotes/**").hasAnyRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/quotes/**").hasAnyRole("ADMIN");
