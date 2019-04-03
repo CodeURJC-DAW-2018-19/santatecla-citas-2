@@ -25,8 +25,7 @@ export class ChartComponent{
     
     constructor(private router:Router,
         activatedRoute:ActivatedRoute){
-
             const id = activatedRoute.snapshot.params['id'];
-            
+    
         }
 }
