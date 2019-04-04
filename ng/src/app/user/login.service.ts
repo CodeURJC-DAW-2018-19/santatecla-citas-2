@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Http, RequestOptions, Headers } from '@angular/http';
-import { map } from 'rxjs/operators'
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 const URL = '/api';
 
-export interface UserLog {
+export interface User {
     id?: number;
-    name: string;
+    userName: string;
     roles: string[];
+    password: string;
 }
 
 @Injectable()
@@ -16,72 +16,58 @@ export class LoginService {
 
     isLogged = false;
     isAdmin = false;
-    user: UserLog;
+    user: User;
+    auth: string;
 
-    constructor(private http: Http) {
-        this.reqIsLogged();
+    constructor(private http: HttpClient) {
+        let user = JSON.parse(localStorage.getItem('currentUser'));
+        if (user) {
+            console.log('Logged user');
+            this.setCurrentUser(user);
+        }
     }
 
-    reqIsLogged() {
+    logIn(userName: string, pass: string) {
 
-        const headers = new Headers({
-            'X-Requested-With': 'XMLHttpRequest'
+        let auth = window.btoa(userName + ':' + pass);
+
+        const headers = new HttpHeaders({
+            Authorization: 'Basic ' + auth,
+            'X-Requested-With': 'XMLHttpRequest',
         });
 
-        const options = new RequestOptions({ withCredentials: true, headers });
+        return this.http.get<User>('/api/login', { headers })
+            .pipe(map(user => {
 
-        this.http.get(URL + '/login', options).subscribe(
-            response => this.processLogInResponse(response),
-            error => {
-                if (error.status !== 401) {
-                    console.error('Error when asking if logged: ' +
-                        JSON.stringify(error));
+                if (user) {
+                    this.setCurrentUser(user);
+                    user.password = auth;
+                    localStorage.setItem('currentUser', JSON.stringify(user));
                 }
-            }
-        );
-    }
 
-    private processLogInResponse(response) {
-        this.isLogged = true;
-        this.user = response.json();
-        this.isAdmin = this.user.roles.indexOf('ROLE_ADMIN') !== -1;
-    }
-
-    logIn(user: string, pass: string) {
-
-        console.log('user:'+user+' pass:'+pass);
-
-        const userPass = user + ':' + pass;
-
-        const headers = new Headers({
-            'Authorization': 'Basic ' + utf8_to_b64(userPass),
-            'X-Requested-With': 'XMLHttpRequest'
-        });
-
-        const options = new RequestOptions({ withCredentials: true, headers });
-
-        return this.http.get(URL + '/login', options).pipe(map(
-            response => {
-                this.processLogInResponse(response);
-                return this.user;
-            }
-        ));
+                return user;
+            }));
     }
 
     logOut() {
 
-        return this.http.get(URL + '/logout', { withCredentials: true }).pipe(map(
-            response => {
-                this.isLogged = false;
-                this.isAdmin = false;
+        return this.http.get(URL + '/logout').pipe(
+            map(response => {
+                this.removeCurrentUser();
                 return response;
-            }
-        ));
+            }),
+        );
     }
-}
 
-function utf8_to_b64(str) {
-    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
-        return String.fromCharCode(<any>'0x' + p1);
-    }));
+    private setCurrentUser(user: User) {
+        this.isLogged = true;
+        this.user = user;
+        this.isAdmin = this.user.roles.indexOf('ROLE_ADMIN') !== -1;
+    }
+
+    removeCurrentUser() {
+        localStorage.removeItem('currentUser');
+        this.isLogged = false;
+        this.isAdmin = false;
+    }
 }

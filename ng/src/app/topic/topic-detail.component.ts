@@ -2,22 +2,33 @@ import { Component } from "@angular/core";
 import { Router, ActivatedRoute } from '@angular/router';
 import { TopicService, Topic } from './topic.service';
 import { LoginService } from '../user/login.service';
+import { Quote, QuoteService } from '../quote/quote.service';
 
 @Component({
-    templateUrl: `quote-detail.component.html`
+    templateUrl: `topic-detail.component.html`
 })
 export class TopicDetailComponent{
     
     topic:Topic;
+    quotes:Quote[];
 
     constructor(private router:Router, activatedRoute: ActivatedRoute,
-        public service:TopicService, public login: LoginService){
+        public service:TopicService,public quoteService:QuoteService, public login: LoginService){
 
             const id = activatedRoute.snapshot.params[`id`];
             service.findOne(id).subscribe(
                 topic => this.topic = topic,
                 error => console.error(error)
             );
+
+            //This for loads each quote related to the topic
+            console.log(this.topic);
+           /* for(let id of this.topic.quoteIds){
+                quoteService.findOne(id).subscribe(
+                    quote => this.quotes.push(quote),
+                    error => console.error(error)
+                )
+            }*/
         }
     
     removeQuote(){

@@ -23,10 +23,11 @@ export class QuoteListComponent implements OnInit{
     }
 
     /**
-     * Duda, para que sirve??
+     * Botón para añadir una cita, redirección a quote/new 
+     * envía a quote-form
      */
     newQuote(){
-        this.router.navigate(['/quote/new']);
+        this.router.navigate(['quote/new']);
     }
 
 }

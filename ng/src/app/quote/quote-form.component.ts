@@ -35,14 +35,15 @@ export class QuoteFormComponent{
 
     save(){
         this.service.postQuote(this.quote).subscribe(
-            quote=>{},
+            quote => {this.quote=quote;
+                this.service.postImage(this.quote.id,this.file).subscribe(
+                file =>{},
+                error => console.error('Error uploading image: '+error),
+                
+            )},
             error=> console.error('Error creating quote: '+ error),
         );
-        this.service.postImage(this.quote.id,this.file).subscribe(
-            file =>{},
-            error => console.error('Error uploading image: '+error),
-            
-        )
+        
         window.history.back();
     }
 

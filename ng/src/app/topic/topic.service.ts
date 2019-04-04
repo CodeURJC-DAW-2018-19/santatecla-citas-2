@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core'
+import {Injectable, Output, EventEmitter} from '@angular/core'
 import {Http,Headers, RequestOptions} from '@angular/http'
 
 import {Observable} from 'rxjs';
@@ -9,8 +9,10 @@ import { Quote } from '../quote/quote.service';
 export interface Topic{
     id?: number;
     name: string;
+    nQuotes:number;
+    quoteIds: number[];
     texts: string[];
-    quotes: Quote[];
+    
     
 }
 const URL ='/api/topics';
@@ -18,6 +20,9 @@ const URL ='/api/topics';
 
 @Injectable()
 export class TopicService{
+
+    quoteReferenced: Quote[];
+    quoteNotReferenced: Quote[];
 
 
     constructor(private http: Http){}
@@ -27,9 +32,9 @@ export class TopicService{
      * depending on the app state
      */
     findAll(page:number){
-        return this.http.get(URL+"?="+page,{withCredentials: true})
+        return this.http.get(URL+"?page="+page,{withCredentials: true})
         .pipe(
-            map(response => response.json()),
+            map(response => response.json().content),
             catchError(error => this.handleError(error))
             );
 
@@ -38,7 +43,7 @@ export class TopicService{
     findOne(id:number){
         return this.http.get(URL+"/"+id,{withCredentials: true})
         .pipe(
-            map(response=>response.json()),
+            map(response=>response.json().content),
             catchError(error=> this.handleError(error))
         );
 
@@ -88,4 +93,6 @@ export class TopicService{
         console.error(error);
         return Observable.throw('Server error('+error.status +') '+error.text);
     }
+
+    
 }

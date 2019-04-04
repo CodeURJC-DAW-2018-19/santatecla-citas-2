@@ -28,12 +28,19 @@ export class QuoteService{
      * depending on the app state
      */
     findAll(page:number){
-        return this.http.get(URL+"?="+page,{withCredentials: true})
+        return this.http.get(URL+"?page="+page,{withCredentials: true})
         .pipe(
-            map(response => response.json()),
+            map(response => response.json().content),
             catchError(error => this.handleError(error))
             );
 
+    }
+    findAllUnpaged(){
+        return this.http.get(URL, {withCredentials: true})
+        .pipe(
+            map(response => response.json()),
+            catchError(error => this.handleError(error))
+        );
     }
 
     findOne(id:number){
@@ -77,13 +84,16 @@ export class QuoteService{
     postImage(id: number, image:File) {
         const body = JSON.stringify(image);
         const headers = new Headers({
-            'Content-Type' : 'application/x-www-form-urlencoded',
+            'Content-Type' : 'multipart/form-data',
 
         });
+        let formData:FormData = new FormData();
+        formData.append('file', image, image.name);
+
         const options = new RequestOptions({withCredentials:true, headers});
 
         //ToDo Ask for how to post this image to the server, json can stringify an image?
-        return this.http.post("/api/images/id",image, options)
+        return this.http.post("/api/images/"+id,formData)
         .pipe(
             map(response => response.json()),
             catchError(error => this.handleError(error))

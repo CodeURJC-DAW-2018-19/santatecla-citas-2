@@ -8,6 +8,7 @@ import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -122,5 +123,9 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
 
     public boolean checkValidQuote(Quote quote){
         return quote != null;
+    }
+
+    public List<Quote> findAllUnpaged() {
+        return quotes.findAll();
     }
 }
