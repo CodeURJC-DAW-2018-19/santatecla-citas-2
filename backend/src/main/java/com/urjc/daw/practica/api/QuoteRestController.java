@@ -61,7 +61,7 @@ public class QuoteRestController {
 	@PostMapping("")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Quote postQuote(@RequestBody Quote quote) {
-		quoteService.save(quote);
+		quote = quoteService.save(quote);
 		return quote;
 	}
 

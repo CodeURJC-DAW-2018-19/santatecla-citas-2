@@ -14,7 +14,7 @@
     </mat-nav-list>
 
 
-    <button mat-fab  *ngIf="loginService.isLogged"  (click)="newQuote()">
+    <button mat-fab  *ngIf="loginService.isAdmin"  (click)="newTopic()">
         <mat-icon>add</mat-icon>
     </button>
 </mat-card>

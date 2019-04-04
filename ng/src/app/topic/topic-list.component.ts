@@ -25,8 +25,8 @@ export class TopicListComponent implements OnInit{
     /**
      * Duda, para que sirve??
      */
-    newQuote(){
-        this.router.navigate(['/topic/new']);
+    newTopic(){
+        this.router.navigate(['topic/new']);
     }
 
 }

@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core'
+import {Injectable, Output, EventEmitter} from '@angular/core'
 import {Http,Headers, RequestOptions} from '@angular/http'
 
 import {Observable} from 'rxjs';
@@ -20,6 +20,9 @@ const URL ='/api/topics';
 
 @Injectable()
 export class TopicService{
+
+    quoteReferenced: Quote[];
+    quoteNotReferenced: Quote[];
 
 
     constructor(private http: Http){}
@@ -90,4 +93,6 @@ export class TopicService{
         console.error(error);
         return Observable.throw('Server error('+error.status +') '+error.text);
     }
+
+    
 }

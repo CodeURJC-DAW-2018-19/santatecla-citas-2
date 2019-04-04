@@ -27,7 +27,7 @@ export class QuoteListComponent implements OnInit{
      * envía a quote-form
      */
     newQuote(){
-        this.router.navigate(['/quote/new']);
+        this.router.navigate(['quote/new']);
     }
 
 }

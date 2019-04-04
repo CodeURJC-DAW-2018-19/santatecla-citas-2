@@ -7,16 +7,19 @@ import { TopicListComponent } from './topic/topic-list.component';
 import {TopicDetailComponent} from './topic/topic-detail.component';
 import { QuoteListComponent } from './quote/quote-list.component';
 import { QuotePopupComponent } from './topic/quote-popup.component';
+import { TopicFormComponent } from './topic/topic-form.component';
+import { QuoteFormComponent } from './quote/quote-form.component';
 
 const appRoutes = [
   { path: 'books', component: BookListComponent },
   { path: 'topics', component: TopicListComponent},
   { path: 'quotes', component: QuoteListComponent},
+  {path: 'quote/new', component: QuoteFormComponent},
 
   {path: 'quotesPop', component: QuotePopupComponent},
 
   { path: 'topic/:id', component: TopicDetailComponent },
-  { path: 'book/new', component: BookFormComponent },
+  { path: 'topic/new', component: TopicFormComponent },
 
   { path: 'book/:id', component: BookDetailComponent },
   { path: 'book/edit/:id', component: BookFormComponent },
