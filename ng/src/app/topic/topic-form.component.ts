@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild, ElementRef} from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import {Topic, TopicService} from './topic.service';
+import *as jsPDF from 'jspdf';
 
 @Component({
     templateUrl: 'topic-form.component.html'
@@ -34,5 +35,25 @@ export class TopicFormComponent{
             error=> console.error('Error creating quote: '+ error),
         );
         window.history.back();
+    }
+
+    @ViewChild('content') content: ElementRef;
+    public downloadPDF(){
+        let doc = new jsPDF();
+
+        let specialElementHandlers = {
+            '#editor': function(element,rederer){
+                return true;
+            }
+
+        };
+
+        let content = this.content.nativeElement;
+        doc.fromHTML(content.innerHTML,15,15,{
+            'width' : 190,
+            'elementHandlers' : specialElementHandlers
+        });
+
+        doc.save('topic.pdf');
     }
 }
