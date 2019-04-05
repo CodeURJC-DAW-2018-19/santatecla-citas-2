@@ -10,6 +10,7 @@ export interface Quote {
     text: string;
     author: string;
     book: string;
+    imageId: number ;
 
 }
 const URL = '/api/quotes/';

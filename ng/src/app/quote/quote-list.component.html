@@ -7,16 +7,12 @@
     </mat-card-title>
     <mat-divider></mat-divider>
     
-    <mat-nav-list *ngIf="loginService.isLogged && loginService.isAdmin">
-        <a *ngFor='let quote of Quotes' mat-list-item [routerLink]="['/quote', quote.id]">
-            {{quote.text}}
-        </a>
-    </mat-nav-list>
+    
 
     <mat-nav-list *ngIf="loginService.isLogged">
-        <mat-list-item [ngStyle]="{'cursor':'auto'}" *ngFor='let quote of quotes'>
+        <a mat-list-item [routerLink]="['/quote', quote.id]" [ngStyle]="{'cursor':'auto'}" *ngFor='let quote of quotes'>
             {{quote.text}}
-        </mat-list-item>
+        </a>
     </mat-nav-list>
 
     <button mat-fab *ngIf="loginService.isAdmin" (click)="newQuote()">

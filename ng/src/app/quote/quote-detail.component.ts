@@ -9,15 +9,21 @@ import { LoginService } from '../user/login.service';
 export class QuoteDetailComponent{
     
     quote:Quote;
+    hasImage:boolean;
 
     constructor(private router:Router, activatedRoute: ActivatedRoute,
         public service:QuoteService, public login: LoginService){
 
             const id = activatedRoute.snapshot.params[`id`];
             service.findOne(id).subscribe(
-                quote => this.quote = quote,
+                quote => {
+                    this.quote = quote
+                    this.hasImage = quote.imageId!= null;
+                },
                 error => console.error(error)
             );
+
+
         }
     
     removeQuote(){
