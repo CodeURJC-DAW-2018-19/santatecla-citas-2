@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Http, Headers, RequestOptions } from '@angular/http'
+import { Http, Headers, RequestOptions, ResponseContentType } from '@angular/http'
 
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
@@ -18,6 +18,7 @@ const URL = '/api/quotes/';
 
 @Injectable()
 export class QuoteService {
+    
 
     constructor(private http: Http) { }
 
@@ -49,6 +50,34 @@ export class QuoteService {
             );
     }
 
+<<<<<<< HEAD
+=======
+    getImage(id: number) {
+        return this.http.get('/api/images/'+id, { responseType: ResponseContentType.Blob ,withCredentials: true })
+            .pipe(
+                map(response => response.blob()),
+                catchError(error => this.handleError(error))
+            );
+    }
+    private n : number;
+    countQuotes() {
+        this.http.get(URL, { withCredentials: true })
+            .pipe(
+                map(response => {
+                    let data = response.json();
+                    for (var i = 0; i < data.items.length; i++) {
+                        this.n++;
+                    }
+                },
+                catchError(error => this.handleError(error))
+                )
+            )
+            console.log(this.n) +"ey";
+            return this.n;
+    }
+
+
+>>>>>>> d6459a1bcfa8adb036c6b79afc604f2d2df5b951
     postQuote(quote: Quote) {
         const body = JSON.stringify(quote);
         const headers = new Headers({

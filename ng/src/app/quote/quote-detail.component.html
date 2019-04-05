@@ -7,11 +7,11 @@
         <p>{{quote.book}}</p>
     </div>
 
-    <img *ngIf="hasImage" src= "api/images/{{quote.id}}">
+    <img *ngIf="hasImage" [src]= "image">
     <p>
-      <button *ngIf="login.isLogged && login.isAdmin" (click)="removeBook()">Remove</button>
-      <button *ngIf="login.isLogged && login.isAdmin" (click)="editBook()">Edit</button>
+      <button *ngIf="login.isLogged && login.isAdmin" (click)="removeQuotek()">Remove</button>
+      <button *ngIf="login.isLogged && login.isAdmin" (click)="editQuote()">Edit</button>
       <br>
-      <button (click)="gotoBooks()">All Books</button>
+      <button (click)="gotoQuotes()">All Quotes</button>
     </p>
     </div>
