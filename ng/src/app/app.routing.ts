@@ -15,8 +15,9 @@ const appRoutes = [
   { path: 'books', component: BookListComponent },
   { path: 'topics', component: TopicListComponent},
   { path: 'quotes', component: QuoteListComponent},
-  {path: 'quote/new', component: QuoteFormComponent},
-  {path: 'quote/:id', component: QuoteDetailComponent},
+  { path: 'quote/new', component: QuoteFormComponent},
+  { path: 'quote/:id', component: QuoteDetailComponent},
+  { path: 'quote/form/:id', component: QuoteFormComponent},
 
   {path: 'quotesPop', component: QuotePopupComponent},
 

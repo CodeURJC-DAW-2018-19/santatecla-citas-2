@@ -8,6 +8,7 @@ import com.urjc.daw.practica.service.QuoteManagementService;
 import com.urjc.daw.practica.service.impl.QuoteImageStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -27,13 +28,14 @@ public class FileRestController {
     @Autowired
     private QuoteManagementService quoteService;
 
-    @GetMapping(value = "/api/images/{id}")
-    public ResponseEntity<QuoteImage> get(@PathVariable Long id){
+    @GetMapping(value = "/api/images/{id}", produces = MediaType.IMAGE_PNG_VALUE)
+    public @ResponseBody byte[] get(@PathVariable Long id){
 
         try {
-            return new ResponseEntity<>(this.imageService.getFile(id),HttpStatus.OK);
+            return this.imageService.getFile(id).getImage();
         } catch (MyFileNotFoundException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            System.out.println("F");
+            return null;
         }
     }
 
