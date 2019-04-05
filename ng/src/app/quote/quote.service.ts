@@ -49,24 +49,6 @@ export class QuoteService {
             );
     }
 
-    private n : number;
-    countQuotes() {
-        this.http.get(URL, { withCredentials: true })
-            .pipe(
-                map(response => {
-                    let data = response.json();
-                    for (var i = 0; i < data.items.length; i++) {
-                        this.n++;
-                    }
-                },
-                catchError(error => this.handleError(error))
-                )
-            )
-            console.log(this.n) +"ey";
-            return this.n;
-    }
-
-
     postQuote(quote: Quote) {
         const body = JSON.stringify(quote);
         const headers = new Headers({
