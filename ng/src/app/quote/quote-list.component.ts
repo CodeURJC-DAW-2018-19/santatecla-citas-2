@@ -20,6 +20,7 @@ export class QuoteListComponent implements OnInit {
     total = 14;
     pageNumber = 1;
     firstPage = 0;
+    pageChanged: Boolean = false;
 
     @ViewChild(TdPagingBarComponent) paging: TdPagingBarComponent;
     constructor(private router: Router, private service: QuoteService,
@@ -28,7 +29,7 @@ export class QuoteListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.service.findAll(this.pageNumber-1).subscribe(
+        this.service.findAll(this.pageNumber - 1).subscribe(
             quotes => this.quotes = quotes,
             error => console.log(error)
         );
@@ -36,11 +37,14 @@ export class QuoteListComponent implements OnInit {
     }
 
     ngDoCheck() {
+        if (this.pageChanged) {
+            this.service.findAll(this.pageNumber - 1).subscribe(
+                quotes => this.quotes = quotes,
+                error => console.log(error)
+            );
+            this.pageChanged = false;
+        }
 
-        this.service.findAll(this.pageNumber-1).subscribe(
-            quotes => this.quotes = quotes,
-            error => console.log(error)
-        );
     }
 
     /**
@@ -59,6 +63,7 @@ export class QuoteListComponent implements OnInit {
     change(event: IPageChangeEvent): void {
         this.event = event;
         this.pageNumber = event.page;
+        this.pageChanged = true;
     }
 
     toggleFirstLast(): void {
