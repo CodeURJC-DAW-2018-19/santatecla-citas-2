@@ -8,6 +8,7 @@ import com.urjc.daw.practica.service.TopicManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -125,7 +126,8 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
         return quote != null;
     }
 
-    public List<Quote> findAllUnpaged() {
-        return quotes.findAll();
+    public Page<Quote> findAllUnpaged() {
+        Page<Quote> page = quotes.findAll(new PageRequest(0,Integer.MAX_VALUE));
+        return page;
     }
 }
