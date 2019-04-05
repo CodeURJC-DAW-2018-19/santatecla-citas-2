@@ -6,20 +6,19 @@
         </div>
     </mat-card-title>
     <mat-divider></mat-divider>
+    
+    
 
     <mat-nav-list *ngIf="loginService.isLogged">
-        <a *ngFor='let quote of Quotes' mat-list-item [routerLink]="['/quote', quote.id]">
+        <a mat-list-item [routerLink]="['/quote', quote.id]" [ngStyle]="{'cursor':'auto'}" *ngFor='let quote of quotes'>
             {{quote.text}}
         </a>
     </mat-nav-list>
 
-    <mat-nav-list *ngIf="loginService.isLogged">
-        <mat-list-item [ngStyle]="{'cursor':'auto'}" *ngFor='let quote of quotes'>
-            {{quote.text}}
-        </mat-list-item>
-    </mat-nav-list>
-
-    <button mat-fab  *ngIf="loginService.isAdmin"  (click)="newQuote()">
+    <button mat-fab *ngIf="loginService.isAdmin" (click)="newQuote()">
         <mat-icon>add</mat-icon>
     </button>
+    <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
+            {{pagingBar.range}} of {{pagingBar.total}}
+    </td-paging-bar>
 </mat-card>

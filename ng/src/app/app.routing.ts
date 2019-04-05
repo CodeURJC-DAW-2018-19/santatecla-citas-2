@@ -9,12 +9,14 @@ import { QuoteListComponent } from './quote/quote-list.component';
 import { QuotePopupComponent } from './topic/quote-popup.component';
 import { TopicFormComponent } from './topic/topic-form.component';
 import { QuoteFormComponent } from './quote/quote-form.component';
+import { QuoteDetailComponent } from './quote/quote-detail.component';
 
 const appRoutes = [
   { path: 'books', component: BookListComponent },
   { path: 'topics', component: TopicListComponent},
   { path: 'quotes', component: QuoteListComponent},
   {path: 'quote/new', component: QuoteFormComponent},
+  {path: 'quote/:id', component: QuoteDetailComponent},
 
   {path: 'quotesPop', component: QuotePopupComponent},
 

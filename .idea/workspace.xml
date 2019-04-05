@@ -2,10 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5ddb4e6-5607-42f7-a550-45ebbedec2c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/security/UserAuthProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/security/UserAuthProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/GraphService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/GraphService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/DBInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/DBInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/PracticaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/PracticaApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/FileRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/FileRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/GraphRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/GraphRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/QuoteRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/QuoteRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/RestControllerExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/RestControllerExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/TopicRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/api/TopicRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/QuoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/QuoteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/TopicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/TopicController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/impl/ImageControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/impl/ImageControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/impl/QuoteControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/impl/QuoteControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/impl/TopicControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/impl/TopicControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/impl/UserControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/controller/impl/UserControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/exception/FileStorageException.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/exception/FileStorageException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/exception/MyFileNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/exception/MyFileNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/model/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/model/CustomUserDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/model/Quote.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/model/Quote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/model/QuoteImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/model/QuoteImage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/model/Topic.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/model/Topic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/repository/ImageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/repository/ImageRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/repository/QuoteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/repository/QuoteRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/repository/TopicRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/repository/TopicRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/CSRFHandlerConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/CSRFHandlerConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/CSRFHandlerInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/CSRFHandlerInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/ConnectorConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/ConnectorConfig$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/ConnectorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/ConnectorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/RestSecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/RestSecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/SimpleCorsFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/SimpleCorsFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/UserAuthProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/UserAuthProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/UserComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/UserComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/WebSecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/security/WebSecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/QuoteManagementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/QuoteManagementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/TopicManagementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/TopicManagementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/CustomUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/DocumentGenerationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/DocumentGenerationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/GraphService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/GraphService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/QuoteImageStorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/QuoteImageStorageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/ThymeleafConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/ThymeleafConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/TopicManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/service/impl/TopicManagementServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/user/UserPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/user/UserPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/web/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/urjc/daw/practica/web/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/test-classes/com/urjc/daw/practica/PracticaApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/com/urjc/daw/practica/PracticaApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/test-classes/com/urjc/daw/practica/repository/QuoteRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/com/urjc/daw/practica/repository/QuoteRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/test-classes/com/urjc/daw/practica/repository/TopicRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/com/urjc/daw/practica/repository/TopicRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/test-classes/com/urjc/daw/practica/repository/UserRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/com/urjc/daw/practica/repository/UserRepositoryTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/backend/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,12 +71,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/PracticaApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="396">
+              <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -26,84 +93,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/FileRestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="376">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/resources/templates/quoteForm.html">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteImageStorageService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
+            <state relative-caret-position="356">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/model/Quote.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
-              <caret line="120" selection-start-line="120" selection-end-line="120" />
-              <folding>
-                <element signature="e#3900#3901#0" expanded="true" />
-                <element signature="e#3939#3940#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/TopicRestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/model/Topic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8334">
-              <caret line="564" selection-start-line="564" selection-end-line="564" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/security/RestSecurityConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="37" selection-start-line="21" selection-start-column="8" selection-end-line="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="306">
+              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -121,6 +130,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>/api</find>
+      <find>entra en</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,9 +172,12 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/backend/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/security/WebSecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/security/RestSecurityConfiguration.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/security/UserAuthProvider.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/GraphService.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/FileRestController.java" />
       </list>
     </option>
   </component>
@@ -184,7 +197,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="404" />
     <option name="y" value="6" />
     <option name="width" value="1197" />
@@ -266,49 +279,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="practica" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="practica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="practica" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="practica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="practica" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="practica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="practica" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="practica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="practica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -486,16 +457,18 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="mave&#9;ACTION&#9;ActivateMavenProjectsToolWindow" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554217840217" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EAS/Stratego" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554471067499" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -669,8 +642,8 @@
       <workItem from="1554266393379" duration="40000" />
       <workItem from="1554299397357" duration="6896000" />
       <workItem from="1554362068767" duration="950000" />
-      <workItem from="1554386249191" duration="3542000" />
-      <workItem from="1554440240730" duration="597000" />
+      <workItem from="1554386249191" duration="3263000" />
+      <workItem from="1554405226253" duration="4116000" />
     </task>
     <servers />
   </component>
@@ -689,7 +662,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67915000" />
+    <option name="totallyTimeSpent" value="73175000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -701,10 +674,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="404" y="6" width="1197" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21987687" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12153518" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -714,21 +687,20 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32822758" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4037199" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32881773" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32881773" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="SonarLint" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Spring" order="11" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32936078" />
-      <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="SonarLint" order="15" weight="0.32936078" />
-      <window_info anchor="bottom" id="SonarQube" order="16" weight="0.32936078" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.32936078" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -736,11 +708,10 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.2375" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="right" id="Maven" order="8" />
-      <window_info anchor="right" id="SciView" order="9" />
-      <window_info anchor="right" id="Database" order="10" />
-      <window_info anchor="right" id="Bean Validation" order="11" visible="true" weight="0.23834653" />
+      <window_info anchor="right" id="Database" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -828,57 +799,35 @@
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/LoginController.java</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java</url>
-          <line>63</line>
+          <line>37</line>
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/FileRestController.java</url>
-          <line>41</line>
+          <line>33</line>
           <properties />
-          <option name="timeStamp" value="23" />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteImageStorageService.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/FileRestController.java</url>
+          <line>30</line>
+          <properties class="com.urjc.daw.practica.api.FileRestController" method="get">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.5.RELEASE/spring-web-5.1.5.RELEASE.jar!/org/springframework/web/multipart/support/StandardMultipartHttpServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="202" selection-start-line="202" selection-end-line="202" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/start.sh" />
-    <entry file="file://$PROJECT_DIR$/target/start2.sh" />
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml" />
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/mustache.js" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE.jar!/org/springframework/web/servlet/HandlerExecutionChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/RestControllerExceptionHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/security/SimpleCorsFilter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/js1.js" />
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/service/QuoteManagementService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/quote.html" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/model/Quote.java" />
@@ -900,16 +849,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties" />
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/PracticaApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#313#314#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -926,8 +865,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16200">
-          <caret line="900" column="12" selection-start-line="900" selection-start-column="12" selection-end-line="900" selection-end-column="12" />
+        <state relative-caret-position="380">
+          <caret line="938" selection-start-line="938" selection-end-line="938" />
         </state>
       </provider>
     </entry>
@@ -952,6 +891,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7871">
+          <caret line="564" selection-start-line="564" selection-end-line="564" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.5.RELEASE/spring-web-5.1.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -959,77 +914,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/resources/templates/quoteForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
+        <state relative-caret-position="1275">
           <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="120" selection-start-line="120" selection-end-line="120" />
-          <folding>
-            <element signature="e#3900#3901#0" expanded="true" />
-            <element signature="e#3939#3940#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/TopicRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
+        <state relative-caret-position="493">
           <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/model/Topic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8334">
-          <caret line="564" selection-start-line="564" selection-end-line="564" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/security/RestSecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
+        <state relative-caret-position="510">
           <caret line="37" selection-start-line="21" selection-start-column="8" selection-end-line="37" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.5.RELEASE/spring-web-5.1.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/security/UserAuthProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="306">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/RestControllerExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/TopicManagementServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.5.RELEASE/spring-data-commons-2.1.5.RELEASE-sources.jar!/org/springframework/data/domain/Unpaged.java" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/repository/QuoteRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.5.RELEASE/spring-data-commons-2.1.5.RELEASE-sources.jar!/org/springframework/data/domain/Pageable.java" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/GraphRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="129" column="78" selection-start-line="129" selection-start-column="42" selection-end-line="129" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/GraphService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="44" lean-forward="true" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/PracticaApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/model/Quote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/service/impl/QuoteImageStorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/urjc/daw/practica/api/FileRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="376">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
         </state>
       </provider>
     </entry>
