@@ -91,7 +91,7 @@ public class TopicRestController {
 	public ResponseEntity<Optional<Topic>> deleteTopic(@PathVariable long id) {
 		Optional<Topic> deleted = topicService.findOne(id);
 		if(deleted.isPresent()) {
-			topicService.deleteReference(id);
+			topicService.deleteTopic(deleted.get());
 			return new ResponseEntity<>(deleted,HttpStatus.OK);
 		}else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

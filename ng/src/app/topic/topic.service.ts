@@ -48,7 +48,7 @@ export class TopicService {
     }
 
 
-    postQuote(topic: Topic) {
+    postTopic(topic: Topic) {
         const body = JSON.stringify(topic);
         const headers = new Headers({
             'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export class TopicService {
 
     }
 
-    removeQuote(topic: Topic) {
+    removeTopic(topic: Topic) {
         const headers = new Headers({
             'X-Requested-With': 'XMLHttpRequest'
         });
