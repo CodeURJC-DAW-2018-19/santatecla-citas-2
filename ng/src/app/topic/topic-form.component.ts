@@ -44,30 +44,9 @@ export class TopicFormComponent{
     removeReference(quote:Quote){
         this.service.removeReference(quote);
     }
-<<<<<<< HEAD
 
-    @ViewChild('content') content: ElementRef;
-    public downloadPDF(){
-        let doc = new jsPDF();
-
-        let specialElementHandlers = {
-            '#editor': function(element,rederer){
-                return true;
-            }
-
-        };
-
-        let content = this.content.nativeElement;
-        doc.fromHTML(content.innerHTML,15,15,{
-            'width' : 190,
-            'elementHandlers' : specialElementHandlers
-        });
-
-        doc.save('topic.pdf');
-=======
     showPopup(){
         this.router.navigate(['/topic/reference', this.topic.id]);
 
->>>>>>> 68b5527baae260797cf86d4da176da69487861de
     }
 }
