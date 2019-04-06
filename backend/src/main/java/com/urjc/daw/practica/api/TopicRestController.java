@@ -48,9 +48,9 @@ public class TopicRestController {
 	DocumentGenerationService dgs;
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<Topic>> getTopic(@PathVariable long id) {
-		Optional<Topic> found = topicService.findOne(id);
-		if(found.isPresent()) {
+	public ResponseEntity<Topic> getTopic(@PathVariable long id) {
+		Topic found = topicService.findOne(id).get();
+		if(found != null) {
 			return new ResponseEntity<>(found,HttpStatus.OK);
 		}else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

@@ -19,7 +19,7 @@ public class GraphService {
 	
 	public HashMap<String,Integer> getGraph(){
 		HashMap<String,Integer> map = new HashMap<String,Integer>();
-		Pageable wholePage = Pageable.unpaged();
+		Pageable wholePage = new PageRequest(0,Integer.MAX_VALUE);
 		Iterator<Topic> it = topicService.findAll(wholePage.getPageNumber(),wholePage.getPageSize()).iterator();
 		while(it.hasNext()) {
 			Topic topic = (Topic) it.next();

@@ -9,15 +9,32 @@ import { LoginService } from '../user/login.service';
 export class QuoteDetailComponent{
     
     quote:Quote;
+    hasImage:boolean;
+    image: any;
 
     constructor(private router:Router, activatedRoute: ActivatedRoute,
         public service:QuoteService, public login: LoginService){
 
             const id = activatedRoute.snapshot.params[`id`];
             service.findOne(id).subscribe(
-                quote => this.quote = quote,
+                quote => {
+                    this.quote = quote
+                    this.hasImage = quote.imageId!= null;
+                    if(this.hasImage){
+                service.getImage(id).subscribe(
+                    image=>{ 
+                        this.image = image;
+                        this.createImageFromBlob(this.image);
+                    },
+                    error => console.error(error)
+                );
+            }
+                },
                 error => console.error(error)
             );
+            
+
+
         }
     
     removeQuote(){
@@ -31,8 +48,19 @@ export class QuoteDetailComponent{
         }
     }
 
+    createImageFromBlob(image: Blob) {
+        let reader = new FileReader();
+        reader.addEventListener("load", () => {
+           this.image = reader.result;
+        }, false);
+    
+        if (image) {
+           reader.readAsDataURL(image);
+        }
+      }
+
     editQuote(){
-        this.router.navigate(['/quotes/form', this.quote.id]);
+        this.router.navigate(['/quote/form', this.quote.id]);
     }
 
 

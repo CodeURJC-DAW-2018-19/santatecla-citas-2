@@ -39,8 +39,6 @@ public class UserAuthProvider implements AuthenticationProvider {
         }
         
         String password = (String) authentication.getCredentials();
-
-        System.out.println("Entra en auto");
         
         if(!this.encoder.matches(password,user.getPassword())){
             throw new BadCredentialsException("Password failed");

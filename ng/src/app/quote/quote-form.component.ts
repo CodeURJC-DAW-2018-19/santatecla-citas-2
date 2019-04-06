@@ -10,21 +10,22 @@ export class QuoteFormComponent{
     quote: Quote;
     file: File;
     codedFile: string;
+    id:number;
 
     constructor(private router:Router,
         activatedRoute:ActivatedRoute,
         private service: QuoteService){
 
-            const id = activatedRoute.snapshot.params['id'];
-            if(id){
-                service.findOne(id).subscribe(
+            this.id = activatedRoute.snapshot.params['id'];
+            if(this.id){
+                service.findOne(this.id).subscribe(
                     quote => this.quote = quote,
                     error => console.error(error)
                 );
                 this.newQuote = false;
 
             }else{
-                this.quote = {author:"",text:'',book:''};
+                this.quote = {author:"",text:'',book:'', imageId:null};
                 this.newQuote = true;
             }
         }
