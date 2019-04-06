@@ -1,23 +1,24 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Router, ActivatedRoute } from '@angular/router';
 import { TopicService, Topic } from './topic.service';
 import { LoginService } from '../user/login.service';
-import *as jsPDF from 'jspdf';
-
+import { Quote, QuoteService } from '../quote/quote.service';
 
 @Component({
-    templateUrl: `quote-detail.component.html`
+    templateUrl: `topic-detail.component.html`
 })
-export class TopicDetailComponent{
-    
-    topic:Topic;
+export class TopicDetailComponent {
 
-    constructor(private router:Router, activatedRoute: ActivatedRoute,
-        public service:TopicService, public login: LoginService){
+    topic: Topic;
+    quotes: Quote[];
+    quoteNumbers: number[];
+
+    constructor(private router: Router, activatedRoute: ActivatedRoute,
+                public service: TopicService, public quoteService: QuoteService, public login: LoginService) {
 
         this.quotes= new Array();
-            const id = activatedRoute.snapshot.params[`id`];
-            service.findOne(id).subscribe(
+        const id = activatedRoute.snapshot.params[`id`];
+        service.findOne(id).subscribe(
             topic => {
                 this.topic = topic
                 for(var i=0 ;i<topic.nQuotes;i++){
@@ -30,21 +31,30 @@ export class TopicDetailComponent{
             error => console.log(error)
         );
         //console.log(this.topic.name);
-        }
-    
-    removeQuote(){
-        const confirm = window.confirm(`Are u sure abut that?`);
-        if(confirm){
-            this.service.removeQuote(this.topic).subscribe(
-                _ => this.router.navigate(['/quotes']),
-                error => console.error(error)
-                
-            )
-        }
     }
 
-    editQuote(){
-        this.router.navigate(['/quotes/form', this.topic.id]);
+    ngOnInit() {
+
+        /*
+        for(let id of this.quoteNumbers){
+            this.quoteService.findOne(id).subscribe(
+                quote => this.quotes.push(quote),
+                error => console.error(error)
+            )
+        };*/
+    }
+
+    removeTopic() {
+        const confirm = window.confirm(`Are u sure abut that?`);
+        if (confirm) {
+            this.service.removeTopic(this.topic).subscribe(
+                _ => this.router.navigate(['/topics']),
+                error => console.error(error)
+
+            )
+        }
+
+        this.router.navigate(['/topics']);
     }
 
     editTopic() {
