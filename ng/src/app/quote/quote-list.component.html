@@ -10,7 +10,7 @@
     
 
     <mat-nav-list *ngIf="loginService.isLogged">
-        <a mat-list-item [routerLink]="['/quote', quote.id]" [ngStyle]="{'cursor':'auto'}" *ngFor='let quote of quotes'>
+        <a mat-list-item [routerLink]="['/quote', quote.id]" [ngStyle]="{'cursor':'pointer'}" *ngFor='let quote of quotes'>
             {{quote.text}}
         </a>
     </mat-nav-list>

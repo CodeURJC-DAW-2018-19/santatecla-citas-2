@@ -12,7 +12,6 @@ import { IPageChangeEvent, TdPagingBarComponent } from '@covalent/core';
 export class QuoteListComponent implements OnInit {
 
     quotes: Quote[];
-    n: Number = this.service.countQuotes();
     event: IPageChangeEvent;
     firstLast: boolean = true;
     QuoteService: any;
@@ -23,6 +22,7 @@ export class QuoteListComponent implements OnInit {
     pageChanged: Boolean = false;
 
     @ViewChild(TdPagingBarComponent) paging: TdPagingBarComponent;
+
     constructor(private router: Router, private service: QuoteService,
         public loginService: LoginService) {
 
@@ -33,7 +33,6 @@ export class QuoteListComponent implements OnInit {
             quotes => this.quotes = quotes,
             error => console.log(error)
         );
-        console.log("page" + this.pageNumber)
     }
 
     ngDoCheck() {
@@ -44,7 +43,6 @@ export class QuoteListComponent implements OnInit {
             );
             this.pageChanged = false;
         }
-
     }
 
     /**
@@ -54,11 +52,6 @@ export class QuoteListComponent implements OnInit {
     newQuote() {
         this.router.navigate(['quote/new']);
     }
-
-    /*getCountQuotes(){
-        var n = this.service.countQuotes();
-        return n;
-    }*/
 
     change(event: IPageChangeEvent): void {
         this.event = event;
