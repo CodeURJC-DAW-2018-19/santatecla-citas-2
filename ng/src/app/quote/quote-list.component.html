@@ -15,15 +15,13 @@
             {{quote.text}}
            
         </a>
-        <button mat-fab *ngIf="reference" (click)="addReference(quote)"></button>
-        </div>
+        <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
+            {{pagingBar.range}} of {{pagingBar.total}}
+        </td-paging-bar>
     </mat-nav-list>
 
     <button mat-fab *ngIf="loginService.isAdmin" (click)="newQuote()">
         <mat-icon>add</mat-icon>
     </button>
     
-    <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
-            {{pagingBar.range}} of {{pagingBar.total}}
-    </td-paging-bar>
 </mat-card>
