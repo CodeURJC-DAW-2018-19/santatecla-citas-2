@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {Quote, QuoteService} from '../quote/quote.service';
 import {LoginService} from '../user/login.service';
+import { TopicService } from './topic.service';
 
 @Component({
     templateUrl:'../quote/quote-list.component.html'
@@ -10,17 +11,15 @@ import {LoginService} from '../user/login.service';
 
 export class QuotePopupComponent implements OnInit{
 
-    quotes: Quote[];
     reference: boolean = true;
+    quotes: Quote[];
     
-    constructor(private router: Router, private service:QuoteService,
+
+    constructor(private router: Router, private service:TopicService,
         public loginService: LoginService){}
         
     ngOnInit(){
-        this.service.findAllUnpaged().subscribe(
-            quotes => this.quotes=quotes,
-            error => console.log(error)
-        );
+       this.quotes = this.service.getNotReferenced();
     }
 
     /**
@@ -30,8 +29,7 @@ export class QuotePopupComponent implements OnInit{
     
      addReference(quote:Quote){
 
-        var index = this.quotes.indexOf(quote);
-        this.quotes.splice(index, 1);
+        this.service.addReference(quote);
         window.history.back();
         //Send quote to topicFormComponent so it adds this quote to the referenced ones
      }

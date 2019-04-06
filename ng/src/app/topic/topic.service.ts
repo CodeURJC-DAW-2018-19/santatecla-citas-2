@@ -3,7 +3,7 @@ import { Http, Headers, RequestOptions } from '@angular/http'
 
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
-import { Quote } from '../quote/quote.service';
+import { Quote, QuoteService } from '../quote/quote.service';
 //{} to copy
 //@
 export interface Topic {
@@ -18,13 +18,15 @@ const URL = '/api/topics';
 
 @Injectable()
 export class TopicService {
-
+    
+    
+    topic: Topic;
     quoteReferenced: Quote[];
     quoteNotReferenced: Quote[];
     private nTopics: number;
 
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private quoteService:QuoteService) { }
 
     /**
      * This method should return the page requested,
@@ -107,8 +109,47 @@ export class TopicService {
             console.log(this.nTopics) +"ey";
             return this.nTopics;
     
-}
+    }
 
+    removeReference(quote: Quote) {
+        var index = this.quoteReferenced.indexOf(quote);
+        this.quoteNotReferenced.push(this.quoteReferenced[index]);
+        this.quoteReferenced.splice(index,1);
+    }
+
+    addReference(quote: Quote) {
+        var index = this.quoteNotReferenced.indexOf(quote);
+        this.quoteReferenced.push(this.quoteNotReferenced[index]);
+        this.quoteNotReferenced.splice(index,1);
+    }
+
+    getReferences(){
+        return this.quoteReferenced;
+    }
+
+    getNotReferenced(){
+        return this.quoteNotReferenced;
+    }
+
+    setReferences(quotes: Quote[]) {
+        this.quoteReferenced=quotes;
+        this.quoteService.findAllUnpaged().subscribe(
+            quotes =>{
+                this.quoteNotReferenced = quotes
+                for (let quote of this.quoteReferenced){
+                    var index = this.quoteNotReferenced.findIndex((current:Quote) => {
+                        return current.id == quote.id;
+                    });
+                    this.quoteNotReferenced.splice(index,1);
+                }
+            },
+            error => console.log(error)
+        );
+
+    }
+    setTopic(topic: Topic) {
+        this.topic= topic;
+    }
     
 
     
