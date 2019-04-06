@@ -50,8 +50,6 @@ export class QuoteService {
             );
     }
 
-<<<<<<< HEAD
-=======
     getImage(id: number) {
         return this.http.get('/api/images/'+id, { responseType: ResponseContentType.Blob ,withCredentials: true })
             .pipe(
@@ -77,7 +75,6 @@ export class QuoteService {
     }
 
 
->>>>>>> d6459a1bcfa8adb036c6b79afc604f2d2df5b951
     postQuote(quote: Quote) {
         const body = JSON.stringify(quote);
         const headers = new Headers({
@@ -94,7 +91,7 @@ export class QuoteService {
                     catchError(error => this.handleError(error))
                 );
         } else {
-            return this.http.put(URL, body, options)
+            return this.http.put(URL+quote.id, body, options)
                 .pipe(
                     map(response => response.json()),
                     catchError(error => this.handleError(error))
@@ -105,6 +102,7 @@ export class QuoteService {
 
     postImage(id: number, image: File) {
         const body = JSON.stringify(image);
+        console.log(id);
         const headers = new Headers({
             'Content-Type': 'multipart/form-data',
 

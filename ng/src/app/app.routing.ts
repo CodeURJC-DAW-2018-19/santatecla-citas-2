@@ -23,6 +23,9 @@ const appRoutes = [
 
   { path: 'topic/:id', component: TopicDetailComponent },
   { path: 'topic/new', component: TopicFormComponent },
+  { path: 'topic/form/:id', component: TopicFormComponent},
+  { path: 'topic/reference/:id', component: QuotePopupComponent},
+
 
   { path: 'book/:id', component: BookDetailComponent },
   { path: 'book/edit/:id', component: BookFormComponent },

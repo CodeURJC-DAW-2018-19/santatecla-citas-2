@@ -5,6 +5,8 @@ import {Topic, TopicService} from './topic.service';
 @Component({
     templateUrl: 'topic-form.component.html'
 })
+
+
 export class TopicFormComponent{
     newTopic: boolean;
     topic: Topic;
@@ -34,5 +36,9 @@ export class TopicFormComponent{
             error=> console.error('Error creating quote: '+ error),
         );
         window.history.back();
+    }
+    showPopup(){
+        this.router.navigate(['/topic/reference', this.topic.id]);
+
     }
 }
