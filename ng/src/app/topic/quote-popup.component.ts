@@ -11,6 +11,7 @@ import {LoginService} from '../user/login.service';
 export class QuotePopupComponent implements OnInit{
 
     quotes: Quote[];
+    reference: boolean = true;
     
     constructor(private router: Router, private service:QuoteService,
         public loginService: LoginService){}
@@ -27,5 +28,12 @@ export class QuotePopupComponent implements OnInit{
      * envía a quote-form
      */
     
+     addReference(quote:Quote){
+
+        var index = this.quotes.indexOf(quote);
+        this.quotes.splice(index, 1);
+        window.history.back();
+        //Send quote to topicFormComponent so it adds this quote to the referenced ones
+     }
 
 }

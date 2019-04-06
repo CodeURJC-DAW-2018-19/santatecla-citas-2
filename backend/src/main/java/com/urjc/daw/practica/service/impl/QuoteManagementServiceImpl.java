@@ -126,8 +126,8 @@ public class QuoteManagementServiceImpl implements QuoteManagementService {
         return quote != null;
     }
 
-    public Page<Quote> findAllUnpaged() {
-        Page<Quote> page = quotes.findAll(new PageRequest(0,Integer.MAX_VALUE));
+    public List<Quote> findAllUnpaged() {
+        List<Quote> page = quotes.findAll();
         return page;
     }
 }

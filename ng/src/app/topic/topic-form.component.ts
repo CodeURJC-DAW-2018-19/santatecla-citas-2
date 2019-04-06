@@ -6,6 +6,8 @@ import *as jsPDF from 'jspdf';
 @Component({
     templateUrl: 'topic-form.component.html'
 })
+
+
 export class TopicFormComponent{
     newTopic: boolean;
     topic: Topic;
@@ -36,6 +38,7 @@ export class TopicFormComponent{
         );
         window.history.back();
     }
+<<<<<<< HEAD
 
     @ViewChild('content') content: ElementRef;
     public downloadPDF(){
@@ -55,5 +58,10 @@ export class TopicFormComponent{
         });
 
         doc.save('topic.pdf');
+=======
+    showPopup(){
+        this.router.navigate(['/topic/reference', this.topic.id]);
+
+>>>>>>> 68b5527baae260797cf86d4da176da69487861de
     }
 }

@@ -54,7 +54,7 @@ public class QuoteRestController {
 	}
 
 	@GetMapping("/")
-	public ResponseEntity<Page<Quote>> findAll() {
+	public ResponseEntity<List<Quote>> findAll() {
 		return new ResponseEntity<>(this.quoteService.findAllUnpaged(),HttpStatus.OK);
 	}
 

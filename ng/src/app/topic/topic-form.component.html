@@ -1,11 +1,11 @@
-<div *ngIf="quote">
-    <h2>Book "{{quote.text}}"</h2>
-    <div *ngIf="quote.id">
-      <label>Id: </label>{{book.id}}
+<div *ngIf="topic">
+    <h2>Topic "{{topic.name}}"</h2>
+    <div *ngIf="topic.id">
+      <label>Id: </label>{{topic.id}}
     </div>
     <div>
       <label>Name: </label>
-      <input [(ngModel)]="topic.Name" placeholder="Name"/>
+      <input [(ngModel)]="topic.name" placeholder="Name"/>
     </div>
 
     <div *ngIf=topic.hasQuotes>
@@ -26,6 +26,9 @@
           <input [(ngModel)]="text" placeholder="Text"/>
         </div>
     </div>
+    <p>
+      <button (click)="showPopup()">Add Quote</button>
+    </p>
     
     <p>
       <button (click)="cancel()">Cancel</button>

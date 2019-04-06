@@ -16,10 +16,17 @@ export class TopicDetailComponent {
     constructor(private router: Router, activatedRoute: ActivatedRoute,
         public service: TopicService, public quoteService: QuoteService, public login: LoginService) {
 
+        this.quotes= new Array();
         const id = activatedRoute.snapshot.params[`id`];
         service.findOne(id).subscribe(
             topic => {
                 this.topic = topic
+                for(var i=0 ;i<topic.nQuotes;i++){
+                    quoteService.findOne(topic.quoteIds[i]).subscribe(
+                        quote => this.quotes.push(quote),
+                        error => console.log(error)
+                    )
+                }
             },
             error => console.log(error)
         );
@@ -37,19 +44,21 @@ export class TopicDetailComponent {
         };*/
     }
 
-    removeQuote() {
+    removeTopic() {
         const confirm = window.confirm(`Are u sure abut that?`);
         if (confirm) {
-            this.service.removeQuote(this.topic).subscribe(
-                _ => this.router.navigate(['/quotes']),
+            this.service.removeTopic(this.topic).subscribe(
+                _ => this.router.navigate(['/topics']),
                 error => console.error(error)
 
             )
         }
+
+        this.router.navigate(['/topics']);
     }
 
-    editQuote() {
-        this.router.navigate(['/quotes/form', this.topic.id]);
+    editTopic() {
+        this.router.navigate(['/topic/form', this.topic.id]);
     }
 
 
