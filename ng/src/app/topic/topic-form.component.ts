@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,Input} from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import {Topic, TopicService} from './topic.service';
 import { Quote } from '../quote/quote.service';
@@ -7,6 +7,8 @@ import { Quote } from '../quote/quote.service';
     selector: 'topic-form',
     templateUrl: 'topic-form.component.html'
 })
+
+
 export class TopicFormComponent{
     newTopic: boolean;
     topic: Topic;
@@ -32,11 +34,11 @@ export class TopicFormComponent{
     cancel(){
         window.history.back();
     }
-    
+
     save(){
-        this.service.postQuote(this.topic).subscribe(
+        this.service.postTopic(this.topic).subscribe(
             topic=>{},
-            error=> console.error('Error creating quote: '+ error),
+            error=> console.error('Error creating Topic: '+ error),
         );
         this.router.navigate(['/topics']);
     }
@@ -44,7 +46,6 @@ export class TopicFormComponent{
     removeReference(quote:Quote){
         this.service.removeReference(quote);
     }
-
     showPopup(){
         this.router.navigate(['/topic/reference', this.topic.id]);
 

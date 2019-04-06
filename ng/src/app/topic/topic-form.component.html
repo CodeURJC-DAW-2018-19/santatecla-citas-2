@@ -1,20 +1,24 @@
-<div *ngIf="topic">
-    <h2>Topic "{{topic.name}}"</h2>
-    <div *ngIf="topic.id">
-      <label>Id: </label>{{topic.id}}
+<div *ngIf="quote">
+    <h2>Book "{{quote.text}}"</h2>
+    <div *ngIf="quote.id">
+      <label>Id: </label>{{book.id}}
     </div>
     <div>
       <label>Name: </label>
-      <input [(ngModel)]="topic.name" placeholder="Name"/>
+      <input [(ngModel)]="topic.Name" placeholder="Name"/>
     </div>
 
-    
+    <div *ngIf=topic.hasQuotes>
 
-    <div *ngFor='let quote of quotes'>
-        <p>{{quote?.text}}</p>
-        <p>{{quote?.author}}</p>
-        <p>{{quote?.book}}</p>
+      <div *ngFor='let quote of topic.quotes'>
+        <label>Reference</label>
+        <div>
+          <p >{{quote.text}}</p>
+          <p>{{quote.author</p>
+          <p>{{quote.book}}</p>
+        </div>
       </div>
+    </div>
     <div *ngIf=topic.hasTexts>
 
         <div *ngFor='let text of topic.texts'>
@@ -22,13 +26,9 @@
           <input [(ngModel)]="text" placeholder="Text"/>
         </div>
     </div>
-    <p>
-      <button (click)="showPopup()">Add Quote</button>
-    </p>
     
     <p>
       <button (click)="cancel()">Cancel</button>
       <button (click)="save()">Save</button>
     </p>
-    <button (click)="downloadPDF()">Descargar PDF</button>>
 </div>
