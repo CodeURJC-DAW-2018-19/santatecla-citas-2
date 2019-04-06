@@ -1,4 +1,4 @@
-import {Component,Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import {Topic, TopicService} from './topic.service';
 import { Quote } from '../quote/quote.service';
@@ -32,11 +32,11 @@ export class TopicFormComponent{
     cancel(){
         window.history.back();
     }
-
+    
     save(){
-        this.service.postTopic(this.topic).subscribe(
+        this.service.postQuote(this.topic).subscribe(
             topic=>{},
-            error=> console.error('Error creating Topic: '+ error),
+            error=> console.error('Error creating quote: '+ error),
         );
         this.router.navigate(['/topics']);
     }
