@@ -1,13 +1,10 @@
-import {Component, ViewChild, ElementRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import {Topic, TopicService} from './topic.service';
-import *as jsPDF from 'jspdf';
 
 @Component({
     templateUrl: 'topic-form.component.html'
 })
-
-
 export class TopicFormComponent{
     newTopic: boolean;
     topic: Topic;
