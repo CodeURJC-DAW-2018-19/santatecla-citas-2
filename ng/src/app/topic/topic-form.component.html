@@ -8,17 +8,13 @@
       <input [(ngModel)]="topic.name" placeholder="Name"/>
     </div>
 
-    <div *ngIf=topic.hasQuotes>
+    
 
-      <div *ngFor='let quote of topic.quotes'>
-        <label>Reference</label>
-        <div>
-          <p >{{quote.text}}</p>
-          <p>{{quote.author</p>
-          <p>{{quote.book}}</p>
-        </div>
+    <div *ngFor='let quote of quotes'>
+        <p>{{quote?.text}}</p>
+        <p>{{quote?.author}}</p>
+        <p>{{quote?.book}}</p>
       </div>
-    </div>
     <div *ngIf=topic.hasTexts>
 
         <div *ngFor='let text of topic.texts'>

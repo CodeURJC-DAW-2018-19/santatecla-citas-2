@@ -6,6 +6,7 @@ import { LoginService } from '../user/login.service';
 import { IPageChangeEvent, TdPagingBarComponent } from '@covalent/core';
 
 @Component({
+    selector: 'quote-list',
     templateUrl: 'quote-list.component.html'
 })
 

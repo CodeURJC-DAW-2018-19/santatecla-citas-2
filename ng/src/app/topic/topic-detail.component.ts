@@ -58,6 +58,8 @@ export class TopicDetailComponent {
     }
 
     editTopic() {
+        this.service.setTopic(this.topic);
+        this.service.setReferences(this.quotes);
         this.router.navigate(['/topic/form', this.topic.id]);
     }
 

@@ -6,6 +6,7 @@ import {LoginService} from '../user/login.service';
 import { IPageChangeEvent } from '@covalent/core';
 
 @Component({
+    selector: 'topic-list',
     templateUrl:'topic-list.component.html'
 })
 
