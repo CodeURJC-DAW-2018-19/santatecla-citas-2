@@ -16,10 +16,17 @@ export class TopicDetailComponent {
     constructor(private router: Router, activatedRoute: ActivatedRoute,
         public service: TopicService, public quoteService: QuoteService, public login: LoginService) {
 
+        this.quotes= new Array();
         const id = activatedRoute.snapshot.params[`id`];
         service.findOne(id).subscribe(
             topic => {
                 this.topic = topic
+                for(var i=0 ;i<topic.nQuotes;i++){
+                    quoteService.findOne(topic.quoteIds[i]).subscribe(
+                        quote => this.quotes.push(quote),
+                        error => console.log(error)
+                    )
+                }
             },
             error => console.log(error)
         );
