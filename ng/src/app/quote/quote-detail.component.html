@@ -9,7 +9,7 @@
 
     <img *ngIf="hasImage" [src]= "image">
     <p>
-      <button *ngIf="login.isLogged && login.isAdmin" (click)="removeQuotek()">Remove</button>
+      <button *ngIf="login.isLogged && login.isAdmin" (click)="removeQuote()">Remove</button>
       <button *ngIf="login.isLogged && login.isAdmin" (click)="editQuote()">Edit</button>
       <br>
       <button (click)="gotoQuotes()">All Quotes</button>

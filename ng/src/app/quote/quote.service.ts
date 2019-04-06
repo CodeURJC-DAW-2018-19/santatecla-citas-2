@@ -91,7 +91,7 @@ export class QuoteService {
                     catchError(error => this.handleError(error))
                 );
         } else {
-            return this.http.put(URL, body, options)
+            return this.http.put(URL+quote.id, body, options)
                 .pipe(
                     map(response => response.json()),
                     catchError(error => this.handleError(error))
@@ -102,6 +102,7 @@ export class QuoteService {
 
     postImage(id: number, image: File) {
         const body = JSON.stringify(image);
+        console.log(id);
         const headers = new Headers({
             'Content-Type': 'multipart/form-data',
 

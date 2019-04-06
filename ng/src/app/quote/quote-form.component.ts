@@ -41,11 +41,14 @@ export class QuoteFormComponent{
                 file =>{},
                 error => console.error('Error uploading image: '+error),
                 
-            )},
+                
+            );
+        },
             error=> console.error('Error creating quote: '+ error),
         );
         
         window.history.back();
+
     }
 
     onFileChanged(event){

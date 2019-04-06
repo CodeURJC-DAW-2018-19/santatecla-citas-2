@@ -20,9 +20,11 @@ const URL ='/api/topics';
 
 @Injectable()
 export class TopicService{
+    
 
     quoteReferenced: Quote[];
     quoteNotReferenced: Quote[];
+    private nTopics: number;
 
 
     constructor(private http: Http){}
@@ -93,6 +95,26 @@ export class TopicService{
         console.error(error);
         return Observable.throw('Server error('+error.status +') '+error.text);
     }
+
+    countTopics() {
+        
+        this.http.get(URL, { withCredentials: true })
+            .pipe(
+                map(response => {
+                    let data = response.json();
+                    for (var i = 0; i < data.items.length; i++) {
+                        this.nTopics++;
+                    }
+                },
+                catchError(error => this.handleError(error))
+                )
+            )
+            console.log(this.nTopics) +"ey";
+            return this.nTopics;
+    
+}
+
+    
 
     
 }
