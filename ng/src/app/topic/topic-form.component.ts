@@ -58,10 +58,12 @@ export class TopicFormComponent{
     save(){
         this.topic.texts= this.texts;
         this.topic.quoteIds = new Array();
-        for(let quote of this.quotes){
-            this.topic.quoteIds.push(quote.id);
+        if(this.hasQuotes){
+            for(let quote of this.quotes){
+               this.topic.quoteIds.push(quote.id);
+            }
         }
-        this.service.postTopic(this.topic).subscribe(
+     this.service.postTopic(this.topic).subscribe(
             topic=>{},
             error=> console.error('Error creating Topic: '+ error),
         );
@@ -73,7 +75,11 @@ export class TopicFormComponent{
     }
 
     showPopup(){
-        this.router.navigate(['/topic/reference', this.topic.id]);
+        var id = 0;
+        if(this.topic.id !=undefined){
+            id = this.topic.id;
+        }
+        this.router.navigate(['/topic/reference', id]);
 
     }
 

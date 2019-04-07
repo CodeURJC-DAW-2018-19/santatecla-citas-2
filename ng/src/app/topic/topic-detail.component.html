@@ -6,6 +6,10 @@
       <p>{{quote.author}}</p>
       <p>{{quote.book}}</p>
     </div>
+
+    <div *ngFor='let text of topic.texts'>
+        <p>{{text}}</p>
+    </div>
    
     <p>
       <button *ngIf="login.isLogged && login.isAdmin" (click)="removeTopic()">Remove</button>

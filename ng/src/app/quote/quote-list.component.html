@@ -10,19 +10,21 @@
 
 
     <mat-nav-list>
-        <div *ngIf="loginService.isLogged">
+        <div *ngIf="loginService.isLogged && !reference">
             <div *ngFor='let quote of quotes'>
                 <a  mat-list-item [routerLink]="['/quote', quote.id]"
                     [ngStyle]="{'cursor':'pointer'}">
                     {{quote.text}}
                 </a>
-                <button mat-fab *ngIf="reference" (click)="addReference(quote)">Add</button>
             </div>
         </div>
-        <div *ngIf="!loginService.isLogged">
-            <a *ngFor='let quote of quotes' mat-list-item [ngStyle]="{'cursor':'default'}">
+        <div *ngIf="!loginService.isLogged || reference">
+            <div *ngFor='let quote of quotes'>
+            <p  mat-list-item [ngStyle]="{'cursor':'default'}">
                 {{quote.text}}
-            </a>
+            </p>
+            <button mat-fab *ngIf="reference" (click)="addReference(quote)">Add</button>
+        </div>
         </div>
     </mat-nav-list>
 
