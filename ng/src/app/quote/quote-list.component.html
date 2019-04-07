@@ -28,7 +28,7 @@
         </div>
     </mat-nav-list>
 
-    <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
+    <td-paging-bar *ngIf="!reference" #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
         {{pagingBar.range}} of {{pagingBar.total}}
     </td-paging-bar>
 

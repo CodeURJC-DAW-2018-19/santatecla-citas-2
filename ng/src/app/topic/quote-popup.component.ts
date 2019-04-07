@@ -14,6 +14,7 @@ export class QuotePopupComponent implements OnInit{
     reference: boolean = true;
     quotes: Quote[];
     
+    
 
     constructor(private router: Router, private service:TopicService,
         public loginService: LoginService){}
@@ -33,5 +34,6 @@ export class QuotePopupComponent implements OnInit{
         window.history.back();
         //Send quote to topicFormComponent so it adds this quote to the referenced ones
      }
+     
 
 }
