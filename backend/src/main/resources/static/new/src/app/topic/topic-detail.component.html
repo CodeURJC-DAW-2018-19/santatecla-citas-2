@@ -1,0 +1,21 @@
+<div *ngIf="topic">
+    <h2>Topic "{{topic.name}}"</h2>
+
+    <div *ngFor='let quote of quotes'>
+        <p>{{quote.text}}</p>
+      <p>{{quote.author}}</p>
+      <p>{{quote.book}}</p>
+    </div>
+
+    <div *ngFor='let text of topic.texts'>
+        <p>{{text}}</p>
+    </div>
+   
+    <p>
+      <button *ngIf="login.isLogged && login.isAdmin" (click)="removeTopic()">Remove</button>
+      <button *ngIf="login.isLogged && login.isAdmin" (click)="editTopic()">Edit</button>
+      <br>
+      <button (click)="gotoTopics()">All Books</button>
+    </p>
+    <button (click)="downloadPDF()">descarga wey</button>
+    </div>
