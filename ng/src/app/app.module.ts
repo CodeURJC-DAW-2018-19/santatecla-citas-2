@@ -54,11 +54,7 @@ import {
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DomSanitizer } from '@angular/platform-browser';
-import { BookService } from './book.service';
 import { LoginService } from './user/login.service';
-import { BookDetailComponent } from './book-detail.component';
-import { BookListComponent } from './book-list.component';
-import { BookFormComponent } from './book-form.component';
 import { LoginComponent } from './user/login.component';
 import { routing } from './app.routing';
 
@@ -133,9 +129,9 @@ import { RegisterComponent } from './user/register.component';
         HttpModule, //Remove when migrated to HttpClient
         routing
     ],
-    declarations: [AppComponent, QuoteDetailComponent, QuoteFormComponent, QuoteListComponent, QuotePopupComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent, TopicListComponent, TopicDetailComponent, TopicFormComponent, IndexComponent,ChartComponent,RegisterComponent],
+    declarations: [AppComponent, QuoteDetailComponent, QuoteFormComponent, QuoteListComponent, QuotePopupComponent, LoginComponent, TopicListComponent, TopicDetailComponent, TopicFormComponent, IndexComponent,ChartComponent,RegisterComponent],
     bootstrap: [AppComponent],
-    providers: [TopicService, BookService, LoginService, QuoteService, ChartService,
+    providers: [TopicService, LoginService, QuoteService, ChartService,
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
         { provide: LocationStrategy, useClass: HashLocationStrategy }],
