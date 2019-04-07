@@ -71,3 +71,48 @@ Page used by admins to delete items or enter de edition pages
 2. Tag the new image called app `docker tag app user/repo:tag`
 3. Push image to the repository `docker push user/repo:tah`
 4. Run the command `docker-compose up` this should Start the app
+
+FASE 4. Documentación:
+
+• Preparación del entorno de desarrollo: Se añadirá a las instrucciones cómo instalar y
+configurar el entorno de desarrollo para poder compilar y ejecutar la aplicación SPA con
+Angular.
+ Configurar entorno de desarrollo:
+ Prerrequisitos:
+ Instalar  Node.jsversión 8.x o 10.x
+ Instalar el gestor de paquetes npm, Angular CLI y Angular dependen de las características y funcionalidades proporcionadas por las bibliotecas que están disponibles en npm.
+ Ana vez instalado el Node y npm, abrimos la consola:
+   Instale el CLI angular: npm install -g @angular/cli
+
+
+• Diagrama de clases y templates: Reflejará las clases y templates del código Angular. El
+diagrama deberá diferenciar claramente qué elementos son componentes y cómo se relacionan
+entre sí (relaciones padre-hijo). También se deberán incluir los servicios y el resto de clases
+auxiliares.
+
+![Diagrama Clase ng](https://github.com/CodeURJC-DAW-2018-19/santatecla-citas-2/blob/working_branch/images/Diagrama-Clase-ng.png).
+
+En esta fase además se deberá crear un vídeo, subir ese vídeo a YouTube y enlazar el vídeo al principio
+del README. Este vídeo tendrá una duración de entre 2 y 3 minutos y mostrará las principales
+funcionalidades de la aplicación web. Uno de los alumnos deberá grabarse la voz describiendo qué está
+haciendo según vaya interactuando con la aplicación web. El vídeo deberá mostrar los aspectos más
+relevantes de la aplicación web, entre otros:
+• Acceso de un usuario anónimo (sin hacer login)
+• Hacer login con un estudiante existente y mostrar las funcionalidades adicionales
+• Si es necesario usar varios estudiantes (usando varios navegadores web) para que se observe
+cómo las acciones de un estudiante afectan a otro (mensajes, puntos, comentarios, solicitudes
+de amistad, etc.)
+• Login como docente y mostrar las funcionalidades propias del administrador.
+• Subida de imágenes.
+• Creación de un nuevo estudiante.
+• Modificación de los datos de una entidad de la aplicación web (cita, autor, libro, entrega, etc...)
+Calificación extra: Control de calidad con tests
+Es posible obtener un punto adicional a la nota de la práctica si se realiza un control de calidad del
+código. En concreto:
+◦ Tests servidor Java/Spring (Fase 2): Se incrementará la nota de la práctica en 0,5 puntos si se
+implementan tests unitarios y de sistema del backend Java. Los tests se implementarán en Java
+con JUnit. Los tests de sistema se implementarán con Selenium.
+◦ Tests cliente TypeScript/Angular (Fase 4): Se incrementará la nota de la práctica en 0,5
+puntos si se implementan tests unitarios y de sistema. Los tests se implementarán con Jasmine.
+Los tests de sistema se implementarán con Protractor.
+El README deberá incluir en cada fase cómo ejecutar los tests desde la línea de comandos.
