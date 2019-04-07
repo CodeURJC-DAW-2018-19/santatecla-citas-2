@@ -1,16 +1,18 @@
 package com.urjc.daw.practica.api;
 
+import com.urjc.daw.practica.repository.UserRepository;
 import com.urjc.daw.practica.security.UserComponent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.*;
 
 import com.urjc.daw.practica.model.User;
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
 
 @RestController
 public class LoginController {
@@ -19,6 +21,9 @@ public class LoginController {
     
     @Autowired
     private UserComponent userComponent;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @RequestMapping("/api/login")
     public ResponseEntity<User>login(){
@@ -44,5 +49,14 @@ public class LoginController {
         }
     }
 
+    @PostMapping("/api/register")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<User> register(@RequestBody User user) {
+        System.out.printf(user.toString());
+        user.setRoles(user.getRoles());
+        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+        userRepository.save(user);
+        return new ResponseEntity<>(user,HttpStatus.OK);
+    }
 
 }
