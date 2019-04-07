@@ -60,7 +60,7 @@ export class TopicService {
         const options = new RequestOptions({ withCredentials: true, headers });
 
         if (!topic.id) {
-            return this.http.post(URL, body, options)
+            return this.http.post(URL+'/', body, options)
                 .pipe(
                     map(response => response.json()),
                     catchError(error => this.handleError(error))
@@ -125,7 +125,6 @@ export class TopicService {
 
     setReferences(quotes: Quote[]) {
         this.quoteReferenced = quotes;
-        this.quoteNotReferenced  = new Array();
         this.quoteService.findAllUnpaged().subscribe(
             quotes => {
                 this.quoteNotReferenced = quotes
