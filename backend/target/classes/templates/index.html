@@ -1,0 +1,248 @@
+{{>navbar}}
+
+
+<!-- End Navbar -->
+<div class="content">
+	<div class="main-page-container">
+		<div class="container-fluid border-container">
+			<div id="p-start">
+				<p class="d-lg-inline-block d-md-inline-block">INICIO</p>
+			</div>
+
+			<div class="row">
+				<!--Topic container-->
+				<div class="col-md-6">
+					<div class="card">
+						<!--Quote board header-->
+						<div class="card-header card-header-success">
+							<h2 class="card-title">Temas</h2>
+						</div>
+
+						<!-- Quote search bar -->
+						{{#logged}}
+						<div class="container-fluid">
+							<div class="col-md-12">
+								<form class="navbar-form" action="/searchTopic">
+									<div class="input-group no-border">
+										<input type="text" value="{{#topicKeyword}}{{topicKeyword}}{{/topicKeyword}}"
+											name="keyword" class="form-control" placeholder="Buscar un tema..." />
+										<button type="submit" class="btn btn-white btn-round btn-just-icon">
+											<i class="material-icons">search</i>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						{{/logged}}
+
+						<!--Topic zone-->
+						<div class="row">
+
+							{{#topic}}
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<div class="card card-stats">
+									<div class="card-header card-header-success card-header-icon">
+										<div class="card-icon">
+											<i class="material-icons">library_books</i>
+										</div>
+										<p class="card-category">Tema</p>
+										<div class="tim-typo">
+
+											<blockquote class="blockquote">
+												{{#logged}}
+												<a href="topic/{{id}}">{{/logged}}
+													<h3 style="color: black">{{#name}}{{name}}{{/name}}</h3>
+													{{#logged}}</a>
+												{{/logged}}
+											</blockquote>
+
+											{{#admin}}
+											<div class="td-actions text-left">
+												<a href="topic/{{id}}">
+													<button type="button" rel="tooltip" title="Edit topìc"
+														class="btn btn-primary btn-link btn-sm">
+														<i class="material-icons">edit</i>
+													</button>
+												</a>
+												<a>
+													<button type="button" onclick="deleteTopic({{id}});" rel="tooltip"
+														title="Delete Quote"
+														class="btn btn-danger btn-link btn-sm btn-delete">
+														<i class="material-icons">close</i>
+													</button>
+												</a>
+											</div>
+
+											{{/admin}}
+										</div>
+									</div>
+								</div>
+							</div>
+							{{/topic}}
+							<!--{{^logged}} -->
+							<!--<div class="row"><div class="col-md-12"><span class="alert alert-danger">You must be-->
+							<!--logged in to see the topic table.</span></div></div> -->
+							<!--{{/logged}}-->
+						</div>
+						<!--End of quote row-->
+						<!--Add quote button-->
+						{{#logged}} {{#admin}}
+						<div class="col-md-12">
+
+							<a href="topicForm">
+								<span class="pull-right"> Añadir tema
+									<button type="submit" class="btn btn-white btn-round btn-just-icon">
+										<i class="material-icons">library_add</i>
+									</button>
+								</span>
+							</a>
+						</div>
+						{{/admin}} {{/logged}}
+					</div>
+				</div>
+
+
+				<div class="col-md-6">
+					<!--Quotes container-->
+					<div class="card">
+						<!--Quote board header-->
+						<div class="card-header card-header-warning">
+							<h2 class="card-title">Citas</h2>
+						</div>
+
+						<!-- Quote search bar -->
+						{{#logged}}
+						<div class="container-fluid">
+							<div class="col-md-12">
+								<form class="navbar-form" action="/searchQuote" method="get">
+									<div class="input-group no-border">
+										<input type="text" value="{{#quoteKeyword}}{{quoteKeyword}}{{/quoteKeyword}}"
+											name="keyword" class="form-control" placeholder="Buscar..." />
+										<button type="submit" class="btn btn-white btn-round btn-just-icon">
+											<i class="material-icons">search</i>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						{{/logged}}
+
+						<!--Quote zone-->
+						<div class="quotes row ">
+
+							{{#quote}}
+							<div class="col-lg-6 col-md-6 col-sm-6 ">
+								<div class="card card-stats">
+									<div class="card-header card-header-warning card-header-icon">
+										<div class="card-icon">
+											<i class="material-icons">speaker_notes</i>
+										</div>
+										<p class="card-category">Cita</p>
+										<div class="tim-typo">
+											<blockquote class="blockquote">
+												{{#logged}}
+												<a href="quote/{{id}}">{{/logged}}
+													<p style="color: black">{{#text}}{{text}}{{/text}}</p>
+													{{#logged}}<small style="color: grey"> {{author}} ,{{book}}
+													</small>{{/logged}}
+													{{#logged}}</a>{{/logged}}
+
+											</blockquote>
+											{{#admin}}
+											<div class="td-actions text-left">
+												<a href="quote/{{id}}">
+													<button type="button" rel="tooltip" title="Editar cita"
+														class="btn btn-primary btn-link btn-sm">
+														<i class="material-icons">edit</i>
+													</button>
+												</a>
+												<a>
+													<button type="button" onclick="deleteButton({{id}});" rel="tooltip"
+														title="Borrar Cita"
+														class="btn btn-danger btn-link btn-sm btn-delete">
+														<i class="material-icons">close</i>
+													</button>
+												</a>
+											</div>
+											{{/admin}}
+										</div>
+									</div>
+								</div>
+							</div>
+							{{/quote}}
+
+						</div>
+						<form>
+						<button id="loadMore" type="button" title="loadMore"><i
+								class="material-icons">add_circle_outline</i></button>
+						<input type="hidden" name="_csrf" value="{{token}}" />
+						</form>
+						{{^logged}} <span>You must be
+								logged in to see the quote table.</span>
+						{{/logged}}
+						<!--End of quote row-->
+
+						{{#logged}} {{#admin}}
+						<!--Add quote button-->
+						<div class="col-md-12">
+							<a href="/quoteForm">
+								<span class="pull-right"> Añadir cita
+									<button type="submit" class="btn btn-white btn-round btn-just-icon">
+										<i class="material-icons">library_add</i>
+									</button>
+								</span>
+							</a>
+						</div>
+						{{/admin}} {{/logged}}
+					</div>
+				</div>
+				{{#logged}}
+				<div id="histogram">
+					<a class="d-lg-inline-block d-md-inline-block" onclick="displayModal()"> HISTOGRAMA </a>
+				</div>
+				{{/logged}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="quoteSelection" class="modal">
+	<div class="modal-content">
+		<span class="close justify-content-end" onclick="closeOnX()">X</span>
+		<div class="wrapper">
+			<div class="content">
+				<div class="container-fluid">
+					<div class="card card-chart">
+						<div class="card-header card-header-success">
+							<div class="ct-chart"></div>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Cantidad de citas por Tema</h4>
+						</div>
+						<div class="card-footer">
+							<div class="stats">
+								<i class="material-icons">access_time</i> actualizado hace 4 minutos
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+		<script type="text/javascript">
+			var data = {
+				labels: [{{#topic}}'{{name}}',{{/topic}}],
+				series: [
+					[{{#topic}}{{nQuotes}}, {{/topic}}]
+					]
+						};
+				new Chartist.Bar('.ct-chart', data);
+		</script>
+	</div>
+</div>
+
+
+
+
+
+{{>footer}}

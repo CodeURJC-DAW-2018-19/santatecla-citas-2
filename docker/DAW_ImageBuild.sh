@@ -4,8 +4,10 @@ pwd
 cd ng
 ng build 
 ls
-cp -r * dist/my-app/ ../backend/src/main/resources/static/new/
+cd dist
+cp -r my-app/. ../../backend/src/main/resources/static/new
 ls
+cd ..
 cd ..
 cd backend
 pwd
