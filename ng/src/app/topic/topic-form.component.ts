@@ -14,6 +14,7 @@ export class TopicFormComponent{
     topic: Topic;
     hasQuotes: boolean;
     hasText: boolean;
+    texts: string[];
 
     quotes:Quote[];
 
@@ -27,6 +28,11 @@ export class TopicFormComponent{
                     topic => {
                         this.topic = topic;
                         this.hasText = topic.texts != undefined;
+                        if(this.hasText){
+                            this.texts=topic.texts;
+                        }else{
+                            this.texts = new Array();
+                        }
                     },
                     error => console.error(error)
                 
@@ -40,6 +46,7 @@ export class TopicFormComponent{
             }else{
                 this.topic={name:"",nQuotes:0 ,quoteIds:[], texts: []};
                 this.newTopic = true;
+                this.texts = new Array();
             }
             
         }
@@ -49,7 +56,14 @@ export class TopicFormComponent{
     }
 
     save(){
-        this.service.postTopic(this.topic).subscribe(
+        this.topic.texts= this.texts;
+        this.topic.quoteIds = new Array();
+        if(this.hasQuotes){
+            for(let quote of this.quotes){
+               this.topic.quoteIds.push(quote.id);
+            }
+        }
+     this.service.postTopic(this.topic).subscribe(
             topic=>{},
             error=> console.error('Error creating Topic: '+ error),
         );
@@ -61,13 +75,19 @@ export class TopicFormComponent{
     }
 
     showPopup(){
-        this.router.navigate(['/topic/reference', this.topic.id]);
+        var id = 0;
+        if(this.topic.id !=undefined){
+            id = this.topic.id;
+        }
+        this.router.navigate(['/topic/reference', id]);
 
     }
 
     addText(){
-        this.topic.texts.push("text");
+        this.texts.push('text');
+        this.hasText = true;
     }
+
     trackByIndex(index:number, obj:any){
         return index;
     }
