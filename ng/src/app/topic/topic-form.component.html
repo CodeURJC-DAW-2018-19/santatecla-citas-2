@@ -8,6 +8,7 @@
       <input [(ngModel)]="topic.name" placeholder="Name"/>
     </div>
 
+
     <div *ngIf=hasQuotes>
       <label>Reference</label>
       <div *ngFor='let quote of quotes'>
@@ -19,14 +20,17 @@
         </div>
       </div>
     </div>
-    <div *ngIf=topic.hasTexts>
+    
+    <div *ngIf=hasText>
 
-        <div *ngFor='let text of topic.texts'>
+        <div *ngFor='let text of topic.texts; let index = index;trackBy:trackByIndex;'>
           <label>Texts</label>
-          <input [(ngModel)]="text" placeholder="Text"/>
+          <input [(ngModel)]="topic.texts[index]" placeholder="Text"/>
         </div>
     </div>
-    
+  
+    <button (click) = "showPopup()">Add Reference</button>
+    <button (click) = "addText()">Add Text</button>
     <p>
       <button (click)="cancel()">Cancel</button>
       <button (click)="save()">Save</button>
