@@ -23,9 +23,9 @@
     
     <div *ngIf=hasText>
 
-        <div *ngFor='let text of topic.texts; let index = index;trackBy:trackByIndex;'>
+        <div *ngFor='let text of texts; let index = index;trackBy:trackByIndex;'>
           <label>Texts</label>
-          <input [(ngModel)]="topic.texts[index]" placeholder="Text"/>
+          <input [(ngModel)]="texts[index]" value=text placeholder="Text"/>
         </div>
     </div>
   
