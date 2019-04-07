@@ -20,7 +20,7 @@ public class User {
 
     private String userName;
 
-    @JsonIgnore
+    //@JsonIgnore and what is this?
     private String password;
 
     @ElementCollection(fetch=FetchType.EAGER)
