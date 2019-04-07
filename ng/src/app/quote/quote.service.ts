@@ -57,7 +57,7 @@ export class QuoteService {
                 catchError(error => this.handleError(error))
             );
     }
-    private n : number;
+    /*private n : number;
     countQuotes() {
         this.http.get(URL, { withCredentials: true })
             .pipe(
@@ -72,7 +72,7 @@ export class QuoteService {
             )
             console.log(this.n) +"ey";
             return this.n;
-    }
+    }*/
 
 
     postQuote(quote: Quote) {
@@ -133,6 +133,13 @@ export class QuoteService {
                 catchError(error => this.handleError(error))
             );
 
+    }
+
+    countQuotes(){
+        return this.http.get(URL+"/").pipe(
+            map(response => response.json()),
+            catchError(error => this.handleError(error))
+          );   
     }
 
     private handleError(error: any) {
