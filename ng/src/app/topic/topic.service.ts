@@ -66,7 +66,7 @@ export class TopicService {
                     catchError(error => this.handleError(error))
                 );
         } else {
-            return this.http.put(URL, body, options)
+            return this.http.put(URL+'/'+topic.id, body, options)
                 .pipe(
                     map(response => response.json()),
                     catchError(error => this.handleError(error))

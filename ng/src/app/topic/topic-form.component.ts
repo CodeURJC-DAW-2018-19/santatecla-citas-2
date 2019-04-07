@@ -13,6 +13,7 @@ export class TopicFormComponent{
     newTopic: boolean;
     topic: Topic;
     hasQuotes: boolean;
+    hasText: boolean;
 
     quotes:Quote[];
 
@@ -23,13 +24,18 @@ export class TopicFormComponent{
             const id = activatedRoute.snapshot.params['id'];
             if(id){
                 service.findOne(id).subscribe(
-                    topic => this.topic = topic,
+                    topic => {
+                        this.topic = topic;
+                        this.hasText = topic.texts != undefined;
+                    },
                     error => console.error(error)
+                
                 );
                 this.newTopic = false;
                 this.quotes = service.getReferences();
 
-                this.hasQuotes = this.quotes.length>0;
+                this.hasQuotes = this.quotes != undefined;
+               
 
             }else{
                 this.topic={name:"",nQuotes:0 ,quoteIds:[], texts: []};
@@ -53,8 +59,16 @@ export class TopicFormComponent{
     removeReference(quote:Quote){
         this.service.removeReference(quote);
     }
+
     showPopup(){
         this.router.navigate(['/topic/reference', this.topic.id]);
 
+    }
+
+    addText(){
+        this.topic.texts.push("text");
+    }
+    trackByIndex(index:number, obj:any){
+        return index;
     }
 }
