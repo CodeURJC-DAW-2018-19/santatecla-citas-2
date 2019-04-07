@@ -35,7 +35,7 @@ export class QuoteListComponent implements OnInit {
             error => console.log(error)
         );
         this.service.countQuotes().subscribe(
-            data => this.total = data,
+            data => this.total = Object.keys(data).length,
             error => console.log(error)
         );
     }
