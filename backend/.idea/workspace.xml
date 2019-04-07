@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="582a90a5-35da-43dc-ae3f-80d7199cde23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practica.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/TopicRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/TopicRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/practica.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/ChartRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/ChartRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/FileRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/FileRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/QuoteRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/QuoteRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/TopicRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/api/TopicRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/impl/QuoteControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/impl/QuoteControllerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/impl/TopicControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/controller/impl/TopicControllerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/model/Topic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/model/Topic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/RestSecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/RestSecurityConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/UserAuthProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/security/UserAuthProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/ChartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/ChartService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/DocumentGenerationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/DocumentGenerationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/GraphService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/QuoteImageStorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/QuoteImageStorageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/QuoteManagementServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/TopicManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/urjc/daw/practica/service/impl/TopicManagementServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/urjc/daw/practica/repository/TopicRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/urjc/daw/practica/repository/TopicRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ng/src/app/app.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ng/src/app/app.routing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ng/src/app/topic/topic-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ng/src/app/topic/topic-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ng/src/app/topic/topic-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ng/src/app/topic/topic-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ng/src/app/topic/topic-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ng/src/app/topic/topic-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ng/src/app/topic/topic-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ng/src/app/topic/topic-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ng/src/app/topic/topic.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ng/src/app/topic/topic.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,16 +14,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/TopicRestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="105" selection-start-line="105" selection-end-line="105" />
+            <state relative-caret-position="186">
+              <caret line="84" selection-start-line="84" selection-end-line="84" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="666">
@@ -83,7 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="787" />
     <option name="y" value="63" />
     <option name="width" value="974" />
@@ -160,7 +134,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554646798703" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554648595866" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -258,15 +232,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554630917216</updated>
-      <workItem from="1554630920823" duration="4158000" />
+      <workItem from="1554630920823" duration="5041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4158000" />
+    <option name="totallyTimeSpent" value="5041000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -319,6 +293,12 @@
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/TopicRestController.java</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -333,6 +313,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.5.RELEASE/spring-web-5.1.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -342,15 +329,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/TopicRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/urjc/daw/practica/api/QuoteRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+        <state relative-caret-position="186">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
         </state>
       </provider>
     </entry>
