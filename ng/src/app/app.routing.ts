@@ -10,16 +10,20 @@ import { QuotePopupComponent } from './topic/quote-popup.component';
 import { TopicFormComponent } from './topic/topic-form.component';
 import { QuoteFormComponent } from './quote/quote-form.component';
 import { QuoteDetailComponent } from './quote/quote-detail.component';
+import { IndexComponent } from './index.component';
+import { ChartComponent } from './charts/chart.component';
 
 const appRoutes = [
   { path: 'books', component: BookListComponent },
   { path: 'topics', component: TopicListComponent},
   { path: 'quotes', component: QuoteListComponent},
+  { path: 'chart', component: ChartComponent},
+  { path: 'index', component: IndexComponent},
   { path: 'quote/new', component: QuoteFormComponent},
   { path: 'quote/:id', component: QuoteDetailComponent},
   { path: 'quote/form/:id', component: QuoteFormComponent},
 
-  {path: 'quotesPop', component: QuotePopupComponent},
+  { path: 'quotesPop', component: QuotePopupComponent},
 
   { path: 'topic/:id', component: TopicDetailComponent },
   { path: 'topic/new', component: TopicFormComponent },
@@ -29,7 +33,7 @@ const appRoutes = [
 
   { path: 'book/:id', component: BookDetailComponent },
   { path: 'book/edit/:id', component: BookFormComponent },
-  { path: '', redirectTo: 'quotes', pathMatch: 'full' }
+  { path: '', redirectTo: 'index', pathMatch: 'full' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

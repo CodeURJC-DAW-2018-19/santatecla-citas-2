@@ -62,19 +62,23 @@ import { BookFormComponent } from './book-form.component';
 import { LoginComponent } from './user/login.component';
 import { routing } from './app.routing';
 
-import {Quote, QuoteService} from './quote/quote.service';
-import {QuoteListComponent} from './quote/quote-list.component';
-import {QuoteFormComponent} from './quote/quote-form.component';
-import {QuoteDetailComponent} from './quote/quote-detail.component'
+import { Quote, QuoteService } from './quote/quote.service';
+import { QuoteListComponent } from './quote/quote-list.component';
+import { QuoteFormComponent } from './quote/quote-form.component';
+import { QuoteDetailComponent } from './quote/quote-detail.component'
 
-import {Topic, TopicService} from './topic/topic.service';
-import {TopicListComponent} from './topic/topic-list.component';
-import {TopicFormComponent} from './topic/topic-form.component';
-import {TopicDetailComponent} from './topic/topic-detail.component'
+import { Topic, TopicService } from './topic/topic.service';
+import { TopicListComponent } from './topic/topic-list.component';
+import { TopicFormComponent } from './topic/topic-form.component';
+import { TopicDetailComponent } from './topic/topic-detail.component'
 import { BasicAuthInterceptor } from './auth/auth.interceptor';
 import { ErrorInterceptor } from './auth/error.interceptor';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { QuotePopupComponent } from './topic/quote-popup.component';
+import { IndexComponent } from './index.component';
+import { ChartComponent } from './charts/chart.component';
+import { ChartService } from './charts/chart.service';
+
 
 @NgModule({
     imports: [
@@ -128,12 +132,12 @@ import { QuotePopupComponent } from './topic/quote-popup.component';
         HttpModule, //Remove when migrated to HttpClient
         routing
     ],
-    declarations: [AppComponent,QuoteDetailComponent,QuoteFormComponent,QuoteListComponent,QuotePopupComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent, TopicListComponent,TopicDetailComponent,TopicFormComponent],
+    declarations: [AppComponent, QuoteDetailComponent, QuoteFormComponent, QuoteListComponent, QuotePopupComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent, TopicListComponent, TopicDetailComponent, TopicFormComponent, IndexComponent,ChartComponent],
     bootstrap: [AppComponent],
-    providers: [TopicService,BookService, LoginService,QuoteService,
-    {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true},
-{provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-{provide: LocationStrategy, useClass: HashLocationStrategy}],
+    providers: [TopicService, BookService, LoginService, QuoteService, ChartService,
+        { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+        { provide: LocationStrategy, useClass: HashLocationStrategy }],
 })
 export class AppModule {
     constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {

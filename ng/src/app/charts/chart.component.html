@@ -1,0 +1,23 @@
+<div *ngIf="loginService.isLogged">
+    <mat-card>
+        <mat-card-title>
+            <div layout="row" layout-align="start center">
+                <span flex>Chart</span>
+
+            </div>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+
+        <div layout="row" layout-padding layout-margin>
+            <div flex>
+                <ngx-charts-bar-vertical [view]="view" [scheme]="colorScheme" [results]="chart" [gradient]="gradient"
+                    [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-bar-vertical>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </div>
+        </div>
+    </mat-card>
+
+</div>

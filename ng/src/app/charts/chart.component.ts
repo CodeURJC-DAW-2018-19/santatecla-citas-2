@@ -1,31 +1,42 @@
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { LoginService } from '../user/login.service';
+import { ChartService, Chart } from './chart.service';
 
 @Component({
-    template: `
-    <ngx-charts-line-chart
-        [view]="view"
-        [scheme]="colorScheme"
-        [results]="multi"
-        [gradient]="gradient"
-        [xAxis]="showXAxis"
-        [yAxis]="showYAxis"
-        [legend]="showLegend"
-        [showXAxisLabel]="showXAxisLabel"
-        [showYAxisLabel]="showYAxisLabel"
-        [xAxisLabel]="xAxisLabel"
-        [yAxisLabel]="yAxisLabel"
-        [autoScale]="autoScale"
-        [timeline]="timeline"
-        (select)="onSelect($event)">
-    </ngx-charts-line-chart>`
+    selector: `chart-component`,
+    templateUrl: `chart.component.html`
 })
-export class ChartComponent{
-    
-    constructor(private router:Router,
-        activatedRoute:ActivatedRoute){
-            const id = activatedRoute.snapshot.params['id'];
-    
-        }
+export class ChartComponent {
+
+    chart: Chart;
+
+    view: any[];
+
+    // options
+    showXAxis = true;
+    showYAxis = true;
+    gradient = false;
+    showLegend = true;
+    showXAxisLabel = true;
+    xAxisLabel = 'Topics';
+    showYAxisLabel = true;
+    yAxisLabel = 'Quotes';
+    colorScheme = {
+        domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+      };
+
+    constructor(private router: Router,
+        activatedRoute: ActivatedRoute, public loginService: LoginService, private service: ChartService) {
+            this.service.getChart().subscribe(
+                chart => this.chart = chart,
+                error => console.log(error)
+            );
+            Object.assign(this, this.chart);
+            console.log(this.chart);
+    }
+
+    onSelect(event) {
+        console.log(event);
+      }
 }
