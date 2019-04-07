@@ -17,7 +17,7 @@ export class QuoteListComponent implements OnInit {
     firstLast: boolean = true;
     QuoteService: any;
     pageSize = 10;
-    total = 14;
+    total : number;
     pageNumber = 1;
     firstPage = 0;
     pageChanged: Boolean = false;
@@ -32,6 +32,10 @@ export class QuoteListComponent implements OnInit {
     ngOnInit() {
         this.service.findAll(this.pageNumber - 1).subscribe(
             quotes => this.quotes = quotes,
+            error => console.log(error)
+        );
+        this.service.countQuotes().subscribe(
+            data => this.total = data,
             error => console.log(error)
         );
     }

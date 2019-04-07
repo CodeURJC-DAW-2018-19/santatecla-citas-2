@@ -136,10 +136,11 @@ export class QuoteService {
     }
 
     countQuotes(){
-        return this.http.get(URL+"/").pipe(
-            map(response => response.json()),
-            catchError(error => this.handleError(error))
-          );   
+        return this.http.get(URL, { withCredentials: true })
+            .pipe(
+                map(response => response = response.json()),
+                catchError(error => this.handleError(error))
+            ) 
     }
 
     private handleError(error: any) {

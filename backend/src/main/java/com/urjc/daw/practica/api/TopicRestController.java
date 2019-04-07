@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
+import com.urjc.daw.practica.service.impl.TopicManagementServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.data.domain.Page;
@@ -42,7 +43,7 @@ public class TopicRestController {
 	private static final String FILENAME = "topicContent.pdf";
 
 	@Autowired
-	private TopicManagementService topicService;
+	private TopicManagementServiceImpl topicService;
 	
 	@Autowired
 	DocumentGenerationService dgs;
@@ -50,6 +51,16 @@ public class TopicRestController {
 	@GetMapping("/{id}")
 	public ResponseEntity<Topic> getTopic(@PathVariable long id) {
 		Topic found = topicService.findOne(id).get();
+		if(found != null) {
+			return new ResponseEntity<>(found,HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
+
+	@GetMapping("")
+	public ResponseEntity<List<Topic>> getTopics() {
+		List<Topic> found = topicService.findAllUnpaged();
 		if(found != null) {
 			return new ResponseEntity<>(found,HttpStatus.OK);
 		}else {
@@ -119,7 +130,7 @@ public class TopicRestController {
 			resource = new ByteArrayResource(Files.readAllBytes(path));
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
-			return new ResponseEntity<ByteArrayResource>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
 		HttpHeaders headers = new HttpHeaders(); 

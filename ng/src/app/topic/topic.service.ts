@@ -18,15 +18,15 @@ const URL = '/api/topics';
 
 @Injectable()
 export class TopicService {
-    
-    
+
+
     topic: Topic;
     quoteReferenced: Quote[];
     quoteNotReferenced: Quote[];
     private nTopics: number;
 
 
-    constructor(private http: Http, private quoteService:QuoteService) { }
+    constructor(private http: Http, private quoteService: QuoteService) { }
 
     /**
      * This method should return the page requested,
@@ -94,53 +94,45 @@ export class TopicService {
     }
 
     countTopics() {
-        
-        this.http.get(URL, { withCredentials: true })
+
+        return this.http.get(URL, { withCredentials: true })
             .pipe(
-                map(response => {
-                    let data = response.json();
-                    for (var i = 0; i < data.items.length; i++) {
-                        this.nTopics++;
-                    }
-                },
+                map(response => response = response.json()),
                 catchError(error => this.handleError(error))
-                )
             )
-            console.log(this.nTopics) +"ey";
-            return this.nTopics;
-    
+
     }
 
     removeReference(quote: Quote) {
         var index = this.quoteReferenced.indexOf(quote);
         this.quoteNotReferenced.push(this.quoteReferenced[index]);
-        this.quoteReferenced.splice(index,1);
+        this.quoteReferenced.splice(index, 1);
     }
 
     addReference(quote: Quote) {
         var index = this.quoteNotReferenced.indexOf(quote);
         this.quoteReferenced.push(this.quoteNotReferenced[index]);
-        this.quoteNotReferenced.splice(index,1);
+        this.quoteNotReferenced.splice(index, 1);
     }
 
-    getReferences(){
+    getReferences() {
         return this.quoteReferenced;
     }
 
-    getNotReferenced(){
+    getNotReferenced() {
         return this.quoteNotReferenced;
     }
 
     setReferences(quotes: Quote[]) {
-        this.quoteReferenced=quotes;
+        this.quoteReferenced = quotes;
         this.quoteService.findAllUnpaged().subscribe(
-            quotes =>{
+            quotes => {
                 this.quoteNotReferenced = quotes
-                for (let quote of this.quoteReferenced){
-                    var index = this.quoteNotReferenced.findIndex((current:Quote) => {
+                for (let quote of this.quoteReferenced) {
+                    var index = this.quoteNotReferenced.findIndex((current: Quote) => {
                         return current.id == quote.id;
                     });
-                    this.quoteNotReferenced.splice(index,1);
+                    this.quoteNotReferenced.splice(index, 1);
                 }
             },
             error => console.log(error)
@@ -148,9 +140,9 @@ export class TopicService {
 
     }
     setTopic(topic: Topic) {
-        this.topic= topic;
+        this.topic = topic;
     }
-    
 
-    
+
+
 }

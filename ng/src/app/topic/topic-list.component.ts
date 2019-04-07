@@ -13,12 +13,13 @@ import { IPageChangeEvent } from '@covalent/core';
 export class TopicListComponent implements OnInit{
 
     topics: Topic[];
-    numTopics = this.service.countTopics();
+    numTopics : number;
     event: IPageChangeEvent;
     firstLast: boolean = true;
     pageSize = 10;
     pageNumber = 1;
     firstPage = 0;
+    total : number;
     pageChanged: boolean = false;
     
     constructor(private router: Router, private service:TopicService,
@@ -27,6 +28,10 @@ export class TopicListComponent implements OnInit{
     ngOnInit(){
         this.service.findAll(0).subscribe(
             topics => this.topics=topics,
+            error => console.log(error)
+        );
+        this.service.countTopics().subscribe(
+            data => this.total = Object.keys(data).length,
             error => console.log(error)
         );
     }

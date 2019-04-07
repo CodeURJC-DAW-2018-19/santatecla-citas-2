@@ -72,4 +72,9 @@ public class TopicManagementServiceImpl implements TopicManagementService {
     public List<Topic> findByKeyword(String keyword) {
         return topics.findByNameContains(keyword);
     }
+
+    public List<Topic> findAllUnpaged() {
+        List<Topic> page = topics.findAll();
+        return page;
+    }
 }
