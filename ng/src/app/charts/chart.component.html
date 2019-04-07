@@ -7,17 +7,17 @@
             </div>
         </mat-card-title>
         <mat-divider></mat-divider>
+        <mat-card-content>
+            <div layout="row">
 
-        <div layout="row" layout-padding layout-margin>
-            <div flex>
                 <ngx-charts-bar-vertical [view]="view" [scheme]="colorScheme" [results]="chart" [gradient]="gradient"
                     [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
                     [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
-                    (select)="onSelect($event)">
+                    [showDataLabel]="showDataLabel" [barPadding]="barPadding" (select)="onSelect($event)">
                 </ngx-charts-bar-vertical>
-                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             </div>
-        </div>
+        </mat-card-content>
     </mat-card>
 
 </div>

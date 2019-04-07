@@ -54,8 +54,8 @@ public class QuoteRestController {
 	}
 
 	@GetMapping("/")
-	public ResponseEntity<List<Quote>> findAll() {
-		return new ResponseEntity<>(this.quoteService.findAllUnpaged(),HttpStatus.OK);
+	public ResponseEntity<Integer> findAll() {
+		return new ResponseEntity<>(this.quoteService.findAllUnpaged().size(),HttpStatus.OK);
 	}
 
 	@PostMapping("")

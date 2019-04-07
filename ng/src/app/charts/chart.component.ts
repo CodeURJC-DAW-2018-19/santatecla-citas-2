@@ -14,13 +14,15 @@ export class ChartComponent {
     view: any[];
 
     // options
+    barPadding = 150;
     showXAxis = true;
     showYAxis = true;
     gradient = false;
-    showLegend = true;
+    showLegend = false;
     showXAxisLabel = true;
     xAxisLabel = 'Topics';
     showYAxisLabel = true;
+    showDataLabel = true;
     yAxisLabel = 'Quotes';
     colorScheme = {
         domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
@@ -35,6 +37,7 @@ export class ChartComponent {
             Object.assign(this, this.chart);
             console.log(this.chart);
     }
+
 
     onSelect(event) {
         console.log(event);

@@ -3,9 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TopicService, Topic } from './topic.service';
 import { LoginService } from '../user/login.service';
 import { Quote, QuoteService } from '../quote/quote.service';
-import * as jsPDF from 'jspdf';
-import { Quote, Quote } from '@angular/compiler';
-import { forEach } from '@angular/router/src/utils/collection';
+//import * as jsPDF from 'jspdf';
 
 @Component({
     templateUrl: `topic-detail.component.html`
