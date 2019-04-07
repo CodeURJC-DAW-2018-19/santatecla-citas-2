@@ -1,8 +1,11 @@
 <div *ngIf="topic">
+
+    <mat-card-title>
+        <div layout="row" layout-align="start center">
+            <span flex>Quote "{{topic.name}}"</span>
+        </div>
+    </mat-card-title>
     <h2>Book "{{topic.name}}"</h2>
-    <div *ngIf="topic.id">
-      <label>Id: </label>{{topic.id}}
-    </div>
     <div>
       <label>Name: </label>
       <input [(ngModel)]="topic.name" placeholder="Name"/>

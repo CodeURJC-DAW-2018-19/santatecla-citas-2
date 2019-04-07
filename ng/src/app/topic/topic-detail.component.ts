@@ -89,8 +89,10 @@ export class TopicDetailComponent {
         }
         line++;
         doc.save('Tema'+this.topic.name);
+    }
 
-
+    goToTopics(){
+        this.router.navigate(['/']);
     }
 
 

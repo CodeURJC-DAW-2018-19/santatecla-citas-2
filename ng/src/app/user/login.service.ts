@@ -84,7 +84,7 @@ export class LoginService {
         console.log(body);
         const options = new RequestOptions({ headers });
 
-        return this.httpr.post(URLR, body)
+        return this.httpr.post(URLR, body, options)
             .pipe(
                 map(response => response.json()),
                 catchError(error => this.handleError(error))
