@@ -1,0 +1,39 @@
+<div *ngIf="topic">
+    <h2>Book "{{topic.name}}"</h2>
+    <div *ngIf="topic.id">
+      <label>Id: </label>{{topic.id}}
+    </div>
+    <div>
+      <label>Name: </label>
+      <input [(ngModel)]="topic.name" placeholder="Name"/>
+    </div>
+
+
+    <div *ngIf=hasQuotes>
+      <label>Reference</label>
+      <div *ngFor='let quote of quotes'>
+        
+        <div>
+          <p >{{quote.text}}</p>
+          <p>{{quote.author}}</p>
+          <p>{{quote.book}}</p>
+        </div>
+        <button mat-fab (click)="removeReference(quote)">Remove</button>
+      </div>
+    </div>
+    
+    <div *ngIf=hasText>
+
+        <div *ngFor='let text of texts; let index = index;trackBy:trackByIndex;'>
+          <label>Texts</label>
+          <input [(ngModel)]="texts[index]" value=text placeholder="Text"/>
+        </div>
+    </div>
+  
+    <button (click) = "showPopup()">Add Reference</button>
+    <button (click) = "addText()">Add Text</button>
+    <p>
+      <button (click)="cancel()">Cancel</button>
+      <button (click)="save()">Save</button>
+    </p>
+</div>
