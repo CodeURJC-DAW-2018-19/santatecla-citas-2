@@ -57,6 +57,10 @@ export class TopicFormComponent{
 
     save(){
         this.topic.texts= this.texts;
+        this.topic.quoteIds = new Array();
+        for(let quote of this.quotes){
+            this.topic.quoteIds.push(quote.id);
+        }
         this.service.postTopic(this.topic).subscribe(
             topic=>{},
             error=> console.error('Error creating Topic: '+ error),
