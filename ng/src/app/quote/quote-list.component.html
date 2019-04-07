@@ -9,14 +9,20 @@
 
 
 
-    <mat-nav-list *ngIf="loginService.isLogged">
-        <div *ngFor='let quote of quotes'>
-            <a mat-list-item [routerLink]="['/quote', quote.id]" [ngStyle]="{'cursor':'pointer'}">
+    <mat-nav-list>
+        <div *ngIf="loginService.isLogged">
+            <a *ngFor='let quote of quotes' mat-list-item [routerLink]="['/quote', quote.id]"
+                [ngStyle]="{'cursor':'pointer'}">
                 {{quote.text}}
-
+            </a>
+        </div>
+        <div *ngIf="!loginService.isLogged">
+            <a *ngFor='let quote of quotes' mat-list-item [ngStyle]="{'cursor':'default'}">
+                {{quote.text}}
             </a>
         </div>
     </mat-nav-list>
+
     <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
         {{pagingBar.range}} of {{pagingBar.total}}
     </td-paging-bar>
