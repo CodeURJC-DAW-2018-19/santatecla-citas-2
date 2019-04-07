@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
+import { RequestOptions, Headers, Http } from '@angular/http';
+import { Observable } from 'rxjs';
 
 const URL = '/api';
+const URLR = '/api/register';
 
 export interface User {
     id?: number;
@@ -19,7 +22,7 @@ export class LoginService {
     user: User;
     auth: string;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private httpr: Http) {
         let user = JSON.parse(localStorage.getItem('currentUser'));
         if (user) {
             console.log('Logged user');
@@ -69,5 +72,31 @@ export class LoginService {
         localStorage.removeItem('currentUser');
         this.isLogged = false;
         this.isAdmin = false;
+    }
+
+    register(user: User) {
+        const body = JSON.stringify(user);
+        const headers = new Headers({
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+
+        });
+        console.log(body);
+        const options = new RequestOptions({ headers });
+
+        return this.httpr.post(URLR, body)
+            .pipe(
+                map(response => response.json()),
+                catchError(error => this.handleError(error))
+            );
+
+
+
+    }
+
+
+    private handleError(error: any) {
+        console.error(error.Content);
+        return Observable.throw('Server error(' + error.status + ') ' + error.text);
     }
 }

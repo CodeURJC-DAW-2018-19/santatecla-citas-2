@@ -78,6 +78,7 @@ import { QuotePopupComponent } from './topic/quote-popup.component';
 import { IndexComponent } from './index.component';
 import { ChartComponent } from './charts/chart.component';
 import { ChartService } from './charts/chart.service';
+import { RegisterComponent } from './user/register.component';
 
 
 @NgModule({
@@ -132,7 +133,7 @@ import { ChartService } from './charts/chart.service';
         HttpModule, //Remove when migrated to HttpClient
         routing
     ],
-    declarations: [AppComponent, QuoteDetailComponent, QuoteFormComponent, QuoteListComponent, QuotePopupComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent, TopicListComponent, TopicDetailComponent, TopicFormComponent, IndexComponent,ChartComponent],
+    declarations: [AppComponent, QuoteDetailComponent, QuoteFormComponent, QuoteListComponent, QuotePopupComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent, TopicListComponent, TopicDetailComponent, TopicFormComponent, IndexComponent,ChartComponent,RegisterComponent],
     bootstrap: [AppComponent],
     providers: [TopicService, BookService, LoginService, QuoteService, ChartService,
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
