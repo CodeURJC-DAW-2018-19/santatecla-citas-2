@@ -40,7 +40,7 @@ export class TopicListComponent implements OnInit{
      * Duda, para que sirve??
      */
     newTopic(){
-        this.router.navigate(['topic/new']);
+        this.router.navigate(['topics/new']);
     }
 
     ngDoCheck() {

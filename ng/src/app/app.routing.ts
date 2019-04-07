@@ -15,10 +15,9 @@ import { ChartComponent } from './charts/chart.component';
 
 const appRoutes = [
   { path: 'books', component: BookListComponent },
-  { path: 'topics', component: TopicListComponent},
-  { path: 'quotes', component: QuoteListComponent},
   { path: 'chart', component: ChartComponent},
   { path: 'index', component: IndexComponent},
+
   { path: 'quote/new', component: QuoteFormComponent},
   { path: 'quote/:id', component: QuoteDetailComponent},
   { path: 'quote/form/:id', component: QuoteFormComponent},
@@ -26,7 +25,8 @@ const appRoutes = [
   { path: 'quotesPop', component: QuotePopupComponent},
 
   { path: 'topic/:id', component: TopicDetailComponent },
-  { path: 'topic/new', component: TopicFormComponent },
+  { path: 'topics', component: IndexComponent},
+  { path: 'topics/new', component:TopicFormComponent},
   { path: 'topic/form/:id', component: TopicFormComponent},
   { path: 'topic/reference/:id', component: QuotePopupComponent},
 

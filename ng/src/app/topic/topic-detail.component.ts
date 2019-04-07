@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TopicService, Topic } from './topic.service';
 import { LoginService } from '../user/login.service';
 import { Quote, QuoteService } from '../quote/quote.service';
+import * as jsPDF from 'jspdf';
+
 //import * as jsPDF from 'jspdf';
 
 @Component({
@@ -65,14 +67,27 @@ export class TopicDetailComponent {
     }
 
     downloadPDF(){
+        const height = 10;
+        var line = 1;
         let doc =new jsPDF();
-        doc.text(this.topic.name,10,10);
-        doc.text(this.topic.texts,10,10);
+        doc.text(this.topic.name,10,height);
+        line++;
+        
+        
         for(let quote of this.quotes){
-            doc.text(quote.text,10,10);
-            doc.text(quote.book,10,10);
-            doc.text(quote.author,10,10);
+            doc.text(quote.text,10,(height*line)+0.5);
+            line++;
+            doc.text(quote.book,10,(height*line)+0.5 );
+            line++;
+            doc.text(quote.author,10,(height*line)+0.5);
+            line++;
         }
+        
+        for(let text of this.topic.texts){
+            doc.text(text,10,height*line+0.5);
+            line++;
+        }
+        line++;
         doc.save('Tema'+this.topic.name);
 
 

@@ -99,11 +99,11 @@ public class TopicRestController {
 
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Optional<Topic>> deleteTopic(@PathVariable long id) {
+	public ResponseEntity<Topic> deleteTopic(@PathVariable long id) {
 		Optional<Topic> deleted = topicService.findOne(id);
 		if(deleted.isPresent()) {
 			topicService.deleteTopic(deleted.get());
-			return new ResponseEntity<>(deleted,HttpStatus.OK);
+			return new ResponseEntity<>(HttpStatus.OK);
 		}else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}

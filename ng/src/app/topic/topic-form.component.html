@@ -1,17 +1,17 @@
-<div *ngIf="quote">
-    <h2>Book "{{quote.text}}"</h2>
-    <div *ngIf="quote.id">
-      <label>Id: </label>{{book.id}}
+<div *ngIf="topic">
+    <h2>Book "{{topic.name}}"</h2>
+    <div *ngIf="topic.id">
+      <label>Id: </label>{{topic.id}}
     </div>
     <div>
       <label>Name: </label>
-      <input [(ngModel)]="topic.Name" placeholder="Name"/>
+      <input [(ngModel)]="topic.name" placeholder="Name"/>
     </div>
 
-    <div *ngIf=topic.hasQuotes>
-
-      <div *ngFor='let quote of topic.quotes'>
-        <label>Reference</label>
+    <div *ngIf=hasQuotes>
+      <label>Reference</label>
+      <div *ngFor='let quote of quotes'>
+        
         <div>
           <p >{{quote.text}}</p>
           <p>{{quote.author</p>

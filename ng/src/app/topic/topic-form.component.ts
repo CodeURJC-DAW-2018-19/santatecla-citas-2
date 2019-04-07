@@ -1,17 +1,18 @@
-import {Component,Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import {Topic, TopicService} from './topic.service';
 import { Quote } from '../quote/quote.service';
 
 @Component({
-    selector: 'topic-form',
     templateUrl: 'topic-form.component.html'
 })
 
 
 export class TopicFormComponent{
+
     newTopic: boolean;
     topic: Topic;
+    hasQuotes: boolean;
 
     quotes:Quote[];
 
@@ -26,9 +27,15 @@ export class TopicFormComponent{
                     error => console.error(error)
                 );
                 this.newTopic = false;
+                this.quotes = service.getReferences();
 
+                this.hasQuotes = this.quotes.length>0;
+
+            }else{
+                this.topic={name:"",nQuotes:0 ,quoteIds:[], texts: []};
+                this.newTopic = true;
             }
-            this.quotes= service.getReferences();
+            
         }
 
     cancel(){

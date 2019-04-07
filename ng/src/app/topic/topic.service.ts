@@ -1,4 +1,4 @@
-import { Injectable, Output, EventEmitter } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { Http, Headers, RequestOptions } from '@angular/http'
 
 import { Observable } from 'rxjs';
@@ -99,7 +99,7 @@ export class TopicService {
             .pipe(
                 map(response => response = response.json()),
                 catchError(error => this.handleError(error))
-            )
+            );
 
     }
 
@@ -125,6 +125,7 @@ export class TopicService {
 
     setReferences(quotes: Quote[]) {
         this.quoteReferenced = quotes;
+        this.quoteNotReferenced  = new Array();
         this.quoteService.findAllUnpaged().subscribe(
             quotes => {
                 this.quoteNotReferenced = quotes
