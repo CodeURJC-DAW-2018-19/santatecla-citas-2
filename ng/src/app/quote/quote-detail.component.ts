@@ -63,7 +63,9 @@ export class QuoteDetailComponent{
         this.router.navigate(['/quote/form', this.quote.id]);
     }
 
-
+    goToQuotes(){
+        this.router.navigate(['/']);
+    }
 
     
 }

@@ -9,14 +9,25 @@
 
 
 
-    <mat-nav-list *ngIf="loginService.isLogged">
-        <div *ngFor='let quote of quotes'>
-            <a mat-list-item [routerLink]="['/quote', quote.id]" [ngStyle]="{'cursor':'pointer'}">
+    <mat-nav-list>
+        <div *ngIf="loginService.isLogged && !reference">
+            <div *ngFor='let quote of quotes'>
+                <a  mat-list-item [routerLink]="['/quote', quote.id]"
+                    [ngStyle]="{'cursor':'pointer'}">
+                    {{quote.text}}
+                </a>
+            </div>
+        </div>
+        <div *ngIf="!loginService.isLogged || reference">
+            <div *ngFor='let quote of quotes'>
+            <p  mat-list-item [ngStyle]="{'cursor':'default'}">
                 {{quote.text}}
-
-            </a>
+            </p>
+            <button mat-fab *ngIf="reference" (click)="addReference(quote)">Add</button>
+        </div>
         </div>
     </mat-nav-list>
+
     <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
         {{pagingBar.range}} of {{pagingBar.total}}
     </td-paging-bar>

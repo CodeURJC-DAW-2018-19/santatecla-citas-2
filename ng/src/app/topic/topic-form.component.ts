@@ -13,6 +13,8 @@ export class TopicFormComponent{
     newTopic: boolean;
     topic: Topic;
     hasQuotes: boolean;
+    hasText: boolean;
+    texts: string[];
 
     quotes:Quote[];
 
@@ -23,17 +25,28 @@ export class TopicFormComponent{
             const id = activatedRoute.snapshot.params['id'];
             if(id){
                 service.findOne(id).subscribe(
-                    topic => this.topic = topic,
+                    topic => {
+                        this.topic = topic;
+                        this.hasText = topic.texts != undefined;
+                        if(this.hasText){
+                            this.texts=topic.texts;
+                        }else{
+                            this.texts = new Array();
+                        }
+                    },
                     error => console.error(error)
+                
                 );
                 this.newTopic = false;
                 this.quotes = service.getReferences();
 
-                this.hasQuotes = this.quotes.length>0;
+                this.hasQuotes = this.quotes != undefined;
+               
 
             }else{
                 this.topic={name:"",nQuotes:0 ,quoteIds:[], texts: []};
                 this.newTopic = true;
+                this.texts = new Array();
             }
             
         }
@@ -43,7 +56,14 @@ export class TopicFormComponent{
     }
 
     save(){
-        this.service.postTopic(this.topic).subscribe(
+        this.topic.texts= this.texts;
+        this.topic.quoteIds = new Array();
+        if(this.hasQuotes){
+            for(let quote of this.quotes){
+               this.topic.quoteIds.push(quote.id);
+            }
+        }
+     this.service.postTopic(this.topic).subscribe(
             topic=>{},
             error=> console.error('Error creating Topic: '+ error),
         );
@@ -53,8 +73,22 @@ export class TopicFormComponent{
     removeReference(quote:Quote){
         this.service.removeReference(quote);
     }
-    showPopup(){
-        this.router.navigate(['/topic/reference', this.topic.id]);
 
+    showPopup(){
+        var id = 0;
+        if(this.topic.id !=undefined){
+            id = this.topic.id;
+        }
+        this.router.navigate(['/topic/reference', id]);
+
+    }
+
+    addText(){
+        this.texts.push('text');
+        this.hasText = true;
+    }
+
+    trackByIndex(index:number, obj:any){
+        return index;
     }
 }
