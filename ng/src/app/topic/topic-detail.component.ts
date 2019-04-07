@@ -3,6 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TopicService, Topic } from './topic.service';
 import { LoginService } from '../user/login.service';
 import { Quote, QuoteService } from '../quote/quote.service';
+import * as jsPDF from 'jspdf';
+import { Quote, Quote } from '@angular/compiler';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
     templateUrl: `topic-detail.component.html`
@@ -61,6 +64,20 @@ export class TopicDetailComponent {
         this.service.setTopic(this.topic);
         this.service.setReferences(this.quotes);
         this.router.navigate(['/topic/form', this.topic.id]);
+    }
+
+    downloadPDF(){
+        let doc =new jsPDF();
+        doc.text(this.topic.name,10,10);
+        doc.text(this.topic.texts,10,10);
+        for(let quote of this.quotes){
+            doc.text(quote.text,10,10);
+            doc.text(quote.book,10,10);
+            doc.text(quote.author,10,10);
+        }
+        doc.save('Tema'+this.topic.name);
+
+
     }
 
 

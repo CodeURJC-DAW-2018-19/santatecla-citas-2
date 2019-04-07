@@ -18,6 +18,7 @@
         <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
             {{pagingBar.range}} of {{pagingBar.total}}
         </td-paging-bar>
+        </div>
     </mat-nav-list>
 
     <button mat-fab *ngIf="loginService.isAdmin" (click)="newQuote()">
