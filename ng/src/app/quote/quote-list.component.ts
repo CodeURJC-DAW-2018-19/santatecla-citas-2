@@ -20,7 +20,8 @@ export class QuoteListComponent implements OnInit {
     total : number;
     pageNumber = 1;
     firstPage = 0;
-    pageChanged: Boolean = false;
+    pageChanged: boolean = false;
+    reference: boolean = false;
 
     @ViewChild(TdPagingBarComponent) paging: TdPagingBarComponent;
 
