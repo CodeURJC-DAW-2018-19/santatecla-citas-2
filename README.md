@@ -110,6 +110,7 @@ de amistad, etc.)
 • Login como docente y mostrar las funcionalidades propias del administrador.
 • Subida de imágenes.
 • Creación de un nuevo estudiante.
-• Modificación de los datos de una entidad de la aplicación web (cita, autor, libro, entrega, etc...)
-  El video esta al principio del Readme.
+• Modificación de los datos de una entidad de la aplicación web (cita, autor, libro, entrega, etc...);
+
+El video esta al principio del Readme.
 
