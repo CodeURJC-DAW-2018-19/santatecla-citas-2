@@ -80,9 +80,12 @@ FASE 4. Documentación:
 • Preparación del entorno de desarrollo: Se añadirá a las instrucciones cómo instalar y
 configurar el entorno de desarrollo para poder compilar y ejecutar la aplicación SPA con
 Angular.
+
  Configurar entorno de desarrollo:
+ 
    Instalar  Node.js versión 8.x o 10.x
    Instalar el gestor de paquetes npm, Angular CLI y Angular dependen de las características y funcionalidades proporcionadas por las bibliotecas que están disponibles en npm.
+   
    Anu vez instalado el Nodejs y npm, abrimos la consola:
    Instale el CLI angular: npm install -g @angular/cli
    Pasamos al directorio donde tenemos la aplicación para instalar ahi el npm y asi poder ejecutarla, ng serve --open (opcional)
