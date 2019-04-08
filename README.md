@@ -85,9 +85,10 @@ Angular.
    Instalar el gestor de paquetes npm, Angular CLI y Angular dependen de las características y funcionalidades proporcionadas por las bibliotecas que están disponibles en npm.
    Anu vez instalado el Nodejs y npm, abrimos la consola:
    Instale el CLI angular: npm install -g @angular/cli
-   Pasamos al directorio donde tenemos la aplicación para instalar ahi el npm y asi poder ejecutarla
-   ng serve --open (opcional)
-
+   Pasamos al directorio donde tenemos la aplicación para instalar ahi el npm y asi poder ejecutarla, ng serve --open (opcional)
+Utilizamos:
+  intellij para la parte de back
+  Visual code studio para desarrollar la aplicacion (ng)
 
 • Diagrama de clases y templates: Reflejará las clases y templates del código Angular. El
 diagrama deberá diferenciar claramente qué elementos son componentes y cómo se relacionan
@@ -109,18 +110,7 @@ de amistad, etc.)
 • Login como docente y mostrar las funcionalidades propias del administrador.
 • Subida de imágenes.
 • Creación de un nuevo estudiante.
-• Modificación de los datos de una entidad de la aplicación web (cita, autor, libro, entrega, etc...)
+• Modificación de los datos de una entidad de la aplicación web (cita, autor, libro, entrega, etc...);
 
-Calificación extra: Control de calidad con tests
-Es posible obtener un punto adicional a la nota de la práctica si se realiza un control de calidad del
-código. En concreto:
+El video esta al principio del Readme.
 
-◦ Tests servidor Java/Spring (Fase 2): Se incrementará la nota de la práctica en 0,5 puntos si se
-implementan tests unitarios y de sistema del backend Java. Los tests se implementarán en Java
-con JUnit. Los tests de sistema se implementarán con Selenium.
-
-◦ Tests cliente TypeScript/Angular (Fase 4): Se incrementará la nota de la práctica en 0,5
-puntos si se implementan tests unitarios y de sistema. Los tests se implementarán con Jasmine.
-Los tests de sistema se implementarán con Protractor.
-
-El README deberá incluir en cada fase cómo ejecutar los tests desde la línea de comandos.
