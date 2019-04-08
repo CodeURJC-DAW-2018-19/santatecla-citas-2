@@ -27,7 +27,10 @@ export class QuoteListComponent implements OnInit {
 
     constructor(private router: Router, private service: QuoteService,
         public loginService: LoginService) {
-
+            this.service.countQuotes().subscribe(
+                data => this.total = Object.keys(data).length,
+                error => console.log(error)
+            );
     }
 
     ngOnInit() {

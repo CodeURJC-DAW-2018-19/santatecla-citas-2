@@ -5,33 +5,45 @@
         <span flex>Topic "{{topic.name}}"</span>
       </div>
     </mat-card-title>
-
     <mat-list>
+
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3 mat-subheader>References</h3>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+
       <mat-card *ngFor='let quote of quotes'>
         <mat-card-title>
-          <mat-icon mat-list-icon>note</mat-icon>
+          <mat-icon mat-list-icon color="primary">note</mat-icon>
           <i>"{{quote.text}}"</i>
         </mat-card-title>
         <mat-card-content>{{quote.author}},{{quote.book}}</mat-card-content>
       </mat-card>
 
-
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3 mat-subheader>Texts</h3>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <br />
       <mat-list-item *ngFor='let text of topic.texts'>
         <input matInput disabled value="{{text}}" />
       </mat-list-item>
 
       <mat-list-item>
-        <button mat-raised-button style="margin-right: 8px" color="primary" *ngIf="login.isLogged && login.isAdmin"
-          (click)="removeTopic()">Remove</button>
-        <button mat-raised-button style="margin-right: 8px" color="primary" *ngIf="login.isLogged && login.isAdmin"
+
+        <button mat-raised-button style="margin: 1%" color="basic" *ngIf="login.isLogged && login.isAdmin"
           (click)="editTopic()">Edit</button>
-        <br>
-        <button mat-raised-button style="margin-right: 8px" color="primary" (click)="goToTopics()">Back</button>
+        <button mat-raised-button style="margin: 1%" color="basic" (click)="downloadPDF()">Download
+          PDF</button>
+        <button mat-raised-button style="margin: 1%" color="warn" *ngIf="login.isLogged && login.isAdmin"
+          (click)="removeTopic()">Remove</button>
+
       </mat-list-item>
       <mat-list-item>
-        <button mat-raised-button style="margin-right: 8px" color="primary" (click)="downloadPDF()">Download
-          PDF</button>
-      </mat-list-item>
-    </mat-list>
-  </mat-card>
-</div>
+        <button mat-raised-button style="margin: 1%" color="primary" (click)="goToTopics()"><mat-icon>chevron_left</mat-icon>Back</button> 
+        </mat-list-item> 
+      </mat-list> 
+    </mat-card> 
+  </div>

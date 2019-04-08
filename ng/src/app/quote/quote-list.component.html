@@ -32,8 +32,10 @@
         {{pagingBar.range}} of {{pagingBar.total}}
     </td-paging-bar>
 
-    <button mat-fab *ngIf="loginService.isAdmin" (click)="newQuote()">
+    <div *ngIf="loginService.isAdmin">
+    <button mat-mini-fab color="primary" style="margin:1%" (click)="newQuote()">
         <mat-icon>add</mat-icon>
-    </button>
+    </button>Add Quote
+    </div>
 
 </mat-card>

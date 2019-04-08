@@ -16,8 +16,10 @@ export class QuotePopupComponent implements OnInit{
     
     
 
-    constructor(private router: Router, private service:TopicService,
-        public loginService: LoginService){}
+    constructor(private router: Router, private service:TopicService, private quoteService:QuoteService,
+        public loginService: LoginService){
+            this.quotes = this.service.getNotReferenced();
+        }
         
     ngOnInit(){
        this.quotes = this.service.getNotReferenced();
@@ -29,7 +31,6 @@ export class QuotePopupComponent implements OnInit{
      */
     
      addReference(quote:Quote){
-
         this.service.addReference(quote);
         window.history.back();
         //Send quote to topicFormComponent so it adds this quote to the referenced ones

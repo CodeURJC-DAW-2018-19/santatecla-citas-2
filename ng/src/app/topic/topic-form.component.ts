@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {Router,ActivatedRoute} from '@angular/router';
-import {Topic, TopicService} from './topic.service';
+import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Topic, TopicService } from './topic.service';
 import { Quote } from '../quote/quote.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { Quote } from '../quote/quote.service';
 })
 
 
-export class TopicFormComponent{
+export class TopicFormComponent {
 
     newTopic: boolean;
     topic: Topic;
@@ -16,79 +16,76 @@ export class TopicFormComponent{
     hasText: boolean;
     texts: string[];
 
-    quotes:Quote[];
+    quotes: Quote[];
 
-    constructor(private router:Router,
-        activatedRoute:ActivatedRoute,
-        private service: TopicService){
+    constructor(private router: Router,
+        activatedRoute: ActivatedRoute,
+        private service: TopicService) {
 
-            const id = activatedRoute.snapshot.params['id'];
-            if(id){
-                service.findOne(id).subscribe(
-                    topic => {
-                        this.topic = topic;
-                        this.hasText = topic.texts != undefined;
-                        if(this.hasText){
-                            this.texts=topic.texts;
-                        }else{
-                            this.texts = new Array();
-                        }
-                    },
-                    error => console.error(error)
-                
-                );
-                this.newTopic = false;
-                this.quotes = service.getReferences();
-
-                this.hasQuotes = this.quotes != undefined;
-               
-
-            }else{
-                this.topic={name:"",nQuotes:0 ,quoteIds:[], texts: []};
-                this.newTopic = true;
-                this.texts = new Array();
-            }
-            
+        const id = activatedRoute.snapshot.params['id'];
+        if (id) {
+            service.findOne(id).subscribe(
+                topic => {
+                    this.topic = topic;
+                    this.hasText = topic.texts != undefined;
+                    if (this.hasText) {
+                        this.texts = topic.texts;
+                    } else {
+                        this.texts = new Array();
+                    }
+                },
+                error => console.error(error)
+            );
+            this.newTopic = false;
+            this.quotes = service.getReferences();
+            this.hasQuotes = this.quotes != undefined;
+        } else {
+            this.topic = { name: "", nQuotes: 0, quoteIds: [], texts: [] };
+            this.newTopic = true;
+            this.texts = new Array();
         }
+        
+    }
 
-    cancel(){
+    cancel() {
         window.history.back();
     }
 
-    save(){
-        this.topic.texts= this.texts;
+    save() {
+        this.topic.texts = this.texts;
         this.topic.quoteIds = new Array();
-        if(this.hasQuotes){
-            for(let quote of this.quotes){
-               this.topic.quoteIds.push(quote.id);
+        if (this.hasQuotes) {
+            for (let quote of this.quotes) {
+                this.topic.quoteIds.push(quote.id);
             }
         }
-     this.service.postTopic(this.topic).subscribe(
-            topic=>{},
-            error=> console.error('Error creating Topic: '+ error),
+        this.service.postTopic(this.topic).subscribe(
+            topic => { },
+            error => console.error('Error creating Topic: ' + error),
         );
         this.router.navigate(['/topics']);
     }
 
-    removeReference(quote:Quote){
+    removeReference(quote: Quote) {
         this.service.removeReference(quote);
     }
 
-    showPopup(){
-        var id = 0;
-        if(this.topic.id !=undefined){
+    showPopup() {
+        /*var id
+        if (this.topic.id != undefined) {
             id = this.topic.id;
-        }
-        this.router.navigate(['/topic/reference', id]);
+        }*/
+        this.service.setTopic(this.topic);
+        this.router.navigate(['/topic/reference/']);
 
     }
 
-    addText(){
+    addText() {
         this.texts.push('text');
         this.hasText = true;
     }
 
-    trackByIndex(index:number, obj:any){
+    trackByIndex(index: number, obj: any) {
         return index;
     }
 }

@@ -22,7 +22,7 @@ export class TopicService {
 
     topic: Topic;
     quoteReferenced: Quote[];
-    quoteNotReferenced: Quote[];
+    quoteNotReferenced: Quote[] = [];
     private nTopics: number;
 
 
@@ -137,8 +137,8 @@ export class TopicService {
             },
             error => console.log(error)
         );
-
     }
+    
     setTopic(topic: Topic) {
         this.topic = topic;
     }

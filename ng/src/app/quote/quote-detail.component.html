@@ -16,11 +16,11 @@
 
       <img *ngIf="hasImage" [src]="image">
       <p>
-        <button mat-raised-button style="margin-right: 8px" color="primary" *ngIf="login.isLogged && login.isAdmin"
-          (click)="removeQuote()">Remove</button>
-        <button mat-raised-button style="margin-right: 8px" color="primary" *ngIf="login.isLogged && login.isAdmin"
+          <button mat-raised-button style="margin: 1%" color="primary" (click)="goToQuotes()"><mat-icon>chevron_left</mat-icon>Back</button>
+          <button mat-raised-button style="margin: 1%" color="basic" *ngIf="login.isLogged && login.isAdmin"
           (click)="editQuote()">Edit</button>
-        <button mat-raised-button style="margin-right: 8px" color="primary" (click)="goToQuotes()">All Quotes</button>
+        <button mat-raised-button style="margin: 1%" color="warn" *ngIf="login.isLogged && login.isAdmin"
+          (click)="removeQuote()">Remove</button>
       </p>
     </mat-card-content>
   </mat-card>

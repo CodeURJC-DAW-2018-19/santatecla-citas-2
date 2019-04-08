@@ -37,9 +37,7 @@ export class TopicDetailComponent {
     }
 
     ngOnInit() {
-            
-        /*
-        for(let id of this.quoteNumbers){
+        /*for(let id of this.quoteNumbers){
             this.quoteService.findOne(id).subscribe(
                 quote => this.quotes.push(quote),
                 error => console.error(error)
