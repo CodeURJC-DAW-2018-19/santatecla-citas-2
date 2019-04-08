@@ -35,7 +35,6 @@ export class ChartComponent {
                 error => console.log(error)
             );
             Object.assign(this, this.chart);
-            console.log(this.chart);
     }
 
 

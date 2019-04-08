@@ -1,17 +1,27 @@
 <div *ngIf="quote">
-    <h2>Quote "{{quote.text}}"</h2>
-    <div>
-      <p>{{quote.author}}</p>
-    </div>
-    <div>
-        <p>{{quote.book}}</p>
-    </div>
+  <mat-card>
+    <mat-card-title>
+      <div layout="row" layout-align="start center">
+        <span flex>Quote "{{quote.text}}"</span>
+      </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content class="example-container">
+      <mat-list-item role="listitem">
+          <span flex>{{quote.author}}</span>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+          <span flex>{{quote.book}}</span>
+      </mat-list-item>
 
-    <img *ngIf="hasImage" [src]= "image">
-    <p>
-      <button *ngIf="login.isLogged && login.isAdmin" (click)="removeQuote()">Remove</button>
-      <button *ngIf="login.isLogged && login.isAdmin" (click)="editQuote()">Edit</button>
-      <br>
-      <button (click)="goToQuotes()">All Quotes</button>
-    </p>
-    </div>
+      <img *ngIf="hasImage" [src]="image">
+      <p>
+          <button mat-raised-button style="margin: 1%" color="primary" (click)="goToQuotes()"><mat-icon>chevron_left</mat-icon>Back</button>
+          <button mat-raised-button style="margin: 1%" color="basic" *ngIf="login.isLogged && login.isAdmin"
+          (click)="editQuote()">Edit</button>
+        <button mat-raised-button style="margin: 1%" color="warn" *ngIf="login.isLogged && login.isAdmin"
+          (click)="removeQuote()">Remove</button>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

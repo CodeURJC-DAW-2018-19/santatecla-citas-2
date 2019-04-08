@@ -23,10 +23,11 @@ export class TopicFormComponent{
         private service: TopicService){
 
             const id = activatedRoute.snapshot.params['id'];
-            if(id){
+            if(id && id != 0){
                 service.findOne(id).subscribe(
                     topic => {
                         this.topic = topic;
+                        this.service.setReferences(topic.quoteIds);
                         this.hasText = topic.texts != undefined;
                         if(this.hasText){
                             this.texts=topic.texts;
@@ -38,17 +39,24 @@ export class TopicFormComponent{
                 
                 );
                 this.newTopic = false;
-                this.quotes = service.getReferences();
 
-                this.hasQuotes = this.quotes != undefined;
+                
                
 
-            }else{
+            }else if(!id){
                 this.topic={name:"",nQuotes:0 ,quoteIds:[], texts: []};
+                this.service.setReferences(this.topic.quoteIds);
                 this.newTopic = true;
                 this.texts = new Array();
             }
-            
+            if(id == 0){
+                this.topic = service.getTopic();
+                this.texts = this.topic.texts;
+                this.hasText = this.topic.texts!= undefined;
+            }
+
+            this.quotes = service.getReferences();
+            this.hasQuotes = this.quotes != undefined;
         }
 
     cancel(){
@@ -62,6 +70,7 @@ export class TopicFormComponent{
             for(let quote of this.quotes){
                this.topic.quoteIds.push(quote.id);
             }
+            this.topic.nQuotes= this.quotes.length;
         }
      this.service.postTopic(this.topic).subscribe(
             topic=>{},
@@ -75,6 +84,8 @@ export class TopicFormComponent{
     }
 
     showPopup(){
+        this.topic.texts = this.texts;
+        this.service.setTopic(this.topic);
         var id = 0;
         if(this.topic.id !=undefined){
             id = this.topic.id;

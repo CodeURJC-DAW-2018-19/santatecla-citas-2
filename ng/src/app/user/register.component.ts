@@ -19,6 +19,7 @@ export class RegisterComponent {
 
     register() {
         event.preventDefault();
+        
         let usuario:User = {userName:this.user,roles:["ROLE_USER"],password:this.password};
                 this.loginService.register(usuario).subscribe(
             (u) => {
@@ -27,6 +28,7 @@ export class RegisterComponent {
             },
             (error) => alert('Invalid user or password'),
         );
+        window.alert("You have signed up successfully");
     }
 
 

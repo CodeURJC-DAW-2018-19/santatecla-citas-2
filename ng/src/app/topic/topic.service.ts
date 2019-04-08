@@ -22,7 +22,7 @@ export class TopicService {
 
     topic: Topic;
     quoteReferenced: Quote[];
-    quoteNotReferenced: Quote[];
+    quoteNotReferenced: Quote[] = [];
     private nTopics: number;
 
 
@@ -123,22 +123,26 @@ export class TopicService {
         return this.quoteNotReferenced;
     }
 
-    setReferences(quotes: Quote[]) {
-        this.quoteReferenced = quotes;
+    getTopic(){
+        return this.topic;
+    }
+    setReferences(quoteIds: number[]) {
+        this.quoteReferenced = new Array();
         this.quoteService.findAllUnpaged().subscribe(
             quotes => {
                 this.quoteNotReferenced = quotes
-                for (let quote of this.quoteReferenced) {
+                for (let id of quoteIds) {
                     var index = this.quoteNotReferenced.findIndex((current: Quote) => {
-                        return current.id == quote.id;
+                        return current.id == id;
                     });
+                    var quote = this.quoteNotReferenced[index];
                     this.quoteNotReferenced.splice(index, 1);
                 }
             },
             error => console.log(error)
         );
-
     }
+    
     setTopic(topic: Topic) {
         this.topic = topic;
     }

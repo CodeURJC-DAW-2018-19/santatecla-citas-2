@@ -38,7 +38,7 @@ export class QuoteDetailComponent{
         }
     
     removeQuote(){
-        const confirm = window.confirm(`Are u sure abut that?`);
+        const confirm = window.confirm(`Are you sure about that? This quote will be deleted.`);
         if(confirm){
             this.service.removeQuote(this.quote).subscribe(
                 _ => this.router.navigate(['/quotes']),

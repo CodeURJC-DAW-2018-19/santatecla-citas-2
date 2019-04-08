@@ -1,21 +1,49 @@
 <div *ngIf="topic">
-    <h2>Topic "{{topic.name}}"</h2>
+  <mat-card>
+    <mat-card-title>
+      <div layout="row" layout-align="start center">
+        <span flex>Topic "{{topic.name}}"</span>
+      </div>
+    </mat-card-title>
+    <mat-list>
 
-    <div *ngFor='let quote of quotes'>
-        <p>{{quote.text}}</p>
-      <p>{{quote.author}}</p>
-      <p>{{quote.book}}</p>
-    </div>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3 mat-subheader>References</h3>
+      </mat-list-item>
+      <mat-divider></mat-divider>
 
-    <div *ngFor='let text of topic.texts'>
-        <p>{{text}}</p>
-    </div>
-   
-    <p>
-      <button *ngIf="login.isLogged && login.isAdmin" (click)="removeTopic()">Remove</button>
-      <button *ngIf="login.isLogged && login.isAdmin" (click)="editTopic()">Edit</button>
-      <br>
-      <button (click)="gotoTopics()">All Books</button>
-    </p>
-    <button (click)="downloadPDF()">descarga wey</button>
-    </div>
+      <mat-card *ngFor='let quote of quotes'>
+        <mat-card-title>
+          <mat-icon mat-list-icon color="primary">note</mat-icon>
+          <i>"{{quote.text}}"</i>
+        </mat-card-title>
+        <mat-card-content>{{quote.author}},{{quote.book}}</mat-card-content>
+      </mat-card>
+
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3 mat-subheader>Texts</h3>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <br />
+      <mat-list-item *ngFor='let text of topic.texts'>
+        <input matInput disabled value="{{text}}" />
+      </mat-list-item>
+
+      <mat-list-item>
+
+        <button mat-raised-button style="margin: 1%" color="basic" *ngIf="login.isLogged && login.isAdmin"
+          (click)="editTopic()">Edit</button>
+        <button mat-raised-button style="margin: 1%" color="basic" (click)="downloadPDF()">Download
+          PDF</button>
+        <button mat-raised-button style="margin: 1%" color="warn" *ngIf="login.isLogged && login.isAdmin"
+          (click)="removeTopic()">Remove</button>
+
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-raised-button style="margin: 1%" color="primary" (click)="goToTopics()"><mat-icon>chevron_left</mat-icon>Back</button> 
+        </mat-list-item> 
+      </mat-list> 
+    </mat-card> 
+  </div>

@@ -8,23 +8,23 @@
     <mat-divider></mat-divider>
 
 
-
     <mat-nav-list>
         <div *ngIf="loginService.isLogged && !reference">
             <div *ngFor='let quote of quotes'>
-                <a  mat-list-item [routerLink]="['/quote', quote.id]"
-                    [ngStyle]="{'cursor':'pointer'}">
-                    {{quote.text}}
+                <a [routerLink]="['/quote', quote.id]" [ngStyle]="{'cursor':'pointer'}"> 
+                    <p mat-list-item style="padding:2%">{{quote.text}}</p>
                 </a>
+                <mat-divider></mat-divider>
             </div>
         </div>
         <div *ngIf="!loginService.isLogged || reference">
             <div *ngFor='let quote of quotes'>
-            <p  mat-list-item [ngStyle]="{'cursor':'default'}">
-                {{quote.text}}
-            </p>
-            <button mat-fab *ngIf="reference" (click)="addReference(quote)">Add</button>
-        </div>
+                <p mat-list-item [ngStyle]="{'cursor':'default'}" style="margin-right: 8px;padding:2%">
+                    {{quote.text}}
+                </p>
+                <mat-divider></mat-divider>
+                <button mat-fab *ngIf="reference" (click)="addReference(quote)">Add</button>
+            </div>
         </div>
     </mat-nav-list>
 
@@ -32,8 +32,10 @@
         {{pagingBar.range}} of {{pagingBar.total}}
     </td-paging-bar>
 
-    <button mat-fab *ngIf="loginService.isAdmin" (click)="newQuote()">
+    <div *ngIf="loginService.isAdmin">
+    <button mat-mini-fab color="primary" style="margin:1%" (click)="newQuote()">
         <mat-icon>add</mat-icon>
-    </button>
+    </button>Add Quote
+    </div>
 
 </mat-card>

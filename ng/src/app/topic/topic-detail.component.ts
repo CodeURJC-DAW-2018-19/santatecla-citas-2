@@ -37,9 +37,7 @@ export class TopicDetailComponent {
     }
 
     ngOnInit() {
-            
-        /*
-        for(let id of this.quoteNumbers){
+        /*for(let id of this.quoteNumbers){
             this.quoteService.findOne(id).subscribe(
                 quote => this.quotes.push(quote),
                 error => console.error(error)
@@ -61,8 +59,7 @@ export class TopicDetailComponent {
     }
 
     editTopic() {
-        this.service.setTopic(this.topic);
-        this.service.setReferences(this.quotes);
+    
         this.router.navigate(['/topic/form', this.topic.id]);
     }
 
@@ -89,8 +86,10 @@ export class TopicDetailComponent {
         }
         line++;
         doc.save('Tema'+this.topic.name);
+    }
 
-
+    goToTopics(){
+        this.router.navigate(['/']);
     }
 
 
