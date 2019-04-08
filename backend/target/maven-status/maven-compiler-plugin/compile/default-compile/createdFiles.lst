@@ -2,6 +2,7 @@ com\urjc\daw\practica\api\ChartRestController.class
 com\urjc\daw\practica\controller\impl\UserControllerImpl.class
 com\urjc\daw\practica\api\FileRestController.class
 com\urjc\daw\practica\controller\impl\ImageControllerImpl.class
+com\urjc\daw\practica\user\CustomWebMvcConfigurerAdapter.class
 com\urjc\daw\practica\controller\UserController.class
 com\urjc\daw\practica\web\IndexController.class
 com\urjc\daw\practica\exception\FileStorageException.class
